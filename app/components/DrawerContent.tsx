@@ -26,13 +26,13 @@ export default function DrawerContent(props: {
           onClick={props.handleDrawerClose}
           currentPathname={pathname}
           href={"/"}
-          formattedMessageId={"PROFESSIONAL_DUTIES"}
+          formattedMessageId={"SKILLS"}
         />
         <DrawerContentLink
           onClick={props.handleDrawerClose}
           currentPathname={pathname}
-          href={"/vaardigheden"}
-          formattedMessageId={"SKILLS"}
+          href={"/beroepstaken"}
+          formattedMessageId={"PROFESSIONAL_DUTIES"}
         />
         <DrawerContentLink
           onClick={props.handleDrawerClose}
