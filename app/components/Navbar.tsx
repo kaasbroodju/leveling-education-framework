@@ -53,6 +53,7 @@ export default function DrawerAppBar({ drawerWidth }: { drawerWidth: number }) {
               aria-label="change theme"
               edge="end"
               onClick={toggleSelectedTheme}
+              sx={{ width: "56px" }}
             >
               {selectedTheme === "dark" ? (
                 <LightModeOutlined />
