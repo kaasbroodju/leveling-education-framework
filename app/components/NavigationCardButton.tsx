@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import {Button, Grid, GridProps, useMediaQuery, useTheme} from "@mui/material";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-import {fontSize} from "@mui/system";
+import {bgcolor, fontSize} from "@mui/system";
 import {getIcon} from "../util/vaardighedenToIcon";
 
 export function NavigationCardButton({
