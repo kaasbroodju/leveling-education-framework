@@ -72,8 +72,8 @@ export default function Beroepstaken({
         <Grid container item spacing={2} component={"header"}>
           <Grid item xs={12} component={"section"}>
             <NavigationCard
-                title={<FormattedMessage id="ARCHITECTURE_LAYERS" />}
-                subheader={<FormattedMessage id="ARCHITECTURE_LAYERS_SUBHEADER" />}
+                title={intl.formatMessage({ id: "ARCHITECTURE_LAYERS" }) }
+                subheader={intl.formatMessage({ id: "ARCHITECTURE_LAYERS_SUBHEADER"})}
             >
               {architecture_layers.map((architecture_layer) => (
                   <NavigationCardButton
@@ -88,8 +88,8 @@ export default function Beroepstaken({
           </Grid>
           <Grid item xs={12} component={"section"}>
             <NavigationCard
-                title={<FormattedMessage id="ACTIVITIES" />}
-                subheader={<FormattedMessage id="ACTIVITIES_SUBHEADER" />}
+                title={intl.formatMessage({ id: "ACTIVITIES"})}
+                subheader={intl.formatMessage({ id: "ACTIVITIES_SUBHEADER"}) }
             >
               {activities.map((activity) => (
                   <NavigationCardButton

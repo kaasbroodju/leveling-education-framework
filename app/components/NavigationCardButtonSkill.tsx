@@ -62,7 +62,7 @@ export function NavigationCardButtonSkill({
               "outlined"
           }
           fullWidth
-          style={{ backgroundColor: isActive ? activeColour : colour, color: theme.palette.primary.main, ":hover": { display: "none"} }}
+          style={{ backgroundColor: isActive ? activeColour : colour, color: theme.palette.primary.main }}
         >
           { isLarge
               ? icon

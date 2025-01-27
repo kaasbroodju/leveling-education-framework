@@ -57,9 +57,9 @@ export default function Index({
       <Grid container spacing={2}>
         <Grid item xs={12} component={"header"}>
           <NavigationCardSkill
-            title={<FormattedMessage id="SKILLS" />}
-            subheader={<FormattedMessage id="SKILLS_SUBHEADER" />}
-            test={Object.fromEntries(
+            title={intl.formatMessage({ id: "SKILLS"}) }
+            subheader={intl.formatMessage({ id: "SKILLS_SUBHEADER"}) }
+            skills={Object.fromEntries(
                 Object.entries(typeOfSkills)
                     .map(([typeOfSkill, associatedSkills]) => [typeOfSkill, associatedSkills.map((skill) =>
                 <NavigationCardButtonSkill
@@ -72,21 +72,6 @@ export default function Index({
                 />
             )]))}
           >
-            {/*{Object.entries(typeOfSkills).map(([typeOfSkill, skills]) => (*/}
-            {/*    <>*/}
-            {/*    {skills.map((skill) => (*/}
-            {/*          <NavigationCardButtonSkill*/}
-            {/*              key={skill}*/}
-            {/*              title={<FormattedMessage id={skill} />}*/}
-            {/*              type_of_skill={typeOfSkill}*/}
-            {/*              query_param_key="vaardigheid"*/}
-            {/*              query_param_value={skill}*/}
-            {/*              props={{ xs: 12, lg: 2.4 }}*/}
-            {/*          />*/}
-            {/*      ))}*/}
-            {/*    </>*/}
-            {/*))}*/}
-
           </NavigationCardSkill>
         </Grid>
         {Object.keys(filteredVaardigheden).map((vaardighedenKey) => (

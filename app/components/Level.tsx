@@ -9,11 +9,12 @@ export function Level(props: {
 }) {
   return (
     <Grid item xs={12} sm={6} md={3}>
-      <Stack gap={1}>
+      <Stack gap={1} component={"section"}>
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="space-between"
+
         >
           <Typography variant="h6" fontWeight="normal" component={"h2"}>
             <FormattedMessage id="NIVEAU" /> {props.niveauKey}
