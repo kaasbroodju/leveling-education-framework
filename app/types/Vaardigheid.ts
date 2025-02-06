@@ -1,8 +1,8 @@
 export const skills = [
+    "Overzicht creëren",
+  "Kritisch oordelen",
   "Juiste kennis ontwikkelen",
   "Kwalitatief product maken",
-  "Overzicht creëren",
-  "Kritisch oordelen",
   "Samenwerken",
   "Boodschap delen",
   "Plannen",
