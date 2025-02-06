@@ -10,11 +10,12 @@ import { filterVaardigheden } from "../util/filterVaardigheden";
 import { NavigationCardButton } from "../components/NavigationCardButton";
 import { NavigationCard } from "../components/NavigationCard";
 import { Grid } from "@mui/material";
+import {migrateToNewFileLayout} from "../util/migrateToNewFileLayout";
+import {getVaardigheden} from "../util/getVaardigheden";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // static site generation
-  const vaardigheden = await getBeroepstakenOrVaardigheden(
-    "vaardigheden",
+  const vaardigheden = await getVaardigheden(
     context.locale === "en" ? "en" : "nl"
   );
 
@@ -34,6 +35,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function Index({
   vaardigheden,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  // migrateToNewFileLayout();
   const intl = useIntl();
   const router = useRouter();
 

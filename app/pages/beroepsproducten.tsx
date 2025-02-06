@@ -16,12 +16,14 @@ import {
 import { Activiteit, activities } from "../types/Activiteit";
 import DefaultErrorPage from "next/error";
 import {getBeroepstaken} from "../util/getBeroepstaken";
+import {getBeroepsproducten} from "../util/getBeroepsproducten";
+import {LevelsCardBeroepsproduct} from "../components/LevelsCardBeroepsproduct";
+import {migrateToNewFileLayout} from "../util/migrateToNewFileLayout";
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  // migrateToNewFileLayout()
   // static site generation
-  const beroepstaken = await getBeroepstaken(
-    context.locale === "en" ? "en" : "nl"
-  );
+  const beroepstaken = await getBeroepsproducten();
 
   if (context.locale === "en")
     // disable english translations whilst there are none
@@ -36,7 +38,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default function Beroepstaken({
+export default function Beroepsproducten({
   beroepstaken,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const intl = useIntl();
@@ -105,7 +107,7 @@ export default function Beroepstaken({
         </Grid>
         <Grid container item spacing={2}>
           {Object.keys(filteredBeroepstaken).map((beroepstaakKey) => (
-              <LevelsCard
+              <LevelsCardBeroepsproduct
                   key={beroepstaakKey}
                   title={beroepstaakKey}
                   item={filteredBeroepstaken[beroepstaakKey]}
