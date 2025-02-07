@@ -2,13 +2,13 @@ import { skills } from "../../types/Vaardigheid";
 
 describe("Vaardigheid", () => {
   const SKILLS = [
-    "Juiste kennis ontwikkelen",
-    "Kwalitatief product maken",
     "Overzicht creëren",
     "Kritisch oordelen",
-    "Samenwerken",
-    "Boodschap delen",
+    "Juiste kennis ontwikkelen",
+    "Kwalitatief product maken",
     "Plannen",
+    "Boodschap delen",
+    "Samenwerken",
     "Flexibel opstellen",
     "Pro-actief handelen",
     "Reflecteren",
