@@ -5,11 +5,12 @@ import { getBeroepstakenOrVaardigheden } from "../util/getBeroepstakenOrVaardigh
 import { useRouter } from "next/router";
 import DefaultErrorPage from "next/error";
 import { LevelsCard } from "../components/LevelsCard";
-import { Skill, skills } from "../types/Vaardigheid";
+import {Skill, skills, typeOfSkills} from "../types/Vaardigheid";
 import { filterVaardigheden } from "../util/filterVaardigheden";
-import { NavigationCardButton } from "../components/NavigationCardButton";
+import { NavigationCardButtonSkill } from "../components/NavigationCardButtonSkill";
 import { NavigationCard } from "../components/NavigationCard";
 import { Grid } from "@mui/material";
+import {NavigationCardSkill} from "../components/NavigationCardSkill";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // static site generation
@@ -55,20 +56,23 @@ export default function Index({
       </Head>
       <Grid container spacing={2}>
         <Grid item xs={12} component={"header"}>
-          <NavigationCard
-            title={<FormattedMessage id="SKILLS" />}
-            subheader={<FormattedMessage id="SKILLS_SUBHEADER" />}
+          <NavigationCardSkill
+            title={intl.formatMessage({ id: "SKILLS"}) }
+            subheader={intl.formatMessage({ id: "SKILLS_SUBHEADER"}) }
+            skills={Object.fromEntries(
+                Object.entries(typeOfSkills)
+                    .map(([typeOfSkill, associatedSkills]) => [typeOfSkill, associatedSkills.map((skill) =>
+                <NavigationCardButtonSkill
+                    key={skill}
+                    title={<FormattedMessage id={skill} />}
+                    type_of_skill={typeOfSkill}
+                    query_param_key="vaardigheid"
+                    query_param_value={skill}
+                    props={{ xs: 12 }}
+                />
+            )]))}
           >
-            {skills.map((skill) => (
-              <NavigationCardButton
-                key={skill}
-                title={<FormattedMessage id={skill} />}
-                query_param_key="vaardigheid"
-                query_param_value={skill}
-                props={{ xs: 12, lg: 2.4 }}
-              />
-            ))}
-          </NavigationCard>
+          </NavigationCardSkill>
         </Grid>
         {Object.keys(filteredVaardigheden).map((vaardighedenKey) => (
           <LevelsCard

@@ -6,14 +6,13 @@ export function NavigationCard({
   subheader,
   children,
 }: {
-  title: string | ReactNode;
-  subheader: string | ReactNode;
+  title: string;
+  subheader: string;
   children: ReactNode;
 }) {
   return (
     <Card sx={{ minWidth: 300 }}>
-      <CardHeader title={title} subheader={subheader} component={"h1"} />
-      <CardContent>
+      <CardContent aria-label={title} aria-description={subheader}>
         <Grid container spacing={1}>
           {children}
         </Grid>
