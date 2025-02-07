@@ -54,7 +54,7 @@ export function NavigationCardButtonSkill({
     <Grid item {...props}>
       <Link href={href} style={{ width: "100%", color: theme.palette.primary.main }}>
         <Button
-            sx={ isLarge ? { textTransform: "none", flexDirection: "column", aspectRatio: "1.7777777777777777", borderWidth: isActive ? 2 : 0, ":hover": { borderWidth: 2 } } : { textTransform: "none", aspectRatio: "1.7777777777777777"}}
+            sx={ isLarge ? { textTransform: "none", flexDirection: "column", aspectRatio: "1.7777777777777777", borderWidth: isActive ? 2 : 0, ":hover": { borderWidth: 2 } } : { textTransform: "none"}}
           variant={
             // isActive
             //   ? "contained"
