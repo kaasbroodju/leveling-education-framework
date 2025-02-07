@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, Grid } from "@mui/material";
 import { ReactNode } from "react";
-import {TypeOfSkill} from "../types/Vaardigheid";
+import {Skill, TypeOfSkill} from "../types/Vaardigheid";
 
 export function NavigationCardSkill({
   title,
@@ -9,7 +9,7 @@ export function NavigationCardSkill({
 }: {
   title: string;
   subheader: string;
-  skills: Record<TypeOfSkill, ReactNode[]>;
+  skills: Record<TypeOfSkill, [Skill, ReactNode][]>
 }) {
   return (
       <Card sx={{ minWidth: 300 }}>
@@ -17,42 +17,27 @@ export function NavigationCardSkill({
           <Grid container spacing={1}>
             <Grid container item xs={12} lg={4.8}>
               <Grid container spacing={1}>
-                <Grid item xs={12} lg={6}>
-                  {skills["Beroeps"][0]}
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  {skills["Beroeps"][1]}
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  {skills["Beroeps"][2]}
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  {skills["Beroeps"][3]}
-                </Grid>
+                {skills["Beroeps"].map(([skill, node]) =>
+                    <Grid key={skill} item xs={12} lg={6}>
+                      {node}
+                    </Grid>
+                )}
               </Grid>
             </Grid>
             <Grid container item xs={12} lg={7.2} spacing={1}>
               <Grid container item xs={12} spacing={1}>
-                <Grid item xs={12} lg={4}>
-                  {skills["Persoonsvormende"][0]}
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                  {skills["Persoonsvormende"][1]}
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                  {skills["Persoonsvormende"][2]}
-                </Grid>
+                {skills["Persoonsvormende"].map(([skill, node]) =>
+                    <Grid key={skill} item xs={12} lg={4}>
+                      {node}
+                    </Grid>
+                )}
               </Grid>
               <Grid container item xs={12} spacing={1}>
-                <Grid item xs={12} lg={4}>
-                  {skills["Sociale"][0]}
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                  {skills["Sociale"][1]}
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                  {skills["Sociale"][2]}
-                </Grid>
+                {skills["Sociale"].map(([skill, node]) =>
+                    <Grid key={skill} item xs={12} lg={4}>
+                      {node}
+                    </Grid>
+                )}
               </Grid>
             </Grid>
           </Grid>
