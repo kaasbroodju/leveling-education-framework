@@ -53,7 +53,7 @@ export function InfoDrawerButton(props: { niveau: string; info: string }) {
                             <FormattedMessage id="NIVEAU" /> {props.niveau}
                         </Typography>
                         <IconButton onClick={handleClose}>
-                            <CloseIcon />
+                            <CloseIcon color={"primary"}/>
                         </IconButton>
                     </Stack>
                     <Typography>
@@ -79,7 +79,7 @@ export function InfoDrawerButton(props: { niveau: string; info: string }) {
         )}
       >
         <IconButton onClick={handleOpen}>
-          <InfoOutlinedIcon />
+          <InfoOutlinedIcon color={"primary"}/>
         </IconButton>
       </Tooltip>
     </>
