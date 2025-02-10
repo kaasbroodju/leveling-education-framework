@@ -1,0 +1,3 @@
+# Opmerkingen
+
+Met langetermijnplanning kan je denken aan een termijn van meerdere maanden bijvoorbeeld zes tot acht sprints.

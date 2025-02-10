@@ -1,0 +1,5 @@
+Methodisch ontwerpen van een (deel van een) systeem op basis van requirements met zelfgekozen hardware- en softwarecomponenten 
+
+of
+
+Integreren van een hardware interface In een applicatie (bijv. een applicatie-driver) 

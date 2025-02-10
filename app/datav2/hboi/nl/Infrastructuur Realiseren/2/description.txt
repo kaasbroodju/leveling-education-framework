@@ -1,0 +1,6 @@
+Inrichten en testen van (een proof of concept van) een cloudgebaseerde infrastructuur met gebruik van (cloud)technieken waarmee voldaan wordt aan ontwerp en daarin gestelde eisen 
+
+of
+
+Opstellen en uitvoeren van een testplan voor een infrastructuur om de kwaliteit te toetsen op basis van de risico's 
+

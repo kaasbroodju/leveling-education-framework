@@ -1,0 +1,9 @@
+Adviseren in de keuze van een data-architectuur voor een dataoplossing, opgebouwd uit bestaande en nieuwe databronnen, waarbij kostenaspecten en kwaliteitseisen zoals beschikbaarheid, performance, security en schaalbaarheid een rol spelen 
+
+of
+
+Adviseren over de toepassing van nieuwe technologieën (als machine learning en artificial intelligence) alsmede de impact daarvan op aspecten als duurzaamheid, security en privacy 
+
+of
+
+Adviseren over de inrichting van een softwareontwikkelproces, waaronder het test- en releaseproces

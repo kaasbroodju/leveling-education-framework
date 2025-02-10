@@ -1,11 +1,11 @@
 import { FormattedMessage, useIntl } from "react-intl";
 import {
-  Box,
-  Drawer,
-  IconButton,
-  Stack,
-  Tooltip,
-  Typography,
+    Box, Card, CardContent, CardHeader,
+    Drawer,
+    IconButton, Modal,
+    Stack,
+    Tooltip,
+    Typography,
 } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useState } from "react";
@@ -24,50 +24,51 @@ export function InfoDrawerButton(props: { niveau: string; info: string }) {
     setOpen(false);
   };
 
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '50vw',
+        // bgcolor: '#1f1f1f',
+        // border: '2px solid #000',
+        // boxShadow: 24,
+        p: 4,
+    };
+
   return (
     <>
-      <Drawer
-        open={open}
-        onClose={handleClose}
-        variant="temporary"
-        anchor="right"
-        // To be above navbar
-        sx={{
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-        }}
-      >
-        <Box
-          width={250}
-          maxWidth="80%"
-          m={3}
-          display="flex"
-          flexDirection="column"
-          gap={2}
+        <Modal
+            open={open}
+            onClose={handleClose}
         >
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Typography variant="h5">
-              <FormattedMessage id="NIVEAU" /> {props.niveau}
-            </Typography>
-            <IconButton onClick={handleClose}>
-              <CloseIcon />
-            </IconButton>
-          </Stack>
-          <Typography>
-            <ReactMarkdown
-              className="markdown"
-              components={{
-                h1: "h2",
-              }}
-            >
-              {props.info}
-            </ReactMarkdown>
-          </Typography>
-        </Box>
-      </Drawer>
+            <Card sx={style}>
+                <CardContent>
+                    <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                    >
+                        <Typography variant="h5">
+                            <FormattedMessage id="NIVEAU" /> {props.niveau}
+                        </Typography>
+                        <IconButton onClick={handleClose}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Stack>
+                    <Typography>
+                        <ReactMarkdown
+                            className="markdown"
+                            components={{
+                                h1: "h2",
+                            }}
+                        >
+                            {props.info}
+                        </ReactMarkdown>
+                    </Typography>
+                </CardContent>
+            </Card>
+        </Modal>
       <Tooltip
         arrow
         title={intl.formatMessage(

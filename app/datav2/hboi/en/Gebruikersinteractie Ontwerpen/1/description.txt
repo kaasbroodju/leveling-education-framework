@@ -1,0 +1,9 @@
+Vertalen van adviezen in een eenvoudige gebruikersinteractie via een gegeven interactieproces, bijv. met een gangbare prototypingtechniek 
+
+of
+
+Ontwerpen van een test waarmee essentiële interactieproblemen geïdentificeerd kunnen worden 
+
+of
+
+Ontwerpen van een visualisatie van een eenvoudige dataset

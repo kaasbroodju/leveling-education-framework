@@ -1,0 +1,5 @@
+Ontwerpen van een (deel van een) systeem, bijv. een embedded of ander technisch systeem, op basis van gegeven hardware 
+
+of
+
+Ontwerpen van een eenvoudig protocol 

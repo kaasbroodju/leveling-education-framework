@@ -1,0 +1,1 @@
+export type BeroepsProduct = { guild: string, product: string, desc: string | undefined }

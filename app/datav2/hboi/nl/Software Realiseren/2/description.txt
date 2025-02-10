@@ -1,0 +1,9 @@
+Bouwen van een softwaresysteem dat bestaat uit meerdere subsystemen, gebruikmakend van bestaande of gegenereerde componenten en de gemaakte keuze kunnen beredeneren 
+
+of
+
+Integreren van softwarecomponenten in een bestaand softwaresysteem, waarbij onder andere de integriteit, veiligheid en systeemprestaties bewaakt worden 
+
+of
+
+Opstellen en uitvoeren van (geautomatiseerde) unit- en UI-testen

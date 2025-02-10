@@ -1,10 +1,13 @@
 import { Card, CardContent, CardHeader, Grid } from "@mui/material";
 import { BeroepstaakOrVaardigheid } from "../types/BeroepstakenOrVaardigheden";
 import { Level } from "./Level";
+import {Niveau} from "../types/Niveau";
+import {BeroepsProduct} from "../types/BeroepsProduct";
+import {BeroepsLevel} from "./BeroepsLevel";
 
 export function LevelsCardBeroepsproduct(props: {
   title: string;
-  item: BeroepstaakOrVaardigheid;
+  item: { [key in Niveau]: BeroepsProduct[] };
 }) {
   return (
     <Grid item xs={12}>
@@ -14,10 +17,10 @@ export function LevelsCardBeroepsproduct(props: {
         <CardContent>
           <Grid container spacing={5}>
             {Object.keys(props.item).map((niveauKey) => (
-              <Level
-                key={niveauKey}
-                niveauKey={niveauKey}
-                title={props.item[niveauKey]}
+              <BeroepsLevel
+                  niveauKey={niveauKey}
+                products={props.item[niveauKey]}
+                title={niveauKey}
               />
             ))}
           </Grid>

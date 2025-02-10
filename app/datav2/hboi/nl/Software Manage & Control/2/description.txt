@@ -1,0 +1,6 @@
+Beheren en gebruiken van een ontwikkelstraat ter ondersteuning van softwareontwikkeling in teams, waardoor onder andere continuous integration (CI) tot de mogelijkheden behoort 
+
+of
+
+Toepassen van methoden en technieken om een softwareontwikkelproces te managen en de kwaliteit ervan te borgen 
+

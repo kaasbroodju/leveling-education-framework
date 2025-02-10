@@ -1,0 +1,11 @@
+[
+  {"guild": "BE","product": "Functionele en niet functionele eisen vaststellen (1, systeemgestuurd)"},
+  {"guild": "BE","product": "Huidige component architectuur"},
+  {"guild": "BE","product": "Test coverage"},
+  {"guild": "BE","product": "Code smells / statische analyse"},
+  {"guild": "BE","product": "Code reviews"},
+  {"guild": "BE","product": "Compatibility tests"},
+  {"guild": "BE","product": "Perfromance analyse"},
+  {"guild": "BE","product": "Migratie analyse"},
+  {"guild": "BE","product": "Use case scenario's (1)"}
+]

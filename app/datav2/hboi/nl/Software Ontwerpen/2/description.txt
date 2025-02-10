@@ -1,0 +1,13 @@
+Opstellen van een ontwerp voor een softwaresysteem, rekening houdend met het gebruik van bestaande componenten en libraries 
+
+of
+
+Toepassen van ontwerpkwaliteitscriteria rekening houdend met (duurzaamheids)aspecten zoals privacy, grote hoeveelheden data en gebruik op diverse devices 
+
+of
+
+Vaststellen van de kwaliteit van het ontwerp, bijvoorbeeld door toetsing of prototyping, rekening houdend met de geformuleerde kwaliteitseigenschappen
+
+of
+
+Opstellen van testontwerpen volgens een gegeven teststrategie
