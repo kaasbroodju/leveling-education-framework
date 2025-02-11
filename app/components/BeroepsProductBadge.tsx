@@ -1,9 +1,22 @@
-import {Box, Button, ButtonBase, Grid, Stack, Typography, Modal, Card, CardHeader, CardContent} from "@mui/material";
+import {
+    Box,
+    Button,
+    ButtonBase,
+    Grid,
+    Stack,
+    Typography,
+    Modal,
+    Card,
+    CardHeader,
+    CardContent,
+    IconButton
+} from "@mui/material";
 import {FormattedMessage, useIntl} from "react-intl";
 import { InfoDrawerButton } from "./InfoDrawerButton";
 import {BeroepsProduct} from "../types/BeroepsProduct";
 import {useState} from "react";
 import ReactMarkdown from "react-markdown";
+import CloseIcon from "@mui/icons-material/Close";
 
 export function BeroepsProductBadge(props: {
     product: BeroepsProduct
@@ -12,7 +25,9 @@ export function BeroepsProductBadge(props: {
     const intl = useIntl();
 
     const handleOpen = () => {
-        setOpen(true);
+        if (props.product.desc) {
+            setOpen(true);
+        }
     };
 
     const handleClose = () => {
@@ -32,7 +47,7 @@ export function BeroepsProductBadge(props: {
     };
 
     return (
-        <Box>
+        <>
             <Button
                 sx={{textAlign: 'left', padding: '0', justifyContent: 'left', textTransform: 'none', alignItems: 'baseline'}}
                 fullWidth={true}
@@ -57,34 +72,37 @@ export function BeroepsProductBadge(props: {
                     {props.product.product}
                 </Typography>
             </Button>
-            {/*<Button onClick={handleOpen}>Open modal</Button>*/}
-            {props.product.desc !== undefined ?
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                    // aria-labelledby="modal-modal-title"
-                    // aria-describedby="modal-modal-description"
-                >
-                    <Card sx={style}>
-                        <CardHeader title={props.product.product} component={"h1"}>
-                            {/*<Typography id="modal-modal-title" variant="h6" component="h2">*/}
-                            {/*    {props.product.product}*/}
-                            {/*</Typography>*/}
-                        </CardHeader>
-                        <CardContent>
-                            <Typography>
-                                <ReactMarkdown
-                                    className="markdown"
-                                    components={{
-                                        h1: "h2",
-                                    }}
-                                >
-                                    {props.product.desc}
-                                </ReactMarkdown>
+            <Modal
+                open={open}
+                onClose={handleClose}
+            >
+                <Card sx={style}>
+                    <CardContent>
+                        <Stack
+                            direction="row"
+                            justifyContent="space-between"
+                            alignItems="center"
+                        >
+                            <Typography variant="h5">
+                                {props.product.product}
                             </Typography>
-                        </CardContent>
-                    </Card>
-                </Modal> : null}
-        </Box>
+                            <IconButton onClick={handleClose}>
+                                <CloseIcon color={"primary"}/>
+                            </IconButton>
+                        </Stack>
+                        <Typography>
+                            <ReactMarkdown
+                                className="markdown"
+                                components={{
+                                    h1: "h2",
+                                }}
+                            >
+                                {props.product.desc ?? ''}
+                            </ReactMarkdown>
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Modal>
+        </>
     );
 }

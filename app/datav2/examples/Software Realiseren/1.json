@@ -1,38 +1,14 @@
 [
   {
-    "guild": "BE", "product": "Controllerlaag met unittest (1), Software component (zelfstandig geheel, deel user story) interactie frontend, businesslogica en repository en unit en integratietest (2)"
+    "guild": "BE", "product": "Controllerlaag met unittests"
   },
   {
-    "guild": "BE", "product": "Programmeertalen (1,2,3)"
+    "guild": "BE", "product": "OOP, imperative, functioneel"
   },
   {
-    "guild": "BE", "product": "Paradigma's (1,2)"
+    "guild": "BE", "product": "Security by design (OWASP)"
   },
   {
-    "guild": "BE", "product": "Testen: unit, geïntegreerd, geautomatiseerd CI/CD (1,2,3)"
-  },
-  {
-    "guild": "BE", "product": "Services/API's (1: realiseren zonder structuur)"
-  },
-  {
-    "guild": "BE", "product": "Security (1 by design)"
-  },
-  {
-    "guild": "BE", "product": "Normaliseren (1, groeperen)"
-  },
-  {
-    "guild": "BE", "product": "Documentatie (Swagger) (1)"
-  },
-  {
-    "guild": "BE", "product": "ORM (1)"
-  },
-  {
-    "guild": "BE", "product": "Datastructuren en algoritmen (1 eenvoudig)"
-  },
-  {
-    "guild": "BE", "product": "Databases (1 gebruik maken)"
-  },
-  {
-    "guild": "BE", "product": "API Documentatie (zie Swagger)"
+    "guild": "BE", "product": "Prototypen"
   }
 ]

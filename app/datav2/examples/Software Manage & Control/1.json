@@ -6,18 +6,6 @@
     "guild": "BE", "product": "Conventies/Documentatie(1)"
   },
   {
-    "guild": "BE", "product": "Containers (1)"
-  },
-  {
-    "guild": "BE", "product": "Beheer kwaliteit inrichten en automatiseren"
-  },
-  {
-    "guild": "BE", "product": "Virtualisatie (1)"
-  },
-  {
-    "guild": "BE", "product": "OS en CLI (1,2)"
-  },
-  {
-    "guild": "BE", "product": "Swagger"
+    "guild": "BE", "product": "Open API / swagger"
   }
 ]

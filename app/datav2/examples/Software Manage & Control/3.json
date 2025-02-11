@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "guild": "BE", "product": "CI + CD"
+  },
+  {
+    "guild": "BE", "product": "Testplan"
+  }
+]

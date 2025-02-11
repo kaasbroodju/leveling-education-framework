@@ -6,24 +6,9 @@
     "guild": "BE", "product": "ERD (1 Databasemodel)"
   },
   {
-    "guild": "BE", "product": "Ontwerpen op basis van dezelfde kwaliteitskenmerken als bij het adviseren"
-  },
-  {
     "guild": "BE", "product": "Teststrategie"
   },
   {
-    "guild": "BE", "product": "Data Architectuur"
-  },
-  {
-    "guild": "BE", "product": "UML"
-  },
-  {
-    "guild": "BE", "product": "Component based architecture design"
-  },
-  {
-    "guild": "BE", "product": "Ontwerp op basis van OWASP"
-  },
-  {
-    "guild": "BE", "product": "Ontwerpen applicatie infrastructuur"
+    "guild": "BE", "product": "UML diagram"
   }
 ]

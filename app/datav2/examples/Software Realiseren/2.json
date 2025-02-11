@@ -1,23 +1,5 @@
 [
   {
-    "guild": "BE", "product": "Datastructuren en algoritmen (2 complexiteit)"
-  },
-  {
-    "guild": "BE", "product": "Security (2 meerder levels van b.v. Owasp)"
-  },
-  {
-    "guild": "BE", "product": "Services/API's (gestructureerd volgens ontwerp gangbaar 2)"
-  },
-  {
-    "guild": "BE", "product": "Testen: unit, geïntegreerd, geautomatiseerd CI/CD (1,2,3)"
-  },
-  {
-    "guild": "BE", "product": "Paradigma's (1,2)"
-  },
-  {
-    "guild": "BE", "product": "Programmeertalen (1,2,3)"
-  },
-  {
-    "guild": "BE", "product": "Controllerlaag met unittest (1), Software component (zelfstandig geheel, deel user story) interactie frontend, businesslogica en repository en unit en integratietest (2)"
+    "guild": "BE", "product": "Services/API's restfull principes"
   }
 ]

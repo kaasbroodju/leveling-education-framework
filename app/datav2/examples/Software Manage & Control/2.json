@@ -1,8 +1,8 @@
 [
   {
-    "guild": "BE", "product": "CI/CD (2)"
+    "guild": "BE", "product": "CI"
   },
   {
-    "guild": "BE", "product": "OS en CLI (1,2)"
+    "guild": "BE", "product": "Docker container/images"
   }
 ]
