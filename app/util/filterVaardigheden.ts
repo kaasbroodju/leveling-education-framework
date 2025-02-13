@@ -1,16 +1,14 @@
 import { BeroepstakenOrVaardigheden } from "../types/BeroepstakenOrVaardigheden";
-import { Skill, skills } from "../types/Vaardigheid";
+import {Skill, SkillLevels, skills} from "../types/Vaardigheid";
+import {Niveau} from "../types/Niveau";
 
 export function filterVaardigheden(
-  vaardigheden: BeroepstakenOrVaardigheden,
-  { vaardigheid }: { vaardigheid?: string }
-) {
-  let filteredVaardigheden = vaardigheden;
-
+  vaardigheden: SkillLevels,
+  { vaardigheid }: { vaardigheid?: Skill }
+): Partial<SkillLevels> {
   if (vaardigheid && skills.includes(vaardigheid as Skill)) {
-    filteredVaardigheden = {};
-    filteredVaardigheden[vaardigheid] = vaardigheden[vaardigheid];
+    return Object.fromEntries([[vaardigheid, vaardigheden[vaardigheid]]])
+  } else {
+    return vaardigheden
   }
-
-  return filteredVaardigheden;
 }

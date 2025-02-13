@@ -3,8 +3,8 @@ import fsPromises from "fs/promises";
 import {getBeroepstaken} from "./getBeroepstaken";
 
 export async function migrateToNewFileLayout() {
-    const lang = ['nl', 'en']
-    const typeOfSkill = ['hboi', 'vaardigheden']
+    const lang: Array<("nl" | "en")> = ['nl', 'en']
+    const typeOfSkill: Array<("hboi" | "vaardigheden")> = ['hboi', 'vaardigheden']
 
     for (let language of lang) {
 

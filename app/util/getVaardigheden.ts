@@ -1,7 +1,7 @@
 import path from "path";
 import fsPromises from "fs/promises";
 import { BeroepstakenOrVaardigheden } from "../types/BeroepstakenOrVaardigheden";
-import {Skill, skills} from "../types/Vaardigheid";
+import {Skill, SkillLevels, skills} from "../types/Vaardigheid";
 import {architecture_layers} from "../types/Architectuurlaag";
 import {activities} from "../types/Activiteit";
 import * as fs from "node:fs";
@@ -9,22 +9,15 @@ import {Niveau, niveaus} from "../types/Niveau";
 
 export async function getVaardigheden(
     locale?: "nl" | "en"
-): Promise<{
-    [key in Skill]: {
-        [key in Niveau]: {
-            title: string;
-            info: string;
-        }
-    }
-}> {
-    const output = {}
+): Promise<SkillLevels> {
+    const output: Partial<SkillLevels> = {}
     if (!locale) locale = "nl"
 
     for (let skill of skills) {
         // for (let activity of activities) {
             const filePath = path.join(process.cwd(), `datav2/vaardigheden/${locale}/${skill}`);
 
-            const beroepspoduct =  {}
+            const beroepspoduct: Partial<{ [key in Niveau]: { title: string, info: string | null }}> =  {}
             for (const level of niveaus) {
                 const description = await fsPromises.readFile(path.join(filePath, level, "description.txt"), "utf-8");
 
@@ -39,9 +32,9 @@ export async function getVaardigheden(
                 }
             }
 
-            output[skill] = beroepspoduct
+            output[skill] = beroepspoduct as { [key in Niveau]: { title: string, info: string | null }}
         // }
     }
 
-    return output
+    return output as SkillLevels
 }

@@ -1,16 +1,16 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid2, Stack, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import { InfoDrawerButton } from "./InfoDrawerButton";
 import {BeroepsProduct} from "../types/BeroepsProduct";
 import {BeroepsProductBadge} from "./BeroepsProductBadge";
 
 export function BeroepsLevel(props: {
-  niveauKey: string;
-  products: BeroepsProduct[]
-  title: string;
+  niveauKey: string,
+  products: BeroepsProduct[],
+  title: string,
 }) {
   return (
-    <Grid item xs={12} sm={6} md={3}>
+    <Grid2 size={{ xs:12, sm:6, md: 3}}>
       <Stack gap={1}>
         <Stack
           direction="row"
@@ -26,7 +26,7 @@ export function BeroepsLevel(props: {
           {/*) : null}*/}
         </Stack>
         {props.products.map((product) => (
-            <BeroepsProductBadge product={product}/>
+            <BeroepsProductBadge key={product.product} product={product}/>
         ))}
         {/*<BeroepsProduct product={prop}/>*/}
         {/*<Typography*/}
@@ -37,6 +37,6 @@ export function BeroepsLevel(props: {
         {/*  {props.title}*/}
         {/*</Typography>*/}
       </Stack>
-    </Grid>
+    </Grid2>
   );
 }

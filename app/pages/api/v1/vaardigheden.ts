@@ -2,10 +2,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { BeroepstakenOrVaardigheden } from "../../../types/BeroepstakenOrVaardigheden";
 import { getBeroepstakenOrVaardigheden } from "../../../util/getBeroepstakenOrVaardigheden";
+import {getVaardigheden} from "../../../util/getVaardigheden";
+import {SkillLevels} from "../../../types/Vaardigheid";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<BeroepstakenOrVaardigheden | { error: string }>
+  res: NextApiResponse<SkillLevels | { error: string }>
 ) {
   // const locale = req.headers["accept-language"]?.startsWith("en") ? "en" : "nl";
 
@@ -15,5 +17,5 @@ export default async function handler(
 
   return res
     .status(200)
-    .json(await getBeroepstakenOrVaardigheden("vaardigheden", "nl"));
+    .json(await getVaardigheden("nl"));
 }

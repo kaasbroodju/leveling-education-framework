@@ -7,12 +7,14 @@ import { Architectuurlaag } from "../../../types/Architectuurlaag";
 import { Niveau } from "../../../types/Niveau";
 import { Activiteit } from "../../../types/Activiteit";
 import { validateBeroepstakenParams } from "../../../util/validateBeroepstakenParams";
+import {getBeroepstaken} from "../../../util/getBeroepstaken";
+import {BeroepsTaken} from "../../../types/HBOI";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<BeroepstakenOrVaardigheden | { error: string }>
+  res: NextApiResponse<Partial<BeroepsTaken> | { error: string }>
 ) {
-  const { architectuurlaag, activiteit, niveau } = req.query;
+  const { architectuurlaag, activiteit, niveau } = req.query as { architectuurlaag?: Architectuurlaag; activiteit?: Activiteit; niveau?: Niveau };
 
   try {
     validateBeroepstakenParams({ architectuurlaag, activiteit, niveau });
@@ -34,10 +36,9 @@ export default async function handler(
   //   return res.status(501).json({ error: "Locale not implemented yet" });
 
   return res.status(200).json(
-    filterBeroepstaken(await getBeroepstakenOrVaardigheden("hboi", "nl"), {
+    filterBeroepstaken(await getBeroepstaken("nl"), {
       architectuurlaag,
       activiteit,
-      niveau,
-    } as { architectuurlaag?: Architectuurlaag; activiteit?: Activiteit; niveau?: Niveau })
+    })
   );
 }

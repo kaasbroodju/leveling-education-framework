@@ -1,19 +1,22 @@
 import { BeroepstakenOrVaardigheden } from "../types/BeroepstakenOrVaardigheden";
+import {Architectuurlaag} from "../types/Architectuurlaag";
+import {Activiteit} from "../types/Activiteit";
+import {Niveau} from "../types/Niveau";
+import {BeroepsProduct} from "../types/BeroepsProduct";
+import {HBOILevels} from "../types/HBOI";
 
-export function filterBeroepstaken(
-  beroepstaken: BeroepstakenOrVaardigheden,
+export function filterBeroepstaken<T>(
+  beroepstaken: HBOILevels<T>,
   {
     architectuurlaag,
     activiteit,
-    niveau,
   }: {
-    architectuurlaag?: string;
-    activiteit?: string;
-    niveau?: string;
+    architectuurlaag?: Architectuurlaag;
+    activiteit?: Activiteit;
   }
-) {
+): Partial<HBOILevels<T>> {
   // Filter beroepstaken based on query paramaters
-  let filteredBeroepstaken = beroepstaken;
+  let filteredBeroepstaken = beroepstaken as Partial<{[key in `${Architectuurlaag} ${Activiteit}`]: {[key in Niveau]: T}}>;
   if (architectuurlaag) {
     filteredBeroepstaken = Object.fromEntries(
       Object.entries(filteredBeroepstaken).filter(([key]) =>
@@ -30,12 +33,5 @@ export function filterBeroepstaken(
     );
   }
 
-  if (niveau) {
-    for (const key in filteredBeroepstaken) {
-      filteredBeroepstaken[key] = {
-        [niveau]: filteredBeroepstaken[key][niveau],
-      };
-    }
-  }
   return filteredBeroepstaken;
 }

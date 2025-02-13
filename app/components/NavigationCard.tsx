@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Grid } from "@mui/material";
+import { Card, CardContent, CardHeader, Grid2 } from "@mui/material";
 import { ReactNode } from "react";
 
 export function NavigationCard({
@@ -13,9 +13,9 @@ export function NavigationCard({
   return (
     <Card sx={{ minWidth: 300 }}>
       <CardContent aria-label={title} aria-description={subheader}>
-        <Grid container spacing={1}>
+        <Grid2 container spacing={1}>
           {children}
-        </Grid>
+        </Grid2>
       </CardContent>
     </Card>
   );

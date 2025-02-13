@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Grid } from "@mui/material";
+import { Grid2 } from "@mui/material";
 import { NavigationCardButton } from "../components/NavigationCardButton";
 import { NavigationCard } from "../components/NavigationCard";
 import { useRouter } from "next/router";
@@ -19,6 +19,8 @@ import {getBeroepstaken} from "../util/getBeroepstaken";
 import {getBeroepsproducten} from "../util/getBeroepsproducten";
 import {LevelsCardBeroepsproduct} from "../components/LevelsCardBeroepsproduct";
 import {migrateToNewFileLayout} from "../util/migrateToNewFileLayout";
+import {BeroepsProduct} from "../types/BeroepsProduct";
+import {Niveau} from "../types/Niveau";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // migrateToNewFileLayout()
@@ -45,7 +47,7 @@ export default function Beroepsproducten({
   const router = useRouter();
 
   const { activiteit, architectuurlaag } = router.query as {
-    [key: string]: string;
+    activiteit?: Activiteit, architectuurlaag?: Architectuurlaag
   };
 
   if (activiteit && !activities.includes(activiteit as Activiteit))
@@ -57,7 +59,7 @@ export default function Beroepsproducten({
   )
     return <DefaultErrorPage statusCode={404} />;
 
-  const filteredBeroepstaken: BeroepstakenType = filterBeroepstaken(
+  const filteredBeroepstaken = filterBeroepstaken<BeroepsProduct[]>(
     beroepstaken,
     {
       activiteit,
@@ -68,14 +70,14 @@ export default function Beroepsproducten({
   return (
     <>
       <Head>
-        <title>LEF - {intl.formatMessage({ id: "PROFESSIONAL_DUTIES" })}</title>
+        <title>{`LEF - ${intl.formatMessage({ id: "PROFESSIONAL_DUTIES" })}`}</title>
       </Head>
-      <Grid container spacing={2}>
-        <Grid container item spacing={2} component={"header"}>
-          <Grid item xs={12} component={"section"}>
+      <Grid2 container spacing={2}>
+        <Grid2 container spacing={2} component={"header"}>
+          <Grid2 size={12} component={"section"}>
             <NavigationCard
-                title={<FormattedMessage id="ARCHITECTURE_LAYERS" />}
-                subheader={<FormattedMessage id="ARCHITECTURE_LAYERS_SUBHEADER" />}
+                title={intl.formatMessage({id: "ARCHITECTURE_LAYERS" })}
+                subheader={intl.formatMessage({id: "ARCHITECTURE_LAYERS_SUBHEADER" })}
             >
               {architecture_layers.map((architecture_layer) => (
                   <NavigationCardButton
@@ -83,15 +85,15 @@ export default function Beroepsproducten({
                       title={<FormattedMessage id={architecture_layer} />}
                       query_param_key="architectuurlaag"
                       query_param_value={architecture_layer}
-                      props={{ xs: 12, lg: 2.4 }}
+                      props={{size: { xs: 12, lg: 2.4 }}}
                   />
               ))}
             </NavigationCard>
-          </Grid>
-          <Grid item xs={12} component={"section"}>
+          </Grid2>
+          <Grid2 size={12} component={"section"}>
             <NavigationCard
-                title={<FormattedMessage id="ACTIVITIES" />}
-                subheader={<FormattedMessage id="ACTIVITIES_SUBHEADER" />}
+                title={intl.formatMessage({id: "ACTIVITIES" })}
+                subheader={intl.formatMessage({id: "ACTIVITIES_SUBHEADER" })}
             >
               {activities.map((activity) => (
                   <NavigationCardButton
@@ -99,22 +101,22 @@ export default function Beroepsproducten({
                       title={<FormattedMessage id={activity} />}
                       query_param_key="activiteit"
                       query_param_value={activity}
-                      props={{ xs: 12, lg: 2.4 }}
+                      props={{size: { xs: 12, lg: 2.4 }}}
                   />
               ))}
             </NavigationCard>
-          </Grid>
-        </Grid>
-        <Grid container item spacing={2}>
-          {Object.keys(filteredBeroepstaken).map((beroepstaakKey) => (
+          </Grid2>
+        </Grid2>
+        <Grid2 container spacing={2}>
+          {Object.entries(filteredBeroepstaken).map(([beroepstaakKey, item]) => (
               <LevelsCardBeroepsproduct
                   key={beroepstaakKey}
                   title={beroepstaakKey}
-                  item={filteredBeroepstaken[beroepstaakKey]}
+                  item={item}
               />
           ))}
-        </Grid>
-      </Grid>
+        </Grid2>
+      </Grid2>
     </>
   );
 }

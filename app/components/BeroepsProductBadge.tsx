@@ -2,7 +2,7 @@ import {
     Box,
     Button,
     ButtonBase,
-    Grid,
+    Grid2,
     Stack,
     Typography,
     Modal,

@@ -1,14 +1,14 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid2, Stack, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import { InfoDrawerButton } from "./InfoDrawerButton";
 
 export function Level(props: {
   niveauKey: string;
   title: string;
-  info: string;
+  info: string | null;
 }) {
   return (
-    <Grid item xs={12} sm={6} md={3}>
+    <Grid2 size={{xs: 12, sm: 6, md: 3}}>
       <Stack gap={1} component={"section"}>
         <Stack
           direction="row"
@@ -32,6 +32,6 @@ export function Level(props: {
           {props.title}
         </Typography>
       </Stack>
-    </Grid>
+    </Grid2>
   );
 }

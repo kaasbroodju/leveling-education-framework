@@ -1,3 +1,5 @@
+import {Niveau} from "./Niveau";
+
 export const skills = [
     "Overzicht creëren",
   "Kritisch oordelen",
@@ -19,3 +21,12 @@ export const typeOfSkills: Record<TypeOfSkill, ReadonlyArray<Skill>> = {
   "Persoonsvormende": [skills[4], skills[5], skills[6]],
   "Sociale": [skills[7], skills[8], skills[9]],
 } as const;
+
+export type SkillLevels = {
+  [key in Skill]: {
+    [key in Niveau]: {
+      title: string;
+      info: string | null;
+    }
+  }
+}

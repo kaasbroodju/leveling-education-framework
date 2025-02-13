@@ -9,7 +9,7 @@ import {Skill, skills, TypeOfSkill, typeOfSkills} from "../types/Vaardigheid";
 import { filterVaardigheden } from "../util/filterVaardigheden";
 import { NavigationCardButtonSkill } from "../components/NavigationCardButtonSkill";
 import { NavigationCard } from "../components/NavigationCard";
-import { Grid } from "@mui/material";
+import { Grid2 } from "@mui/material";
 import {migrateToNewFileLayout} from "../util/migrateToNewFileLayout";
 import {getVaardigheden} from "../util/getVaardigheden";
 import {NavigationCardSkill} from "../components/NavigationCardSkill";
@@ -42,7 +42,7 @@ export default function Index({
   const router = useRouter();
 
   const { vaardigheid } = router.query as {
-    [key: string]: string;
+   vaardigheid?: Skill
   };
 
   if (vaardigheid && !skills.includes(vaardigheid as Skill))
@@ -61,7 +61,7 @@ export default function Index({
             type_of_skill={"Beroeps"}
             query_param_key="vaardigheid"
             query_param_value={a}
-            props={{ xs: 12 }}
+            props={{size: { xs: 12 }}}
         />]
     ),
     Persoonsvormende: typeOfSkills["Persoonsvormende"].map((a) =>
@@ -71,7 +71,7 @@ export default function Index({
             type_of_skill={"Persoonsvormende"}
             query_param_key="vaardigheid"
             query_param_value={a}
-            props={{ xs: 12 }}
+            props={{size: { xs: 12 }}}
         />]
     ),
     Sociale: typeOfSkills["Sociale"].map((a) =>
@@ -81,7 +81,7 @@ export default function Index({
             type_of_skill={"Sociale"}
             query_param_key="vaardigheid"
             query_param_value={a}
-            props={{ xs: 12 }}
+            props={{size: { xs: 12 }}}
         />]
     ),
   }
@@ -89,24 +89,24 @@ export default function Index({
   return (
     <>
       <Head>
-        <title>LEF - {intl.formatMessage({ id: "SKILLS" })}</title>
+        <title>{`LEF - ${intl.formatMessage({ id: "SKILLS" })}`}</title>
       </Head>
-      <Grid container spacing={2}>
-        <Grid item xs={12} component={"header"}>
+      <Grid2 container spacing={2}>
+        <Grid2 size={12} component={"header"}>
           <NavigationCardSkill
             title={intl.formatMessage({ id: "SKILLS"}) }
             subheader={intl.formatMessage({ id: "SKILLS_SUBHEADER"}) }
             skills={skillsMap}
           />
-        </Grid>
-        {Object.keys(filteredVaardigheden).map((vaardighedenKey) => (
+        </Grid2>
+        {Object.entries(filteredVaardigheden).map(([vaardighedenKey, vaardigheid]) => (
           <LevelsCard
             key={vaardighedenKey}
             title={vaardighedenKey}
-            item={filteredVaardigheden[vaardighedenKey]}
+            item={vaardigheid}
           />
         ))}
-      </Grid>
+      </Grid2>
     </>
   );
 }

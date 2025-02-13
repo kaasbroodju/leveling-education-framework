@@ -3,7 +3,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Grid,
+  Grid2,
   List,
   ListItem,
   ListItemButton,
@@ -28,8 +28,8 @@ export default function About() {
 
   const intl = useIntl();
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6}>
+    <Grid2 container spacing={2}>
+      <Grid2 size={{xs: 12, sm: 6}}>
         <Card>
           <CardHeader title={intl.formatMessage({ id: "MADE_BY" })} />
           <CardMedia
@@ -98,8 +98,8 @@ export default function About() {
             </List>
           </CardContent>
         </Card>
-      </Grid>
-      <Grid item xs={12} sm={6}>
+      </Grid2>
+      <Grid2 size={{xs: 12, sm: 6}}>
         <Card>
           <CardHeader title={intl.formatMessage({ id: "MADE_POSSIBLE_BY" })} />
 
@@ -127,8 +127,8 @@ export default function About() {
             </List>
           </CardContent>
         </Card>
-      </Grid>
-      <Grid item xs={12} sm={6}>
+      </Grid2>
+      <Grid2 size={{xs: 12, sm:6}}>
         <Card>
           <CardHeader title={intl.formatMessage({ id: "CONTRIBUTORS" })} />
 
@@ -157,8 +157,8 @@ export default function About() {
             </List>
           </CardContent>
         </Card>
-      </Grid>
-      <Grid item xs={12} sm={6}>
+      </Grid2>
+      <Grid2 size={{xs: 12, sm:6}}>
         <Card>
           <CardHeader title={intl.formatMessage({ id: "HELPFUL_LINKS" })} />
 
@@ -172,7 +172,7 @@ export default function About() {
             </List>
           </CardContent>
         </Card>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 }
