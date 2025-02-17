@@ -6,35 +6,24 @@ import {architecture_layers} from "../types/Architectuurlaag";
 import {activities} from "../types/Activiteit";
 import * as fs from "node:fs";
 import {Niveau, niveaus} from "../types/Niveau";
+import {PrismaClient} from "@prisma/client";
 
 export async function getVaardigheden(
     locale?: "nl" | "en"
 ): Promise<SkillLevels> {
-    const output: Partial<SkillLevels> = {}
-    if (!locale) locale = "nl"
-
-    for (let skill of skills) {
-        // for (let activity of activities) {
-            const filePath = path.join(process.cwd(), `datav2/vaardigheden/${locale}/${skill}`);
-
-            const beroepspoduct: Partial<{ [key in Niveau]: { title: string, info: string | null }}> =  {}
-            for (const level of niveaus) {
-                const description = await fsPromises.readFile(path.join(filePath, level, "description.txt"), "utf-8");
-
-                let info = null;
-                if (fs.existsSync(path.join(filePath, level, "info.txt"))) {
-                    info = await fsPromises.readFile(path.join(filePath, level, "info.txt"), "utf-8");
-                }
-
-                beroepspoduct[level] = {
-                    title: description,
-                    info
-                }
+    const prisma = new PrismaClient();
+    return (await prisma.skillDescription.findMany())
+        .reduce((acc, vaardigheid) => {
+            if (!acc[vaardigheid.skillId as Skill]) {
+                acc[vaardigheid.skillId as Skill] = {};
             }
 
-            output[skill] = beroepspoduct as { [key in Niveau]: { title: string, info: string | null }}
-        // }
-    }
-
-    return output as SkillLevels
+            // @ts-ignore
+            acc[vaardigheid.skillId as Skill][`${vaardigheid.level}` as Niveau] = {
+                title: vaardigheid.description,
+                info: vaardigheid.sublament
+            }
+            return acc;
+        }, {} as Partial<{ [key in Skill]: Partial<{ [key in Niveau]: { title: string, info: string | null } }> }>
+        ) as SkillLevels
 }

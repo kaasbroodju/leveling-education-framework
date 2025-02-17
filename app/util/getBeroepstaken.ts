@@ -8,35 +8,25 @@ import * as fs from "node:fs";
 import {Niveau, niveaus} from "../types/Niveau";
 import {BeroepsTaken} from "../types/HBOI";
 import {BeroepsProduct} from "../types/BeroepsProduct";
+import {PrismaClient} from "@prisma/client";
 
 export async function getBeroepstaken(
     locale?: "nl" | "en"
 ): Promise<BeroepsTaken> {
-    const output: Partial<BeroepsTaken> = {}
     if (!locale) locale = "nl"
 
-    for (let architectureLayer of architecture_layers) {
-        for (let activity of activities) {
-            const filePath = path.join(process.cwd(), `datav2/hboi/${locale}/${architectureLayer} ${activity}`);
-
-            const beroepspoduct: Partial<{ [key in Niveau]: { title: string, info: string | null }}> =  {}
-            for (const level of niveaus) {
-                const description = await fsPromises.readFile(path.join(filePath, level, "description.txt"), "utf-8");
-
-                let info = null;
-                if (fs.existsSync(path.join(filePath, level, "info.txt"))) {
-                    info = await fsPromises.readFile(path.join(filePath, level, "info.txt"), "utf-8");
-                }
-
-                beroepspoduct[level as Niveau] = {
-                    title: description,
-                    info
-                }
+    const prisma = new PrismaClient();
+    return (await prisma.hBOIDescription.findMany())
+        .reduce((acc, beroepstaakNiveau) => {
+            if (!acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`]) {
+                acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`] = {};
             }
 
-            output[`${architectureLayer} ${activity}`] = beroepspoduct as { [key in Niveau]: { title: string, info: string | null }}
-        }
-    }
-
-    return output as BeroepsTaken
+            // @ts-ignore
+            acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`][`${beroepstaakNiveau.level}` as Niveau] = {
+                title: beroepstaakNiveau.description,
+                info: beroepstaakNiveau.sublament
+            }
+            return acc;
+        }, {} as Partial<{ [key in `${Architectuurlaag} ${Activiteit}`]: Partial<{ [key in Niveau]: { title: string, info: string | null } }> }>) as BeroepsTaken
 }
