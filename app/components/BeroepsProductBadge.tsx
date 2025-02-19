@@ -9,7 +9,7 @@ import {
     Card,
     CardHeader,
     CardContent,
-    IconButton
+    IconButton, TextField, FormControl, InputLabel, Select, MenuItem, SelectChangeEvent
 } from "@mui/material";
 import {FormattedMessage, useIntl} from "react-intl";
 import { InfoDrawerButton } from "./InfoDrawerButton";
@@ -17,15 +17,36 @@ import {BeroepsProduct} from "../types/BeroepsProduct";
 import {useState} from "react";
 import ReactMarkdown from "react-markdown";
 import CloseIcon from "@mui/icons-material/Close";
+import {architecture_layers} from "../types/Architectuurlaag";
+import {activities} from "../types/Activiteit";
+import {createBeroepsproduct, CreateBeroepsproductDTO, updateBeroepsproduct} from "../lib/api/beroepsproducten";
 
 export function BeroepsProductBadge(props: {
     product: BeroepsProduct
 }) {
+
+    const isAuthed = true
+
     const [open, setOpen] = useState(false);
+    const [formData, setFormData] = useState<CreateBeroepsproductDTO>({
+        title: props.product.title,
+        layer: props.product.architectureLayerId,
+        activity: props.product.activityId,
+        level: props.product.level,
+        guild: props.product.guild,
+        sublament: props.product.sublament ?? '',
+    });
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent) => {
+        console.log({ [e.target.name]: e.target.value }, { ...formData, [e.target.name]: e.target.value })
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
     const intl = useIntl();
 
     const handleOpen = () => {
-        if (props.product.desc) {
+        if (props.product.sublament || isAuthed) {
             setOpen(true);
         }
     };
@@ -45,6 +66,139 @@ export function BeroepsProductBadge(props: {
         // boxShadow: 24,
         p: 4,
     };
+
+    console.log(props.product)
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // setLoading(true);
+        // setMessage('');
+
+        try {
+            await updateBeroepsproduct(props.product.id, formData);
+            // setMessage('Beroepsproduct created successfully!');
+            // setFormData({ title: '', description: '' });
+        } catch (error) {
+            // setMessage('Error creating beroepsproduct.');
+        } finally {
+            // setLoading(false);
+        }
+    };
+
+    const cardContent = isAuthed
+        ? (<Card sx={style}>
+            <CardHeader
+                title={"Create beroepsproduct"}
+                action={
+                    <IconButton onClick={handleClose}>
+                        <CloseIcon color={"primary"}/>
+                    </IconButton>
+                }
+            >
+
+            </CardHeader>
+            <CardContent>
+                <form onSubmit={handleSubmit}>
+                    <Stack spacing={2}>
+                        <TextField id="outlined-basic" name={"title"} label="Title" variant="outlined" fullWidth defaultValue={props.product.title} onChange={handleChange} />
+                        <Grid2 container spacing={2}>
+                            <Grid2 size={4}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Architectuurlaag</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        name="layer"
+                                        defaultValue={props.product.architectureLayerId}
+                                        label="Architectuurlaag"
+                                        onChange={handleChange}
+                                        // value={''}
+                                    >
+                                        {architecture_layers.map((layer) => (<MenuItem key={layer} value={layer}>{layer}</MenuItem>))}
+                                    </Select>
+                                </FormControl>
+                            </Grid2>
+                            <Grid2 size={4}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Activiteit</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        name={"activity"}
+                                        label="Activiteit"
+                                        defaultValue={props.product.activityId}
+                                        onChange={handleChange}
+                                        // value={''}
+                                    >
+                                        {activities.map((activity) => (<MenuItem key={activity} value={activity}>{activity}</MenuItem>))}
+                                    </Select>
+                                </FormControl>
+                            </Grid2>
+                            <Grid2 size={2}>
+                                <TextField type="number" slotProps={{htmlInput:{min: 1, max: 4}}} defaultValue={props.product.level} name={"level"} label="Level" variant="outlined" fullWidth onChange={handleChange} />
+                            </Grid2>
+                            <Grid2 size={2}>
+                                <TextField id="outlined-basic" name={"guild"} label="Guild" variant="outlined" defaultValue={props.product.guild} fullWidth onChange={handleChange} />
+                            </Grid2>
+                        </Grid2>
+
+
+
+
+                        <TextField
+                            id="outlined-multiline-static"
+                            label="Description"
+                            name={"sublament"}
+                            multiline
+                            rows={8}
+                            fullWidth
+                            defaultValue={props.product.sublament}
+                            onChange={handleChange}
+                        />
+                        <Button fullWidth variant={"contained"} type={"submit"}>Submit</Button>
+                    </Stack>
+                </form>
+                {/*<Box*/}
+                {/*    component="form"*/}
+                {/*    // sx={{ '& > :not(style)': { m: 1, width: '25ch' } }}*/}
+                {/*    noValidate*/}
+                {/*    autoComplete="off"*/}
+                {/*    submit={createBeroepsProduct}*/}
+                {/*>*/}
+
+
+                {/*</Box>*/}
+            </CardContent>
+        </Card>)
+        : (
+            <Card sx={style}>
+                <CardContent>
+                    <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                    >
+                        <Typography variant="h5">
+                            {props.product.title}
+                        </Typography>
+                        <IconButton onClick={handleClose}>
+                            <CloseIcon color={"primary"}/>
+                        </IconButton>
+                    </Stack>
+                    <Typography>
+                        <ReactMarkdown
+                            className="markdown"
+                            components={{
+                                h1: "h2",
+                            }}
+                        >
+                            {props.product.sublament ?? ''}
+                        </ReactMarkdown>
+                    </Typography>
+                </CardContent>
+            </Card>
+        );
 
     return (
         <>
@@ -69,39 +223,14 @@ export function BeroepsProductBadge(props: {
                     // whiteSpace="pre-wrap"
                     // sx={{ wordBreak: "break-word" }}
                 >
-                    {props.product.product}
+                    {props.product.title}
                 </Typography>
             </Button>
             <Modal
                 open={open}
                 onClose={handleClose}
             >
-                <Card sx={style}>
-                    <CardContent>
-                        <Stack
-                            direction="row"
-                            justifyContent="space-between"
-                            alignItems="center"
-                        >
-                            <Typography variant="h5">
-                                {props.product.product}
-                            </Typography>
-                            <IconButton onClick={handleClose}>
-                                <CloseIcon color={"primary"}/>
-                            </IconButton>
-                        </Stack>
-                        <Typography>
-                            <ReactMarkdown
-                                className="markdown"
-                                components={{
-                                    h1: "h2",
-                                }}
-                            >
-                                {props.product.desc ?? ''}
-                            </ReactMarkdown>
-                        </Typography>
-                    </CardContent>
-                </Card>
+                {cardContent}
             </Modal>
         </>
     );

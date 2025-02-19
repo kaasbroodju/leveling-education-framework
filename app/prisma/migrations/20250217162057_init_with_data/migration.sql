@@ -17,7 +17,7 @@ INSERT INTO "Activity" (activity) VALUES ('Analyseren');
 INSERT INTO "Activity" (activity) VALUES ('Adviseren');
 INSERT INTO "Activity" (activity) VALUES ('Ontwerpen');
 INSERT INTO "Activity" (activity) VALUES ('Realiseren');
-INSERT INTO "Activity" (activity) VALUES ('Manage');
+INSERT INTO "Activity" (activity) VALUES ('Manage & Control');
 
 
 --
@@ -147,22 +147,22 @@ of
 Validatie met key stakeholders van visie en strategie
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage', 1, 'Vastleggen van de belangrijkste beslissingen, resultaten en inzichten met betrekking tot het interactieontwerp in een iteratief proces
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage & Control', 1, 'Vastleggen van de belangrijkste beslissingen, resultaten en inzichten met betrekking tot het interactieontwerp in een iteratief proces
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage', 2, 'Toepassen van standaarden (interactieontwerprichtlijnen, technieken en methoden), passend binnen de professionele context
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage & Control', 2, 'Toepassen van standaarden (interactieontwerprichtlijnen, technieken en methoden), passend binnen de professionele context
 
 of
 
 Bewaken en overdragen van het interactie-ontwerp bij het gerealiseerde interactieve product of dienst
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage', 3, 'Bewaken van de kernwaarden en gebruikerservaring van product, organisatie of dienst in iedere fase van het ontwikkel- en productieproces
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage & Control', 3, 'Bewaken van de kernwaarden en gebruikerservaring van product, organisatie of dienst in iedere fase van het ontwikkel- en productieproces
 
 of
 
 Planmatig en methodisch vastleggen van designkeuzes voor alle stakeholders binnen een bedrijf
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage', 4, 'Vanuit gebruikersinteractie-perspectief aansturen van een complex project op strategisch niveau met inachtneming van korte- en langetermijndoelen en met afstemming met alle betrokken stakeholders
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Gebruikersinteractie', 'Manage & Control', 4, 'Vanuit gebruikersinteractie-perspectief aansturen van een complex project op strategisch niveau met inachtneming van korte- en langetermijndoelen en met afstemming met alle betrokken stakeholders
 
 ', NULL);
 INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Analyseren', 1, 'Analyseren van een enkel(e) organisatie, organisatieproces of procesbesturing op operationeel niveau met bijbehorende gegevensstromen en (gestructureerde) databehoeften
@@ -272,7 +272,7 @@ of
 Creëren van breed draagvlak voor veranderingen onder alle relevante interne en externe stakeholders
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage', 1, 'Verrichten van onderhoudswerkzaamheden aan de procesdocumentatie (bijv. business rules, principes en procesmodellen)
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage & Control', 1, 'Verrichten van onderhoudswerkzaamheden aan de procesdocumentatie (bijv. business rules, principes en procesmodellen)
 
 of
 
@@ -281,7 +281,7 @@ Meten en bewaken van ict-processen aan de hand van data
 of
 
 Beschrijven van de veranderbehoefte voor een enkel deelproces', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage', 2, 'Inrichten, onderhouden en actualiseren van (functionele) beheerprocessen
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage & Control', 2, 'Inrichten, onderhouden en actualiseren van (functionele) beheerprocessen
 
 of
 
@@ -290,7 +290,7 @@ Meten en bewaken van organisatieprocessen aan de hand van data
 of
 
 Signaleren van de veranderbehoefte van meerdere operationele en tactische organisatieprocessen', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage', 3, 'Formuleren en actualiseren van principes, business rules en modellen van procesarchitectuur
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage & Control', 3, 'Formuleren en actualiseren van principes, business rules en modellen van procesarchitectuur
 
 of
 
@@ -299,7 +299,7 @@ Meten en bewaken van de strategische doelen van de organisatie aan de hand van d
 of
 
 Proactief signaleren van behoefte aan verandering in alle organisatieprocessen en bijbehorende veranderprocessen in gang zetten', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage', 4, 'Bedenken van nieuwe organisatorische en technologische oplossingen voor het beheren van (interorganisationele) procesinnovaties
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Organisatieprocessen', 'Manage & Control', 4, 'Bedenken van nieuwe organisatorische en technologische oplossingen voor het beheren van (interorganisationele) procesinnovaties
 
 ', NULL);
 INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Analyseren', 1, 'Analyseren van een eenvoudige infrastructuur volgens een standaardmethode en op basis van gegeven kwaliteitseisen, bijvoorbeeld security
@@ -380,24 +380,24 @@ Realiseren van een cloudmanagementplatform voor DevOps
 ', NULL);
 INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Realiseren', 4, 'Toepassen van volwassenheidsmodellen bij het realiseren van cloud-agnostische enterprise infrastructuren
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage', 1, 'Opzetten en documenteren van standaardbeheerprocessen en werkprocedures voor beheer van een eenvoudige, bijvoorbeeld cloudgebaseerde, infrastructuur
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage & Control', 1, 'Opzetten en documenteren van standaardbeheerprocessen en werkprocedures voor beheer van een eenvoudige, bijvoorbeeld cloudgebaseerde, infrastructuur
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage', 2, 'Implementeren van het beheer van technologische ontwikkelingen m.b.t. de (cloudgebaseerde) infrastructuur
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage & Control', 2, 'Implementeren van het beheer van technologische ontwikkelingen m.b.t. de (cloudgebaseerde) infrastructuur
 
 of
 
 Implementeren van delen van beheerprocessen
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage', 3, 'Implementeren van beheerprocessen voor een cloud-agnostische enterprise infrastructuur
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage & Control', 3, 'Implementeren van beheerprocessen voor een cloud-agnostische enterprise infrastructuur
 
 of
 
 Inbedden van een vernieuwde infrastructuur in de organisatie
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage', 4, 'Vormgeven van Business - IT alignment en IT governance in relatie tot een cloud-agnostische enterprise infrastructuur
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Infrastructuur', 'Manage & Control', 4, 'Vormgeven van Business - IT alignment en IT governance in relatie tot een cloud-agnostische enterprise infrastructuur
 
 ', NULL);
 INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Analyseren', 1, 'Verzamelen en valideren van functionele eisen voor een softwaresysteem met één stakeholder volgens een standaardmethode en het opstellen van acceptatiecriteria
@@ -503,7 +503,7 @@ Bij het uitvoeren van deze beroepstaak kunnen onder andere de volgende beroepsta
 # Links en bronnen
 
 - [Backend development](https://www.youtube.com/playlist?list=PLKssF68zVDQ7Byksmqyi69MyTtxunGBEN)');
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage', 2, 'Beoordelen van een gegeven ontwikkelomgeving op basis van kwaliteitseisen
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage & Control', 2, 'Beoordelen van een gegeven ontwikkelomgeving op basis van kwaliteitseisen
 
 of
 
@@ -535,26 +535,26 @@ of
 Opstellen en uitvoeren van (herbruikbare) compliancytesten
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage', 1, 'Inrichten en gebruik maken van beheersysteem ter ondersteuning van softwareontwikkeling in teamverband
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage & Control', 1, 'Inrichten en gebruik maken van beheersysteem ter ondersteuning van softwareontwikkeling in teamverband
 
 ', '# Links en bronnen
 
 - [GIT gebruik playlist](https://www.youtube.com/playlist?list=PLKssF68zVDQ4jNCrTlUE2UMhOucbvzyeg)');
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage', 2, 'Beheren en gebruiken van een ontwikkelstraat ter ondersteuning van softwareontwikkeling in teams, waardoor onder andere continuous integration (CI) tot de mogelijkheden behoort
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage & Control', 2, 'Beheren en gebruiken van een ontwikkelstraat ter ondersteuning van softwareontwikkeling in teams, waardoor onder andere continuous integration (CI) tot de mogelijkheden behoort
 
 of
 
 Toepassen van methoden en technieken om een softwareontwikkelproces te managen en de kwaliteit ervan te borgen
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage', 3, 'Uitvoeren van configuratie-, change- en releasemanagement in afstemming met infrastructuurmanagement waardoor CI/CD tot de mogelijkheden behoort
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage & Control', 3, 'Uitvoeren van configuratie-, change- en releasemanagement in afstemming met infrastructuurmanagement waardoor CI/CD tot de mogelijkheden behoort
 
 of
 
 Inrichten en evalueren van een ontwikkelstraat met CI/CD ondersteuning
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage', 4, '(Door)Ontwikkelen van methoden en technieken voor het softwareontwikkelproces met als doel de effectiviteit en kwaliteit van het softwaresysteem te verbeteren alsmede de kosten en doorlooptijd van het softwareontwikkelproces te verkleinen
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Software', 'Manage & Control', 4, '(Door)Ontwikkelen van methoden en technieken voor het softwareontwikkelproces met als doel de effectiviteit en kwaliteit van het softwaresysteem te verbeteren alsmede de kosten en doorlooptijd van het softwareontwikkelproces te verkleinen
 
 ', NULL);
 INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Analyseren', 1, 'Verzamelen van kwaliteitseisen en acceptatiecriteria voor een systeem, bijv. een embedded of ander technisch (deel)systeem op basis van een domeinanalyse
@@ -672,12 +672,12 @@ of
 Realiseren van een compleet systeem met machine learning-elementen inclusief netwerk, hardware en systeemsoftware
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage', 1, 'Installeren en gebruiken van een ontwikkel- en testplatform ten behoeve van hardware/software, inclusief tools
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage & Control', 1, 'Installeren en gebruiken van een ontwikkel- en testplatform ten behoeve van hardware/software, inclusief tools
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage', 3, 'Opzetten en gebruikmaken van versiebeheer, releasemanagement, teamworkondersteuning en automated testing voor hard- en softwaresystemen
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage & Control', 3, 'Opzetten en gebruikmaken van versiebeheer, releasemanagement, teamworkondersteuning en automated testing voor hard- en softwaresystemen
 
 ', NULL);
-INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage', 4, 'Aansturen van co-designteams voor het beheren van het realisatieproces van de hardware, software en synthese, inclusief de ontwikkelomgeving
+INSERT INTO "HBOIDescription" ("architectureLayerId", "activityId", level, description, sublament) VALUES ('Hardwareinterfacing', 'Manage & Control', 4, 'Aansturen van co-designteams voor het beheren van het realisatieproces van de hardware, software en synthese, inclusief de ontwikkelomgeving
 
 ', NULL);
 

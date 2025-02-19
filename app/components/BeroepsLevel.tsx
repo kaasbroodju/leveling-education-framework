@@ -26,7 +26,7 @@ export function BeroepsLevel(props: {
           {/*) : null}*/}
         </Stack>
         {props.products.map((product) => (
-            <BeroepsProductBadge key={product.product} product={product}/>
+            <BeroepsProductBadge key={product.id} product={product}/>
         ))}
         {/*<BeroepsProduct product={prop}/>*/}
         {/*<Typography*/}

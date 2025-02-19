@@ -17,6 +17,20 @@ export async function createBeroepsproduct(data: CreateBeroepsproductDTO) {
     return response.json();
 }
 
+export async function updateBeroepsproduct(id: string, data: CreateBeroepsproductDTO) {
+    const response = await fetch(`/api/v1/beroepsproducten/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to create beroepsproduct');
+    }
+
+    return response.json();
+}
+
 export async function fetchBeroepsproducten() {
     const response = await fetch('/api/v1/beroepsproducten');
 

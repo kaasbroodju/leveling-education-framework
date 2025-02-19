@@ -54,16 +54,16 @@ INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild
 INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('da43780a-6469-473f-b2e4-6ec0c896a4aa', 'Software', 'Realiseren', 1, 'BE', 'Security by design (OWASP)', NULL);
 INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('01499b03-acc5-4aca-b16c-2e1b0ba0347a', 'Software', 'Realiseren', 1, 'BE', 'Prototypen', NULL);
 INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('4e6df8f5-3bf7-447f-ab7f-603e790c7af4', 'Software', 'Realiseren', 2, 'BE', 'Services/API''s restfull principes', NULL);
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('dd1df801-579c-4c12-b7eb-618f7ac53a87', 'Software', 'Manage', 1, 'BE', 'Versiebeheer (1)', '# VCS
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('dd1df801-579c-4c12-b7eb-618f7ac53a87', 'Software', 'Manage & Control', 1, 'BE', 'Versiebeheer (1)', '# VCS
 Je werkt met een VCS (version control system), zoals GIT (standaard) of Mercurial (Facebook).
 ## Workflow & DTAP
 Je hebt beschreven op de wiki hoe men omgaat qua branches, commit messages en peer reviews. Je hebt je (proces)documentatie uitgewerkt tot en met de D van DTAP.');
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('61109fd9-3869-417b-9f20-ba420a42f1d7', 'Software', 'Manage', 1, 'BE', 'Conventies/Documentatie(1)', NULL);
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('e8f01612-9e78-46e2-b49c-220b3846f663', 'Software', 'Manage', 1, 'BE', 'Open API / swagger', NULL);
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('c18b2fb7-1c66-4002-b8f6-1a05a613cfff', 'Software', 'Manage', 2, 'BE', 'CI', NULL);
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('a2322787-0aef-4957-82b6-dfdce3294ba3', 'Software', 'Manage', 2, 'BE', 'Docker container/images', NULL);
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('6a96fc22-c317-4b68-8d94-ba901e0a5b96', 'Software', 'Manage', 3, 'BE', 'CI + CD', NULL);
-INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('bc70bb78-45c9-4e8e-9e1a-8cc7a196bf68', 'Software', 'Manage', 3, 'BE', 'Testplan', NULL);
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('61109fd9-3869-417b-9f20-ba420a42f1d7', 'Software', 'Manage & Control', 1, 'BE', 'Conventies/Documentatie(1)', NULL);
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('e8f01612-9e78-46e2-b49c-220b3846f663', 'Software', 'Manage & Control', 1, 'BE', 'Open API / swagger', NULL);
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('c18b2fb7-1c66-4002-b8f6-1a05a613cfff', 'Software', 'Manage & Control', 2, 'BE', 'CI', NULL);
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('a2322787-0aef-4957-82b6-dfdce3294ba3', 'Software', 'Manage & Control', 2, 'BE', 'Docker container/images', NULL);
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('6a96fc22-c317-4b68-8d94-ba901e0a5b96', 'Software', 'Manage & Control', 3, 'BE', 'CI + CD', NULL);
+INSERT INTO "HBOIExample" (id, "architectureLayerId", "activityId", level, guild, title, sublament) VALUES ('bc70bb78-45c9-4e8e-9e1a-8cc7a196bf68', 'Software', 'Manage & Control', 3, 'BE', 'Testplan', NULL);
 
 
 -- Completed on 2025-02-17 19:21:20 CET

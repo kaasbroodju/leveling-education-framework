@@ -9,8 +9,6 @@ import {PrismaClient} from "@prisma/client";
 import {db} from "../lib/db";
 
 export async function getBeroepsproducten(): Promise<BeroepsProducten> {
-    const output: Partial<BeroepsProducten> = {}
-
     return (await db.hBOIExample.findMany())
         .reduce((acc, beroepstaakNiveau) => {
             if (!acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`]) {
@@ -23,11 +21,7 @@ export async function getBeroepsproducten(): Promise<BeroepsProducten> {
             }
 
             // @ts-ignore
-            acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`][`${beroepstaakNiveau.level}` as Niveau].push({
-                guild: beroepstaakNiveau.guild,
-                product: beroepstaakNiveau.title,
-                desc: beroepstaakNiveau.sublament
-            })
+            acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`][`${beroepstaakNiveau.level}` as Niveau].push(beroepstaakNiveau)
             return acc;
         }, {} as Partial<{ [key in `${Architectuurlaag} ${Activiteit}`]: Partial<{ [key in Niveau]: BeroepsProduct[] }> }>) as BeroepsProducten
 }
