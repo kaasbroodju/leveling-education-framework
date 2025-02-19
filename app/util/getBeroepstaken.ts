@@ -9,14 +9,15 @@ import {Niveau, niveaus} from "../types/Niveau";
 import {BeroepsTaken} from "../types/HBOI";
 import {BeroepsProduct} from "../types/BeroepsProduct";
 import {PrismaClient} from "@prisma/client";
+import {db} from "../lib/db";
 
 export async function getBeroepstaken(
     locale?: "nl" | "en"
 ): Promise<BeroepsTaken> {
     if (!locale) locale = "nl"
 
-    const prisma = new PrismaClient();
-    return (await prisma.hBOIDescription.findMany())
+
+    return (await db.hBOIDescription.findMany())
         .reduce((acc, beroepstaakNiveau) => {
             if (!acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`]) {
                 acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`] = {};

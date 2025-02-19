@@ -21,6 +21,7 @@ import {LevelsCardBeroepsproduct} from "../components/LevelsCardBeroepsproduct";
 import {migrateToNewFileLayout} from "../util/migrateToNewFileLayout";
 import {BeroepsProduct} from "../types/BeroepsProduct";
 import {Niveau} from "../types/Niveau";
+import {CreateBeroepsProduct} from "../components/forms/CreateBeroepsProduct";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // migrateToNewFileLayout()
@@ -72,7 +73,13 @@ export default function Beroepsproducten({
       <Head>
         <title>{`LEF - ${intl.formatMessage({ id: "PROFESSIONAL_DUTIES" })}`}</title>
       </Head>
+
       <Grid2 container spacing={2}>
+        <Grid2 size={12}>
+          <CreateBeroepsProduct />
+
+        </Grid2>
+
         <Grid2 container spacing={2} component={"header"}>
           <Grid2 size={12} component={"section"}>
             <NavigationCard
@@ -107,7 +114,7 @@ export default function Beroepsproducten({
             </NavigationCard>
           </Grid2>
         </Grid2>
-        <Grid2 container spacing={2}>
+        <Grid2 spacing={2} size={12}>
           {Object.entries(filteredBeroepstaken).map(([beroepstaakKey, item]) => (
               <LevelsCardBeroepsproduct
                   key={beroepstaakKey}

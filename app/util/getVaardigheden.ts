@@ -7,12 +7,13 @@ import {activities} from "../types/Activiteit";
 import * as fs from "node:fs";
 import {Niveau, niveaus} from "../types/Niveau";
 import {PrismaClient} from "@prisma/client";
+import {db} from "../lib/db";
 
 export async function getVaardigheden(
     locale?: "nl" | "en"
 ): Promise<SkillLevels> {
-    const prisma = new PrismaClient();
-    return (await prisma.skillDescription.findMany())
+
+    return (await db.skillDescription.findMany())
         .reduce((acc, vaardigheid) => {
             if (!acc[vaardigheid.skillId as Skill]) {
                 acc[vaardigheid.skillId as Skill] = {};

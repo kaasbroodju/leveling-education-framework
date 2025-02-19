@@ -6,12 +6,12 @@ import {Niveau, niveaus} from "../types/Niveau";
 import {BeroepsProduct} from "../types/BeroepsProduct";
 import {BeroepsProducten, BeroepsTaken} from "../types/HBOI";
 import {PrismaClient} from "@prisma/client";
+import {db} from "../lib/db";
 
 export async function getBeroepsproducten(): Promise<BeroepsProducten> {
     const output: Partial<BeroepsProducten> = {}
 
-    const prisma = new PrismaClient();
-    return (await prisma.hBOIExample.findMany())
+    return (await db.hBOIExample.findMany())
         .reduce((acc, beroepstaakNiveau) => {
             if (!acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`]) {
                 acc[`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`] = {
