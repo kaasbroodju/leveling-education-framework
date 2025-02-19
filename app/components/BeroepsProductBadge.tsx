@@ -20,12 +20,14 @@ import CloseIcon from "@mui/icons-material/Close";
 import {architecture_layers} from "../types/Architectuurlaag";
 import {activities} from "../types/Activiteit";
 import {createBeroepsproduct, CreateBeroepsproductDTO, updateBeroepsproduct} from "../lib/api/beroepsproducten";
+import {useSession} from "next-auth/react";
 
 export function BeroepsProductBadge(props: {
     product: BeroepsProduct
 }) {
 
-    const isAuthed = true
+    const { data: session } = useSession();
+    const isLoggedIn = !!session;
 
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState<CreateBeroepsproductDTO>({
@@ -40,13 +42,12 @@ export function BeroepsProductBadge(props: {
     const [message, setMessage] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent) => {
-        console.log({ [e.target.name]: e.target.value }, { ...formData, [e.target.name]: e.target.value })
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
     const intl = useIntl();
 
     const handleOpen = () => {
-        if (props.product.sublament || isAuthed) {
+        if (props.product.sublament || isLoggedIn) {
             setOpen(true);
         }
     };
@@ -67,8 +68,6 @@ export function BeroepsProductBadge(props: {
         p: 4,
     };
 
-    console.log(props.product)
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -86,7 +85,7 @@ export function BeroepsProductBadge(props: {
         }
     };
 
-    const cardContent = isAuthed
+    const cardContent = isLoggedIn
         ? (<Card sx={style}>
             <CardHeader
                 title={"Create beroepsproduct"}

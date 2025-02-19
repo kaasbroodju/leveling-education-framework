@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Grid2 } from "@mui/material";
+import {Grid2, Stack} from "@mui/material";
 import { NavigationCardButton } from "../components/NavigationCardButton";
 import { NavigationCard } from "../components/NavigationCard";
 import { useRouter } from "next/router";
@@ -22,6 +22,7 @@ import {migrateToNewFileLayout} from "../util/migrateToNewFileLayout";
 import {BeroepsProduct} from "../types/BeroepsProduct";
 import {Niveau} from "../types/Niveau";
 import {CreateBeroepsProduct} from "../components/forms/CreateBeroepsProduct";
+import {useSession} from "next-auth/react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // migrateToNewFileLayout()
@@ -46,6 +47,8 @@ export default function Beroepsproducten({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const intl = useIntl();
   const router = useRouter();
+  const { data: session } = useSession();
+  const isLoggedIn = !!session;
 
   const { activiteit, architectuurlaag } = router.query as {
     activiteit?: Activiteit, architectuurlaag?: Architectuurlaag
@@ -74,11 +77,12 @@ export default function Beroepsproducten({
         <title>{`LEF - ${intl.formatMessage({ id: "PROFESSIONAL_DUTIES" })}`}</title>
       </Head>
 
-      <Grid2 container spacing={2}>
-        <Grid2 size={12}>
-          <CreateBeroepsProduct />
+      <Stack spacing={2}>
+        {/*<Grid2 size={12}>*/}
+        {isLoggedIn ? (<CreateBeroepsProduct />) : null}
 
-        </Grid2>
+
+        {/*</Grid2>*/}
 
         <Grid2 container spacing={2} component={"header"}>
           <Grid2 size={12} component={"section"}>
@@ -114,7 +118,7 @@ export default function Beroepsproducten({
             </NavigationCard>
           </Grid2>
         </Grid2>
-        <Grid2 spacing={2} size={12}>
+        {/*<Grid2 spacing={2} size={12}>*/}
           {Object.entries(filteredBeroepstaken).map(([beroepstaakKey, item]) => (
               <LevelsCardBeroepsproduct
                   key={beroepstaakKey}
@@ -122,8 +126,8 @@ export default function Beroepsproducten({
                   item={item}
               />
           ))}
-        </Grid2>
-      </Grid2>
+        {/*</Grid2>*/}
+      </Stack>
     </>
   );
 }

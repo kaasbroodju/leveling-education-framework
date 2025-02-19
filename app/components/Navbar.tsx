@@ -9,12 +9,16 @@ import ToolbarTitle from "./ToolbarTitle";
 import DrawerContent from "./DrawerContent";
 import LanguageSelector from "./LanguageSelector";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { LightModeOutlined } from "@mui/icons-material";
+import {LightModeOutlined, Logout} from "@mui/icons-material";
 import { Stack } from "@mui/material";
 import { SelectedThemeContext } from "../context/SelectedThemeContext";
+import {signOut, useSession} from "next-auth/react";
 
 export default function DrawerAppBar({ drawerWidth }: { drawerWidth: number }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { data: session, status } = useSession();
+  const isLoggedIn = !!session;
+  // if (status) return <p>{session}</p>;
   const { selectedTheme, toggleSelectedTheme } =
     useContext(SelectedThemeContext);
 
@@ -25,6 +29,8 @@ export default function DrawerAppBar({ drawerWidth }: { drawerWidth: number }) {
   const handleDrawerClose = () => {
     setMobileOpen(false);
   };
+
+
 
   return (
     <>
@@ -61,6 +67,15 @@ export default function DrawerAppBar({ drawerWidth }: { drawerWidth: number }) {
                 <DarkModeIcon />
               )}
             </IconButton>
+            { isLoggedIn ? <IconButton
+                color="inherit"
+                aria-label="logout"
+                edge="end"
+                onClick={() => signOut({ callbackUrl: window.location.href })}
+                sx={{ width: "56px" }}
+            >
+              <Logout />
+            </IconButton> : null}
             <LanguageSelector />
           </Stack>
         </Toolbar>

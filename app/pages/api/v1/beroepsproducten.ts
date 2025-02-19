@@ -1,9 +1,18 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import {db} from "../../../lib/db";
+import {getSession} from "next-auth/react";
+import {getServerSession} from "next-auth";
+import {authOptions} from "../auth/[...nextauth]";
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse) {
     switch (req.method) {
         case 'POST':
+            const session = await getServerSession(req, res, authOptions);
+
+            if (!session || session.user.role !== 'teacher') {
+                return res.status(403).json({ error: 'Unauthorized' });
+            }
+
             return createBeroepsproduct(req, res);
         case 'GET':
             return getBeroepsproducten(req, res);
@@ -14,7 +23,6 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 }
 
 async function createBeroepsproduct( req: NextApiRequest, res: NextApiResponse) {
-    console.log(req.body)
     const { title, layer, activity, guild, level, sublament } = req.body
 
 

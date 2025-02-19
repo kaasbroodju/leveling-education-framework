@@ -9,21 +9,25 @@ import { IntlProvider } from "react-intl";
 import Layout from "../components/Layout";
 import { useTranslation } from "../hooks/useTranslation";
 import SelectedThemeProvider from "../providers/SelectedThemeProvider";
+import {SessionProvider} from "next-auth/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const { locale, defaultLocale, messages } = useTranslation();
 
   return (
-    <IntlProvider
-      messages={messages}
-      locale={locale ? locale : "nl"}
-      defaultLocale={defaultLocale}
-    >
-      <SelectedThemeProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </SelectedThemeProvider>
-    </IntlProvider>
+      <SessionProvider session={pageProps.session}>
+        <IntlProvider
+            messages={messages}
+            locale={locale ? locale : "nl"}
+            defaultLocale={defaultLocale}
+        >
+          <SelectedThemeProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </SelectedThemeProvider>
+        </IntlProvider>
+      </SessionProvider>
+
   );
 }

@@ -63,3 +63,10 @@ model HBOIExample {
   title               String
   sublament           String?
 }
+
+model User {
+  id       String  @id @default(uuid())
+  email    String  @unique
+  password String
+  role     String  @default("teacher") // Only teachers will be stored
+}
