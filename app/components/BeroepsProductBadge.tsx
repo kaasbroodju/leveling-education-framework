@@ -24,9 +24,11 @@ import { architecture_layers } from "../types/Architectuurlaag";
 import { activities } from "../types/Activiteit";
 import {
   CreateBeroepsproductDTO,
+  deleteBeroepsproduct,
   updateBeroepsproduct,
 } from "../lib/api/beroepsproducten";
 import { useSession } from "next-auth/react";
+import { Delete } from "@mui/icons-material";
 
 export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
   const { data: session } = useSession();
@@ -56,6 +58,14 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
   const handleOpen = () => {
     if (props.product.sublament || isLoggedIn) {
       setOpen(true);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (
+      window.confirm(`Are you sure you want to delete ${props.product.title}`)
+    ) {
+      await deleteBeroepsproduct(props.product.id);
     }
   };
 
@@ -95,11 +105,16 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
   const cardContent = isLoggedIn ? (
     <Card sx={style}>
       <CardHeader
-        title={"Create beroepsproduct"}
+        title={"Update beroepsproduct"}
         action={
-          <IconButton onClick={handleClose}>
-            <CloseIcon color={"primary"} />
-          </IconButton>
+          <Stack direction={"row"}>
+            <IconButton onClick={handleDelete}>
+              <Delete color={"error"} />
+            </IconButton>
+            <IconButton onClick={handleClose}>
+              <CloseIcon color={"primary"} />
+            </IconButton>
+          </Stack>
         }
       ></CardHeader>
       <CardContent>

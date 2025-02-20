@@ -41,6 +41,18 @@ export async function updateBeroepsproduct(
   return response.json();
 }
 
+export async function deleteBeroepsproduct(id: string) {
+  const response = await fetch(`/api/v1/beroepsproducten/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to delete beroepsproduct");
+  }
+
+  return response.json();
+}
+
 export async function fetchBeroepsproducten() {
   const response = await fetch("/api/v1/beroepsproducten");
 
