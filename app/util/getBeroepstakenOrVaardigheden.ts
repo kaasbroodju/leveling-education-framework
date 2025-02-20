@@ -4,7 +4,7 @@ import { BeroepstakenOrVaardigheden } from "../types/BeroepstakenOrVaardigheden"
 
 export async function getBeroepstakenOrVaardigheden(
   type: "vaardigheden" | "hboi",
-  locale?: "nl" | "en"
+  locale?: "nl" | "en",
 ): Promise<BeroepstakenOrVaardigheden> {
   let file = `${type}-nl.json`;
   if (locale === "en") file = `${type}-en.json`;

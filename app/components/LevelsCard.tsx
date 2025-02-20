@@ -1,18 +1,16 @@
 import { Card, CardContent, CardHeader, Grid2 } from "@mui/material";
-import { BeroepstaakOrVaardigheid } from "../types/BeroepstakenOrVaardigheden";
 import { Level } from "./Level";
-import {BeroepsTaken, HBOILevels} from "../types/HBOI";
-import {Niveau} from "../types/Niveau";
+import { Niveau } from "../types/Niveau";
 
 export function LevelsCard(props: {
   title: string;
-  item: { [key in Niveau]: { title: string, info: string | null } };
+  item: { [key in Niveau]: { title: string; info: string | null } };
 }) {
   return (
     <Grid2 size={12}>
       <Card component={"section"}>
         {/* TODO translate titles */}
-        <CardHeader title={props.title} component={"h1"}/>
+        <CardHeader title={props.title} component={"h1"} />
         <CardContent>
           <Grid2 container spacing={5}>
             {Object.entries(props.item).map(([niveauKey, level]) => (

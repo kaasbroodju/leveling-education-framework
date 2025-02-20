@@ -1,20 +1,22 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { filterBeroepstaken } from "../../../util/filterBeroepstaken";
-import { BeroepstakenOrVaardigheden } from "../../../types/BeroepstakenOrVaardigheden";
-import { getBeroepstakenOrVaardigheden } from "../../../util/getBeroepstakenOrVaardigheden";
 import { Architectuurlaag } from "../../../types/Architectuurlaag";
 import { Niveau } from "../../../types/Niveau";
 import { Activiteit } from "../../../types/Activiteit";
 import { validateBeroepstakenParams } from "../../../util/validateBeroepstakenParams";
-import {getBeroepstaken} from "../../../util/getBeroepstaken";
-import {BeroepsTaken} from "../../../types/HBOI";
+import { getBeroepstaken } from "../../../util/getBeroepstaken";
+import { BeroepsTaken } from "../../../types/HBOI";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Partial<BeroepsTaken> | { error: string }>
+  res: NextApiResponse<Partial<BeroepsTaken> | { error: string }>,
 ) {
-  const { architectuurlaag, activiteit, niveau } = req.query as { architectuurlaag?: Architectuurlaag; activiteit?: Activiteit; niveau?: Niveau };
+  const { architectuurlaag, activiteit, niveau } = req.query as {
+    architectuurlaag?: Architectuurlaag;
+    activiteit?: Activiteit;
+    niveau?: Niveau;
+  };
 
   try {
     validateBeroepstakenParams({ architectuurlaag, activiteit, niveau });
@@ -39,6 +41,6 @@ export default async function handler(
     filterBeroepstaken(await getBeroepstaken("nl"), {
       architectuurlaag,
       activiteit,
-    })
+    }),
   );
 }

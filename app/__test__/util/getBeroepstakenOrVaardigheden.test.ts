@@ -8,7 +8,7 @@ import { activities } from "../../types/Activiteit";
 describe("getBeroepstakenOrVaardigheden", () => {
   const sortedHBOI: string[] = architecture_layers
     .map((architecture_layer) =>
-      activities.map((activity) => `${architecture_layer} ${activity}`)
+      activities.map((activity) => `${architecture_layer} ${activity}`),
     )
     .flat()
     .sort();

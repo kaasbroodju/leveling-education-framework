@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Grid2 } from "@mui/material";
+import { Card, CardContent, Grid2 } from "@mui/material";
 import { ReactNode } from "react";
 
 export function NavigationCard({

@@ -1,19 +1,23 @@
 import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
-import {Button, Grid2, Grid2Props, useMediaQuery, useTheme} from "@mui/material";
+import {
+  Button,
+  Grid2,
+  Grid2Props,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
-import {bgcolor, fontSize} from "@mui/system";
-import {getIcon} from "../util/vaardighedenToIcon";
-import {skills, TypeOfSkill} from "../types/Vaardigheid";
-import {Property} from "csstype";
+import { getIcon } from "../util/vaardighedenToIcon";
+import { TypeOfSkill } from "../types/Vaardigheid";
+import { Property } from "csstype";
 
 export function NavigationCardButtonSkill({
   title,
   query_param_key,
   query_param_value,
   type_of_skill,
-  props = {size: { xs: 12, sm: 6 }},
+  props = { size: { xs: 12, sm: 6 } },
 }: {
   title: string | ReactNode;
   query_param_key: string;
@@ -23,8 +27,8 @@ export function NavigationCardButtonSkill({
 }) {
   const router = useRouter();
   const theme = useTheme();
-  theme.palette.primary
-  const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
+  theme.palette.primary;
+  const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
   let href;
   if (router.query[query_param_key] === query_param_value) {
     const { [query_param_key]: _, ...query } = router.query;
@@ -33,42 +37,55 @@ export function NavigationCardButtonSkill({
     href = { query: { ...router.query, [query_param_key]: query_param_value } };
   }
 
-  let activeColourMap: Map<TypeOfSkill, Property.Color> = new Map([
-      ["Beroeps", "rgba(152, 172, 204, 1)"],
-      ["Persoonsvormende", "rgba(176, 196, 156, 1)"],
-      ["Sociale", "rgba(232, 172, 140, 1)"],
-  ])
+  const activeColourMap: Map<TypeOfSkill, Property.Color> = new Map([
+    ["Beroeps", "rgba(152, 172, 204, 1)"],
+    ["Persoonsvormende", "rgba(176, 196, 156, 1)"],
+    ["Sociale", "rgba(232, 172, 140, 1)"],
+  ]);
 
-  let colourMap: Map<TypeOfSkill, Property.Color> = new Map([
+  const colourMap: Map<TypeOfSkill, Property.Color> = new Map([
     ["Beroeps", "rgba(152, 172, 204, .9)"],
     ["Persoonsvormende", "rgba(176, 196, 156, .9)"],
     ["Sociale", "rgba(232, 172, 140, .9)"],
-  ])
+  ]);
 
-  let colour = colourMap.get(type_of_skill);
-  let activeColour = activeColourMap.get(type_of_skill);
-  let isActive = query_param_value === router.query[query_param_key];
+  const colour = colourMap.get(type_of_skill);
+  const activeColour = activeColourMap.get(type_of_skill);
+  const isActive = query_param_value === router.query[query_param_key];
 
-  let icon = getIcon(query_param_value);
+  const icon = getIcon(query_param_value);
 
   return (
     <Grid2 {...props}>
-      <Link href={href} style={{ width: "100%", color: theme.palette.primary.main }}>
+      <Link
+        href={href}
+        style={{ width: "100%", color: theme.palette.primary.main }}
+      >
         <Button
-            sx={ isLarge ? { textTransform: "none", flexDirection: "column", aspectRatio: "1.7777777777777777", borderWidth: isActive ? 2 : 0, ":hover": { borderWidth: 2 } } : { textTransform: "none"}}
+          sx={
+            isLarge
+              ? {
+                  textTransform: "none",
+                  flexDirection: "column",
+                  aspectRatio: "1.7777777777777777",
+                  borderWidth: isActive ? 2 : 0,
+                  ":hover": { borderWidth: 2 },
+                }
+              : { textTransform: "none" }
+          }
           variant={
             // isActive
             //   ? "contained"
             //   : "outlined"
-              "outlined"
+            "outlined"
           }
           fullWidth
-          style={{ backgroundColor: isActive ? activeColour : colour, color: theme.palette.primary.main }}
+          style={{
+            backgroundColor: isActive ? activeColour : colour,
+            color: theme.palette.primary.main,
+          }}
         >
-          { isLarge
-              ? icon
-              : null
-          }
+          {isLarge ? icon : null}
 
           {title}
         </Button>

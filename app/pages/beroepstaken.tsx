@@ -5,8 +5,6 @@ import { NavigationCardButton } from "../components/NavigationCardButton";
 import { NavigationCard } from "../components/NavigationCard";
 import { useRouter } from "next/router";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { BeroepstakenOrVaardigheden as BeroepstakenType } from "../types/BeroepstakenOrVaardigheden";
-import { getBeroepstakenOrVaardigheden } from "../util/getBeroepstakenOrVaardigheden";
 import { filterBeroepstaken } from "../util/filterBeroepstaken";
 import { LevelsCard } from "../components/LevelsCard";
 import {
@@ -15,13 +13,12 @@ import {
 } from "../types/Architectuurlaag";
 import { Activiteit, activities } from "../types/Activiteit";
 import DefaultErrorPage from "next/error";
-import {getBeroepstaken} from "../util/getBeroepstaken";
-import {BeroepsTaken} from "../types/HBOI";
+import { getBeroepstaken } from "../util/getBeroepstaken";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // static site generation
   const beroepstaken = await getBeroepstaken(
-    context.locale === "en" ? "en" : "nl"
+    context.locale === "en" ? "en" : "nl",
   );
 
   if (context.locale === "en")
@@ -44,7 +41,8 @@ export default function Beroepstaken({
   const router = useRouter();
 
   const { activiteit, architectuurlaag } = router.query as {
-    activiteit?: Activiteit, architectuurlaag?: Architectuurlaag
+    activiteit?: Activiteit;
+    architectuurlaag?: Architectuurlaag;
   };
 
   if (activiteit && !activities.includes(activiteit as Activiteit))
@@ -56,13 +54,13 @@ export default function Beroepstaken({
   )
     return <DefaultErrorPage statusCode={404} />;
 
-  const filteredBeroepstaken = filterBeroepstaken<{ title: string, info: string | null }>(
-    beroepstaken,
-    {
-      activiteit,
-      architectuurlaag,
-    }
-  );
+  const filteredBeroepstaken = filterBeroepstaken<{
+    title: string;
+    info: string | null;
+  }>(beroepstaken, {
+    activiteit,
+    architectuurlaag,
+  });
 
   return (
     <>
@@ -73,45 +71,49 @@ export default function Beroepstaken({
         <Grid2 container spacing={2} component={"header"}>
           <Grid2 size={12} component={"section"}>
             <NavigationCard
-                title={intl.formatMessage({ id: "ARCHITECTURE_LAYERS" }) }
-                subheader={intl.formatMessage({ id: "ARCHITECTURE_LAYERS_SUBHEADER"})}
+              title={intl.formatMessage({ id: "ARCHITECTURE_LAYERS" })}
+              subheader={intl.formatMessage({
+                id: "ARCHITECTURE_LAYERS_SUBHEADER",
+              })}
             >
               {architecture_layers.map((architecture_layer) => (
-                  <NavigationCardButton
-                      key={architecture_layer}
-                      title={<FormattedMessage id={architecture_layer} />}
-                      query_param_key="architectuurlaag"
-                      query_param_value={architecture_layer}
-                      props={{size: { xs: 12, lg: 2.4 }}}
-                  />
+                <NavigationCardButton
+                  key={architecture_layer}
+                  title={<FormattedMessage id={architecture_layer} />}
+                  query_param_key="architectuurlaag"
+                  query_param_value={architecture_layer}
+                  props={{ size: { xs: 12, lg: 2.4 } }}
+                />
               ))}
             </NavigationCard>
           </Grid2>
           <Grid2 size={12} component={"section"}>
             <NavigationCard
-                title={intl.formatMessage({ id: "ACTIVITIES"})}
-                subheader={intl.formatMessage({ id: "ACTIVITIES_SUBHEADER"}) }
+              title={intl.formatMessage({ id: "ACTIVITIES" })}
+              subheader={intl.formatMessage({ id: "ACTIVITIES_SUBHEADER" })}
             >
               {activities.map((activity) => (
-                  <NavigationCardButton
-                      key={activity}
-                      title={<FormattedMessage id={activity} />}
-                      query_param_key="activiteit"
-                      query_param_value={activity}
-                      props={{size: { xs: 12, lg: 2.4 }}}
-                  />
+                <NavigationCardButton
+                  key={activity}
+                  title={<FormattedMessage id={activity} />}
+                  query_param_key="activiteit"
+                  query_param_value={activity}
+                  props={{ size: { xs: 12, lg: 2.4 } }}
+                />
               ))}
             </NavigationCard>
           </Grid2>
         </Grid2>
         <Grid2 container spacing={2}>
-          {Object.entries(filteredBeroepstaken).map(([beroepstaakKey, item]) => (
+          {Object.entries(filteredBeroepstaken).map(
+            ([beroepstaakKey, item]) => (
               <LevelsCard
-                  key={beroepstaakKey}
-                  title={beroepstaakKey}
-                  item={item}
+                key={beroepstaakKey}
+                title={beroepstaakKey}
+                item={item}
               />
-          ))}
+            ),
+          )}
         </Grid2>
       </Grid2>
     </>

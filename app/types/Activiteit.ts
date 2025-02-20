@@ -6,4 +6,4 @@ export const activities = [
   "Manage & Control",
 ] as const;
 
-export type Activiteit = typeof activities[number];
+export type Activiteit = (typeof activities)[number];

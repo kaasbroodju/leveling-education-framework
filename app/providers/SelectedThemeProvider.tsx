@@ -29,7 +29,7 @@ export default function SelectedThemeProvider({
 
   function toggleSelectedTheme() {
     setSelectedTheme(
-      selectedTheme === ThemesEnum.Light ? ThemesEnum.Dark : ThemesEnum.Light
+      selectedTheme === ThemesEnum.Light ? ThemesEnum.Dark : ThemesEnum.Light,
     );
   }
 
