@@ -8,35 +8,38 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+	allConfig: js.configs.all,
 });
 
 export default [
-  ...compat.extends(
-    "next/core-web-vitals",
-    "next/typescript",
-    "plugin:prettier/recommended",
-  ),
-  {
-    plugins: {
-      "unused-imports": unusedImports,
-      prettier,
-    },
+	...compat.extends(
+		"next/core-web-vitals",
+		"next/typescript",
+		"plugin:prettier/recommended",
+	),
+	{
+		plugins: {
+			"unused-imports": unusedImports,
+			prettier,
+		},
 
-    rules: {
-      "unused-imports/no-unused-imports": "error", // Ensure this is enabled for error detection
-      "unused-imports/no-unused-vars": [
-        "warn",
-        {
-          vars: "all",
-          args: "none",
-          ignoreRestSiblings: false,
-        },
-      ],
-      "prettier/prettier": "error",
-    },
-    ignores: ["node_modules/*", ".next/*"],
-  },
+		rules: {
+			"unused-imports/no-unused-imports": "error", // Ensure this is enabled for error detection
+			"unused-imports/no-unused-vars": [
+				"warn",
+				{
+					vars: "all",
+					args: "none",
+					ignoreRestSiblings: false,
+				},
+			],
+			"prettier/prettier": "error",
+			indent: "off",
+			// indent: ["error", "tab", { SwitchCase: 1 }],
+			"no-tabs": ["error", { allowIndentationTabs: true }],
+		},
+		ignores: ["node_modules/*", ".next/*"],
+	},
 ];

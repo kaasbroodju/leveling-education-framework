@@ -15,108 +15,107 @@ import { SelectedThemeContext } from "../context/SelectedThemeContext";
 import { signOut, useSession } from "next-auth/react";
 
 export default function DrawerAppBar({ drawerWidth }: { drawerWidth: number }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const { data: session, status } = useSession();
-  const isLoggedIn = !!session;
-  // if (status) return <p>{session}</p>;
-  const { selectedTheme, toggleSelectedTheme } =
-    useContext(SelectedThemeContext);
+	const [mobileOpen, setMobileOpen] = useState(false);
+	const { data: session } = useSession();
+	const isLoggedIn = !!session;
+	const { selectedTheme, toggleSelectedTheme } =
+		useContext(SelectedThemeContext);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+	const handleDrawerToggle = () => {
+		setMobileOpen((prevState) => !prevState);
+	};
 
-  const handleDrawerClose = () => {
-    setMobileOpen(false);
-  };
+	const handleDrawerClose = () => {
+		setMobileOpen(false);
+	};
 
-  return (
-    <>
-      <AppBar
-        component="nav"
-        position="fixed"
-        sx={{
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-        }}
-        elevation={1}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <ToolbarTitle />
-          <Stack direction="row" gap={1}>
-            <IconButton
-              color="inherit"
-              aria-label="change theme"
-              edge="end"
-              onClick={toggleSelectedTheme}
-              sx={{ width: "56px" }}
-            >
-              {selectedTheme === "dark" ? (
-                <LightModeOutlined />
-              ) : (
-                <DarkModeIcon />
-              )}
-            </IconButton>
-            {isLoggedIn ? (
-              <IconButton
-                color="inherit"
-                aria-label="logout"
-                edge="end"
-                onClick={() => signOut({ callbackUrl: window.location.href })}
-                sx={{ width: "56px" }}
-              >
-                <Logout />
-              </IconButton>
-            ) : null}
-            <LanguageSelector />
-          </Stack>
-        </Toolbar>
-      </AppBar>
+	return (
+		<>
+			<AppBar
+				component="nav"
+				position="fixed"
+				sx={{
+					zIndex: (theme) => theme.zIndex.drawer + 1,
+				}}
+				elevation={1}
+			>
+				<Toolbar>
+					<IconButton
+						color="inherit"
+						aria-label="open drawer"
+						edge="start"
+						onClick={handleDrawerToggle}
+						sx={{ mr: 2, display: { md: "none" } }}
+					>
+						<MenuIcon />
+					</IconButton>
+					<ToolbarTitle />
+					<Stack direction="row" gap={1}>
+						<IconButton
+							color="inherit"
+							aria-label="change theme"
+							edge="end"
+							onClick={toggleSelectedTheme}
+							sx={{ width: "56px" }}
+						>
+							{selectedTheme === "dark" ? (
+								<LightModeOutlined />
+							) : (
+								<DarkModeIcon />
+							)}
+						</IconButton>
+						{isLoggedIn ? (
+							<IconButton
+								color="inherit"
+								aria-label="logout"
+								edge="end"
+								onClick={() => signOut({ callbackUrl: window.location.href })}
+								sx={{ width: "56px" }}
+							>
+								<Logout />
+							</IconButton>
+						) : null}
+						<LanguageSelector />
+					</Stack>
+				</Toolbar>
+			</AppBar>
 
-      <Box
-        component="nav"
-        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
-        aria-label="navigation"
-      >
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerClose}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", md: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          <DrawerContent handleDrawerClose={handleDrawerClose} />
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: "none", md: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-          open
-        >
-          <DrawerContent handleDrawerClose={handleDrawerClose} />
-        </Drawer>
-      </Box>
-    </>
-  );
+			<Box
+				component="nav"
+				sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
+				aria-label="navigation"
+			>
+				<Drawer
+					variant="temporary"
+					open={mobileOpen}
+					onClose={handleDrawerClose}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+					sx={{
+						display: { xs: "block", md: "none" },
+						"& .MuiDrawer-paper": {
+							boxSizing: "border-box",
+							width: drawerWidth,
+						},
+					}}
+				>
+					<DrawerContent handleDrawerClose={handleDrawerClose} />
+				</Drawer>
+				<Drawer
+					variant="permanent"
+					sx={{
+						display: { xs: "none", md: "block" },
+						"& .MuiDrawer-paper": {
+							boxSizing: "border-box",
+							width: drawerWidth,
+						},
+					}}
+					open
+				>
+					<DrawerContent handleDrawerClose={handleDrawerClose} />
+				</Drawer>
+			</Box>
+		</>
+	);
 }

@@ -1,11 +1,15 @@
 [
   {
-    "guild": "BE", "product": "Versiebeheer (1)", "desc": "# VCS\nJe werkt met een VCS (version control system), zoals GIT (standaard) of Mercurial (Facebook).\n## Workflow & DTAP\nJe hebt beschreven op de wiki hoe men omgaat qua branches, commit messages en peer reviews. Je hebt je (proces)documentatie uitgewerkt tot en met de D van DTAP."
+    "guild": "BE",
+    "product": "Versiebeheer (1)",
+    "desc": "# VCS\nJe werkt met een VCS (version control system), zoals GIT (standaard) of Mercurial (Facebook).\n## Workflow & DTAP\nJe hebt beschreven op de wiki hoe men omgaat qua branches, commit messages en peer reviews. Je hebt je (proces)documentatie uitgewerkt tot en met de D van DTAP."
   },
   {
-    "guild": "BE", "product": "Conventies/Documentatie(1)"
+    "guild": "BE",
+    "product": "Conventies/Documentatie(1)"
   },
   {
-    "guild": "BE", "product": "Open API / swagger"
+    "guild": "BE",
+    "product": "Open API / swagger"
   }
 ]

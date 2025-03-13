@@ -4,14 +4,14 @@ import { getVaardigheden } from "../../../util/getVaardigheden";
 import { SkillLevels } from "../../../types/Vaardigheid";
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<SkillLevels | { error: string }>,
+	req: NextApiRequest,
+	res: NextApiResponse<SkillLevels | { error: string }>,
 ) {
-  // const locale = req.headers["accept-language"]?.startsWith("en") ? "en" : "nl";
+	// const locale = req.headers["accept-language"]?.startsWith("en") ? "en" : "nl";
 
-  // if (locale === "en")
-  //   // disable english translations whilst there are none
-  //   return res.status(501).json({ error: "Locale not implemented yet" });
+	// if (locale === "en")
+	//   // disable english translations whilst there are none
+	//   return res.status(501).json({ error: "Locale not implemented yet" });
 
-  return res.status(200).json(await getVaardigheden("nl"));
+	return res.status(200).json(await getVaardigheden("nl"));
 }

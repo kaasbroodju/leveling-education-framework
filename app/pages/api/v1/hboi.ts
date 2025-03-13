@@ -9,38 +9,38 @@ import { getBeroepstaken } from "../../../util/getBeroepstaken";
 import { BeroepsTaken } from "../../../types/HBOI";
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Partial<BeroepsTaken> | { error: string }>,
+	req: NextApiRequest,
+	res: NextApiResponse<Partial<BeroepsTaken> | { error: string }>,
 ) {
-  const { architectuurlaag, activiteit, niveau } = req.query as {
-    architectuurlaag?: Architectuurlaag;
-    activiteit?: Activiteit;
-    niveau?: Niveau;
-  };
+	const { architectuurlaag, activiteit, niveau } = req.query as {
+		architectuurlaag?: Architectuurlaag;
+		activiteit?: Activiteit;
+		niveau?: Niveau;
+	};
 
-  try {
-    validateBeroepstakenParams({ architectuurlaag, activiteit, niveau });
-  } catch (error) {
-    if (error instanceof Error)
-      return res.status(400).json({
-        error: error.message,
-      });
-    else
-      return res.status(500).json({
-        error: "Unknown error happened during validation of query params.",
-      });
-  }
+	try {
+		validateBeroepstakenParams({ architectuurlaag, activiteit, niveau });
+	} catch (error) {
+		if (error instanceof Error)
+			return res.status(400).json({
+				error: error.message,
+			});
+		else
+			return res.status(500).json({
+				error: "Unknown error happened during validation of query params.",
+			});
+	}
 
-  // const locale = req.headers["accept-language"]?.startsWith("en") ? "en" : "nl";
+	// const locale = req.headers["accept-language"]?.startsWith("en") ? "en" : "nl";
 
-  // if (locale === "en")
-  //   // disable english translations whilst there are none
-  //   return res.status(501).json({ error: "Locale not implemented yet" });
+	// if (locale === "en")
+	//   // disable english translations whilst there are none
+	//   return res.status(501).json({ error: "Locale not implemented yet" });
 
-  return res.status(200).json(
-    filterBeroepstaken(await getBeroepstaken("nl"), {
-      architectuurlaag,
-      activiteit,
-    }),
-  );
+	return res.status(200).json(
+		filterBeroepstaken(await getBeroepstaken("nl"), {
+			architectuurlaag,
+			activiteit,
+		}),
+	);
 }

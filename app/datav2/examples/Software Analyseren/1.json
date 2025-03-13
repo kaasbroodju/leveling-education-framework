@@ -1,6 +1,6 @@
 [
-  {"guild": "BE","product": "Huidige component architectuur"},
-  {"guild": "BE","product": "Test coverage"},
-  {"guild": "BE","product": "Code smells / statische analyse"},
-  {"guild": "BE","product": "Code reviews"}
+  { "guild": "BE", "product": "Huidige component architectuur" },
+  { "guild": "BE", "product": "Test coverage" },
+  { "guild": "BE", "product": "Code smells / statische analyse" },
+  { "guild": "BE", "product": "Code reviews" }
 ]
