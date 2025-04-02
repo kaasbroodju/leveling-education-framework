@@ -1,8 +1,6 @@
-import {Card, CardContent, CardHeader, Grid2, Stack} from "@mui/material";
-import { Niveau } from "../types/Niveau";
+import { Card, CardContent, CardHeader, Grid2, Stack } from "@mui/material";
 import { BeroepsProduct } from "../types/BeroepsProduct";
-import { BeroepsLevel } from "./BeroepsLevel";
-import {BeroepsProductBadge} from "./BeroepsProductBadge";
+import { BeroepsProductBadge } from "./BeroepsProductBadge";
 
 export function LevelsCardBeroepsproduct(props: {
 	title: string;
@@ -31,7 +29,6 @@ export function LevelsCardBeroepsproduct(props: {
 										<BeroepsProductBadge key={product.id} product={product} />
 									))}
 								</Stack>
-
 							</Grid2>
 						))}
 					</Grid2>

@@ -1,10 +1,7 @@
 import path from "path";
 import fsPromises from "fs/promises";
-import {
-	architecture_layers,
-	Architectuurlaag,
-} from "../types/Architectuurlaag";
-import { Activiteit, activities } from "../types/Activiteit";
+import { architecture_layers } from "../types/Architectuurlaag";
+import { activities } from "../types/Activiteit";
 import * as fs from "node:fs";
 import { Niveau, niveaus } from "../types/Niveau";
 import { BeroepsTaken } from "../types/HBOI";

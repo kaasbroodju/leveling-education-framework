@@ -17,7 +17,6 @@ import {
 } from "@mui/material";
 import { BeroepsProduct } from "../types/BeroepsProduct";
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import CloseIcon from "@mui/icons-material/Close";
 import { architecture_layers } from "../types/Architectuurlaag";
 import { activities } from "../types/Activiteit";
@@ -28,8 +27,8 @@ import {
 } from "../lib/api/beroepsproducten";
 import { useSession } from "next-auth/react";
 import { Delete } from "@mui/icons-material";
-import {guildToColour} from "../util/guildToColour";
-import {guilds} from "../types/Guild";
+import { guildToColour } from "../util/guildToColour";
+import { guilds } from "../types/Guild";
 
 export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 	const { data: session } = useSession();
@@ -52,7 +51,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 	};
 
 	const handleOpen = () => {
-		if (props.product.sublament || isLoggedIn) {
+		if (isLoggedIn) {
 			setOpen(true);
 		}
 	};
@@ -161,9 +160,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 							</Grid2>
 							<Grid2 size={2}>
 								<FormControl fullWidth>
-									<InputLabel id="guild-label">
-										Guild
-									</InputLabel>
+									<InputLabel id="guild-label">Guild</InputLabel>
 									<Select
 										labelId="guild-label"
 										id="guild-select"
@@ -202,16 +199,6 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 						<CloseIcon color={"primary"} />
 					</IconButton>
 				</Stack>
-				<Typography>
-					<ReactMarkdown
-						className="markdown"
-						components={{
-							h1: "h2",
-						}}
-					>
-						{props.product.sublament ?? ""}
-					</ReactMarkdown>
-				</Typography>
 			</CardContent>
 		</Card>
 	);

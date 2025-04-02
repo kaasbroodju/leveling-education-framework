@@ -1,7 +1,6 @@
 import { Architectuurlaag } from "../types/Architectuurlaag";
 import { Activiteit } from "../types/Activiteit";
-import { Niveau } from "../types/Niveau";
-import {BeroepsProducten, HBOILevels} from "../types/HBOI";
+import { BeroepsProducten } from "../types/HBOI";
 
 export function filterBeroepsproducten(
 	beroepstaken: BeroepsProducten,

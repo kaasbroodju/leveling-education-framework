@@ -21,7 +21,7 @@ import WebIcon from "@mui/icons-material/Web";
 import SchoolIcon from "@mui/icons-material/School";
 import Contributor from "../components/Contributor";
 import { ListItemLink } from "../components/ListItemLink";
-import {Login} from "@mui/icons-material";
+import { Login } from "@mui/icons-material";
 
 export default function About() {
 	const { selectedTheme } = useContext(SelectedThemeContext);
@@ -125,11 +125,7 @@ export default function About() {
 								text={intl.formatMessage({ id: "ABOUT_EDUCATION_SITE_TEXT" })}
 								icon={<WebIcon />}
 							/>
-							<ListItemLink
-								href="/login"
-								text={"Log in"}
-								icon={<Login />}
-							/>
+							<ListItemLink href="/login" text={"Log in"} icon={<Login />} />
 						</List>
 					</CardContent>
 				</Card>

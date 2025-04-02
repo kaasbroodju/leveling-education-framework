@@ -28,7 +28,7 @@ async function updateBeroeopsProduct(
 	res: NextApiResponse,
 ) {
 	const { beroepsproduct } = req.query as { beroepsproduct: string };
-	const { title, layer, activity, guild, level, sublament } = req.body;
+	const { title, layer, activity, guild } = req.body;
 	const result = await db.hBOIExample.update({
 		where: {
 			id: beroepsproduct,
@@ -38,8 +38,6 @@ async function updateBeroeopsProduct(
 			architectureLayerId: layer,
 			activityId: activity,
 			guild,
-			level,
-			sublament,
 		},
 	});
 

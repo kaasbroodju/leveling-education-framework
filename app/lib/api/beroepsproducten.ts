@@ -1,13 +1,12 @@
 import { Architectuurlaag } from "../../types/Architectuurlaag";
 import { Activiteit } from "../../types/Activiteit";
+import { Guild } from "../../types/Guild";
 
 export type CreateBeroepsproductDTO = {
 	title: string;
 	layer: Architectuurlaag | "";
 	activity: Activiteit | "";
-	guild: string;
-	sublament: string;
-	level: number;
+	guild: Guild | "";
 };
 
 export async function createBeroepsproduct(data: CreateBeroepsproductDTO) {

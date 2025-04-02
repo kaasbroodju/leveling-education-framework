@@ -1,25 +1,19 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import {
-	Box,
 	Button,
 	Card,
 	CardContent,
 	CardHeader,
 	TextField,
-	Typography,
-	Alert, Stack,
+	Alert,
+	Stack,
 } from "@mui/material";
 
 export default function LoginPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
-	const [showPassword, setShowPassword] = useState(false);
-
-	const handleClickShowPassword = () => {
-		setShowPassword(!showPassword);
-	};
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -47,11 +41,7 @@ export default function LoginPage() {
 			<CardHeader title={"Login"} />
 			<CardContent>
 				<Stack component="form" onSubmit={handleSubmit} spacing={4}>
-					{error && (
-						<Alert severity="error">
-							{error}
-						</Alert>
-					)}
+					{error && <Alert severity="error">{error}</Alert>}
 					<TextField
 						margin="normal"
 						required

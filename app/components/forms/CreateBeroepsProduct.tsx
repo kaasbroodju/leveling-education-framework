@@ -23,7 +23,7 @@ import {
 	createBeroepsproduct,
 	CreateBeroepsproductDTO,
 } from "../../lib/api/beroepsproducten";
-import {guilds} from "../../types/Guild";
+import { guilds } from "../../types/Guild";
 
 export function CreateBeroepsProduct() {
 	const [open, setOpen] = useState(false);
@@ -31,9 +31,7 @@ export function CreateBeroepsProduct() {
 		title: "",
 		layer: "",
 		activity: "",
-		level: 1,
 		guild: "",
-		sublament: "",
 	});
 
 	const handleChange = (
@@ -107,9 +105,7 @@ export function CreateBeroepsProduct() {
 								<Grid2 container spacing={2}>
 									<Grid2 size={5}>
 										<FormControl fullWidth>
-											<InputLabel id="layer-label">
-												Architectuurlaag
-											</InputLabel>
+											<InputLabel id="layer-label">Architectuurlaag</InputLabel>
 											<Select
 												labelId="layer-label"
 												id="layer-select"
@@ -128,9 +124,7 @@ export function CreateBeroepsProduct() {
 									</Grid2>
 									<Grid2 size={5}>
 										<FormControl fullWidth>
-											<InputLabel id="activity-label">
-												Activiteit
-											</InputLabel>
+											<InputLabel id="activity-label">Activiteit</InputLabel>
 											<Select
 												labelId="activity-label"
 												id="activity-select"
@@ -149,9 +143,7 @@ export function CreateBeroepsProduct() {
 									</Grid2>
 									<Grid2 size={2}>
 										<FormControl fullWidth>
-											<InputLabel id="guild-label">
-												Guild
-											</InputLabel>
+											<InputLabel id="guild-label">Guild</InputLabel>
 											<Select
 												labelId="guild-label"
 												id="guild-select"

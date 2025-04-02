@@ -26,7 +26,5 @@ export default async function handler(
 		data: { email, password: hashedPassword, role: "teacher" },
 	});
 
-	return res
-		.status(201)
-		.json({ message: "Account created successfully" });
+	return res.status(201).json({ message: "Account created successfully" });
 }

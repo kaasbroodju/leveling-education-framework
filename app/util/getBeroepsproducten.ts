@@ -1,6 +1,5 @@
 import { Architectuurlaag } from "../types/Architectuurlaag";
 import { Activiteit } from "../types/Activiteit";
-import { Niveau } from "../types/Niveau";
 import { BeroepsProduct } from "../types/BeroepsProduct";
 import { BeroepsProducten } from "../types/HBOI";
 import { db } from "../lib/db";
@@ -22,10 +21,10 @@ export async function getBeroepsproducten(): Promise<BeroepsProducten> {
 				] = [];
 			}
 
-			// @ts-ignore
+			// @ts-expect-error undefined
 			acc[
 				`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
-			].push(beroepsproduct);
+			].push(beroepsproduct as BeroepsProduct);
 			return acc;
 		},
 		{} as Partial<{
