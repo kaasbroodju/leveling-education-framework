@@ -15,7 +15,6 @@ export async function migrateToNewFileLayout() {
 				const activiteit = Object.keys(taken);
 
 				for (const level of activiteit) {
-					console.log(key, level);
 					await fsPromises.mkdir(`datav2/${type}/${language}/${key}/${level}`, {
 						recursive: true,
 					});
@@ -45,31 +44,4 @@ export async function migrateToNewFileLayout() {
 			}
 		}
 	}
-
-	// const source = await getBeroepstakenOrVaardigheden("hboi", "nl")
-	//
-	// const architectuur = Object.keys(source)
-	//
-	//
-	// for (let key of architectuur) {
-	//     console.log(key)
-	//     // await fsPromises.mkdir('tmp/' + key, {recursive: true});
-	//     const taken = source[key]
-	//
-	//     const activiteit = Object.keys(taken)
-	//
-	//
-	//     for (let keyactiviteit of activiteit) {
-	//         console.log(key, keyactiviteit)
-	//         await fsPromises.mkdir('tmp/' + key + '/' + keyactiviteit, {recursive: true});
-	//         const taak = taken[keyactiviteit]
-	//         await fsPromises.writeFile('tmp/' + key + '/' + keyactiviteit + '/' + 'description.txt', taak.title)
-	//         if (taak.info !== "") {
-	//             await fsPromises.writeFile('tmp/' + key + '/' + keyactiviteit + '/' + 'info.txt', taak.info)
-	//         }
-	//
-	//
-	//     }
-	//
-	// }
 }

@@ -23,6 +23,7 @@ import {
 	createBeroepsproduct,
 	CreateBeroepsproductDTO,
 } from "../../lib/api/beroepsproducten";
+import {guilds} from "../../types/Guild";
 
 export function CreateBeroepsProduct() {
 	const [open, setOpen] = useState(false);
@@ -40,10 +41,6 @@ export function CreateBeroepsProduct() {
 			| React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 			| SelectChangeEvent,
 	) => {
-		console.log(
-			{ [e.target.name]: e.target.value },
-			{ ...formData, [e.target.name]: e.target.value },
-		);
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
@@ -110,12 +107,12 @@ export function CreateBeroepsProduct() {
 								<Grid2 container spacing={2}>
 									<Grid2 size={5}>
 										<FormControl fullWidth>
-											<InputLabel id="demo-simple-select-label">
+											<InputLabel id="layer-label">
 												Architectuurlaag
 											</InputLabel>
 											<Select
-												labelId="demo-simple-select-label"
-												id="demo-simple-select"
+												labelId="layer-label"
+												id="layer-select"
 												name="layer"
 												label="Architectuurlaag"
 												onChange={handleChange}
@@ -131,12 +128,12 @@ export function CreateBeroepsProduct() {
 									</Grid2>
 									<Grid2 size={5}>
 										<FormControl fullWidth>
-											<InputLabel id="demo-simple-select-label">
+											<InputLabel id="activity-label">
 												Activiteit
 											</InputLabel>
 											<Select
-												labelId="demo-simple-select-label"
-												id="demo-simple-select"
+												labelId="activity-label"
+												id="activity-select"
 												name={"activity"}
 												label="Activiteit"
 												onChange={handleChange}
@@ -151,14 +148,25 @@ export function CreateBeroepsProduct() {
 										</FormControl>
 									</Grid2>
 									<Grid2 size={2}>
-										<TextField
-											id="outlined-basic"
-											name={"guild"}
-											label="Guild"
-											variant="outlined"
-											fullWidth
-											onChange={handleChange}
-										/>
+										<FormControl fullWidth>
+											<InputLabel id="guild-label">
+												Guild
+											</InputLabel>
+											<Select
+												labelId="guild-label"
+												id="guild-select"
+												name={"guild"}
+												label="Guild"
+												onChange={handleChange}
+												// value={''}
+											>
+												{guilds.map((guild) => (
+													<MenuItem key={guild} value={guild}>
+														{guild}
+													</MenuItem>
+												))}
+											</Select>
+										</FormControl>
 									</Grid2>
 								</Grid2>
 								<Button fullWidth variant={"contained"} type={"submit"}>

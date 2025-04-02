@@ -28,6 +28,8 @@ import {
 } from "../lib/api/beroepsproducten";
 import { useSession } from "next-auth/react";
 import { Delete } from "@mui/icons-material";
+import {guildToColour} from "../util/guildToColour";
+import {guilds} from "../types/Guild";
 
 export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 	const { data: session } = useSession();
@@ -38,9 +40,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 		title: props.product.title,
 		layer: props.product.architectureLayerId,
 		activity: props.product.activityId,
-		level: props.product.level,
 		guild: props.product.guild,
-		sublament: props.product.sublament ?? "",
 	});
 
 	const handleChange = (
@@ -160,15 +160,26 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 								</FormControl>
 							</Grid2>
 							<Grid2 size={2}>
-								<TextField
-									id="outlined-basic"
-									name={"guild"}
-									label="Guild"
-									variant="outlined"
-									defaultValue={props.product.guild}
-									fullWidth
-									onChange={handleChange}
-								/>
+								<FormControl fullWidth>
+									<InputLabel id="guild-label">
+										Guild
+									</InputLabel>
+									<Select
+										labelId="guild-label"
+										id="guild-select"
+										name={"guild"}
+										label="Guild"
+										defaultValue={props.product.guild}
+										onChange={handleChange}
+										// value={''}
+									>
+										{guilds.map((guild) => (
+											<MenuItem key={guild} value={guild}>
+												{guild}
+											</MenuItem>
+										))}
+									</Select>
+								</FormControl>
 							</Grid2>
 						</Grid2>
 						<Button fullWidth variant={"contained"} type={"submit"}>
@@ -221,11 +232,13 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 				<Typography
 					component={"span"}
 					sx={{
-						backgroundColor: "red",
+						backgroundColor: guildToColour(props.product.guild),
 						borderRadius: "4px",
 						padding: "0 1ch",
 						display: "inline-block",
+						minWidth: "4ch",
 						flex: "",
+						textAlign: "center",
 					}}
 					variant="subtitle2"
 					// whiteSpace="pre-wrap"
