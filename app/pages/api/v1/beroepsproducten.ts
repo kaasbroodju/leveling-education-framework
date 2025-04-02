@@ -24,7 +24,7 @@ export default async function handler(
 }
 
 async function createBeroepsproduct(req: NextApiRequest, res: NextApiResponse) {
-	const { title, layer, activity, guild, level, sublament } = req.body;
+	const { title, layer, activity, guild } = req.body;
 
 	const example = await db.hBOIExample.create({
 		data: {
@@ -32,8 +32,6 @@ async function createBeroepsproduct(req: NextApiRequest, res: NextApiResponse) {
 			architectureLayerId: layer,
 			activityId: activity,
 			guild,
-			level,
-			sublament,
 		},
 	});
 

@@ -115,7 +115,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 							onChange={handleChange}
 						/>
 						<Grid2 container spacing={2}>
-							<Grid2 size={4}>
+							<Grid2 size={5}>
 								<FormControl fullWidth>
 									<InputLabel id="demo-simple-select-label">
 										Architectuurlaag
@@ -137,7 +137,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 									</Select>
 								</FormControl>
 							</Grid2>
-							<Grid2 size={4}>
+							<Grid2 size={5}>
 								<FormControl fullWidth>
 									<InputLabel id="demo-simple-select-label">
 										Activiteit
@@ -161,18 +161,6 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 							</Grid2>
 							<Grid2 size={2}>
 								<TextField
-									type="number"
-									slotProps={{ htmlInput: { min: 1, max: 4 } }}
-									defaultValue={props.product.level}
-									name={"level"}
-									label="Level"
-									variant="outlined"
-									fullWidth
-									onChange={handleChange}
-								/>
-							</Grid2>
-							<Grid2 size={2}>
-								<TextField
 									id="outlined-basic"
 									name={"guild"}
 									label="Guild"
@@ -183,31 +171,11 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 								/>
 							</Grid2>
 						</Grid2>
-
-						<TextField
-							id="outlined-multiline-static"
-							label="Description"
-							name={"sublament"}
-							multiline
-							rows={8}
-							fullWidth
-							defaultValue={props.product.sublament}
-							onChange={handleChange}
-						/>
 						<Button fullWidth variant={"contained"} type={"submit"}>
 							Submit
 						</Button>
 					</Stack>
 				</form>
-				{/*<Box*/}
-				{/*    component="form"*/}
-				{/*    // sx={{ '& > :not(style)': { m: 1, width: '25ch' } }}*/}
-				{/*    noValidate*/}
-				{/*    autoComplete="off"*/}
-				{/*    submit={createBeroepsProduct}*/}
-				{/*>*/}
-
-				{/*</Box>*/}
 			</CardContent>
 		</Card>
 	) : (

@@ -31,6 +31,8 @@ export function InfoDrawerButton(props: { niveau: string; info: string }) {
 		left: "50%",
 		transform: "translate(-50%, -50%)",
 		width: "50vw",
+		height: "50vh",
+		overflow: "scroll",
 		// bgcolor: '#1f1f1f',
 		// border: '2px solid #000',
 		// boxShadow: 24,

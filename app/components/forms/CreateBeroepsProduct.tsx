@@ -108,7 +108,7 @@ export function CreateBeroepsProduct() {
 									onChange={handleChange}
 								/>
 								<Grid2 container spacing={2}>
-									<Grid2 size={4}>
+									<Grid2 size={5}>
 										<FormControl fullWidth>
 											<InputLabel id="demo-simple-select-label">
 												Architectuurlaag
@@ -129,7 +129,7 @@ export function CreateBeroepsProduct() {
 											</Select>
 										</FormControl>
 									</Grid2>
-									<Grid2 size={4}>
+									<Grid2 size={5}>
 										<FormControl fullWidth>
 											<InputLabel id="demo-simple-select-label">
 												Activiteit
@@ -152,18 +152,6 @@ export function CreateBeroepsProduct() {
 									</Grid2>
 									<Grid2 size={2}>
 										<TextField
-											type="number"
-											slotProps={{ htmlInput: { min: 1, max: 4 } }}
-											defaultValue={1}
-											name={"level"}
-											label="Level"
-											variant="outlined"
-											fullWidth
-											onChange={handleChange}
-										/>
-									</Grid2>
-									<Grid2 size={2}>
-										<TextField
 											id="outlined-basic"
 											name={"guild"}
 											label="Guild"
@@ -173,17 +161,6 @@ export function CreateBeroepsProduct() {
 										/>
 									</Grid2>
 								</Grid2>
-
-								<TextField
-									id="outlined-multiline-static"
-									label="Description"
-									name={"sublament"}
-									multiline
-									rows={8}
-									fullWidth
-									defaultValue="Write in Markdown"
-									onChange={handleChange}
-								/>
 								<Button fullWidth variant={"contained"} type={"submit"}>
 									Submit
 								</Button>

@@ -6,33 +6,30 @@ import { BeroepsProducten } from "../types/HBOI";
 import { db } from "../lib/db";
 
 export async function getBeroepsproducten(): Promise<BeroepsProducten> {
-	return (await db.hBOIExample.findMany()).reduce(
-		(acc, beroepstaakNiveau) => {
+	return (
+		await db.hBOIExample.findMany({
+			orderBy: [{ guild: "asc" }, { title: "asc" }],
+		})
+	).reduce(
+		(acc, beroepsproduct) => {
 			if (
 				!acc[
-					`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`
+					`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
 				]
 			) {
 				acc[
-					`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`
-				] = {
-					1: [],
-					2: [],
-					3: [],
-					4: [],
-				};
+					`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
+				] = [];
 			}
 
 			// @ts-ignore
 			acc[
-				`${beroepstaakNiveau.architectureLayerId} ${beroepstaakNiveau.activityId}` as `${Architectuurlaag} ${Activiteit}`
-			][`${beroepstaakNiveau.level}` as Niveau].push(beroepstaakNiveau);
+				`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
+			].push(beroepsproduct);
 			return acc;
 		},
 		{} as Partial<{
-			[key in `${Architectuurlaag} ${Activiteit}`]: Partial<{
-				[key in Niveau]: BeroepsProduct[];
-			}>;
+			[key in `${Architectuurlaag} ${Activiteit}`]: BeroepsProduct[];
 		}>,
 	) as BeroepsProducten;
 }

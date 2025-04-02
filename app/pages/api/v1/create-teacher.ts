@@ -17,7 +17,7 @@ export default async function handler(
 		where: { role: "teacher" },
 	});
 	if (existingTeacher) {
-		return res.status(400).json({ message: "Teacher already exists" });
+		return res.status(400).json({ message: "Account already exists" });
 	}
 
 	// Hash password and create user
@@ -28,5 +28,5 @@ export default async function handler(
 
 	return res
 		.status(201)
-		.json({ message: "Teacher account created successfully" });
+		.json({ message: "Account created successfully" });
 }

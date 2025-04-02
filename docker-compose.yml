@@ -1,6 +1,4 @@
-version: "3.9"
-
-services: 
+services:
   watchtower:
     image: v2tec/watchtower
     container_name: leveling-education-framework-watchtower

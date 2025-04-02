@@ -5,7 +5,6 @@ import { NavigationCardButton } from "../components/NavigationCardButton";
 import { NavigationCard } from "../components/NavigationCard";
 import { useRouter } from "next/router";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { filterBeroepstaken } from "../util/filterBeroepstaken";
 import {
 	architecture_layers,
 	Architectuurlaag,
@@ -14,9 +13,9 @@ import { Activiteit, activities } from "../types/Activiteit";
 import DefaultErrorPage from "next/error";
 import { getBeroepsproducten } from "../util/getBeroepsproducten";
 import { LevelsCardBeroepsproduct } from "../components/LevelsCardBeroepsproduct";
-import { BeroepsProduct } from "../types/BeroepsProduct";
 import { CreateBeroepsProduct } from "../components/forms/CreateBeroepsProduct";
 import { useSession } from "next-auth/react";
+import { filterBeroepsproducten } from "../util/filterBeroepsproducten";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	// migrateToNewFileLayout()
@@ -59,13 +58,10 @@ export default function Beroepsproducten({
 	)
 		return <DefaultErrorPage statusCode={404} />;
 
-	const filteredBeroepstaken = filterBeroepstaken<BeroepsProduct[]>(
-		beroepstaken,
-		{
-			activiteit,
-			architectuurlaag,
-		},
-	);
+	const filteredBeroepstaken = filterBeroepsproducten(beroepstaken, {
+		activiteit,
+		architectuurlaag,
+	});
 
 	return (
 		<>
@@ -116,11 +112,11 @@ export default function Beroepsproducten({
 					</Grid2>
 				</Grid2>
 				{/*<Grid2 spacing={2} size={12}>*/}
-				{Object.entries(filteredBeroepstaken).map(([beroepstaakKey, item]) => (
+				{Object.entries(filteredBeroepstaken).map(([beroepstaakKey, items]) => (
 					<LevelsCardBeroepsproduct
 						key={beroepstaakKey}
 						title={beroepstaakKey}
-						item={item}
+						items={items}
 					/>
 				))}
 				{/*</Grid2>*/}

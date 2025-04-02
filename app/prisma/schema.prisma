@@ -58,10 +58,8 @@ model HBOIExample {
   architectureLayerId String
   activity            Activity          @relation(fields: [activityId], references: [activity])
   activityId          String
-  level               Int
   guild               String
   title               String
-  sublament           String?
 }
 
 model User {
