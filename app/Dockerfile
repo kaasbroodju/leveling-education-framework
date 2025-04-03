@@ -43,6 +43,10 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Create necessary directories and set permissions
+RUN mkdir -p /home/nextjs/.npm && \
+    chown -R nextjs:nodejs /home/nextjs/.npm
+
 COPY --from=builder /app/public ./public
 
 # Automatically leverage output traces to reduce image size
@@ -52,9 +56,16 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Copy Prisma schema & migrations
 COPY --from=builder /app/prisma ./prisma
-# Ensure Prisma client is available
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 
+# Copy full Prisma client
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+
+# Install runtime dependencies for Prisma
+RUN apk add --no-cache libc6-compat openssl
+
+# Set proper permissions on the app directory
+RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
