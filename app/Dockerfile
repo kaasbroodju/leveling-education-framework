@@ -43,10 +43,6 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Create necessary directories and set permissions
-RUN mkdir -p /home/nextjs/.npm && \
-    chown -R nextjs:nodejs /home/nextjs/.npm
-
 COPY --from=builder /app/public ./public
 
 # Automatically leverage output traces to reduce image size
@@ -54,12 +50,14 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Copy package.json (needed for scripts)
+COPY --from=builder /app/package.json ./package.json
+
+# Copy the entire node_modules to ensure Prisma and all dependencies are available
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+
 # Copy Prisma schema & migrations
 COPY --from=builder /app/prisma ./prisma
-
-# Copy full Prisma client
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 
 # Install runtime dependencies for Prisma
 RUN apk add --no-cache libc6-compat openssl
@@ -74,4 +72,4 @@ EXPOSE 3000
 ENV PORT 3000
 
 # Run Prisma migrations before starting the app
-CMD ["sh", "-c", "npx prisma migrate deploy && node server.js"]
+CMD ["sh", "-c", "node -e \"const { execSync } = require('child_process'); try { execSync('npx prisma migrate deploy', {stdio: 'inherit'}); } catch (error) { console.error('Migration failed but continuing startup'); }\" && node server.js"]
