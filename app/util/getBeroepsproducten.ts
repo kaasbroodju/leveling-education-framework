@@ -5,6 +5,7 @@ import { BeroepsProducten } from "../types/HBOI";
 import { db } from "../lib/db";
 
 export async function getBeroepsproducten(): Promise<BeroepsProducten> {
+	console.log(process.env.USE_MOCK_DATA, process.env.USE_MOCK_DATA === "true")
 	if (process.env.USE_MOCK_DATA === "true") {
 		return {} as BeroepsProducten;
 	}
