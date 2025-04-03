@@ -9,26 +9,25 @@ export async function getBeroepsproducten(): Promise<BeroepsProducten> {
 		await db.hBOIExample.findMany({
 			orderBy: [{ guild: "asc" }, { title: "asc" }],
 		})
-	).reduce(
-		(acc, beroepsproduct) => {
-			if (
-				!acc[
-					`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
-				]
-			) {
-				acc[
-					`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
-				] = [];
-			}
-
-			// @ts-expect-error undefined
+	).reduce<
+		Partial<{
+			[key in `${Architectuurlaag} ${Activiteit}`]: BeroepsProduct[];
+		}>
+	>((acc, beroepsproduct) => {
+		if (
+			!acc[
+				`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
+			]
+		) {
 			acc[
 				`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
-			].push(beroepsproduct as BeroepsProduct);
-			return acc;
-		},
-		{} as Partial<{
-			[key in `${Architectuurlaag} ${Activiteit}`]: BeroepsProduct[];
-		}>,
-	) as BeroepsProducten;
+			] = [];
+		}
+
+		// @ts-expect-error undefined
+		acc[
+			`${beroepsproduct.architectureLayerId} ${beroepsproduct.activityId}` as `${Architectuurlaag} ${Activiteit}`
+		].push(beroepsproduct as BeroepsProduct);
+		return acc;
+	}, {}) as BeroepsProducten;
 }
