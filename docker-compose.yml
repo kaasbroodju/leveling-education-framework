@@ -20,7 +20,7 @@ services:
 
   db:
     image: postgres:latest
-    restart: always
+    restart: unless-stopped
     environment:
       POSTGRES_DB: lef
       POSTGRES_PASSWORD: LEF
