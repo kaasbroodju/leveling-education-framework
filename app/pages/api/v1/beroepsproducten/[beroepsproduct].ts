@@ -9,6 +9,7 @@ export default async function handler(
 ) {
 	const session = await getServerSession(req, res, authOptions);
 
+	// @ts-expect-error undefined
 	if (!session || session.user.role !== "teacher") {
 		return res.status(403).json({ error: "Unauthorized" });
 	}

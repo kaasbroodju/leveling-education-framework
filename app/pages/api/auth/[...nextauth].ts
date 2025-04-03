@@ -40,17 +40,13 @@ export const authOptions: NextAuthOptions = {
 		}),
 	],
 	callbacks: {
-		async session({
-			session,
-			token,
-		}: {
-			session: { user: { role: string } };
-			token: { role: string };
-		}) {
+		async session({ session, token }) {
+			// @ts-expect-error undefined
 			session.user.role = token.role;
 			return session;
 		},
-		async jwt({ token, user }: { token: string; user: User | null }) {
+		async jwt({ token, user }) {
+			// @ts-expect-error undefined
 			if (user) token.role = user.role;
 			return token;
 		},
