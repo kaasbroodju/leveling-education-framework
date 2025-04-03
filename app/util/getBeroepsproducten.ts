@@ -5,11 +5,11 @@ import { BeroepsProducten } from "../types/HBOI";
 import { db } from "../lib/db";
 
 export async function getBeroepsproducten(): Promise<BeroepsProducten> {
-	return (
-		await db.hBOIExample.findMany({
-			orderBy: [{ guild: "asc" }, { title: "asc" }],
-		})
-	).reduce<
+	const products = (await db.hBOIExample.findMany({
+		orderBy: [{ guild: "asc" }, { title: "asc" }],
+	})) as BeroepsProduct[];
+
+	return products.reduce<
 		Partial<{
 			[key in `${Architectuurlaag} ${Activiteit}`]: BeroepsProduct[];
 		}>
