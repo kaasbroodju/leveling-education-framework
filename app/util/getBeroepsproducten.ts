@@ -5,6 +5,9 @@ import { BeroepsProducten } from "../types/HBOI";
 import { db } from "../lib/db";
 
 export async function getBeroepsproducten(): Promise<BeroepsProducten> {
+	if (process.env.USE_MOCK_DATA === "true") {
+		return {} as BeroepsProducten;
+	}
 	const products = (await db.hBOIExample.findMany({
 		orderBy: [{ guild: "asc" }, { title: "asc" }],
 	})) as BeroepsProduct[];
