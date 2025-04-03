@@ -14,9 +14,6 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-# Install Prisma CLI globally
-RUN npm install -g prisma
-
 # Rebuild the source code only when needed
 FROM node:22-alpine AS builder
 WORKDIR /app
