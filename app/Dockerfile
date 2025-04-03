@@ -66,4 +66,4 @@ EXPOSE 3000
 ENV PORT 3000
 
 # Run Prisma migrations before starting the app
-CMD ["sh", "-c", "prisma migrate deploy && node server.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy && node server.js"]
