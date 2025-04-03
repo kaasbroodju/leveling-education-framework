@@ -32,7 +32,7 @@ export default function LoginPage() {
 		if (res?.error) {
 			setError("Invalid email or password.");
 		} else {
-			window.location.href = "/login"; // Redirect on success
+			window.location.href = "/"; // Redirect on success
 		}
 	};
 

@@ -66,6 +66,7 @@ export function CreateBeroepsProduct() {
 		e.preventDefault();
 
 		await createBeroepsproduct(formData);
+		setOpen(false);
 	};
 
 	return (

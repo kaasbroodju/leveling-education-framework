@@ -61,6 +61,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 			window.confirm(`Are you sure you want to delete ${props.product.title}`)
 		) {
 			await deleteBeroepsproduct(props.product.id);
+			setOpen(false);
 		}
 	};
 
@@ -84,6 +85,7 @@ export function BeroepsProductBadge(props: { product: BeroepsProduct }) {
 		e.preventDefault();
 
 		await updateBeroepsproduct(props.product.id, formData);
+		setOpen(false);
 	};
 
 	const cardContent = isLoggedIn ? (

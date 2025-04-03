@@ -14,6 +14,8 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
+# Install Prisma CLI globally
+RUN npm install -g prisma
 
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
@@ -50,10 +52,17 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Copy Prisma schema & migrations
+COPY --from=builder /app/prisma ./prisma
+# Ensure Prisma client is available
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
+
+
 USER nextjs
 
 EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["node", "server.js"]
+# Run Prisma migrations before starting the app
+CMD ["sh", "-c", "prisma migrate deploy && node server.js"]

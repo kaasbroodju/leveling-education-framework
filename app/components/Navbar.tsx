@@ -69,7 +69,7 @@ export default function DrawerAppBar({ drawerWidth }: { drawerWidth: number }) {
 								color="inherit"
 								aria-label="logout"
 								edge="end"
-								onClick={() => signOut({ callbackUrl: window.location.href })}
+								onClick={async () => await signOut({ callbackUrl: "/" })}
 								sx={{ width: "56px" }}
 							>
 								<Logout />

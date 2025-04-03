@@ -32,6 +32,79 @@ export default function About() {
 		<Grid2 container spacing={2}>
 			<Grid2 size={{ xs: 12, sm: 6 }}>
 				<Card>
+					<CardHeader title={intl.formatMessage({ id: "CONTRIBUTORS" })} />
+
+					<CardMedia
+						component="img"
+						height={cardMediaHeight}
+						image="/thankyou.png"
+						alt="Miffy saying thank you with Utrecht Science Park on the background"
+					/>
+					<CardContent>
+						<List sx={{ width: "100%" }}>
+							<Contributor
+								avatarImageSrc="/fotovanmij.jpeg"
+								name="Luca Bergman"
+								outsideSrc="https://www.linkedin.com/in/luca-bergman-30b28b203/"
+								description={intl.formatMessage({
+									id: "THANK_YOU_LUCA_BERGMAN_DESC",
+								})}
+							/>
+							<Contributor
+								avatarImageSrc="/kevindemeijer.jpeg"
+								name="Kevin de Meijer"
+								outsideSrc="https://nl.linkedin.com/in/kevindemeijer"
+								description={intl.formatMessage({
+									id: "THANK_YOU_KEVIN_DE_MEIJER_DESC",
+								})}
+							/>
+							<Contributor
+								name="Gideon Swaak"
+								description={intl.formatMessage({
+									id: "THANK_YOU_GIDEON_SWAAK_DESC",
+								})}
+							/>
+						</List>
+					</CardContent>
+				</Card>
+			</Grid2>
+			<Grid2 size={{ xs: 12, sm: 6 }}>
+				<Card>
+					<CardHeader title={intl.formatMessage({ id: "MADE_POSSIBLE_BY" })} />
+
+					<CardMedia
+						component="img"
+						height={cardMediaHeight}
+						image={
+							selectedTheme === "light" ? "/OI_Black.svg" : "/OI_White.svg"
+						}
+						alt="Open-ICT logo"
+					/>
+					<CardContent>
+						<Typography variant="h5">Open-ICT</Typography>
+						<List>
+							<ListItemLink
+								href="https://www.hu.nl/voltijd-opleidingen/open-ict"
+								text={intl.formatMessage({ id: "ABOUT_EDUCATION_LINK_TEXT" })}
+								icon={<SchoolIcon />}
+							/>
+							<ListItemLink
+								href="https://husite.nl/open-ict/"
+								text={intl.formatMessage({ id: "ABOUT_EDUCATION_SITE_TEXT" })}
+								icon={<WebIcon />}
+							/>
+							<ListItemLink
+								href="https://github.com/kaasbroodju/leveling-education-framework"
+								text="GitHub"
+								icon={<GitHubIcon />}
+							/>
+							<ListItemLink href="/login" text={"Log in"} icon={<Login />} />
+						</List>
+					</CardContent>
+				</Card>
+			</Grid2>
+			<Grid2 size={{ xs: 12, sm: 6 }}>
+				<Card>
 					<CardHeader title={intl.formatMessage({ id: "MADE_BY" })} />
 					<CardMedia
 						component="img"
@@ -96,81 +169,6 @@ export default function About() {
 									</ListItemButton>
 								</a>
 							</ListItem>
-						</List>
-					</CardContent>
-				</Card>
-			</Grid2>
-			<Grid2 size={{ xs: 12, sm: 6 }}>
-				<Card>
-					<CardHeader title={intl.formatMessage({ id: "MADE_POSSIBLE_BY" })} />
-
-					<CardMedia
-						component="img"
-						height={cardMediaHeight}
-						image={
-							selectedTheme === "light" ? "/OI_Black.svg" : "/OI_White.svg"
-						}
-						alt="Open-ICT logo"
-					/>
-					<CardContent>
-						<Typography variant="h5">Open-ICT</Typography>
-						<List>
-							<ListItemLink
-								href="https://www.hu.nl/voltijd-opleidingen/open-ict"
-								text={intl.formatMessage({ id: "ABOUT_EDUCATION_LINK_TEXT" })}
-								icon={<SchoolIcon />}
-							/>
-							<ListItemLink
-								href="https://husite.nl/open-ict/"
-								text={intl.formatMessage({ id: "ABOUT_EDUCATION_SITE_TEXT" })}
-								icon={<WebIcon />}
-							/>
-							<ListItemLink href="/login" text={"Log in"} icon={<Login />} />
-						</List>
-					</CardContent>
-				</Card>
-			</Grid2>
-			<Grid2 size={{ xs: 12, sm: 6 }}>
-				<Card>
-					<CardHeader title={intl.formatMessage({ id: "CONTRIBUTORS" })} />
-
-					<CardMedia
-						component="img"
-						height={cardMediaHeight}
-						image="/thankyou.gif"
-						alt="Thank you gif"
-					/>
-					<CardContent>
-						<List sx={{ width: "100%" }}>
-							<Contributor
-								avatarImageSrc="/kevindemeijer.jpeg"
-								name="Kevin de Meijer"
-								outsideSrc="https://nl.linkedin.com/in/kevindemeijer"
-								description={intl.formatMessage({
-									id: "THANK_YOU_KEVIN_DE_MEIJER_DESC",
-								})}
-							/>
-							<Contributor
-								name="Gideon Swaak"
-								description={intl.formatMessage({
-									id: "THANK_YOU_GIDEON_SWAAK_DESC",
-								})}
-							/>
-						</List>
-					</CardContent>
-				</Card>
-			</Grid2>
-			<Grid2 size={{ xs: 12, sm: 6 }}>
-				<Card>
-					<CardHeader title={intl.formatMessage({ id: "HELPFUL_LINKS" })} />
-
-					<CardContent>
-						<List sx={{ width: "100%" }}>
-							<ListItemLink
-								href="https://github.com/spark-156/leveling-education-framework"
-								text="GitHub source code"
-								icon={<GitHubIcon />}
-							/>
 						</List>
 					</CardContent>
 				</Card>
