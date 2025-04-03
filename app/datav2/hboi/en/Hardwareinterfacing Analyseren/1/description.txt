@@ -1,0 +1,9 @@
+Verzamelen van kwaliteitseisen en acceptatiecriteria voor een systeem, bijv. een embedded of ander technisch (deel)systeem op basis van een domeinanalyse 
+
+of
+
+Beschrijven van de (fysieke) architectuur van een systeem, bijv. een embedded of ander technisch (deel)systeem 
+
+of
+
+Beschrijven van de toepasbaarheid van actuatoren en sensoren

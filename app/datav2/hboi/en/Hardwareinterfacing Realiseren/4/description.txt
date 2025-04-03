@@ -1,0 +1,6 @@
+Realiseren van een compleet systeem waarbij gebruik gemaakt wordt van hardware synthese (VHDL) of artificial intelligence 
+
+of
+
+Realiseren van een compleet systeem met machine learning-elementen inclusief netwerk, hardware en systeemsoftware 
+

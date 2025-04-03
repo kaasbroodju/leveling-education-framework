@@ -1,0 +1,6 @@
+Bouwen en beschikbaar stellen van (zelflerende) softwaresysteem gebaseerd op een model, algoritme of data met wetenschappelijk aantoonbare correcte werking en antwoorden gevend op ethische vragen 
+
+of
+
+Opstellen en uitvoeren van (herbruikbare) compliancytesten 
+

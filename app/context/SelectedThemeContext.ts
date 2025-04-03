@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { ThemesEnum } from "../types/ThemesEnum";
 
 export const SelectedThemeContext = createContext({
-  selectedTheme: ThemesEnum.Light,
-  activeTheme: lightTheme,
-  toggleSelectedTheme: () => {},
+	selectedTheme: ThemesEnum.Light,
+	activeTheme: lightTheme,
+	toggleSelectedTheme: () => {},
 });

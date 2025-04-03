@@ -1,0 +1,9 @@
+Uitvoeren van een requirementsanalyse voor een (deel)systeem, inclusief hardware- en software, rekening houdend met domeinaspecten en relevante kwaliteitseigenschappen waaronder security, safety en duurzaamheid 
+
+of
+
+Uitvoeren van een protocolanalyse 
+
+of
+
+Opstellen van een acceptatietest voor een systeem aan de hand van de kwaliteitseisen

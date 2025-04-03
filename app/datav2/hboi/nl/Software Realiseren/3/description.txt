@@ -1,0 +1,9 @@
+Bouwen, testen en beschikbaar stellen van een schaalbaar softwaresysteem dat aansluit bij bestaande systemen, eventueel in de cloud, volgens een ontworpen of gegenereerde architectuur met onderbouwd gebruik van frameworks 
+
+of
+
+Opstellen en uitvoeren van regressie-, integratie- en systeemtesten en de uitkomsten ervan evalueren, verwerken en opvolgen 
+
+of
+
+Refactoren van een bestaande applicatie m.b.v. design patterns

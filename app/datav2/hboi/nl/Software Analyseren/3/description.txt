@@ -1,0 +1,5 @@
+Uitvoeren van een requirementsanalyse voor een softwaresysteem met verschillende stakeholders in een context van bestaande systemen 
+
+of
+
+Definiëren van acceptatiecriteria aan de hand van kwaliteitseigenschappen en een uitgevoerde risicoanalyse met onder andere aandacht voor duurzaamheids-, security- en privacyaspecten en toegankelijkheid 

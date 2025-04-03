@@ -1,0 +1,29 @@
+# Voorbeeld
+
+Stel je hebt een uitdaging/vraagstuk waar je een oplossing voor wilt vinden. Het idee van niveau 3 van Overzicht Creëren is dat je het komen tot de aanpak van het probleem/uitdaging/vraagstuk methodisch gaat doen. Hiervoor stel je in het algemeen een research story op à la "Als team willen we weten hoe we het probleem effectief kunnen aanpakken zodat wij tot een goed onderbouwde oplossing kunnen komen". Deze story kan je natuurlijk aanpassen met specifieke details, maar wat belangrijk is is dat ze vanuit de story de taken en methodes kunnen benoemen.
+
+---
+
+## RS: aanpak vinden voor uitdaging
+
+**Taken:**
+
+- Vinden van mogelijke aanpakken (Community Research, Available Product Analysis, Expert Interview, etc...)
+- Criteria opstellen voor keuze van de aanpak (Brainstorm, Literature Study, Expert Interview, etc...)
+- Aanpakken scoren op basis van criteria (Multi-criteria Decision Making/MCDM, etc....)
+- Conclusie trekken
+- Opstellen van acceptatie- en kwaliteitscriteria voor de op te leveren producten uit de gekozen aanpak
+
+**Tussenproducten: (bijvoorbeeld als attachment aan deze research story)**
+
+- Overzicht van de mogelijke aanpakken
+- Lijst van selectie criteria
+- Gevulde tabel met conclusie uit MCDM
+
+**Deliverables:**
+
+- Een gekozen aanpak (in stories, wiki bijdrage, paper, rapport, etc...)
+
+---
+
+Door jouw aanpak-research story uit te voeren laat je zien dat je op een methodische manier gekomen bent tot een aanpak. Je kan ook laten zien door acceptatie- en kwaliteitscriteria op te stellen aan welke kwaliteit dat moet voldoen. Als jouw aanpak-research story is uitgevoerd weet je wat je moet gaan doen om tot een oplossing te komen. Vaak zitten daar weer research stories of taken bij om uiteindelijk ook de onderbouwing van je deliverables/producten voor je opdrachtgever te kunnen geven.

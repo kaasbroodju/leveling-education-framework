@@ -1,3 +1,3 @@
 export enum LocalStorageEnum {
-  Theme = "theme",
+	Theme = "theme",
 }

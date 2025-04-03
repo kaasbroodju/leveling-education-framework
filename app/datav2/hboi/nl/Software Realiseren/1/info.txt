@@ -1,0 +1,14 @@
+# Opmerkingen
+
+Denk bij het bevragen van een database ook aan het bevragen van een (REST API) backend vanuit de frontend.
+
+# Beroepsproducten
+
+Bij het uitvoeren van deze beroepstaak kunnen onder andere de volgende beroepstaken worden gemaakt:
+- Werkende code;
+- Werkende database;
+- Webpagina's/website.
+
+# Links en bronnen
+
+- [Backend development](https://www.youtube.com/playlist?list=PLKssF68zVDQ7Byksmqyi69MyTtxunGBEN)

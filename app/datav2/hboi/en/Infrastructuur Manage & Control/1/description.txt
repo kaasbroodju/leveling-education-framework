@@ -1,0 +1,2 @@
+Opzetten en documenteren van standaardbeheerprocessen en werkprocedures voor beheer van een eenvoudige, bijvoorbeeld cloudgebaseerde, infrastructuur 
+

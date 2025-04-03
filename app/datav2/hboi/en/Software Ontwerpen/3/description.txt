@@ -1,0 +1,9 @@
+Opstellen van een softwarearchitectuur voor een softwaresysteem, opgebouwd uit bestaande en nieuwe systemen, rekening houdend met meerdere stakeholders en kwaliteitseisen 
+
+of
+
+Opstellen van teststrategie voor systeem- en compliancytesten 
+
+of
+
+Ontwerpen van de data-architectuur en de modelarchitectuur inclusief een teststrategie voor de data en de machine learning-modellen

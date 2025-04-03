@@ -1,0 +1,5 @@
+Ontwerpen van samenhangende organisatieprocessen: functionele organisatiestructuur, procesmanagement en informatievoorziening, rekening houdend met security en privacywetgeving 
+
+of
+
+Ontwerpen van de interfaces voor een applicatie in het applicatielandschap (mappings) 

@@ -6,34 +6,34 @@ import { Box, Stack } from "@mui/material";
 import { Logo } from "./Logo";
 
 export default function ToolbarTitle() {
-  return (
-    <>
-      <Typography
-        variant="h6"
-        component="div"
-        noWrap
-        sx={{ display: { xs: "none", sm: "block" } }}
-      >
-        <Link href="/" style={{ width: "100%" }}>
-          <Stack width={"100%"} alignItems="center" direction="row" gap={2}>
-            <Logo />
-            <FormattedMessage id={"TITLE_LONG"} />
-          </Stack>
-        </Link>
-      </Typography>
-      <Typography
-        variant="h6"
-        component="div"
-        noWrap
-        sx={{ display: { xs: "block", sm: "none" } }}
-      >
-        <Link href="/" style={{ width: "100%" }}>
-          <Stack width={"100%"} alignItems="center" direction="row" gap={2}>
-            <Logo />
-          </Stack>
-        </Link>
-      </Typography>
-      <Box flexGrow={1} />
-    </>
-  );
+	return (
+		<>
+			<Typography
+				variant="h6"
+				component="div"
+				noWrap
+				sx={{ display: { xs: "none", sm: "block" } }}
+			>
+				<Link href="/" style={{ width: "100%" }}>
+					<Stack width={"100%"} alignItems="center" direction="row" gap={2}>
+						<Logo />
+						<FormattedMessage id={"TITLE_LONG"} />
+					</Stack>
+				</Link>
+			</Typography>
+			<Typography
+				variant="h6"
+				component="div"
+				noWrap
+				sx={{ display: { xs: "block", sm: "none" } }}
+			>
+				<Link href="/" style={{ width: "100%" }}>
+					<Stack width={"100%"} alignItems="center" direction="row" gap={2}>
+						<Logo />
+					</Stack>
+				</Link>
+			</Typography>
+			<Box flexGrow={1} />
+		</>
+	);
 }

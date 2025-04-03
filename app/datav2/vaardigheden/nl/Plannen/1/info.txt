@@ -1,0 +1,10 @@
+# Opmerkingen
+
+Er staat in de beschrijving 'Team'. Dat is niet alleen je squad, maar denk daarbij ook vooral aan de tribe en coach. Rekening houden met hoeveel capaciteit er is in de tribe voor reviews en kennisdelingen is een belangrijk onderdeel van je planning.
+
+Met kortetermijnplanning moet je denken aan een planning voor enkele dagen tot ongeveer een sprint. 
+
+# Mogelijke bewijsstukken
+
+- Overzicht van je checkins/checkouts (met benoeming van de taken die je gaat doen/hebt gedaan)
+- Overzicht van het sprintboard (inclusief status van de stories en taken) van het begin en het eind van de sprint.

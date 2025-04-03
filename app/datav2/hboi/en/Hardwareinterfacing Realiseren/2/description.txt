@@ -1,0 +1,6 @@
+Realiseren van een ontworpen (deel van een) systeem en met behulp van software de koppelingen met hardwarecomponenten realiseren 
+
+of
+
+Schrijven en testen van ontworpen (delen van) systemen en hardware interfaces (bijv. applicatiedriver-software) 
+

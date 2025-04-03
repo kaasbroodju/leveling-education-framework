@@ -1,6 +1,6 @@
-const withPWA = require('next-pwa')({
-  dest: 'public'
-})
+const withPWA = require("next-pwa")({
+  dest: "public",
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,14 +8,14 @@ const nextConfig = {
   i18n: {
     // These are all the lang you want to support in
     // your application
-    locales: ['en', 'nl'],
+    locales: ["en", "nl"],
     // This is the default locale you want to be used when visiting
     // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'nl',
-    localeDetection: false
+    defaultLocale: "nl",
+    localeDetection: false,
   },
   // Docker support
-  output: 'standalone'
-}
+  output: "standalone",
+};
 
-module.exports = withPWA(nextConfig)
+module.exports = withPWA(nextConfig);
