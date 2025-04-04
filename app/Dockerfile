@@ -53,6 +53,12 @@ ENV PORT 3000
 
 # We'll set a default DATABASE_URL that will be overridden by docker-compose
 ENV DATABASE_URL "postgresql://lef:LEF@db:5432/lef?schema=public"
+ENV NEXTAUTH_URL=http://localhost:3000
+ENV NEXTAUTH_SECRET=your_random_secret
+
+# Run Prisma commands before starting the app (prisma deploy or prisma generate)
+RUN npx prisma migrate deploy  # To apply database migrations
+RUN npx prisma generate  # To generate the Prisma client
 
 # Command to run the application after waiting for the database
 CMD ["node", "server.js"]
