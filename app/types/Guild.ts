@@ -14,10 +14,10 @@ export type Guild = (typeof guilds)[number];
 export const guild_colours = {
 	AI: "#4B0082",
 	BE: "#B71C1C",
-	BIM: "#005F5F",
+	BIM: "#9A7300",
 	CSC: "#006400",
 	FE: "#D35400",
 	"UI/UX": "#880E4F",
 	TI: "#001F3F",
-	GD: "#9A7300",
+	GD: "#8950C7",
 } as { [key in Guild]: string };
