@@ -22,51 +22,51 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 
-export function getIcon(query_param_value: string) {
+export function getIcon(query_param_value: string, fontSize = 48) {
 	switch (query_param_value) {
 		case "Juiste kennis ontwikkelen":
-			return <MenuBook sx={{ fontSize: 48 }} />;
+			return <MenuBook sx={{ fontSize }} />;
 		case "Kwalitatief product maken":
-			return <Biotech sx={{ fontSize: 48 }} />;
+			return <Biotech sx={{ fontSize }} />;
 		case "Overzicht creëren":
-			return <Explore sx={{ fontSize: 48 }} />;
+			return <Explore sx={{ fontSize }} />;
 		case "Kritisch oordelen":
-			return <Announcement sx={{ fontSize: 48 }} />;
+			return <Announcement sx={{ fontSize }} />;
 		case "Samenwerken":
-			return <Handshake sx={{ fontSize: 48 }} />;
+			return <Handshake sx={{ fontSize }} />;
 		case "Boodschap delen":
-			return <CoPresent sx={{ fontSize: 48 }} />;
+			return <CoPresent sx={{ fontSize }} />;
 		case "Plannen":
-			return <CalendarMonth sx={{ fontSize: 48 }} />;
+			return <CalendarMonth sx={{ fontSize }} />;
 		case "Flexibel opstellen":
-			return <AccessibilityNew sx={{ fontSize: 48 }} />;
+			return <AccessibilityNew sx={{ fontSize }} />;
 		case "Pro-actief handelen":
-			return <DirectionsRun sx={{ fontSize: 48 }} />;
+			return <DirectionsRun sx={{ fontSize }} />;
 		case "Reflecteren":
-			return <Psychology sx={{ fontSize: 48 }} />;
+			return <Psychology sx={{ fontSize }} />;
 		// architectuurlaag
 		case "Gebruikersinteractie":
-			return <SmartButton sx={{ fontSize: 48 }} />;
+			return <SmartButton sx={{ fontSize }} />;
 		case "Organisatieprocessen":
-			return <Domain sx={{ fontSize: 48 }} />;
+			return <Domain sx={{ fontSize }} />;
 		case "Infrastructuur":
-			return <Storage sx={{ fontSize: 48 }} />;
+			return <Storage sx={{ fontSize }} />;
 		case "Software":
-			return <Laptop sx={{ fontSize: 48 }} />;
+			return <Laptop sx={{ fontSize }} />;
 		case "Hardwareinterfacing":
-			return <Memory sx={{ fontSize: 48 }} />;
+			return <Memory sx={{ fontSize }} />;
 		// activiteit
 		case "Analyseren":
-			return <Biotech sx={{ fontSize: 48 }} />;
+			return <Biotech sx={{ fontSize }} />;
 		case "Adviseren":
-			return <Chat sx={{ fontSize: 48 }} />;
+			return <Chat sx={{ fontSize }} />;
 		case "Ontwerpen":
-			return <DesignServices sx={{ fontSize: 48 }} />;
+			return <DesignServices sx={{ fontSize }} />;
 		case "Realiseren":
-			return <Build sx={{ fontSize: 48 }} />;
+			return <Build sx={{ fontSize }} />;
 		case "Manage & Control":
-			return <Tune sx={{ fontSize: 48 }} />;
+			return <Tune sx={{ fontSize }} />;
 		default:
-			return <MenuIcon sx={{ fontSize: 48 }} />;
+			return <MenuIcon sx={{ fontSize }} />;
 	}
 }

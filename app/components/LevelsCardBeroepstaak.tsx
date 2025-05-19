@@ -6,18 +6,31 @@ import {
 	Grid2,
 	Stack,
 	Typography,
+	useTheme,
 } from "@mui/material";
 import { Level } from "./Level";
 import { Niveau } from "../types/Niveau";
 import { getIcon } from "../util/vaardighedenToIcon";
-import { getColour } from "../util/vaardighedenToColour";
 
-export function LevelsCard(props: {
+export function LevelsCardBeroepstaak(props: {
 	title: string;
 	item: { [key in Niveau]: { title: string; info: string | null } };
 }) {
-	const icon = getIcon(props.title, 32);
-	const colour = getColour(props.title);
+	const index = props.title.indexOf(" ");
+
+	let laag, activiteit;
+	if (index !== -1) {
+		laag = props.title.slice(0, index);
+		activiteit = props.title.slice(index + 1);
+	} else {
+		laag = props.title;
+		activiteit = "";
+	}
+
+	const laagIcon = getIcon(laag, 32);
+	const activiteitIcon = getIcon(activiteit, 32);
+	const theme = useTheme();
+	const colour = theme.palette.primary.main;
 	return (
 		<Grid2 size={12}>
 			<Card component={"section"}>
@@ -28,7 +41,8 @@ export function LevelsCard(props: {
 							<Typography variant={"h5"} component={"h1"}>
 								{props.title}
 							</Typography>
-							{icon}
+							{laagIcon}
+							{activiteitIcon}
 						</Stack>
 					}
 				/>

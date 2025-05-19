@@ -6,7 +6,6 @@ import { NavigationCard } from "../components/NavigationCard";
 import { useRouter } from "next/router";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { filterBeroepstaken } from "../util/filterBeroepstaken";
-import { LevelsCard } from "../components/LevelsCard";
 import {
 	architecture_layers,
 	Architectuurlaag,
@@ -14,6 +13,7 @@ import {
 import { Activiteit, activities } from "../types/Activiteit";
 import DefaultErrorPage from "next/error";
 import { getBeroepstaken } from "../util/getBeroepstaken";
+import { LevelsCardBeroepstaak } from "../components/LevelsCardBeroepstaak";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	// static site generation
@@ -106,11 +106,11 @@ export default function Beroepstaken({
 				</Grid2>
 				<Grid2 container spacing={2}>
 					{Object.entries(filteredBeroepstaken).map(
-						([beroepstaakKey, item]) => (
-							<LevelsCard
+						([beroepstaakKey, levels]) => (
+							<LevelsCardBeroepstaak
 								key={beroepstaakKey}
 								title={beroepstaakKey}
-								item={item}
+								item={levels}
 							/>
 						),
 					)}
