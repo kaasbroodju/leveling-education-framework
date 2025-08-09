@@ -1,0 +1,10 @@
+& {
+    display: flex;
+    flex-direction: row;
+    min-height: 64px;
+    padding: 0 24px;
+    align-items: center;
+    background-color: var(--secondary-bg-color);
+    box-shadow: var(--Paper-shadow);
+    grid-area: header;
+}

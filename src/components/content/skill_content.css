@@ -1,0 +1,12 @@
+& {
+    h1, h2 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+}

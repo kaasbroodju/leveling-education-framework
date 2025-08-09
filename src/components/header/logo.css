@@ -1,0 +1,27 @@
+& {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+a {
+    width: 100%;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+
+    picture {
+        height: 40px;
+        width: 40px;
+    }
+}

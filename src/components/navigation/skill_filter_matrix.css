@@ -1,0 +1,53 @@
+& {
+    display: grid;
+    gap: 8px;
+    grid-template-areas:
+        "a b"
+        "a c";
+    grid-template-columns: 2fr 3fr;
+    height: 260px;
+
+    & > :first-child {
+        grid-area: a;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    div {
+        gap: 8px;
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
+        font-weight: 500;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
+        text-align: center;
+        border-radius: 4px;
+        /*aspect-ratio: 1.77778 / 1;*/
+    }
+
+    .product-skill {
+        background-color: #8c9ebb;
+    }
+
+    .social-skill {
+        background-color: #a2b490;
+    }
+
+    .personal-skill {
+        background-color: #d49e81;
+    }
+}
