@@ -1,0 +1,17 @@
+.guild-tag {
+    padding: 0 1ch;
+
+    border-radius: 4px;
+    min-width: 5ch;
+    line-height: 1.75;
+    font-weight: 600;
+    /*font-size: 0.875rem;*/
+    /*line-height: 1.57;*/
+    letter-spacing: 0.00714em;
+    text-align: center;
+    align-self: stretch;
+}
+
+.title {
+    padding-left: 1ch;
+}

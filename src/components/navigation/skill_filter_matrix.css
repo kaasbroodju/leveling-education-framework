@@ -6,6 +6,8 @@
         "a c";
     grid-template-columns: 2fr 3fr;
     height: 260px;
+    /*width: 100%;*/
+    /*aspect-ratio: 1.7778;*/
 
     & > :first-child {
         grid-area: a;
@@ -36,18 +38,21 @@
         text-decoration: none;
         text-align: center;
         border-radius: 4px;
-        /*aspect-ratio: 1.77778 / 1;*/
+        border: 2px solid var(--base-color);
+        background-color: var(--base-color);
+
+        &:hover, &:focus, &[lef-link-active] {
+            border-color: var(--primary-color);
+            background-color: color-mix(in srgb, var(--base-color) 90%, white 10%);
+        }
+
+        &[lef-link-active] {
+            /* Automatisch 10% lichter maken */
+            background-color: color-mix(in srgb, var(--base-color) 90%, white 10%);
+        }
     }
 
-    .product-skill {
-        background-color: #8c9ebb;
-    }
-
-    .social-skill {
-        background-color: #a2b490;
-    }
-
-    .personal-skill {
-        background-color: #d49e81;
-    }
+    .product-skill { --base-color: #8c9ebb; }
+    .social-skill { --base-color: #a2b490; }
+    .personal-skill { --base-color: #d49e81; }
 }

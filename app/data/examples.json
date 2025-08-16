@@ -1,0 +1,440 @@
+[
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "Testplan"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "CI"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "CD"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "Open API / swagger"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "Docker container/images"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "Versiebeheer (GIT)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "BE",
+    "title": "Test coverage"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "BE",
+    "title": "Code smells / statische analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "BE",
+    "title": "Code reviews"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "ERD"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "Teststrategie"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "Architectuur Patronen/bestaande componenten (2,3 Design Patterns, Design Principes, Message Brokers)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "BE",
+    "title": "Advies over stack, frameworks,  databases, etc. gebaseerd op MCD"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "BE",
+    "title": "Advies over stack, frameworks,  databases, etc. gebaseerd op analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "OOP, imperative, functioneel"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Security by design (OWASP)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Prototypen"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Services/API's restfull principes"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "C4"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "Coding conventies"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "BE",
+    "title": "Performance analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "Normaliseren"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Test driven development"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Domain driven design"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "CQRS"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "REST | gRPC | GraphQL | SOAP"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Unit tests"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Integration tests"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Functional tests"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "ORM"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Serverless (AWS/Azure)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "Event-driven architecture"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "WebSockets"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "Competitor Analysis"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "User Research"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "Affinity Diagrams"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "Personas"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "Customer Journey Mapping"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "Empathy Mapping"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "5 Whys"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "User Needs & Problems"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Goal-Oriented Design"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Product Vision"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Pain & Gains "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Business models"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Service blueprints"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Value Proposition"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "Moodboards"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "UI/UX",
+    "title": "How might we’s"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Crazy 8’s "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Storyboards"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Wireflows"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Lo-fi design"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Wireframes"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Flow Charts"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "UI/UX",
+    "title": "Gamification Patterns"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "UI/UX",
+    "title": "Content & Story "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "UI/UX",
+    "title": "Responsive Design "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "UI/UX",
+    "title": "Figma components "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "UI/UX",
+    "title": "UI / UX patterns "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "UI/UX",
+    "title": "Interactive Prototype"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "Heuristic Evaluation "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "UX/UI Audit"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "A/B Testing"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "User research"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "KPI's Analysis"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "Atomic Design "
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "UI/UX",
+    "title": "Design Systems"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Game Design Document"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game Design Document"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Game Design Document"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "UI/UX",
+    "title": "Cognitive Map"
+  }
+]

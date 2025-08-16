@@ -2,15 +2,15 @@ body {
     background-color: var(--primary-bg-color);
     color: var(--primary-color);
     margin: 0;
-    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
-    margin:0;
+    /*font-family: "Roboto", "Helvetica", "Arial", "sans-serif";*/
+    /*margin:0;*/
     font-family:"Roboto","Helvetica","Arial",sans-serif;
-    font-weight:400;
-    font-size:0.875rem;
-    line-height:1.43;
-    letter-spacing:0.01071em;
-    white-space:pre-wrap;
-    word-break:break-word;
+    /*font-weight:400;*/
+    /*font-size:0.875rem;*/
+    /*line-height:1.43;*/
+    /*letter-spacing:0.01071em;*/
+    /*white-space:pre-wrap;*/
+    /*word-break:break-word;*/
 }
 a {
     color: var(--primary-color);
@@ -42,8 +42,13 @@ a {
     grid-template-rows: auto 1fr;
 }
 
-main {
-    padding: 0 240px;
+div.main-container {
     overflow-y: scroll;
     height: calc(100vh - 64px);
+}
+
+main {
+    margin: 0 auto;
+    max-width: clamp(300px, 100%, 1200px);
+    padding: 24px;
 }

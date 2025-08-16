@@ -1,0 +1,27 @@
+& {
+    h1, h2 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        column-count: 3;
+        column-gap: 40px;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.75;
+
+        > li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        > li:not(:first-child) {
+            margin-top: 8px;
+        }
+    }
+}

@@ -8,5 +8,40 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 40px;
+
+        > section > p {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+    }
+
+    .skill-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        button {
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+            aspect-ratio: 1;
+            border: none;
+            margin-left: auto;
+            padding: 8px;
+            background-color: transparent;
+
+            span {
+                color: var(--primary-color);
+                /*font-size: 24px;*/
+                /*margin-left: auto;*/
+            }
+
+            &:hover {
+                background-color: var(--tertairy-bg-color);
+            }
+        }
+
+
     }
 }

@@ -1,5 +1,7 @@
 use std::collections::{BTreeMap, HashMap};
 use serde::{Deserialize, Serialize};
+use crate::domain::Activiteit::{Adviseren, Analyseren, Manage_and_Control, Ontwerpen, Realiseren};
+use crate::domain::Architectuurlaag::{Gebruikersinteractie, Hardwareinterfacing, Infrastructuur, Organisatieprocessen, Software};
 
 #[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, PartialOrd)]
 #[derive(Ord, FromFormField)]
@@ -16,6 +18,7 @@ pub enum Skill {
         serialize = "Juiste kennis ontwikkelen",
         deserialize = "Juiste kennis ontwikkelen"
     ))]
+    #[field(value = "Juiste kennis ontwikkelen")]
     Juiste_kennis_ontwikkelen,
 
     #[serde(rename(
@@ -51,8 +54,8 @@ pub enum Skill {
     Reflecteren,
 }
 
-impl Skill {
-    pub fn to_icon(&self) -> &str {
+impl Icon for Skill {
+    fn to_icon(&self) -> &str {
         match &self {
             Skill::Overzicht_creëren => { "explore" }
             Skill::Kritisch_oordelen => {"announcement"}
@@ -66,12 +69,14 @@ impl Skill {
             Skill::Reflecteren => {"psychology"}
         }
     }
+}
 
+impl Skill {
     pub fn to_text(&self) -> &str {
         match &self {
             Skill::Overzicht_creëren => {"Overzicht creëren"}
             Skill::Kritisch_oordelen => {"Kritisch oordelen"}
-            Skill::Juiste_kennis_ontwikkelen => {"Juiste kennisontwikkelen"}
+            Skill::Juiste_kennis_ontwikkelen => {"Juiste kennis ontwikkelen"}
             Skill::Kwalitatief_product_maken => {"Kwalitatief product maken"}
             Skill::Plannen => {"Plannen"}
             Skill::Boodschap_delen => {"Boodschap delen"}
@@ -99,7 +104,18 @@ pub enum Level {
     Level4,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, FromFormField)]
+impl Level {
+    pub fn to_text(&self) -> &str {
+        match self {
+            Level::Level1 => {"Niveau 1"}
+            Level::Level2 => {"Niveau 2"}
+            Level::Level3 => {"Niveau 3"}
+            Level::Level4 => {"Niveau 4"}
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, FromFormField, Ord, PartialOrd)]
 pub enum Activiteit {
     #[serde(rename(serialize = "Analyseren", deserialize = "Analyseren"))]
     Analyseren,
@@ -120,8 +136,8 @@ pub enum Activiteit {
     Manage_and_Control,
 }
 
-impl Activiteit {
-    pub fn to_icon(&self) -> &str {
+impl Icon for Activiteit {
+    fn to_icon(&self) -> &str {
         match &self {
             Activiteit::Analyseren => {"biotech"}
             Activiteit::Adviseren => {"chat"}
@@ -130,7 +146,9 @@ impl Activiteit {
             Activiteit::Manage_and_Control => {"tune"}
         }
     }
-    
+}
+
+impl Activiteit {
     pub fn to_text(&self) -> &str {
         match &self {
             Activiteit::Manage_and_Control => {"Manage & Control"}
@@ -142,7 +160,7 @@ impl Activiteit {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, FromFormField)]
+#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, FromFormField, Ord, PartialOrd)]
 
 pub enum Architectuurlaag {
     #[serde(rename(
@@ -168,8 +186,8 @@ pub enum Architectuurlaag {
     Hardwareinterfacing,
 }
 
-impl Architectuurlaag {
-    pub fn to_icon(&self) -> &str {
+impl Icon for Architectuurlaag {
+    fn to_icon(&self) -> &str {
         match &self {
             Architectuurlaag::Gebruikersinteractie => {"smart_button"}
             Architectuurlaag::Organisatieprocessen => {"domain"}
@@ -180,7 +198,7 @@ impl Architectuurlaag {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash)]
+#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, Ord, PartialOrd)]
 
 pub enum Guild {
     #[serde(rename(serialize = "AI", deserialize = "AI"))]
@@ -213,6 +231,34 @@ pub enum Guild {
     GameDevelopment,
 }
 
+impl Guild {
+    pub fn get_short_name(&self) -> &str {
+        match &self {
+            Guild::ArtificialIntelligence => {"AI"}
+            Guild::Backend => {"BE"}
+            Guild::BusinessItManagement => {"BIT"}
+            Guild::CyberSecurityAndCloud => {"CSC"}
+            Guild::Frontend => {"FE"}
+            Guild::UIUX => {"UI/UX"}
+            Guild::Embedded => {"TI"}
+            Guild::GameDevelopment => {"GD"}
+        }
+    }
+    
+    pub fn get_color(&self) -> &str {
+        match &self {
+            Guild::ArtificialIntelligence => {"#4B0082"}
+            Guild::Backend => {"#B71C1C"}
+            Guild::BusinessItManagement => {"#9A7300"}
+            Guild::CyberSecurityAndCloud => {"#006400"}
+            Guild::Frontend => {"#D35400"}
+            Guild::UIUX => {"#880E4F"}
+            Guild::Embedded => {"#001F3F"}
+            Guild::GameDevelopment => {"#8950C7"}
+        }
+    }
+}
+
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct LevelDescription {
     pub title: String,
@@ -221,12 +267,95 @@ pub struct LevelDescription {
 
 #[derive(Debug, serde::Deserialize, serde::Serialize, Clone)]
 pub struct HBOIExampleResponse {
-    pub id: String,
-    pub architectureLayerId: Architectuurlaag,
-    pub activityId: Activiteit,
+    pub architecture_layer: Architectuurlaag,
+    pub activity: Activiteit,
     pub guild: Guild,
     pub title: String,
 }
 
 pub type VaardighedenResponseBody = BTreeMap<Skill, BTreeMap<Level, LevelDescription>>;
-pub type HBOIResponseBody = BTreeMap<String, BTreeMap<Level, LevelDescription>>;
+
+use serde::{Deserializer, Serializer};
+use std::fmt;
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+pub struct HBOIKey {
+    pub architectuurlaag: Architectuurlaag,
+    pub activiteit: Activiteit,
+}
+
+impl HBOIKey {
+    pub fn new(architectuurlaag: Architectuurlaag, activiteit: Activiteit) -> Self {
+        Self { architectuurlaag, activiteit }
+    }
+}
+
+impl fmt::Display for HBOIKey {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} {}",
+               serde_json::to_string(&self.architectuurlaag).unwrap_or_default().trim_matches('"'),
+               serde_json::to_string(&self.activiteit).unwrap_or_default().trim_matches('"'))
+    }
+}
+
+impl Serialize for HBOIKey {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        // Serialiseer beide structs naar strings en combineer ze
+        let arch_str = serde_json::to_string(&self.architectuurlaag)
+            .map_err(serde::ser::Error::custom)?
+            .trim_matches('"').to_string();
+
+        let act_str = serde_json::to_string(&self.activiteit)
+            .map_err(serde::ser::Error::custom)?
+            .trim_matches('"').to_string();
+
+        serializer.serialize_str(&format!("{} {}", arch_str, act_str))
+    }
+}
+
+impl<'de> Deserialize<'de> for HBOIKey {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let s = String::deserialize(deserializer)?;
+        let mut parts = s.splitn(2, ' ');
+
+        let arch_str = parts
+            .next()
+            .ok_or_else(|| serde::de::Error::custom("Missing architectuurlaag"))?;
+
+        let act_str = parts
+            .next()
+            .ok_or_else(|| serde::de::Error::custom("Missing activiteit"))?;
+
+        // Deserialise de string delen terug naar je structs
+        let architectuurlaag: Architectuurlaag = serde_json::from_str(&format!("\"{}\"", arch_str))
+            .map_err(serde::de::Error::custom)?;
+
+        let activiteit: Activiteit = serde_json::from_str(&format!("\"{}\"", act_str))
+            .map_err(serde::de::Error::custom)?;
+
+        Ok(HBOIKey::new(architectuurlaag, activiteit))
+    }
+}
+
+pub type HBOIResponseBody = BTreeMap<HBOIKey, BTreeMap<Level, LevelDescription>>;
+
+// pub type HBOIResponseBody = BTreeMap<String, BTreeMap<Level, LevelDescription>>;
+
+
+
+pub const PRODUCT_SKILLS: [Skill; 4] = [Skill::Overzicht_creëren, Skill::Kritisch_oordelen, Skill::Juiste_kennis_ontwikkelen, Skill::Kwalitatief_product_maken];
+pub const SOCIAL_SKILLS: [Skill; 3] = [Skill::Plannen, Skill::Boodschap_delen, Skill::Samenwerken];
+pub const PERSONAL_SKILLS: [Skill; 3] = [Skill::Flexibel_opstellen, Skill::Proactief_handelen, Skill::Reflecteren];
+pub const ARCHITECTUURLAGEN: [Architectuurlaag; 5] = [Gebruikersinteractie, Organisatieprocessen, Infrastructuur, Software, Hardwareinterfacing];
+pub const ACTIVITEITEN: [Activiteit; 5] = [Analyseren, Adviseren, Ontwerpen, Realiseren, Manage_and_Control];
+
+
+pub trait Icon {
+    fn to_icon(&self) -> &str;
+}
