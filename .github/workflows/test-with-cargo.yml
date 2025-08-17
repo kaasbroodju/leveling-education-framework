@@ -1,0 +1,56 @@
+name: Test with Cargo
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Run tests
+        run: cargo test
+
+      - name: Run tests with verbose output
+        run: cargo test -- --nocapture
+        if: failure()
+
+#  # Optional: Add additional checks
+#  check:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#
+#      - name: Install Rust
+#        uses: dtolnay/rust-toolchain@stable
+#        with:
+#          components: rustfmt, clippy
+#
+#      - name: Cache cargo registry
+#        uses: actions/cache@v4
+#        with:
+#          path: |
+#            ~/.cargo/registry
+#            ~/.cargo/git
+#            target
+#          key: ${{ runner.os }}-cargo-check-${{ hashFiles('**/Cargo.lock') }}
+#
+#      - name: Check formatting
+#        run: cargo fmt -- --check
+#
+#      - name: Run clippy
+#        run: cargo clippy -- -D warnings

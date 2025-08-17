@@ -1,0 +1,97 @@
+& {
+    display: grid;
+    gap: 8px;
+    grid-template-areas:
+        "a b"
+        "a c";
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
+
+    @media only screen and (max-width: 1000px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a"
+            "b"
+            "c";
+
+        grid-template-rows: repeat(3, auto);
+    }
+
+
+    height: 260px;
+
+    @media only screen and (max-width: 1000px) {
+        height: unset;
+    }
+    /*width: 100%;*/
+    /*aspect-ratio: 1.7778;*/
+
+    & > :first-child {
+        grid-area: a;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(4, auto);
+            gap: 8px;
+        }
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+    }
+
+    div {
+        gap: 8px;
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
+        font-weight: 500;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
+        text-align: center;
+        border-radius: 4px;
+        border: 2px solid var(--base-color);
+        background-color: var(--base-color);
+
+        @media only screen and (max-width: 1000px) {
+            span:first-child {
+                display: none;
+            }
+
+            span {
+                padding: 0.25rem;
+            }
+        }
+
+        &:hover, &:focus, &[lef-link-active] {
+            border-color: var(--primary-color);
+            background-color: color-mix(in srgb, var(--base-color) 90%, white 10%);
+        }
+
+        &[lef-link-active] {
+            /* Automatisch 10% lichter maken */
+            background-color: color-mix(in srgb, var(--base-color) 90%, white 10%);
+        }
+    }
+
+    .product-skill { --base-color: #8c9ebb; }
+    .social-skill { --base-color: #a2b490; }
+    .personal-skill { --base-color: #d49e81; }
+}

@@ -1,0 +1,13 @@
+[package]
+name = "leveling-education-framework"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+lazy_static = "1.5.0"
+markdown = "1.0.0"
+rocket = {  version = "0.5.1", features = ["json"] }
+serde = "1.0.219"
+serde_json = "1.0.142"
+tidos = { version = "0.6.9", features = ["rocket"] }
+chrono = { version = "0.4", features = ["serde"] }

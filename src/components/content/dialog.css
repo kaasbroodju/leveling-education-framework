@@ -1,0 +1,17 @@
+& {
+    max-width: clamp(300px, 60vw, 1200px);
+    max-height: 80vh;
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--primary-color);
+    box-shadow: 0px 0px 6px 0px rgba(from var(--primary-color) r g b / 0.1);
+
+
+    &::backdrop {
+        opacity: 0.5;
+        background: var(--primary-bg-color);
+    }
+
+}

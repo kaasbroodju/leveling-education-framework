@@ -5,7 +5,18 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/app" # Location of package manifests
+  - package-ecosystem: "cargo" # Rust/Cargo ecosystem
+    directory: "/" # Location of Cargo.toml (project root)
     schedule:
       interval: "weekly"
+    # Optional: Group updates to reduce PR noise
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*"
+        dependency-type: "development"
+      patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"

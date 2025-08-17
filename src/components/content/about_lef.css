@@ -1,0 +1,9 @@
+& {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    img {
+        width: 100%;
+    }
+}

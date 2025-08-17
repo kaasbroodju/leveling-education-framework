@@ -1,0 +1,9 @@
+&{
+    background-color: var(--secondary-bg-color);
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px 0px rgba(from var(--primary-color) r g b / 0.1);
+
+    &.with-padding {
+        padding: 16px;
+    }
+}

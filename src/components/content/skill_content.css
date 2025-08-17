@@ -1,0 +1,57 @@
+& {
+    h1, h2 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+
+        @media only screen and (max-width: 1100px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
+        @media only screen and (max-width: 800px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+
+        > section > p {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+    }
+
+    .skill-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        button {
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+            aspect-ratio: 1;
+            border: none;
+            margin-left: auto;
+            padding: 8px;
+            background-color: transparent;
+
+            span {
+                color: var(--primary-color);
+                /*font-size: 24px;*/
+                /*margin-left: auto;*/
+            }
+
+            &:hover {
+                background-color: var(--tertairy-bg-color);
+            }
+        }
+
+
+    }
+}
