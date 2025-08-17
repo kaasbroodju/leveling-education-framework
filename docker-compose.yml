@@ -1,38 +1,21 @@
 services:
   watchtower:
-    image: v2tec/watchtower
+    image: containrrr/watchtower
     container_name: leveling-education-framework-watchtower
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  
+
   app:
     image: spark156/leveling-education-framework:latest
     container_name: leveling-education-framework
-    build:
-      context: app
-      target: runner
+    restart: unless-stopped
     networks:
       - caddy
     labels:
       caddy: ${HOSTS}
       caddy.reverse_proxy: "{{upstreams 3000}}"
 
-  db:
-    image: postgres:latest
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: lef
-      POSTGRES_PASSWORD: LEF
-      POSTGRES_USER: lef
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-
 networks:
   caddy:
     external: true
-
-volumes:
-  pgdata:
