@@ -52,3 +52,11 @@ main {
     max-width: clamp(300px, 100%, 1200px);
     padding: 24px;
 }
+
+main > :not(:first-child) {
+    margin-top: 24px;
+}
+
+main > header > :not(:first-child) {
+    margin-top: 24px;
+}

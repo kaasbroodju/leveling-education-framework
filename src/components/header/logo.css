@@ -20,7 +20,8 @@ a > div {
     width: 100%;
     gap: 16px;
 
-    picture {
+    > div {
+        fill: var(--primary-color);
         height: 40px;
         width: 40px;
     }

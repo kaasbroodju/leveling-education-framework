@@ -1,4 +1,5 @@
 use std::collections::BTreeMap;
+use markdown::to_html;
 use tidos::{scoped_css, view, Component, Page};
 use crate::components::card::Card;
 use crate::components::navigation::beroepstaken_filter_matrix::BeroepstakenFilterMatrix;
@@ -52,6 +53,9 @@ struct Description<'a> {
 
 impl Component for Description<'_> {
     fn to_render(&self, page: &mut Page) -> String {
+        tidos::head! {
+            <script defer>@html {include_str!("skill_content.js")}</script>
+        }
         view!{
             <section class={scoped_css!("skill_content.css")}>
                 <h2>{format!("{}", self.title.replace('_', " "))}</h2>
@@ -59,17 +63,25 @@ impl Component for Description<'_> {
                 <div>
                     {#for (level, description) in self.levels.iter()}
                         <section>
-                            {#match level}
-                                {:case Level::Level1}
-                                    <h3>{"Niveau 1"}</h3>
-                                {:case Level::Level2}
-                                    <h3>{"Niveau 2"}</h3>
-                                {:case Level::Level3}
-                                    <h3>{"Niveau 3"}</h3>
-                                {:case Level::Level4}
-                                    <h3>{"Niveau 4"}</h3>
-                            {/match}
+                            <div class="skill-header">
+                                <h3>{level.to_text()}</h3>
+                                {#if let Some(x) = &description.info}
+                                    <button lef-modal={format!("{}-{:#?}", self.title, level)}>
+                                        <span class="material-symbols-outlined">{"info"}</span>
+                                    </button>
+                                {/if}
+                                
+                            </div>
                             <p>{&description.title}</p>
+                            {#if let Some(x) = &description.info}
+                                <dialog class={scoped_css!("dialog.css")} id={format!("{}-{:#?}", self.title, level)} lef-modal closedby="any">
+                                    <Card content={view! {
+                                        <h2>{format!("Extra toelichting {} {}" , self.title.replace('_', " ").to_lowercase(), level.to_text().to_lowercase())}</h2>
+                                        @html{to_html(x)}}
+                                    }/>
+                                </dialog>
+                            {/if}
+                            
                             // @html{markdown::to_html(&description.title)}
                         </section>
                     {/for}

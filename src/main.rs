@@ -3,7 +3,7 @@ use chrono::{DateTime, Utc};
 use rocket::fs::{FileServer, NamedFile};
 use rocket::http::{Header, Status};
 use rocket::{Request, Response};
-use rocket::response::Responder;
+use rocket::response::{status, Responder};
 use tidos::Component;
 mod components;
 mod domain;
@@ -18,7 +18,7 @@ use crate::components::content::beroepsproducten_content::BeroepsproductenConten
 use crate::components::content::beroepstaken_content::BeroepstakenContent;
 use crate::components::content::skill_content::SkillContent;
 use crate::components::layout::Layout;
-use crate::domain::{Activiteit, Architectuurlaag, Skill};
+use crate::domain::{Activiteit, Architectuurlaag, HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
 
 #[get("/?<vaardigheid>")]
 fn index(vaardigheid: Option<Skill>) -> Page {
@@ -48,7 +48,7 @@ fn beroepsproducten(architectuurlaag: Option<Architectuurlaag>, activiteit: Opti
     
     page! {
         {
-            tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
+            tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
             ""
         }
         <Layout current_url="/beroepsproducten" content={view! {<BeroepsproductenContent architectuurlaag={architectuurlaag} activiteit={activiteit} /> }} />
@@ -59,7 +59,7 @@ fn beroepsproducten(architectuurlaag: Option<Architectuurlaag>, activiteit: Opti
 fn about() -> Page {
     page! {
         {
-            tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
+            tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
             ""
         }
         <Layout current_url="/about" content={view! {<AboutLef  /> }} />
@@ -79,6 +79,9 @@ fn index_not_found() -> Page {
 
 // use rocket::http::{Header, Status};
 use rocket::response::{Result as ResponseResult};
+use rocket::response::status::Accepted;
+use rocket::serde::json::Json;
+use crate::data::{EXAMPLES_DATA, HBOI_DATA, SKILL_DATA};
 // use rocket::{Request, Response};
 // use rocket::fs::NamedFile;
 // use std::path::{Path, PathBuf};
@@ -128,7 +131,7 @@ impl<'r> Responder<'r, 'static> for CachedFile {
         let mut response = self.named_file.respond_to(req)?;
 
         // Voeg cache headers toe
-        response.set_header(Header::new("Cache-Control", "public, max-age=10"));
+        response.set_header(Header::new("Cache-Control", "public, max-age=360"));
         response.set_header(Header::new("Last-Modified",
                                         self.last_modified.format("%a, %d %b %Y %H:%M:%S GMT").to_string()));
 
@@ -142,9 +145,27 @@ async fn files(file: PathBuf) -> Option<CachedFile> {
     CachedFile::new(path).await.ok()
 }
 
+#[get("/vaardigheden")]
+async fn vaardighedenApi() -> Json<VaardighedenResponseBody> {
+    Json((*SKILL_DATA).clone())
+}
+
+#[get("/hboi")]
+async fn beroepstakenApi() -> Json<HBOIResponseBody> {
+    Json((*HBOI_DATA).clone())
+}
+
+#[get("/beroepsproducten")]
+async fn beroepsproductenApi() -> Json<Vec<HBOIExampleResponse>> {
+    Json((*EXAMPLES_DATA).clone())
+}
+
+
+
 #[launch]
 fn rocket() -> _ {
     rocket::build()
+        .mount("/api/v1", routes![vaardighedenApi, beroepstakenApi, beroepsproductenApi])
         .register("/", catchers![index_not_found])
         .mount("/", routes![index, beroepstaken, beroepsproducten, about, files])
         // .mount("/", FileServer::from("./app/public"))
