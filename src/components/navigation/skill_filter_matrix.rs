@@ -8,7 +8,6 @@ pub struct SkillFilterMatrix<'a> {
 
 impl<'a> Component for SkillFilterMatrix<'a> {
     fn to_render(&self, page: &mut Page) -> String {
-        println!("{:?}", &self.filter);
         view! {
             <header class={scoped_css!("skill_filter_matrix.css")}>
                 <div>

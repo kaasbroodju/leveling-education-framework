@@ -1955,9 +1955,9 @@ dependencies = [
 
 [[package]]
 name = "tidos"
-version = "0.6.9"
+version = "0.6.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aaac587f9b6c45789b29e4691a30817bfa4bb729136457a18fc57f30a9976081"
+checksum = "278b2dcddf752a5b213023c20440d8c62b85aa41593231378b592bd27e3538bf"
 dependencies = [
  "rocket",
  "tidos_macro",

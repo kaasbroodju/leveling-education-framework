@@ -61,7 +61,7 @@ impl Component for BeroepsproductenContent {
         //     {/for}
         // }
 
-        println!("{:?}", (&self.architectuurlaag, &self.activiteit));
+        
         
         
         
