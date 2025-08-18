@@ -6,9 +6,10 @@ WORKDIR /app
 # Copy manifests and Rocket config
 COPY Cargo.toml Cargo.lock Rocket.toml ./
 
-# Copy source code
+# Copy source code and required folders
 COPY src ./src
-COPY app ./app
+COPY app/data ./app/data
+COPY app/public ./app/public
 
 # Build for release
 RUN cargo build --release
@@ -16,17 +17,15 @@ RUN cargo build --release
 # Runtime stage
 FROM debian:bookworm-slim AS runtime
 
-## Install CA certificates for HTTPS requests (if needed)
-#RUN apt-get update && apt-get install -y \
-#    ca-certificates \
-#    && rm -rf /var/lib/apt/lists/*
 
 # Create app user
 RUN groupadd -r appuser && useradd -r -g appuser appuser
 
-# Copy the binary and Rocket config
-COPY --from=builder /app/target/release/leveling-education-framework /usr/local/bin/app
+# Copy the binary, Rocket config, and data folders
+COPY --from=builder /app/target/release/leveling-education-framework /app/app
 COPY --from=builder /app/Rocket.toml /app/Rocket.toml
+COPY --from=builder /app/app/data /app/app/data
+COPY --from=builder /app/app/public /app/app/public
 
 # Set working directory for runtime
 WORKDIR /app
@@ -44,4 +43,4 @@ EXPOSE 3000
 ENV RUST_LOG=info
 
 # Run the binary (Rocket.toml will be found automatically)
-CMD ["/usr/local/bin/app"]
+CMD ["./app"]
