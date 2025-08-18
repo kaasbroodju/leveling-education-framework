@@ -21,7 +21,7 @@ impl Component for BeroepstakenContent {
             {/for}
         }
 
-        println!("{:?}", (&self.architectuurlaag, &self.activiteit));
+        
         
         let key = format!(
             "{} {}",
@@ -29,7 +29,6 @@ impl Component for BeroepstakenContent {
             self.activiteit.as_ref().map_or("", |x| x.to_text())
         );
         
-        println!("{key}");
         
         view! {
             <BeroepstakenFilterMatrix base_url="/beroepstaken" architectuurlaag={&self.architectuurlaag} activiteit={&self.activiteit} />
