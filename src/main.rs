@@ -20,50 +20,64 @@ use crate::components::content::skill_content::SkillContent;
 use crate::components::layout::Layout;
 use crate::domain::{Activiteit, Architectuurlaag, HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
 
+#[derive(Responder)]
+#[response(status = 200, content_type = "html")]
+struct CachedHtml {
+    inner: Page,
+    cache_control: Header<'static>,
+}
+
+impl From<Page> for CachedHtml {
+    fn from(value: Page) -> Self {
+        CachedHtml {
+            inner: value,
+            cache_control: Header::new("Cache-Control", "public, max-age=300, stale-while-revalidate=86400"),
+        }
+    }
+}
+
 #[get("/?<vaardigheid>")]
-fn index(vaardigheid: Option<Skill>) -> Page {
+fn index(vaardigheid: Option<Skill>) -> CachedHtml {
     page! {
         {
             tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
             ""
         }
         <Layout current_url="/" content={view! {<SkillContent filter={vaardigheid} /> }} />
-    }
+    }.into()
 }
 
 #[get("/beroepstaken?<architectuurlaag>&<activiteit>")]
-fn beroepstaken(architectuurlaag: Option<Architectuurlaag>, activiteit: Option<Activiteit>) -> Page {
-    
+fn beroepstaken(architectuurlaag: Option<Architectuurlaag>, activiteit: Option<Activiteit>) -> CachedHtml {
     page! {
         {
             tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
             ""
         }
         <Layout current_url="/beroepstaken" content={view! {<BeroepstakenContent architectuurlaag={architectuurlaag} activiteit={activiteit} /> }} />
-    }
+    }.into()
 }
 
 #[get("/beroepsproducten?<architectuurlaag>&<activiteit>")]
-fn beroepsproducten(architectuurlaag: Option<Architectuurlaag>, activiteit: Option<Activiteit>) -> Page {
-    
+fn beroepsproducten(architectuurlaag: Option<Architectuurlaag>, activiteit: Option<Activiteit>) -> CachedHtml {
     page! {
         {
             tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
             ""
         }
         <Layout current_url="/beroepsproducten" content={view! {<BeroepsproductenContent architectuurlaag={architectuurlaag} activiteit={activiteit} /> }} />
-    }
+    }.into()
 }
 
 #[get("/about")]
-fn about() -> Page {
+fn about() -> CachedHtml {
     page! {
         {
             tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
             ""
         }
         <Layout current_url="/about" content={view! {<AboutLef  /> }} />
-    }
+    }.into()
 }
 
 #[catch(404)]
