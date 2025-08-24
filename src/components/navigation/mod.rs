@@ -10,17 +10,22 @@ pub struct NavBar<'a> {
 impl<'a> Component for NavBar<'a> {
     fn to_render(&self, page: &mut Page) -> String {
         let nav_list = vec![
-            ("Vaardigheden", "/"),
-            ("Beroepstaken / HBO-i","/beroepstaken"),
-            ("Beroepsproducten","/beroepsproducten"),
-            ("Over ons","/about")
+            ("Vaardigheden", "/", "face"),
+            ("Beroepstaken / HBO-i","/beroepstaken", "category"),
+            ("Beroepsproducten","/beroepsproducten", "package_2"),
+            ("Over ons","/about", "info")
         ];
         
         view! {
             <nav class={scoped_css!("nav_bar.css")}>
                 <ul>
-                    {#for (label, href) in nav_list}
-                        <li><a href={href} class={if self.current_url.eq(href) {"active"} else {""}}>{label}</a></li>
+                    {#for (label, href, icon) in nav_list}
+                        <li>
+                            <a href={href} class={if self.current_url.eq(href) {"active"} else {""}}>
+                                <span class="material-symbols-outlined">{icon}</span>
+                                <span>{label}</span>
+                            </a>
+                        </li>
                     {/for}
                 </ul>
             </nav>

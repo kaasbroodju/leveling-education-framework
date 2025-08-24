@@ -2,6 +2,7 @@ use std::collections::HashSet;
 use tidos::{scoped_css, view, Component, Page};
 use crate::components::header::HeaderBar;
 use crate::components::navigation::NavBar;
+use crate::components::quick_search::QuickSearch;
 use crate::domain::{Icon, ACTIVITEITEN, ARCHITECTUURLAGEN, PERSONAL_SKILLS, PRODUCT_SKILLS, SOCIAL_SKILLS};
 
 pub struct Layout<'a> {
@@ -42,8 +43,11 @@ impl<'a> Component for Layout<'a> {
             <link rel="stylesheet" href={format!("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,-1&icon_names={icons}")} />
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
             <link rel="manifest" href="/manifest.json" />
+            // <script>@html{"navigator.serviceWorker.register('/service-worker.js')"}</script>
         }
+        
         view! {
+            <QuickSearch />
             <div class="main-layout">
                 <HeaderBar />
                 <NavBar current_url={self.current_url} />

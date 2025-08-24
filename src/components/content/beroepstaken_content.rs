@@ -5,7 +5,7 @@ use crate::components::card::Card;
 use crate::components::navigation::beroepstaken_filter_matrix::BeroepstakenFilterMatrix;
 use crate::components::navigation::skill_filter_matrix::SkillFilterMatrix;
 use crate::data::HBOI_DATA;
-use crate::domain::{Activiteit, Architectuurlaag, HBOIResponseBody, Level, LevelDescription, Skill, VaardighedenResponseBody};
+use crate::domain::{Activiteit, Architectuurlaag, HBOIResponseBody, Level, LevelDescription, Skill, VaardighedenResponseBody, ACTIVITEITEN, ARCHITECTUURLAGEN};
 
 pub struct BeroepstakenContent {
     pub architectuurlaag: Option<Architectuurlaag>,
@@ -16,8 +16,16 @@ impl Component for BeroepstakenContent {
     fn to_render(&self, page: &mut Page) -> String {
         let content = &(*HBOI_DATA);
         tidos::head! {
-            {#for (skill, _) in content.iter()}
-                <link rel="prefetch" href={format!("/?vaardigheid={skill:#?}")} />
+            {#for laag in ARCHITECTUURLAGEN.iter()}
+                <link rel="prefetch" href={format!("/beroepstaken?architectuurlaag={laag:#?}")} />
+            {/for}
+            {#for activiteit in ACTIVITEITEN.iter()}
+                <link rel="prefetch" href={format!("/beroepstaken?activiteit={activiteit:#?}")} />
+            {/for}
+            {#for laag in ARCHITECTUURLAGEN.iter()}
+                {#for activiteit in ACTIVITEITEN.iter()}
+                    <link rel="prefetch" href={format!("/beroepstaken?architectuurlaag={laag:#?}?activiteit={activiteit:#?}")} />
+                {/for}
             {/for}
         }
 

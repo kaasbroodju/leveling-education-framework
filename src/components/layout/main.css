@@ -42,9 +42,35 @@ a {
     grid-template-rows: auto 1fr;
 }
 
+@media only screen and (max-width: 1280px) {
+    .main-layout {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "sidebar main";
+        grid-template-columns: minmax(auto, 56px) 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .main-layout {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main";
+        grid-template-columns: 1fr;
+    }
+}
+
 div.main-container {
     overflow-y: scroll;
     height: calc(100vh - 64px);
+
+    @media only screen and (max-width: 960px) {
+        height: calc(100vh - 64px - 64px - 1px);
+    }
 }
 
 main {
