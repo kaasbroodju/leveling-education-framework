@@ -115,6 +115,12 @@
   },
   {
     "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "BE",
+    "title": "JWT | OAuth"
+  },
+  {
+    "architecture_layer": "Software",
     "activity": "Ontwerpen",
     "guild": "BE",
     "title": "C4"
