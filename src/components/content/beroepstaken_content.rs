@@ -15,21 +15,6 @@ pub struct BeroepstakenContent {
 impl Component for BeroepstakenContent {
     fn to_render(&self, page: &mut Page) -> String {
         let content = &(*HBOI_DATA);
-        tidos::head! {
-            {#for laag in ARCHITECTUURLAGEN.iter()}
-                <link rel="prefetch" href={format!("/beroepstaken?architectuurlaag={laag:#?}")} />
-            {/for}
-            {#for activiteit in ACTIVITEITEN.iter()}
-                <link rel="prefetch" href={format!("/beroepstaken?activiteit={activiteit:#?}")} />
-            {/for}
-            {#for laag in ARCHITECTUURLAGEN.iter()}
-                {#for activiteit in ACTIVITEITEN.iter()}
-                    <link rel="prefetch" href={format!("/beroepstaken?architectuurlaag={laag:#?}?activiteit={activiteit:#?}")} />
-                {/for}
-            {/for}
-        }
-
-        
         
         let key = format!(
             "{} {}",
@@ -88,8 +73,6 @@ impl Component for Description<'_> {
                                     }/>
                                 </dialog>
                             {/if}
-                            
-                            // @html{markdown::to_html(&description.title)}
                         </section>
                     {/for}
                 </div>

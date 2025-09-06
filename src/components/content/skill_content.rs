@@ -13,11 +13,6 @@ pub struct SkillContent {
 impl Component for SkillContent {
     fn to_render(&self, page: &mut Page) -> String {
         let content = &(*SKILL_DATA);
-        tidos::head! {
-            {#for (skill, _) in content.iter()}
-                <link rel="prefetch" href={format!("/?vaardigheid={skill:#?}")} />
-            {/for}
-        }
         
         view! {
             <Card content={
