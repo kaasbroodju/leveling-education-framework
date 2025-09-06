@@ -1,4 +1,4 @@
-setTimeout(() => {
+document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll("button").forEach(
         (element) => element.onclick = () => {
             let modal = document.querySelector(`dialog[id="${element.attributes['lef-modal'].value}"]`);
@@ -6,7 +6,7 @@ setTimeout(() => {
             modal.open = true
         }
     )
-}, 0)
+});
 
 
 

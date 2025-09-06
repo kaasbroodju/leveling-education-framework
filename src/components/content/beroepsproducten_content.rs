@@ -55,17 +55,6 @@ impl Component for BeroepsproductenContent {
                 }
             }));
         
-        // tidos::head! {
-        //     {#for (skill, _) in content.iter()}
-        //         <link rel="prefetch" href={format!("/?vaardigheid={skill:#?}")} />
-        //     {/for}
-        // }
-
-        
-        
-        
-        
-        
         view! {
             <BeroepstakenFilterMatrix base_url="/beroepsproducten" architectuurlaag={&self.architectuurlaag} activiteit={&self.activiteit} />
             {#if !grouped_content.is_empty()}

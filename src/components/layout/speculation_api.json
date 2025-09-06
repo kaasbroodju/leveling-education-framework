@@ -1,0 +1,18 @@
+{
+  "prerender": [
+    {
+      "where": { "href_matches": "/*" },
+      "eagerness": "moderate"
+    }
+  ],
+  "prefetch": [
+    {
+      "urls": ["/", "/beroepstaken"],
+      "eagerness": "immediate"
+    },
+    {
+      "where": { "href_matches": "/*" },
+      "eagerness": "eager"
+    }
+  ]
+}

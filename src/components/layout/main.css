@@ -21,6 +21,8 @@ a {
     --tertairy-bg-color: #e5e5e5;
     --primary-color: #333333;
     --line-color: #d7d7d7;
+    --quick-search-bg-color: #ffffff;
+    --quick-search-border-color: #d1d9e0;
     --Paper-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 @media (prefers-color-scheme: dark) {
@@ -30,6 +32,9 @@ a {
         --tertairy-bg-color: #363636;
         --primary-color: #f0f0f0;
         --line-color: #2e2e2e;
+        --quick-search-bg-color: #212830;
+        --quick-search-border-color: #3d444d;
+
     }
 }
 
