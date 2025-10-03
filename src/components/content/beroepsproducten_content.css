@@ -8,11 +8,11 @@
         padding: 0;
         margin: 0;
         list-style: none;
-        column-count: 3;
+        column-count: 1;
         column-gap: 40px;
         font-weight: 400;
         font-size: 1rem;
-        line-height: 1.75;
+        line-height: 1.5;
 
         > li {
             display: flex;
@@ -21,7 +21,19 @@
         }
 
         > li:not(:first-child) {
-            margin-top: 8px;
+            margin-top: 12px;
+        }
+    }
+
+    @media (min-width: 600px) {
+        ul {
+            column-count: 2;
+        }
+    }
+
+    @media (min-width: 800px) {
+        ul {
+            column-count: 3;
         }
     }
 }

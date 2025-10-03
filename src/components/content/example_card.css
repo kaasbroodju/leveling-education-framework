@@ -1,4 +1,5 @@
 .guild-tag {
+    height: min-content;
     padding: 0 1ch;
 
     border-radius: 4px;

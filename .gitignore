@@ -1,5 +1,7 @@
 .env
 .DS_STORE
+.idea
+.vscode
 
 # Added by cargo
 
