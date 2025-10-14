@@ -1,6 +1,0 @@
-Op gestructureerde wijze bouwen, testen en beschikbaar stellen van een eenvoudig softwaresysteem dat werkt met gestructureerde data en voldoet aan de basis kwaliteitseisen 
-
-of
-
-Opstellen en uitvoeren van (geautomatiseerde) unittesten 
-

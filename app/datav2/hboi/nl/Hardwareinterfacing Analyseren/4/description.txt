@@ -1,6 +1,0 @@
-Onderzoek doen naar emerging technologies, bijv. machine learning, voor toepassing in gedistribueerde systemen 
-
-of
-
-Onderzoek doen naar security, safety, privacy en duurzaamheidsaspecten binnen emerging technologies 
-

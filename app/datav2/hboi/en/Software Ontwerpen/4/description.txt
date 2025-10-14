@@ -1,6 +1,0 @@
-Opstellen van een herbruikbare softwarearchitectuur voor (cross-platform) softwaresystemen opgebouwd uit bestaande en nieuwe (cloud-based) systemen, rekening houdend met meerdere stakeholders, kwaliteitskenmerken en compliance met wet- en regelgeving 
-
-of
-
-Ontwerpen van een softwaresysteem of framework voor het oplossen van een generieke klasse van problemen 
-

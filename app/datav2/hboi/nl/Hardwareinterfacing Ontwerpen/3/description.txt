@@ -1,6 +1,0 @@
-Ontwerpen van een gedistribueerd systeem inclusief bepaling van relevante hardware- en softwarecomponenten op basis van de kwaliteitseisen inclusief niet-functionele eisen zoals timing, resourcegebruik, onderhoudbaarheid, safety en security 
-
-of
-
-Ontwerpen van een protocol voor betrouwbare productie en transmissie van grote hoeveelheden data 
-

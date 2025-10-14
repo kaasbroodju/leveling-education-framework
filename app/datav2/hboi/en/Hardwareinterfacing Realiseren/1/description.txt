@@ -1,5 +1,0 @@
-Software schrijven voor een ontworpen (deel van een) systeem, voorzien van actuatoren en sensoren 
-
-of
-
-Testen van een gerealiseerd (deel van een) systeem 

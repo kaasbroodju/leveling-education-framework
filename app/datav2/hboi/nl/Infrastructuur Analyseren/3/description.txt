@@ -1,9 +1,0 @@
-Analyseren van trends en best practices en deze vertalen naar gewenste of benodigde ontwikkelingen in de enterprise infrastructuur 
-
-of
-
-Uitvoeren van een requirementsimpact- of gap-analyse voor een enterprise infrastructuur om kwaliteitseisen op te stellen 
-
-of
-
-Analyseren van technische mogelijkheden en privacy concerns van systemen voor beheer en verwerking van data

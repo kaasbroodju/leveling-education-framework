@@ -1,6 +1,0 @@
-Realiseren van (een proof of concept van) een cloud-agnostische infrastructuur door specificatie van cloudtechnieken binnen de kaders van enterprise architectuur, referentiearchitecturen en/of standaarden 
-
-of
-
-Realiseren van een cloudmanagementplatform voor DevOps 
-

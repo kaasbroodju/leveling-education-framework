@@ -1,9 +1,0 @@
-Uitvoeren van een requirementsanalyse voor een softwaresysteem met verschillende stakeholders, rekening houdend met duurzaamheidsaspecten en andere kwaliteitseigenschappen waaronder security 
-
-of
-
-Uitvoeren van een analyse om de functionaliteit, veiligheid, ontwerp, interfaces e.d. van een bestaand softwaresysteem of bestaande component te formuleren en te valideren 
-
-of
-
-Beoordelen van de kwaliteit van een dataset met onder andere beschrijvende statistiek en visualisaties

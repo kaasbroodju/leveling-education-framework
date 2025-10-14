@@ -1,7 +1,0 @@
-Uitvoeren van een requirementsanalyse in afstemming met stakeholders voor een gedistribueerd systeem rekening houdend met de kwaliteitseisen inclusief timing, resourcegebruik, performance, security (netwerken), safety en andere relevante niet functionele eisen. (bijv. met machine learning-componenten) 
-
-of
-
-Opstellen van een acceptatietestplan en een integratietestplan aan de hand van de kwaliteitseisen 
-
-

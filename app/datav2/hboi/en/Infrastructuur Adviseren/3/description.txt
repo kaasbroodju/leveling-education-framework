@@ -1,9 +1,0 @@
-Adviseren over zakelijke rechtvaardiging en business-IT alignment van enterprise infrastructuren, inclusief beheer-, beveiliging- en privacy aspecten, in relatie tot informatie- en referentiearchitecturen 
-
-of
-
-Adviseren over de inrichting van de infrastructuur voor de verwerking van grote hoeveelheden data 
-
-of
-
-Adviseren over een cloudmanagementplatform voor DevOps

@@ -1,2 +1,0 @@
-Analyseren van een eenvoudige infrastructuur volgens een standaardmethode en op basis van gegeven kwaliteitseisen, bijvoorbeeld security 
-

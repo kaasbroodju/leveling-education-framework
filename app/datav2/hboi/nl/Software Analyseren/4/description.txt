@@ -1,2 +1,0 @@
-Analyse uitvoeren op complexe software-in-software systemen om alle niet-functionele requirements, waaronder safety, security en privacy en de compliance daarvan met wet- en regelgeving te inventariseren om te komen tot best practices en vernieuwde ict-standaarden 
-

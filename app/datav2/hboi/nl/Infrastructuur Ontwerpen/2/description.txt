@@ -1,2 +1,0 @@
-Ontwerpen van een infrastructuur door specificatie van technieken op basis van gegeven requirements met betrekking tot kwaliteitseisen zoals beschikbaarheid, performance, schaalbaarheid, security. privacy en duurzaamheid 
-

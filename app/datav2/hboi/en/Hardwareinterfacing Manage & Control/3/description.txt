@@ -1,2 +1,0 @@
-Opzetten en gebruikmaken van versiebeheer, releasemanagement, teamworkondersteuning en automated testing voor hard- en softwaresystemen 
-

@@ -1,9 +1,0 @@
-Vertalen van adviezen in een ontwerp van gedetailleerde gebruikersinteractie met verschillende prototypingtechnieken 
-
-of
-
-Ontwerpen van testen waarmee de doelstellingen van de iteratie geëvalueerd worden 
-
-of
-
-Onder eigen regie toepassen van een interactieontwerpproces in samenwerking met stakeholders
