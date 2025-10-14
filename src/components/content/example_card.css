@@ -1,7 +1,6 @@
 .guild-tag {
-    height: min-content;
     padding: 0 1ch;
-
+    color: #f0f0f0; /* Color overwrite due to contrast*/
     border-radius: 4px;
     min-width: 5ch;
     line-height: 1.75;

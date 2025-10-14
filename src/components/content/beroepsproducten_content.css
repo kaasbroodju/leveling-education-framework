@@ -8,7 +8,7 @@
         padding: 0;
         margin: 0;
         list-style: none;
-        column-count: 1;
+        column-count: 3;
         column-gap: 40px;
         font-weight: 400;
         font-size: 1rem;
@@ -25,15 +25,15 @@
         }
     }
 
-    @media (min-width: 600px) {
+    @media only screen and (max-width: 960px) {
         ul {
             column-count: 2;
         }
     }
 
-    @media (min-width: 800px) {
+    @media only screen and (max-width: 720px) {
         ul {
-            column-count: 3;
+            column-count: 1;
         }
     }
 }
