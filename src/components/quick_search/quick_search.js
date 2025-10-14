@@ -9,12 +9,12 @@ function mount() {
     const searchElement = document.querySelector("input#search-query")
 
     searchElement.oninput = (e) => {
-        const minScore = 80
+        const minScore = 60
         const query = e.target.value
         if (query.length >= 2) {
             const searchEngine = new SkillSearchEngine(allSkills);
             const queryResults = searchEngine.search(query);
-
+            console.log(queryResults)
             let results = queryResults.length === 1
                 ? queryResults
                 : queryResults.filter((e) => e.score >= minScore).slice(0, 5)
@@ -302,5 +302,4 @@ class SkillSearchEngine {
         return results.sort((a, b) => b.score - a.score);
     }
 }
-
-setTimeout(mount, 0);
+document.addEventListener('DOMContentLoaded', mount);
