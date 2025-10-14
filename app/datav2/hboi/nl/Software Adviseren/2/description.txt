@@ -1,6 +1,0 @@
-Adviseren over aanschaf en selectie van softwarecomponenten bij het ontwikkelen van een softwaresysteem op basis van functionaliteit en kosten 
-
-of
-
-Adviseren over een onderdeel van een architectuur of een beperkt softwaresysteem 
-

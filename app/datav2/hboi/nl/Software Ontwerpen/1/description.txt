@@ -1,6 +1,0 @@
-Maken van een ontwerp voor een softwaresysteem, inclusief database, met modelleertechnieken volgens een standaardmethode 
-
-of
-
-Opstellen van testscripts voor eindgebruikers/acceptatietests 
-

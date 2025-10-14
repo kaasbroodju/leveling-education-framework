@@ -1,6 +1,0 @@
-Ontwerpen van een cloud-agnostische enterprise infrastructuur door specificatie van cloudtechnieken op basis van zelf opgestelde requirements binnen de kaders van enterprise architectuur, referentiearchitecturen en/of standaarden 
-
-of
-
-Ontwerpen van een security operations center (SOC) voor het voorkomen en oplossen van security-incidenten en -problemen 
-

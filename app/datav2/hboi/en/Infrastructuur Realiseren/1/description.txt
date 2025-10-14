@@ -1,1 +1,0 @@
-Inrichten, testen en beschikbaar stellen van (een proof of concept van) een eenvoudige infrastructuur 

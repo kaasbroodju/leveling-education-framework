@@ -1,5 +1,0 @@
-Realiseren van een gedistribueerd systeem of deel ervan op basis van een gegeven ontwerp, inclusief de relevante kwaliteitseisen 
-
-of
-
-Opstellen en uitvoeren van een acceptatieprocedure van een gerealiseerd systeem 

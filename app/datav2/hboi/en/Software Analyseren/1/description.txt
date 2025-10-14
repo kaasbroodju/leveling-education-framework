@@ -1,9 +1,0 @@
-Verzamelen en valideren van functionele eisen voor een softwaresysteem met één stakeholder volgens een standaardmethode en het opstellen van acceptatiecriteria 
-
-of
-
-Uitvoeren van een analyse van de functionaliteit van een bestaand softwaresysteem of bestaande component om de (on)mogelijkheden voor aanpassing vast te stellen 
-
-of
-
-Analyseren of een gegeven dataset informatie oplevert voor een gegeven toepassing

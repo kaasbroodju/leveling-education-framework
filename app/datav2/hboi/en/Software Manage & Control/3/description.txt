@@ -1,6 +1,0 @@
-Uitvoeren van configuratie-, change- en releasemanagement in afstemming met infrastructuurmanagement waardoor CI/CD tot de mogelijkheden behoort 
-
-of
-
-Inrichten en evalueren van een ontwikkelstraat met CI/CD ondersteuning 
-

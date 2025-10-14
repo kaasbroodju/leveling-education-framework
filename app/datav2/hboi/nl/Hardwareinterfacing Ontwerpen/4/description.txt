@@ -1,6 +1,0 @@
-Ontwerpen van gedistribueerde systemen met gebruik van hardware synthese en/of artificial intelligence 
-
-of
-
-Ontwerpen van een gedistribueerd systeem met gebruik van machine learning-componenten inclusief bepaling van actuatoren, sensoren, circulariteit, CO2-footprint, timing, resourcegebruik en performance 
-

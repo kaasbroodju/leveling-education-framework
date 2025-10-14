@@ -1,2 +1,0 @@
-Uitvoeren van een grondig, theoretisch onderbouwd en toegepast onderzoek naar referentiearchitecturen, best practices en standaarden voor cloud-agnostische enterprise infrastructuren of high performance computing om het volwassenheidsniveau bij verschillende organisaties te kunnen bepalen 
-

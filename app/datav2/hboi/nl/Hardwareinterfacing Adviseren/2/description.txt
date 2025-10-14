@@ -1,6 +1,0 @@
-Uitbrengen van een technisch advies voor de architectuur van een (deel van een) systeem inclusief de hardware- en software-componenten, op basis van de requirementsanalyse 
-
-of
-
-Adviseren over het koppelen van hardwaresystemen en softwarecomponenten 
-

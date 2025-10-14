@@ -1,1 +1,0 @@
-Installeren en gebruiken van een ontwikkel- en testplatform ten behoeve van hardware/software, inclusief tools 

@@ -1,9 +1,0 @@
-Adviseren over inrichting en beheer van een (cloudgebaseerde) infrastructuur met onderbouwde keuzes vanuit kwaliteitseisen, beschikbare technologie en beheermethodes 
-
-of
-
-Maatregelen voorstellen die de informatiebeveiliging van een infrastructuur verbeteren 
-
-of
-
-Adviseren over de mogelijke migratie naar of keuze voor bijvoorbeeld een private, hybride of publieke cloud

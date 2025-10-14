@@ -1,6 +1,0 @@
-Een onderbouwd technisch advies geven voor een eenvoudig (deel van een) systeem 
-
-of
-
-Aanbevelingen doen voor de initiële structuur en functionaliteit van een gegeven (deel)systeem, zowel op hardware- als softwaregebied 
-

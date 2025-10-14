@@ -1,6 +1,0 @@
-Analyseren van de kwaliteit van een bestaande infrastructuur en de daarop aanwezige services aan de hand van gangbare methoden en standaarden 
-
-of
-
-Analyseren van aan infrastructuur gerelateerde incidenten, problemen en security-bedreigingen 
-

@@ -1,9 +1,0 @@
-Verrichten van onderhoudswerkzaamheden aan de procesdocumentatie (bijv. business rules, principes en procesmodellen) 
-
-of
-
-Meten en bewaken van ict-processen aan de hand van data 
-
-of
-
-Beschrijven van de veranderbehoefte voor een enkel deelproces

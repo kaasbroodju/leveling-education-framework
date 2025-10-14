@@ -1,6 +1,0 @@
-Implementeren van beheerprocessen voor een cloud-agnostische enterprise infrastructuur 
-
-of
-
-Inbedden van een vernieuwde infrastructuur in de organisatie 
-

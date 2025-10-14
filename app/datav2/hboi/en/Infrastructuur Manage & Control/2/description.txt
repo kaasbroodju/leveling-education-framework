@@ -1,6 +1,0 @@
-Implementeren van het beheer van technologische ontwikkelingen m.b.t. de (cloudgebaseerde) infrastructuur 
-
-of
-
-Implementeren van delen van beheerprocessen 
-
