@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lef.open-ict.hu.nl/sitemap.xml
