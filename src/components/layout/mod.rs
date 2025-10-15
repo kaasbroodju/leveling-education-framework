@@ -34,6 +34,8 @@ impl<'a> Component for Layout<'a> {
             <style>@html{include_str!("main.css")}</style>
             <link rel="icon" href="/logo_light.svg" media="(prefers-color-scheme: light)" />
             <link rel="icon" href="/logo_dark.svg" media="(prefers-color-scheme: dark)" />
+            <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+            <link rel="llms-txt" type="text/markdown" href="/llms.txt" />
             <meta name="description" content="LEF is een tool voor open-ict studenten om onze vaardigheden en HBO-i competenties beter te navigeren." />
             <script type="application/ld+json">@html{SEO_JSON_LINKED_DATA}</script>
             <script type="speculationrules">@html{include_str!("speculation_api.json")}</script>
