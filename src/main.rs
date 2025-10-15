@@ -38,12 +38,17 @@ impl From<Page> for CachedHtml {
 
 #[get("/robots.txt")]
 fn robots() -> &'static str {
-    include_str!("../robots.txt")
+    include_str!("../app/data/robots.txt")
+}
+
+#[get("/sitemap.xml")]
+fn sitemap() -> &'static str {
+    include_str!("../app/data/sitemap.xml")
 }
 
 #[get("/llms.txt")]
 fn llms() -> &'static str {
-    include_str!("../STUDIEWIJZER_FOR_AI.md")
+    include_str!("../app/data/STUDIEWIJZER_FOR_AI.md")
 }
 
 #[get("/?<vaardigheid>")]
@@ -191,6 +196,6 @@ fn rocket() -> _ {
     rocket::build()
         .mount("/api/v1", routes![vaardighedenApi, beroepstakenApi, beroepsproductenApi])
         .register("/", catchers![index_not_found])
-        .mount("/", routes![index, beroepstaken, beroepsproducten, about, files, robots, llms])
+        .mount("/", routes![index, beroepstaken, beroepsproducten, about, files, robots, llms, sitemap])
         // .mount("/", FileServer::from("./app/public"))
 }
