@@ -1,14 +1,14 @@
 services:
   watchtower:
     image: containrrr/watchtower
-    container_name: leveling-education-framework-watchtower
+    container_name: lef-watchtower
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
   app:
-    image: spark156/leveling-education-framework:latest
-    container_name: leveling-education-framework
+    image: kaasbroodju/leveling-education-framework:latest
+    container_name: lef
     restart: unless-stopped
     networks:
       - caddy
