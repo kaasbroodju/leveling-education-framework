@@ -588,7 +588,7 @@
     "title": "Infrastructuurscan"
   },
   {
-    "architecture_layer": "Analyfrastructuur",
+    "architecture_layer": "Infrastructuur",
     "activity": "Analyseren",
     "guild": "CI",
     "title": "Kwaliteitsanalyse"

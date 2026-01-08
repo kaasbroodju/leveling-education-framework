@@ -211,10 +211,12 @@ pub enum Guild {
     #[serde(rename(serialize = "BIM", deserialize = "BIM"))]
    
     BusinessItManagement,
-
-    #[serde(rename(serialize = "CSC", deserialize = "CSC"))]
     
-    CyberSecurityAndCloud,
+    #[serde(rename(serialize = "CS", deserialize = "CS"))]
+    CyberSecurity,
+
+    #[serde(rename(serialize = "CI", deserialize = "CI"))]
+    CloudInfrastructure,
 
     #[serde(rename(serialize = "FE", deserialize = "FE"))]
     
