@@ -237,7 +237,7 @@ impl Guild {
             Guild::ArtificialIntelligence => {"AI"}
             Guild::Backend => {"BE"}
             Guild::BusinessItManagement => {"BIT"}
-            Guild::CyberSecurity => {"CY"}
+            Guild::CyberSecurity => {"CS"}
             Guild::CloudInfrastructure => {"CI"}
             Guild::Frontend => {"FE"}
             Guild::UIUX => {"UI/UX"}

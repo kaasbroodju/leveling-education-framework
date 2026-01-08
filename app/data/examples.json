@@ -446,140 +446,140 @@
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Analyseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Security checklist"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Adviseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Security-implementatieadvies"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Adviseren",
-    "guild": "CY",
-    "title": "Privacy-waarborgingsadvies"
+    "guild": "CS",
+    "title": "PrivaCS-waarborgingsadvies"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Disaster recovery"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Analyseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Incidentanalyse"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
+    "guild": "CS",
     "title": "IT service management (ITIL)"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Configuration management (CMDB)"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Analyseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Gapanalyse"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Analyseren",
-    "guild": "CY",
-    "title": "Privacyanalyse"
+    "guild": "CS",
+    "title": "PrivaCSanalyse"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Adviseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Risk & compliance-advies"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Adviseren",
-    "guild": "CY",
-    "title": "Lifecycle-advies"
+    "guild": "CS",
+    "title": "LifeCScle-advies"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Patch management"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Monitoring & alerting"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Ontwerpen",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Security architectuur (Zero Trust)"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Ontwerpen",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Identity architecture"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Realiseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Identity & Access Management (IAM)"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Audit & reporting"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Realiseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Secrets management"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Ontwerpen",
-    "guild": "CY",
-    "title": "Privacy by design (GDPR)"
+    "guild": "CS",
+    "title": "PrivaCS by design (GDPR)"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Realiseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Monitoring & logging"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Realiseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Security hardening"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Realiseren",
-    "guild": "CY",
+    "guild": "CS",
     "title": "Network security"
   },
   {
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
-    "guild": "CY",
-    "title": "Policy enforcement"
+    "guild": "CS",
+    "title": "PoliCS enforcement"
   },
   {
     "architecture_layer": "Infrastructuur",
