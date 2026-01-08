@@ -580,5 +580,197 @@
     "activity": "Manage & Control",
     "guild": "CY",
     "title": "Policy enforcement"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Analyseren",
+    "guild": "CI",
+    "title": "Infrastructuurscan"
+  },
+  {
+    "architecture_layer": "Analyfrastructuur",
+    "activity": "Analyseren",
+    "guild": "CI",
+    "title": "Kwaliteitsanalyse"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Adviseren",
+    "guild": "CI",
+    "title": "Netwerk- en infrastructuur(tooling)advies"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Adviseren",
+    "guild": "CI",
+    "title": "Cloudstrategieadvies"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Adviseren",
+    "guild": "CI",
+    "title": "Architectuuradvies"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Adviseren",
+    "guild": "CI",
+    "title": "Data-infrastructuuradvies"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Netwerkspecificaties"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Cloudspecificaties"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Netwerkontwerp"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Infrastructuurontwerp"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Ontwerp van een SOC"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Relaties tussen (cloud-agnostische) infrastructuur"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Logical architectuur"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Physical architectuur"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "High availability ontwerp"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CI",
+    "title": "Cost optimization design (FinOps)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Infrastructuur opzetten"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Infrastructure as Code (Terraform | Bicep | CloudFormation)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Configuration management (Ansible | Puppet | Chef)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Cloud provisioning (AWS | Azure | GCP)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Virtualisatie (VMware | Hyper-V | KVM)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Containerization (Docker)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Container orchestration (Kubernetes)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Networking (VPC | VNets | Subnets | Routing)"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Load balancing"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Storage Provisioning"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "Backup & recovery"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Manage & Control",
+    "guild": "CI",
+    "title": "Beheerprocedures"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Manage & Control",
+    "guild": "CI",
+    "title": "Beheerimplementatie"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Manage & Control",
+    "guild": "CI",
+    "title": "Release management"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Manage & Control",
+    "guild": "CI",
+    "title": "Asset management"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "CI",
+    "title": "High availability"
   }
 ]
