@@ -237,7 +237,8 @@ impl Guild {
             Guild::ArtificialIntelligence => {"AI"}
             Guild::Backend => {"BE"}
             Guild::BusinessItManagement => {"BIT"}
-            Guild::CyberSecurityAndCloud => {"CSC"}
+            Guild::CyberSecurity => {"CS"}
+            Guild::CloudInfrastructure => {"CI"}
             Guild::Frontend => {"FE"}
             Guild::UIUX => {"UI/UX"}
             Guild::Embedded => {"TI"}
@@ -250,7 +251,8 @@ impl Guild {
             Guild::ArtificialIntelligence => {"#4B0082"}
             Guild::Backend => {"#B71C1C"}
             Guild::BusinessItManagement => {"#9A7300"}
-            Guild::CyberSecurityAndCloud => {"#006400"}
+            Guild::CyberSecurity => {"#085308ff"}
+            Guild::CloudInfrastructure => {"#59c759ff"}
             Guild::Frontend => {"#D35400"}
             Guild::UIUX => {"#880E4F"}
             Guild::Embedded => {"#001F3F"}
