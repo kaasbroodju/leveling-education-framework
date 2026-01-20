@@ -459,7 +459,7 @@
     "architecture_layer": "Infrastructuur",
     "activity": "Adviseren",
     "guild": "CS",
-    "title": "PrivaCS-waarborgingsadvies"
+    "title": "Privacy-waarborgingsadvies"
   },
   {
     "architecture_layer": "Infrastructuur",
@@ -495,7 +495,7 @@
     "architecture_layer": "Infrastructuur",
     "activity": "Analyseren",
     "guild": "CS",
-    "title": "PrivaCSanalyse"
+    "title": "Privacyanalyse"
   },
   {
     "architecture_layer": "Infrastructuur",
@@ -507,7 +507,7 @@
     "architecture_layer": "Infrastructuur",
     "activity": "Adviseren",
     "guild": "CS",
-    "title": "LifeCScle-advies"
+    "title": "Lifecycle-advies"
   },
   {
     "architecture_layer": "Infrastructuur",
@@ -555,7 +555,7 @@
     "architecture_layer": "Infrastructuur",
     "activity": "Ontwerpen",
     "guild": "CS",
-    "title": "PrivaCS by design (GDPR)"
+    "title": "Privacy by design (GDPR)"
   },
   {
     "architecture_layer": "Infrastructuur",
@@ -579,7 +579,7 @@
     "architecture_layer": "Infrastructuur",
     "activity": "Manage & Control",
     "guild": "CS",
-    "title": "PoliCS enforcement"
+    "title": "Policy enforcement"
   },
   {
     "architecture_layer": "Infrastructuur",
@@ -772,5 +772,155 @@
     "activity": "Realiseren",
     "guild": "CI",
     "title": "High availability"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Analyseren",
+    "guild": "CS",
+    "title": "Risicoanalyse"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "CS",
+    "title": "Access architecture (technisch)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "CS",
+    "title": "Security checklist"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "CS",
+    "title": "Proces gapanalyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "CS",
+    "title": "Privacyanalyse (DPIA)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "CS",
+    "title": "Risico en maatregelen analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "CS",
+    "title": "Business Impact Analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Security roadmap"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Security-implementatieadvies"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Privacy-waarborgingsadvies"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Risk & compliance-advies"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Business Continuity Management"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Prioriteiten in CIS Controls"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "CS",
+    "title": "Prioriteiten in Annex A ISO 27.xxxx controls"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "CS",
+    "title": "SOC-processen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "CS",
+    "title": "Disaster Recovery Plan"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "CS",
+    "title": "Procesontwerp voor een of meerdere controls"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "CS",
+    "title": "Identity & Access Management (IAM)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "CS",
+    "title": "SOC use cases"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "CS",
+    "title": "CIS controls voor domein in organisatie"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "CS",
+    "title": "Information Security Management System (ISMS)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "CS",
+    "title": "Audit & reporting"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "CS",
+    "title": "Control reporting"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "CS",
+    "title": "Incident Response Book"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "CS",
+    "title": "Proces eigenaarschap vaststellen"
   }
 ]
