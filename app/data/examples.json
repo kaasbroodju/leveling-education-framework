@@ -422,24 +422,6 @@
   {
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Analyseren",
-    "guild": "GD",
-    "title": "Game Design Document"
-  },
-  {
-    "architecture_layer": "Gebruikersinteractie",
-    "activity": "Adviseren",
-    "guild": "GD",
-    "title": "Game Design Document"
-  },
-  {
-    "architecture_layer": "Gebruikersinteractie",
-    "activity": "Ontwerpen",
-    "guild": "GD",
-    "title": "Game Design Document"
-  },
-  {
-    "architecture_layer": "Gebruikersinteractie",
-    "activity": "Analyseren",
     "guild": "UI/UX",
     "title": "Cognitive Map"
   },
@@ -922,5 +904,293 @@
     "activity": "Manage & Control",
     "guild": "CS",
     "title": "Proces eigenaarschap vaststellen"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Game Design Document"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Player Persona Set"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Competitor Experience Analysis"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Playability & Usability Test Report"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Player Journey Map"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "New Game Pitch"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Monetization Ethics Advice"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game UX Heuristic Review"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Accessibility Advice"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game Asset List"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Game HUD / UI Wireframes"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Game HUD / UI Style Guide"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Level Interaction Design"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Core Game Mechanic Design"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "(Non-)Playable Character Design"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Paper Prototype"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Input & Control System Prototype"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Core Game Mechanic Prototype"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Game Asset Prototype"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Tutorial Prototype"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "UX Iteration Log & Decision Tracker"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Usability & Playability Testing Setup"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Player Feedback Dashboard"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Pre-release UX Quality Checklist"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Code Performance Review"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Bug Impact Analysis"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "GD",
+    "title": "Game Architecture Risk Scan"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game Engine Recommendation"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game System Architecture Proposal"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game Optimization Strategy"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "GD",
+    "title": "Game AI Approach Recommendation"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "State Machine Design"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Save/Load System Design"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Core Game Mechanic System Design"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "Multiplayer Sync Design"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "GD",
+    "title": "AI Behavior Tree Design"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Playable Digital Prototype"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Game Release Build"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Modular Game Mechanics System"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Enemy AI Implementation"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Inventory & Progression System"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "GD",
+    "title": "Multiplayer Prototype"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Version Control Workflow"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Bug Tracking Report"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Automated Testing Setup"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Build & Release Quality Checklist"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Build & Release Pipeline Script"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "GD",
+    "title": "Performance Monitoring Dashboard"
   }
 ]
