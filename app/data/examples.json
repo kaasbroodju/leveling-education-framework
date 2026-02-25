@@ -770,139 +770,139 @@
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Analyseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Security checklist"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Analyseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Proces gapanalyse"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Analyseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Privacyanalyse (DPIA)"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Analyseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Risico en maatregelen analyse"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Analyseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Business Impact Analyse"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Security roadmap"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Security-implementatieadvies"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Privacy-waarborgingsadvies"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Risk & compliance-advies"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Business Continuity Management"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Prioriteiten in CIS Controls"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Adviseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Prioriteiten in Annex A ISO 27.xxxx controls"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Ontwerpen",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "SOC-processen"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Ontwerpen",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Disaster Recovery Plan"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Ontwerpen",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Procesontwerp voor een of meerdere controls"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Realiseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Identity & Access Management (IAM)"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Realiseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "SOC use cases"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Realiseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "CIS controls voor domein in organisatie"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Realiseren",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Information Security Management System (ISMS)"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Manage & Control",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Audit & reporting"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Manage & Control",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Control reporting"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Manage & Control",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Incident Response Book"
   },
   {
     "architecture_layer": "Organisatieprocessen",
     "activity": "Manage & Control",
-    "guild": "CS",
+    "guild": "BIT",
     "title": "Proces eigenaarschap vaststellen"
   },
   {
