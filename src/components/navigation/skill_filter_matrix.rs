@@ -1,4 +1,5 @@
 use tidos::{scoped_css, view, Component, Page};
+use crate::components::icons;
 use crate::domain::{Activiteit, Architectuurlaag, Icon, Skill, PERSONAL_SKILLS, PRODUCT_SKILLS, SOCIAL_SKILLS};
 
 pub struct SkillFilterMatrix<'a> {
@@ -18,7 +19,7 @@ impl<'a> Component for SkillFilterMatrix<'a> {
                             aria-label={x.to_text()}
                             :lef-link-active={self.filter.as_ref().map_or(false, |o| o.eq(&x))}
                         >
-                            <span class="material-symbols-outlined" style="font-size: 48px;">{x.to_icon()}</span>
+                            <span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
                             <span>{x.to_text()}</span>
                         </a>
                     {/for}
@@ -26,7 +27,7 @@ impl<'a> Component for SkillFilterMatrix<'a> {
                 <div>
                     {#for x in SOCIAL_SKILLS}
                         <a class="social-skill" href={state_dependent_link(&self.filter, &x)} aria-label={x.to_text()} :lef-link-active={self.filter.as_ref().map_or(false, |o| o.eq(&x))}>
-                            <span class="material-symbols-outlined" style="font-size: 48px;">{x.to_icon()}</span>
+                            <span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
                             <span>{x.to_text()}</span>
                         </a>
                     {/for}
@@ -34,7 +35,7 @@ impl<'a> Component for SkillFilterMatrix<'a> {
                 <div>
                     {#for x in PERSONAL_SKILLS}
                         <a class="personal-skill" href={state_dependent_link(&self.filter, &x)} aria-label={x.to_text()} :lef-link-active={self.filter.as_ref().map_or(false, |o| o.eq(&x))}>
-                            <span class="material-symbols-outlined" style="font-size: 48px;">{x.to_icon()}</span>
+                            <span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
                             <span>{x.to_text()}</span>
                         </a>
                     {/for}

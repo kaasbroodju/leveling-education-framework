@@ -2,6 +2,7 @@ use std::collections::BTreeMap;
 use markdown::to_html;
 use tidos::{scoped_css, view, Component, Page};
 use crate::components::card::Card;
+use crate::components::icons::InfoIcon;
 use crate::components::navigation::skill_filter_matrix::SkillFilterMatrix;
 use crate::data::SKILL_DATA;
 use crate::domain::{Level, LevelDescription, Skill, VaardighedenResponseBody};
@@ -50,8 +51,8 @@ impl Component for Description<'_> {
                             <div class="skill-header">
                                 <h3>{level.to_text()}</h3>
                                 {#if let Some(x) = &description.info}
-                                    <button lef-modal={format!("{}-{:#?}", self.title, level)}>
-                                        <span class="material-symbols-outlined">{"info"}</span>
+                                    <button lef-modal={format!("{}-{:#?}", self.title, level)} aria-label={format!("open modal over {} {}", self.title, level.to_text())}>
+                                        <InfoIcon />
                                     </button>
                                 {/if}
                                 

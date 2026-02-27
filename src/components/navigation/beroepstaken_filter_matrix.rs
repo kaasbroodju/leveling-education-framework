@@ -1,5 +1,6 @@
 use tidos::{scoped_css, view, Component, Page};
 use crate::components::card::Card;
+use crate::components::icons;
 use crate::domain::{Activiteit, Architectuurlaag, Icon, Skill, ACTIVITEITEN, ARCHITECTUURLAGEN};
 use crate::domain::Activiteit::{Adviseren, Analyseren, Manage_and_Control, Ontwerpen, Realiseren};
 use crate::domain::Architectuurlaag::{Gebruikersinteractie, Hardwareinterfacing, Infrastructuur, Organisatieprocessen, Software};
@@ -19,7 +20,7 @@ impl<'a> Component for BeroepstakenFilterMatrix<'a> {
                     <div class={css}>
                         {#for x in ARCHITECTUURLAGEN}
                             <a href={state_dependent_link(self.base_url, (&self.architectuurlaag, &self.activiteit), (Some(&x), None))} aria-label={format!("{x:#?}")} :lef-link-active={self.architectuurlaag.as_ref().map_or(false, |o| o.eq(&x))}>
-                                <span class="material-symbols-outlined" style="font-size: 48px;">{x.to_icon()}</span>
+                                <span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
                                 <span>{format!("{x:#?}")}</span>
                             </a>
                         {/for}
@@ -34,7 +35,7 @@ impl<'a> Component for BeroepstakenFilterMatrix<'a> {
                                 aria-label={x.to_text()}
                                 :lef-link-active={self.activiteit.as_ref().map_or(false, |o| o.eq(&x))}
                             >
-                                <span class="material-symbols-outlined" style="font-size: 48px;">{x.to_icon()}</span>
+                                <span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
                                 <span>{x.to_text()}</span>
                             </a>
                         {/for}

@@ -27,6 +27,7 @@
 
         span:first-child {
             margin: 0 0.5ch;
+            display: flex;
         }
 
         input {

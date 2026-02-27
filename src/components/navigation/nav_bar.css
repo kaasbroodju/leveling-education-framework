@@ -61,7 +61,8 @@
 
 
         span:first-child {
-            margin-right: 1ch;
+            margin-right: 12px;
+            display: flex;
         }
 
         &:hover, &:active, &:target {
