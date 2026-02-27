@@ -1,5 +1,6 @@
 use tidos::{scoped_css, view, Component, Page};
 use crate::components::card::Card;
+use crate::components::icons::InfoIcon;
 
 pub struct QuickSearch;
 
@@ -14,7 +15,7 @@ impl Component for QuickSearch {
                 <Card content={
                 view! {
                     <div class="search-header">
-                        <span class="material-symbols-outlined">{"info"}</span>
+                        <span><InfoIcon /></span>
                         <input id="search-query" type="search" autocomplete="off" autofocus placeholder="Zoek in LEF..." />
                     </div>
                     <div>

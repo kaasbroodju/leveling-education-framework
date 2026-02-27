@@ -1,5 +1,6 @@
 use tidos::{scoped_css, view, Component, Page};
 use crate::components::card::{AboutCard, Card};
+use crate::components::icons::{CategoryIcon, FaceIcon, OpenInNewIcon, Package2Icon, SchoolIcon, WebIcon};
 
 pub struct AboutLef;
 
@@ -87,7 +88,7 @@ impl<'a> Component for PersonSection<'a> {
                 </div>
                 <div>
                     {#if let Some(href) = self.linkedIn}
-                        <a href={href} target="_blank"><span class="material-symbols-outlined" style="font-size: 24px;padding: 8px;">open_in_new</span></a>
+                        <a href={href} target="_blank" aria-label={format!("bekijk meer over {} op LinkedIn", &self.name)}><span style="font-size: 24px;padding: 8px;"><OpenInNewIcon /></span></a>
                     {/if}
                 </div>
             </div>
@@ -113,10 +114,10 @@ impl Component for AboutLefCard {
                         <div>
                             <ul>
                                 <li>
-                                    <a href="https://www.hu.nl/voltijd-opleidingen/open-ict" target="_blank"><span class="material-symbols-outlined">school</span><span>Opleiding</span></a>
+                                    <a href="https://www.hu.nl/voltijd-opleidingen/open-ict" target="_blank"><span><SchoolIcon /></span><span>Opleiding</span></a>
                                 </li>
                                 <li>
-                                    <a href="https://husite.nl/open-ict/" target="_blank"><span class="material-symbols-outlined">web</span><span><abbr title="Hogeschool Utrecht">{"HU"}</abbr>{" website"}</span></a>
+                                    <a href="https://husite.nl/open-ict/" target="_blank"><span><WebIcon /></span><span><abbr title="Hogeschool Utrecht">{"HU"}</abbr>{" website"}</span></a>
                                 </li>
                                 <li>
                                     <a href="https://github.com/kaasbroodju/leveling-education-framework" target="_blank">
@@ -153,7 +154,7 @@ impl Component for Maintainer {
                                 </li>
                                 <li>
                                     <a href="https://nl.linkedin.com/in/morris-waaijer-0894b52b7" target="_blank">
-                                        <span>
+                                        <span aria-hidden="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="24px" height="24px"><path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"/></svg>
                                         </span>
                                         <span>LinkedIn</span>
@@ -182,13 +183,13 @@ impl Component for LEFApi {
                         <div>
                             <ul>
                                 <li>
-                                    <a href="/api/v1/vaardigheden" target="_blank"><span class="material-symbols-outlined">face</span><span>Vaardigheden</span></a>
+                                    <a href="/api/v1/vaardigheden" target="_blank"><span><FaceIcon /></span><span>Vaardigheden</span></a>
                                 </li>
                                 <li>
-                                    <a href="/api/v1/hboi" target="_blank"><span class="material-symbols-outlined">category</span><span>Beroepstaken / HBO-i</span></a>
+                                    <a href="/api/v1/hboi" target="_blank"><span><CategoryIcon /></span><span>Beroepstaken / HBO-i</span></a>
                                 </li>
                                 <li>
-                                    <a href="/api/v1/beroepsproducten" target="_blank"><span class="material-symbols-outlined">package_2</span><span>Beroepsproducten</span></a>
+                                    <a href="/api/v1/beroepsproducten" target="_blank"><span><Package2Icon /></span><span>Beroepsproducten</span></a>
                                 </li>
                             </ul>
                         </div>

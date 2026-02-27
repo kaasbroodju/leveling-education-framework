@@ -40,6 +40,7 @@
             margin-left: auto;
             padding: 8px;
             background-color: transparent;
+            color: var(--primary-color);
 
             span {
                 color: var(--primary-color);
