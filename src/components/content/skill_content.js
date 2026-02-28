@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll("button").forEach(
+    document.querySelectorAll("button[lef-modal]").forEach(
         (element) => element.onclick = () => {
             let modal = document.querySelector(`dialog[id="${element.attributes['lef-modal'].value}"]`);
             modal.showModal()

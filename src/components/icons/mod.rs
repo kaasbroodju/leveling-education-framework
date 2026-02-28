@@ -34,35 +34,35 @@ pub const WEB_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidde
 // ---------------------------------------------------------------------------
 
 pub fn svg_by_name(name: &str) -> &'static str {
-    match name {
-        "accessibility_new" => ACCESSIBILITY_NEW_SVG,
-        "announcement"      => ANNOUNCEMENT_SVG,
-        "biotech"           => BIOTECH_SVG,
-        "build"             => BUILD_SVG,
-        "calendar_month"    => CALENDAR_MONTH_SVG,
-        "category"          => CATEGORY_SVG,
-        "chat"              => CHAT_SVG,
-        "co_present"        => CO_PRESENT_SVG,
-        "design_services"   => DESIGN_SERVICES_SVG,
-        "directions_run"    => DIRECTIONS_RUN_SVG,
-        "domain"            => DOMAIN_SVG,
-        "explore"           => EXPLORE_SVG,
-        "face"              => FACE_SVG,
-        "handshake"         => HANDSHAKE_SVG,
-        "info"              => INFO_SVG,
-        "laptop"            => LAPTOP_SVG,
-        "memory"            => MEMORY_SVG,
-        "menu_book"         => MENU_BOOK_SVG,
-        "open_in_new"       => OPEN_IN_NEW_SVG,
-        "package_2"         => PACKAGE_2_SVG,
-        "psychology"        => PSYCHOLOGY_SVG,
-        "school"            => SCHOOL_SVG,
-        "smart_button"      => SMART_BUTTON_SVG,
-        "storage"           => STORAGE_SVG,
-        "tune"              => TUNE_SVG,
-        "web"               => WEB_SVG,
-        _                   => "",
-    }
+	match name {
+		"accessibility_new" => ACCESSIBILITY_NEW_SVG,
+		"announcement" => ANNOUNCEMENT_SVG,
+		"biotech" => BIOTECH_SVG,
+		"build" => BUILD_SVG,
+		"calendar_month" => CALENDAR_MONTH_SVG,
+		"category" => CATEGORY_SVG,
+		"chat" => CHAT_SVG,
+		"co_present" => CO_PRESENT_SVG,
+		"design_services" => DESIGN_SERVICES_SVG,
+		"directions_run" => DIRECTIONS_RUN_SVG,
+		"domain" => DOMAIN_SVG,
+		"explore" => EXPLORE_SVG,
+		"face" => FACE_SVG,
+		"handshake" => HANDSHAKE_SVG,
+		"info" => INFO_SVG,
+		"laptop" => LAPTOP_SVG,
+		"memory" => MEMORY_SVG,
+		"menu_book" => MENU_BOOK_SVG,
+		"open_in_new" => OPEN_IN_NEW_SVG,
+		"package_2" => PACKAGE_2_SVG,
+		"psychology" => PSYCHOLOGY_SVG,
+		"school" => SCHOOL_SVG,
+		"smart_button" => SMART_BUTTON_SVG,
+		"storage" => STORAGE_SVG,
+		"tune" => TUNE_SVG,
+		"web" => WEB_SVG,
+		_ => "",
+	}
 }
 
 // ---------------------------------------------------------------------------
@@ -98,80 +98,132 @@ pub struct TuneIcon;
 pub struct WebIcon;
 
 impl Component for AccessibilityNewIcon {
-    fn to_render(&self, _page: &mut Page) -> String { ACCESSIBILITY_NEW_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		ACCESSIBILITY_NEW_SVG.to_string()
+	}
 }
 impl Component for AnnouncementIcon {
-    fn to_render(&self, _page: &mut Page) -> String { ANNOUNCEMENT_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		ANNOUNCEMENT_SVG.to_string()
+	}
 }
 impl Component for BiotechIcon {
-    fn to_render(&self, _page: &mut Page) -> String { BIOTECH_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		BIOTECH_SVG.to_string()
+	}
 }
 impl Component for BuildIcon {
-    fn to_render(&self, _page: &mut Page) -> String { BUILD_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		BUILD_SVG.to_string()
+	}
 }
 impl Component for CalendarMonthIcon {
-    fn to_render(&self, _page: &mut Page) -> String { CALENDAR_MONTH_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		CALENDAR_MONTH_SVG.to_string()
+	}
 }
 impl Component for CategoryIcon {
-    fn to_render(&self, _page: &mut Page) -> String { CATEGORY_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		CATEGORY_SVG.to_string()
+	}
 }
 impl Component for ChatIcon {
-    fn to_render(&self, _page: &mut Page) -> String { CHAT_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		CHAT_SVG.to_string()
+	}
 }
 impl Component for CoPresentIcon {
-    fn to_render(&self, _page: &mut Page) -> String { CO_PRESENT_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		CO_PRESENT_SVG.to_string()
+	}
 }
 impl Component for DesignServicesIcon {
-    fn to_render(&self, _page: &mut Page) -> String { DESIGN_SERVICES_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		DESIGN_SERVICES_SVG.to_string()
+	}
 }
 impl Component for DirectionsRunIcon {
-    fn to_render(&self, _page: &mut Page) -> String { DIRECTIONS_RUN_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		DIRECTIONS_RUN_SVG.to_string()
+	}
 }
 impl Component for DomainIcon {
-    fn to_render(&self, _page: &mut Page) -> String { DOMAIN_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		DOMAIN_SVG.to_string()
+	}
 }
 impl Component for ExploreIcon {
-    fn to_render(&self, _page: &mut Page) -> String { EXPLORE_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		EXPLORE_SVG.to_string()
+	}
 }
 impl Component for FaceIcon {
-    fn to_render(&self, _page: &mut Page) -> String { FACE_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		FACE_SVG.to_string()
+	}
 }
 impl Component for HandshakeIcon {
-    fn to_render(&self, _page: &mut Page) -> String { HANDSHAKE_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		HANDSHAKE_SVG.to_string()
+	}
 }
 impl Component for InfoIcon {
-    fn to_render(&self, _page: &mut Page) -> String { INFO_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		INFO_SVG.to_string()
+	}
 }
 impl Component for LaptopIcon {
-    fn to_render(&self, _page: &mut Page) -> String { LAPTOP_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		LAPTOP_SVG.to_string()
+	}
 }
 impl Component for MemoryIcon {
-    fn to_render(&self, _page: &mut Page) -> String { MEMORY_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		MEMORY_SVG.to_string()
+	}
 }
 impl Component for MenuBookIcon {
-    fn to_render(&self, _page: &mut Page) -> String { MENU_BOOK_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		MENU_BOOK_SVG.to_string()
+	}
 }
 impl Component for OpenInNewIcon {
-    fn to_render(&self, _page: &mut Page) -> String { OPEN_IN_NEW_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		OPEN_IN_NEW_SVG.to_string()
+	}
 }
 impl Component for Package2Icon {
-    fn to_render(&self, _page: &mut Page) -> String { PACKAGE_2_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		PACKAGE_2_SVG.to_string()
+	}
 }
 impl Component for PsychologyIcon {
-    fn to_render(&self, _page: &mut Page) -> String { PSYCHOLOGY_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		PSYCHOLOGY_SVG.to_string()
+	}
 }
 impl Component for SchoolIcon {
-    fn to_render(&self, _page: &mut Page) -> String { SCHOOL_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		SCHOOL_SVG.to_string()
+	}
 }
 impl Component for SmartButtonIcon {
-    fn to_render(&self, _page: &mut Page) -> String { SMART_BUTTON_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		SMART_BUTTON_SVG.to_string()
+	}
 }
 impl Component for StorageIcon {
-    fn to_render(&self, _page: &mut Page) -> String { STORAGE_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		STORAGE_SVG.to_string()
+	}
 }
 impl Component for TuneIcon {
-    fn to_render(&self, _page: &mut Page) -> String { TUNE_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		TUNE_SVG.to_string()
+	}
 }
 impl Component for WebIcon {
-    fn to_render(&self, _page: &mut Page) -> String { WEB_SVG.to_string() }
+	fn to_render(&self, _page: &mut Page) -> String {
+		WEB_SVG.to_string()
+	}
 }

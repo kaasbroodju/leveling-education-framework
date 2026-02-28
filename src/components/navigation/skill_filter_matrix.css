@@ -23,8 +23,6 @@
     @media only screen and (max-width: 960px) {
         height: unset;
     }
-    /*width: 100%;*/
-    /*aspect-ratio: 1.7778;*/
 
     & > :first-child {
         grid-area: a;
@@ -55,16 +53,20 @@
         height: 100%;
     }
 
-    a {
+    button {
         font-weight: 500;
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    a {
-        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        background: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        cursor: pointer;
+        padding: 0;
         text-align: center;
         border-radius: 4px;
         border: 2px solid var(--base-color);
@@ -80,13 +82,12 @@
             }
         }
 
-        &:hover, &:focus, &[lef-link-active] {
+        &:hover, &[lef-link-active] {
             border-color: var(--primary-color);
             background-color: color-mix(in srgb, var(--base-color) 90%, white 10%);
         }
 
         &[lef-link-active] {
-            /* Automatisch 10% lichter maken */
             background-color: color-mix(in srgb, var(--base-color) 90%, white 10%);
         }
     }
