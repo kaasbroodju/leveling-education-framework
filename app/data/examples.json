@@ -273,7 +273,7 @@
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Adviseren",
     "guild": "UI/UX",
-    "title": "Pain & Gains "
+    "title": "Pain & Gains"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
@@ -303,13 +303,13 @@
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Adviseren",
     "guild": "UI/UX",
-    "title": "How might we’s"
+    "title": "How might we's"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Ontwerpen",
     "guild": "UI/UX",
-    "title": "Crazy 8’s "
+    "title": "Crazy 8's"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
@@ -351,25 +351,25 @@
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Realiseren",
     "guild": "UI/UX",
-    "title": "Content & Story "
+    "title": "Content & Story"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Realiseren",
     "guild": "UI/UX",
-    "title": "Responsive Design "
+    "title": "Responsive Design"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Realiseren",
     "guild": "UI/UX",
-    "title": "Figma components "
+    "title": "Figma components"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Realiseren",
     "guild": "UI/UX",
-    "title": "UI / UX patterns "
+    "title": "UI / UX patterns"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
@@ -381,7 +381,7 @@
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Manage & Control",
     "guild": "UI/UX",
-    "title": "Heuristic Evaluation "
+    "title": "Heuristic Evaluation"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
@@ -411,7 +411,7 @@
     "architecture_layer": "Gebruikersinteractie",
     "activity": "Manage & Control",
     "guild": "UI/UX",
-    "title": "Atomic Design "
+    "title": "Atomic Design"
   },
   {
     "architecture_layer": "Gebruikersinteractie",
@@ -1192,5 +1192,353 @@
     "activity": "Manage & Control",
     "guild": "GD",
     "title": "Performance Monitoring Dashboard"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "Framework Vergelijken"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "UI Vergelijken"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "User Journey Mapping"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "Probleem Analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "Requirement Analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "Casus Vaststellen"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "FE",
+    "title": "Advies over handigste framework"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "FE",
+    "title": "CSS methodology (tailwind)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "FE",
+    "title": "Accessibility"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "FE",
+    "title": "Statemanagement"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "FE",
+    "title": "Library / package management"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "FE",
+    "title": "Performance rendering strategy (SSR, ISR, CSR)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Wireframe"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Toepassen SDG's op front-end"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Mockdata opzetten"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Folderstructuur organiseren"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Framework gebruiken (algemeen)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Rubber Duck"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "OOP structuur"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Lighthouse testen"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Toepassen van DRY en KISS"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "SAAS dashboard"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Herbruikbare componenten"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Validatie client-side"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Authenticatie"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Mockdata opzetten"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Framework React gebruiken"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Unit testing & integration testing"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Realiseren prototype naar code"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Continuous Development (CD)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Continuous Integration (CI)"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Conventies"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Git / versiebeheer"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Swagger"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Opzetten storybook"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Linting"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Overdrachtsdocument"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Automatic testing"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "WCAG"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Klikbaar prototype maken"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Overdrachtsdocument"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "E2E-testing"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Readme"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Gebruikershandleiding"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Toegankelijkheid testing"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "User testing"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Interactief Figma design maken"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Teststructuur opzetten"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Componenten architectuur"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Usability testplan"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Sitemap"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Kleur gebruik contrast"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "Project structuur"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "User Journey"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "FE",
+    "title": "User Exprience"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Analyseren",
+    "guild": "FE",
+    "title": "Docker image"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "FE",
+    "title": "Docker compose"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Manage & Control",
+    "guild": "FE",
+    "title": "Docker vulnerabilities"
   }
 ]
