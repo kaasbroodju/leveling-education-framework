@@ -1,147 +1,105 @@
 # Leveling Education Framework
 Better navigation for [HBO-I Domeinbeschrijving](https://www.hbo-i.nl/publicaties-domeinbeschrijving/) and Open-ICT Vaardigheden.
 
-Full app built in [NextJS](https://nextjs.org) version 13 with [Material UI](https://mui.com) framework
+Built with [Rust](https://www.rust-lang.org/), [Rocket](https://rocket.rs/) and [Tidos](https://crates.io/crates/tidos).
 
+## Running locally
 
-# Updating Vaardigheden and/ or HBO-I
-Make sure to update all supported languages json's in`/app/data`
+```bash
+cargo run
+```
 
-# Environment variables
-| Name | Example value | Type | Description |
-| ----------- | ----------- | ----------- | ----------- |
-| HOSTS | localhost, lef.open-ict.hu.nl | String | comma seperated list of all hosts that caddy should auto-generate https certificates and route for | 
+## Updating content
 
-# Running in production
-To run the application in a production environment run the following commands:
+Content lives in `/app/data` as JSON files. Edit the relevant file and redeploy to update vaardigheden, HBO-I competenties, or beroepsproducten.
 
-1. Rename `.env-prod` to `.env` and edit any values you need to edit.
-2. Pull all the images with `docker compose pull`, this prevents docker compose from seeing the `build: ...` section in the docker-compose.yml and deciding to build the image from source. Skip this step if you do wish to build from source. 
-3. Run the command `docker network create caddy`
-4. Launch Caddy with `docker compose -f docker-compose.caddy.yml --env-file .env up -d`, you can optionally add the `--no-build` after the `-d` flag if you wish to tell docker compose to pull the images or use the local image cache instead of building the container from source.
-5. Launch the application with `docker compose --env-file .env up -d`
+## Environment variables
 
-# Contributing to Leveling Education Framework
-We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+| Name | Example | Description |
+| --- | --- | --- |
+| `HOSTS` | `localhost, lef.open-ict.hu.nl` | Comma-separated list of hosts that Caddy generates HTTPS certificates for |
+
+Copy `.env-example` to `.env` and fill in the values before deploying.
+
+## Running in production
+
+1. Copy `.env-example` to `.env` and edit the values.
+2. Create the shared Docker network: `docker network create caddy`
+3. Start Caddy: `docker compose -f docker-compose.caddy.yml --env-file .env up -d`
+4. Start the application: `docker compose --env-file .env up -d`
+
+Watchtower automatically pulls and restarts the container when a new image is published to Docker Hub.
+
+## Contributing
+
+We love your input! Whether it's:
 
 - Reporting a bug
 - Discussing the current state of the code
 - Submitting a fix
 - Proposing new features
 
-# We Develop with Github
-We use github to host code, to track issues and feature requests, as well as accept pull requests.
-
-## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
-Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)). We actively welcome your pull requests:
+We use GitHub to host code, track issues, and accept pull requests via [GitHub Flow](https://guides.github.com/introduction/flow/index.html):
 
 1. Fork the repo and create your branch from `main`.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes (Currently not implemented yet).
-5. Make sure your code lints.
-6. Issue that pull request and make sure to merge into the `dev` branch!
+2. Make your changes.
+3. If you've changed the API, update this documentation.
+4. Open a pull request and target the `main` branch.
 
-## Report bugs using Github's [issues](https://github.com/spark-156/leveling-education-framework/issues)
-We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/spark-156/leveling-education-framework/issues/new); it's that easy!
+Report bugs via [GitHub Issues](https://github.com/spark-156/leveling-education-framework/issues).
 
 ## License
-By contributing, you agree that your contributions will be not be licensed and you lose all rights to your code.
 
-# API documentation
+By contributing, you agree that your contributions will not be licensed and you lose all rights to your code.
 
-The api is available under /api/v1
+## API
 
-## Accept-Language header
-This application has an `en` and `nl` translation. The by default returns the `nl` translation for all requests. If you wish to get the `en` version then you must set the `Accept-Language` header with `en` as its value. It will currently respond with a `501` error because there are no translations yet. But this is something to keep in mind later.
+The API is available under `/api/v1`.
 
-This Accept-Language header applies for all api routes.
-## HBO-I
-### Description 
-Getting an up to date version of the hbo-i.json file under /app/data
-### URL 
-/api/v1/hboi
+### `GET /api/v1/hboi`
 
-### Query Paramaters
-| Paramater | Possible values |
-| --- | --- |
-| architectuurlaag | Gebruikersinteractie \| Organisatieprocessen \|Infrastructuur \| Software \| Hardwareinterfacing |
-| activiteit | Analyseren \| Adviseren \| Ontwerpen \| Realiseren \| Manage & Control |
-| niveau | 1 \| 2 \| 3 \| 4 |
+Returns all HBO-I competenties.
 
-### Errors
-#### 501 Not Implemented
-#### 400 Bad Request
-```
+**Response**
+```json
 {
-    error: message
+  "<architectuurlaag> <activiteit>": {
+    "1": { "title": "string", "info": "string | null" },
+    "2": { "title": "string", "info": "string | null" },
+    "3": { "title": "string", "info": "string | null" },
+    "4": { "title": "string", "info": "string | null" }
+  }
 }
 ```
 
-### Response
-```
+### `GET /api/v1/vaardigheden`
+
+Returns all Open-ICT vaardigheden.
+
+**Response**
+```json
 {
-    [key: string]: {
-        [key: string] {
-            title: string,
-            info: string
-        }
-    }
+  "<vaardigheid>": {
+    "1": { "title": "string", "info": "string | null" },
+    "2": { "title": "string", "info": "string | null" },
+    "3": { "title": "string", "info": "string | null" },
+    "4": { "title": "string", "info": "string | null" }
+  }
 }
 ```
 
+### `GET /api/v1/beroepsproducten`
 
-## Vaardigheden
-### Description 
-Getting an up to date version of the vaardigheden.json file under /app/data
-### URL 
-/api/v1/vaardigheden
+Returns all beroepsproducten voorbeelden.
 
-### Errors
-#### 501 Not Implemented
-#### 400 Bad Request
+**Response**
+```json
+[
+  {
+    "architecture_layer": "string",
+    "activity": "string",
+    "guild": "string",
+    "title": "string"
+  }
+]
 ```
-{
-    error: message
-}
-```
-
-### Response
-```
-{
-    [key: string]: {
-        [key: string] {
-            title: string,
-            info: string
-        }
-    }
-}
-```
-
-## Vaardigheid
-### Description 
-Getting an up to date version of the vaardigheden.json file under /app/data
-### URL 
-/api/v1/vaardigheden/{vaardigheid}
-
-Possible `vaardigheid` values: 'Juiste kennis ontwikkelen', 'Kwalitatief product maken', 'Overzicht creëren', 'Kritisch oordelen', 'Samenwerken', 'Boodschap delen', 'Plannen', 'Flexibel opstellen', 'Pro-actief handelen', 'Reflecteren'
-
-### Errors
-#### 501 Not Implemented
-#### 400 Bad Request
-```
-{
-    error: message
-}
-```
-
-### Response
-```
-{
-    [key: string] {
-        title: string,
-        info: string
-    }
-}
-```
-
