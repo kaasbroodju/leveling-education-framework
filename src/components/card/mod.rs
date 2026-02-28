@@ -1,25 +1,25 @@
-use tidos::{scoped_css, view, Component, Page};
+use tidos::{Component, Page, scoped_css, view};
 
 pub struct Card {
-    pub content: String
+	pub content: String,
 }
 
 impl Component for Card {
-    fn to_render(&self, page: &mut Page) -> String {
-        view! {
-            <div class={format!("{} {}", scoped_css!("card.css"), "with-padding")}>@html{&self.content}</div>
-        }
-    }
+	fn to_render(&self, page: &mut Page) -> String {
+		view! {
+			<div class={format!("{} {}", scoped_css!("card.css"), "with-padding")}>@html{&self.content}</div>
+		}
+	}
 }
 
 pub struct AboutCard {
-    pub content: String
+	pub content: String,
 }
 
 impl Component for AboutCard {
-    fn to_render(&self, page: &mut Page) -> String {
-        view! {
-            <div class={scoped_css!("card.css")}>@html{&self.content}</div>
-        }
-    }
+	fn to_render(&self, page: &mut Page) -> String {
+		view! {
+			<div class={scoped_css!("card.css")}>@html{&self.content}</div>
+		}
+	}
 }
