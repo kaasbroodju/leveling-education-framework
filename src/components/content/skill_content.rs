@@ -2,34 +2,35 @@ use crate::components::card::Card;
 use crate::components::icons::InfoIcon;
 use crate::components::navigation::skill_filter_matrix::SkillFilterMatrix;
 use crate::data::SKILL_DATA;
-use crate::domain::{Level, LevelDescription, Skill, VaardighedenResponseBody};
+use crate::domain::{Level, LevelDescription};
 use markdown::to_html;
 use std::collections::BTreeMap;
 use tidos::{Component, Page, scoped_css, view};
 
-pub struct SkillContent {
-	pub filter: Option<Skill>,
-}
+pub struct SkillContent;
 
 impl Component for SkillContent {
 	fn to_render(&self, page: &mut Page) -> String {
 		let content = &(*SKILL_DATA);
 
+		tidos::head! {
+			<script>@html{include_str!("skill_filter.js")}</script>
+		}
+
 		view! {
 			<Card>
 				{#slot:content}
-					<SkillFilterMatrix filter={&self.filter} />
+					<SkillFilterMatrix />
 				{/slot}
 			</Card>
-			{#for (skill, levels) in content
-				.iter()
-				.filter(|(s, _)| self.filter.as_ref().map_or(true, |f| f == *s))
-			}
-				<Card>
-					{#slot:content}
-						<Description title={skill.to_text().to_string()} levels={levels} />
-					{/slot}
-				</Card>
+			{#for (skill, levels) in content.iter()}
+				<div data-vaardigheid={skill.to_text()}>
+					<Card>
+						{#slot:content}
+							<Description title={skill.to_text().to_string()} levels={levels} />
+						{/slot}
+					</Card>
+				</div>
 			{/for}
 		}
 	}
@@ -73,7 +74,6 @@ impl Component for Description<'_> {
 								</dialog>
 							{/if}
 
-							// @html{markdown::to_html(&description.title)}
 						</section>
 					{/for}
 				</div>

@@ -1,45 +1,32 @@
 use crate::components::card::Card;
 use crate::components::icons::InfoIcon;
 use crate::components::navigation::beroepstaken_filter_matrix::BeroepstakenFilterMatrix;
-use crate::components::navigation::skill_filter_matrix::SkillFilterMatrix;
 use crate::data::HBOI_DATA;
-use crate::domain::{
-	ACTIVITEITEN, ARCHITECTUURLAGEN, Activiteit, Architectuurlaag, HBOIResponseBody, Level,
-	LevelDescription, Skill, VaardighedenResponseBody,
-};
+use crate::domain::{Level, LevelDescription};
 use markdown::to_html;
 use std::collections::BTreeMap;
 use tidos::{Component, Page, scoped_css, view};
 
-pub struct BeroepstakenContent {
-	pub architectuurlaag: Option<Architectuurlaag>,
-	pub activiteit: Option<Activiteit>,
-}
+pub struct BeroepstakenContent;
 
 impl Component for BeroepstakenContent {
 	fn to_render(&self, page: &mut Page) -> String {
 		let content = &(*HBOI_DATA);
 
-		let key = format!(
-			"{} {}",
-			self.architectuurlaag
-				.as_ref()
-				.map_or(String::new(), |x| format!("{x:#?}")),
-			self.activiteit.as_ref().map_or("", |x| x.to_text())
-		);
+		tidos::head! {
+			<script>@html{include_str!("beroepstaken_filter.js")}</script>
+		}
 
 		view! {
-			<BeroepstakenFilterMatrix base_url="/beroepstaken" architectuurlaag={&self.architectuurlaag} activiteit={&self.activiteit} />
-			{#for (skill, levels) in content
-				.iter()
-				.filter(|(s, _)| self.architectuurlaag.as_ref().map_or(true, |x| x.eq(&s.architectuurlaag))
-					&& self.activiteit.as_ref().map_or(true, |x| x.eq(&s.activiteit)))
-			}
-				<Card>
-					{#slot:content}
-						<Description title={skill.to_string()} levels={levels} />
-					{/slot}
-				</Card>
+			<BeroepstakenFilterMatrix />
+			{#for (skill, levels) in content.iter()}
+				<div data-architectuurlaag={format!("{:#?}", skill.architectuurlaag)} data-activiteit={format!("{:#?}", skill.activiteit)}>
+					<Card>
+						{#slot:content}
+							<Description title={skill.to_string()} levels={levels} />
+						{/slot}
+					</Card>
+				</div>
 			{/for}
 		}
 	}

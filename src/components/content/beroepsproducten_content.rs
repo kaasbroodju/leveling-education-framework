@@ -1,49 +1,22 @@
 use crate::components::card::Card;
 use crate::components::navigation::beroepstaken_filter_matrix::BeroepstakenFilterMatrix;
-use crate::components::navigation::skill_filter_matrix::SkillFilterMatrix;
-use crate::data::{EXAMPLES_DATA, HBOI_DATA};
-use crate::domain::{
-	Activiteit, Architectuurlaag, Guild, HBOIExampleResponse, HBOIKey, HBOIResponseBody, Level,
-	LevelDescription, Skill, VaardighedenResponseBody,
-};
+use crate::data::EXAMPLES_DATA;
+use crate::domain::{Activiteit, Architectuurlaag, Guild, HBOIExampleResponse, HBOIKey};
 use std::cmp::Ordering;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::BTreeMap;
 use tidos::{Component, Page, scoped_css, view};
 
-pub struct BeroepsproductenContent {
-	pub architectuurlaag: Option<Architectuurlaag>,
-	pub activiteit: Option<Activiteit>,
-}
+pub struct BeroepsproductenContent;
 
 impl Component for BeroepsproductenContent {
 	fn to_render(&self, page: &mut Page) -> String {
 		let content = &(*EXAMPLES_DATA);
-		let content = content
-			.iter()
-			.filter(|example| {
-				self.architectuurlaag
-					.as_ref()
-					.map_or(true, |laag| laag.eq(&example.architecture_layer))
-					&& self
-						.activiteit
-						.as_ref()
-						.map_or(true, |activiteit| activiteit.eq(&example.activity))
-			})
-			.collect::<Vec<_>>();
 
 		let mut grouped_content = BTreeMap::<HBOIKey, Vec<&HBOIExampleResponse>>::new();
-
 		for example in content {
-			let key = format!(
-				"{} {}",
-				self.architectuurlaag
-					.as_ref()
-					.map_or(String::new(), |x| format!("{x:#?}")),
-				self.activiteit.as_ref().map_or("", |x| x.to_text())
-			);
 			let key = HBOIKey {
-				architectuurlaag: (&example).architecture_layer.clone(),
-				activiteit: (&example).activity.clone(),
+				architectuurlaag: example.architecture_layer.clone(),
+				activiteit: example.activity.clone(),
 			};
 			match grouped_content.get_mut(&key) {
 				None => {
@@ -63,18 +36,23 @@ impl Component for BeroepsproductenContent {
 			})
 		});
 
+		tidos::head! {
+			<script>@html{include_str!("beroepstaken_filter.js")}</script>
+		}
+
 		view! {
-			<BeroepstakenFilterMatrix base_url="/beroepsproducten" architectuurlaag={&self.architectuurlaag} activiteit={&self.activiteit} />
+			<BeroepstakenFilterMatrix />
 			{#if !grouped_content.is_empty()}
 				{#for (key, examples) in grouped_content}
-					<Card>
-						{#slot:content}
-							<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={examples} />
-						{/slot}
-					</Card>
+					<div data-architectuurlaag={format!("{:#?}", key.architectuurlaag)} data-activiteit={format!("{:#?}", key.activiteit)}>
+						<Card>
+							{#slot:content}
+								<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={examples} />
+							{/slot}
+						</Card>
+					</div>
 				{/for}
 			{/if}
-
 		}
 	}
 }

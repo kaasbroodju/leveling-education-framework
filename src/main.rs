@@ -18,10 +18,7 @@ use crate::components::content::beroepsproducten_content::BeroepsproductenConten
 use crate::components::content::beroepstaken_content::BeroepstakenContent;
 use crate::components::content::skill_content::SkillContent;
 use crate::components::layout::Layout;
-use crate::domain::{
-	Activiteit, Architectuurlaag, HBOIExampleResponse, HBOIResponseBody, Skill,
-	VaardighedenResponseBody,
-};
+use crate::domain::{HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
 use tidos::{Page, page};
 
 #[derive(Responder)]
@@ -58,8 +55,8 @@ fn llms() -> &'static str {
 	include_str!("../app/data/STUDIEWIJZER_FOR_AI.md")
 }
 
-#[get("/?<vaardigheid>")]
-fn index(vaardigheid: Option<Skill>) -> CachedHtml {
+#[get("/")]
+fn index() -> CachedHtml {
 	page! {
 		{
 			tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
@@ -67,18 +64,15 @@ fn index(vaardigheid: Option<Skill>) -> CachedHtml {
 		}
 		<Layout current_url="/">
 			{#slot:content}
-				<SkillContent filter={vaardigheid} />
+				<SkillContent />
 			{/slot}
 		</Layout>
 	}
 	.into()
 }
 
-#[get("/beroepstaken?<architectuurlaag>&<activiteit>")]
-fn beroepstaken(
-	architectuurlaag: Option<Architectuurlaag>,
-	activiteit: Option<Activiteit>,
-) -> CachedHtml {
+#[get("/beroepstaken")]
+fn beroepstaken() -> CachedHtml {
 	page! {
 		{
 			tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
@@ -86,18 +80,15 @@ fn beroepstaken(
 		}
 		<Layout current_url="/beroepstaken">
 			{#slot:content}
-				<BeroepstakenContent architectuurlaag={architectuurlaag} activiteit={activiteit} />
+				<BeroepstakenContent />
 			{/slot}
 		</Layout>
 	}
 	.into()
 }
 
-#[get("/beroepsproducten?<architectuurlaag>&<activiteit>")]
-fn beroepsproducten(
-	architectuurlaag: Option<Architectuurlaag>,
-	activiteit: Option<Activiteit>,
-) -> CachedHtml {
+#[get("/beroepsproducten")]
+fn beroepsproducten() -> CachedHtml {
 	page! {
 		{
 			tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
@@ -105,7 +96,7 @@ fn beroepsproducten(
 		}
 		<Layout current_url="/beroepsproducten">
 			{#slot:content}
-				<BeroepsproductenContent architectuurlaag={architectuurlaag} activiteit={activiteit} />
+				<BeroepsproductenContent />
 			{/slot}
 		</Layout>
 	}
