@@ -1540,5 +1540,263 @@
     "activity": "Manage & Control",
     "guild": "FE",
     "title": "Docker vulnerabilities"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "User persona's"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "User journey"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Procesanalyse huidig (BPMN)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Procesanalyse huidig (ITIL)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Gap analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Stakeholder map/RASCI (analyse)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "SWOT analyse (huidig)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Business Model Canvas (huidig)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Value Propostion Canvas (huidig)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Requierment analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Concurrentie analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "Risico analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "BIT",
+    "title": "DESTEP analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "BIT",
+    "title": "Adviesrapport obv ontwerp"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "BIT",
+    "title": "Adviesrapport obv analyse"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "BIT",
+    "title": "Productvisie"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "BIT",
+    "title": "Missie/visie van organisatie"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Productbacklog refinement (INVEST/DEEP)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Requirement engineering"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Procesontwerp gewenst (BPMN)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Servicedesign ITIL (gewenst)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Implementatieplan (ADKAR, Kotter, ITIL transition, Cynefin)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Stakeholder communicatieplan"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "SWOT (gewenst)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Business Model Canvas (gewenst)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Value Propostion Canvas (gewenst)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "BIT",
+    "title": "Roadmap"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Productbacklog management"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Dashboards (Excel, PowerBI, etc)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Inrichten standaardapplicatie"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Low-code oplossing maken"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Uitvoeren implementatieplan"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Vibe-code voor POC"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "BIT",
+    "title": "Functionele testen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Qualitycontrol (story's)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "(Test) Pipeline to Market (CI/CD)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Begroting (uren+geld)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Werk inschatten (Planpoker)"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Burndown chart"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "(Overdrachts)documentatie"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Service Level Agreement"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Algeme voorwaarden"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "BIT",
+    "title": "Privacy beleid"
   }
 ]
