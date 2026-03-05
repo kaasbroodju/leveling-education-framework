@@ -212,7 +212,7 @@ pub enum Guild {
 	#[serde(rename(serialize = "BE", deserialize = "BE"))]
 	Backend,
 
-	#[serde(rename(serialize = "BIM", deserialize = "BIM"))]
+	#[serde(rename(serialize = "BIT", deserialize = "BIT"))]
 	BusinessItManagement,
 
 	#[serde(rename(serialize = "CS", deserialize = "CS"))]
