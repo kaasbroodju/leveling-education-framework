@@ -37,6 +37,18 @@
   },
   {
     "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "Grafana dashboards"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "BE",
+    "title": "k8s"
+  },
+  {
+    "architecture_layer": "Software",
     "activity": "Analyseren",
     "guild": "BE",
     "title": "Test coverage"
@@ -55,9 +67,57 @@
   },
   {
     "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "BE",
+    "title": "ISO 25010"
+  },
+  {
+    "architecture_layer": "Software",
     "activity": "Ontwerpen",
     "guild": "BE",
-    "title": "UML"
+    "title": "UML - class diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML - sequence diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML - component diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML - deployment diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML - state diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML - activity diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "UML - use case diagram"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "BE",
+    "title": "BPMN"
   },
   {
     "architecture_layer": "Software",
