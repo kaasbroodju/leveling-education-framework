@@ -25,13 +25,19 @@
   "background_color": "#121212",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "landscape",
+  "orientation": "any",
   "screenshots": [
     {
       "src": "/screenshot.png",
-      "sizes": "2880x1556",
+      "sizes": "1920x968",
       "type": "image/png",
       "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot_mobile.png",
+      "sizes": "515x1143",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 }
