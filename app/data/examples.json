@@ -1858,5 +1858,503 @@
     "activity": "Manage & Control",
     "guild": "BIT",
     "title": "Privacy beleid"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Gebruikersbehoefte kaart bij AI-functionaliteit"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Usability tests"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Gebruikersfeedback voor modelverbetering"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Explainability"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Interactiepatronen met AI-systemen"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Gebruikersvertrouwen"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "AI-oplossing"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Ethical AI interface"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Human-in-the-loop"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "AI-ondersteunde user flow"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Feedbackmechanismen voor modelverbetering"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Explainability interfaces"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Implementatie AI-chatbots of agents"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Prompt-based interfaces"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Feedbacksysteem voor modelverbetering"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Monitoring mens-AI gebruik"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Beheer prompt libraries"
+  },
+  {
+    "architecture_layer": "Gebruikersinteractie",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Governance voor verantwoord gebruik AI interfaces"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Datavolwassenheid: beschikbaarheid en kwaliteit"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Geschiktheid bedrijfsprocessen voor AI-automatisering"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Identificatie AI use cases binnen organisatie"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Data Governance"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Risico's en ethische implicaties"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Data bias"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Algorithmes/technieken"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Databronnen en kwaliteit"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Trustworthy AI"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "AI implementatie advies obv bestaande processen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Impact advies"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Ontwerp databronnen, -kwaliteit en -stromen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Human-AI samenwerking in processen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "AI lifecycle processen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "AI-ondersteunde procesautomatisering"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "AI integratie in bedrijfsprocessen"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Data pipelines"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "AI based decision support system"
+  },
+  {
+    "architecture_layer": "Organisatieprocessen",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "AI lifecycle governance"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Cloud vs local AI"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Analyse compute en storage behoeften"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "AI platformen"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "MLOps tooling"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "MLOps pipelines"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "AI/ML infra-architectuur ontwerp"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Inrichting MLOps"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Data pipelines"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Containerized AI services"
+  },
+  {
+    "architecture_layer": "Infrastructuur",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Resource management for training"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Accuracy | Precision | Recall | F1"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "AI/ML model analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "EDA"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Analyse integratie met bestaande systemen"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Model performance analyse"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Advies data-architectuur"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Mogelijkheden GenAI"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Kosten GenAI"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "LLM"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Modelarchitectuur"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Frameworks"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Data Preparation"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Feature engineering strategie"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Ontwerp data-architectuur"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "C4"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Teststrategie ML model"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "ML pipelines"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Model evaluatie strategie"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Data card"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Ontwerpen",
+    "guild": "AI",
+    "title": "Model architecture"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Implementatie pre-trained model"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Trainen ML model"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Prompt engineering"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Geïmplementeerde dataoplossing"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Implementatie ML-componenten"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "Integratie AI model in applicatie"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Realiseren",
+    "guild": "AI",
+    "title": "LMM implementatie"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Implementatieplan continues improvements"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "CI/CD pipeline voor data"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Model performance"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Lifecycle management"
+  },
+  {
+    "architecture_layer": "Software",
+    "activity": "Manage & Control",
+    "guild": "AI",
+    "title": "Versieberheer modellen"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Hardwarevereisten voor AI workloads"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "AI",
+    "title": "Energieverbruik AI modellen"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "CPU vs GPUs"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "AI",
+    "title": "Kostenoptimalisatie van AI hardware"
   }
 ]
