@@ -2356,5 +2356,221 @@
     "activity": "Adviseren",
     "guild": "AI",
     "title": "Kostenoptimalisatie van AI hardware"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "TI",
+    "title": "Specificatie vergelijking"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "TI",
+    "title": "Datasheet vergelijking"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "TI",
+    "title": "Criteria analyse"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "TI",
+    "title": "Toepassing hardware componenten"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Analyseren",
+    "guild": "TI",
+    "title": "Bestaand hardware (deel-)systeem analyse"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "TI",
+    "title": "Adviesrapport hardware keuze"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "TI",
+    "title": "Onderzoeksrapport communicatieprotocol"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "TI",
+    "title": "Multidecision criteria matrix software framework"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "TI",
+    "title": "Multidecision criteria matrix hardware component"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "TI",
+    "title": "Multidecision criteria matrix hardware communicatie protocol"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Adviseren",
+    "guild": "TI",
+    "title": "Adviesrapport communicatieprotocol keuze"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Ontwerpen",
+    "guild": "TI",
+    "title": "Wiring diagram"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Ontwerpen",
+    "guild": "TI",
+    "title": "Component diagram"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Ontwerpen",
+    "guild": "TI",
+    "title": "Sequence diagram"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Ontwerpen",
+    "guild": "TI",
+    "title": "PCB schematic"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Ontwerpen",
+    "guild": "TI",
+    "title": "Breadboard prototype"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Simulatie"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Testopstelling"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Firmware (software voor hardware)"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "PCB"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Product prototype"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Component prototype"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Software driver voor hardware component"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Software library voor hardware"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Validatieschema"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Tiny Machine Learning"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Realiseren",
+    "guild": "TI",
+    "title": "Embedded Machine Learning"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Wiring diagram"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Documentatie project (readme, e.a.)"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Versiebeheer (git, ci/cd)"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Simulatie"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Breadboard (testplatform)"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Documentatie Development Kit (Arduino, ESP, e.a.)"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Documentatie hardware componenten (datasheets)"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Over the air updates"
+  },
+  {
+    "architecture_layer": "Hardwareinterfacing",
+    "activity": "Manage & Control",
+    "guild": "TI",
+    "title": "Logbeheer (sensor, firmware, e.a.)"
   }
 ]
