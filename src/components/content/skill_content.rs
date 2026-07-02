@@ -27,7 +27,7 @@ impl Component for SkillContent {
 				<div data-vaardigheid={skill.to_text()}>
 					<Card>
 						{#slot:content}
-							<Description title={skill.to_text().to_string()} levels={levels} />
+							<Description title={skill.to_text().to_string()} description={&levels.description} levels={&levels.level_description} />
 						{/slot}
 					</Card>
 				</div>
@@ -39,6 +39,7 @@ impl Component for SkillContent {
 struct Description<'a> {
 	pub levels: &'a BTreeMap<Level, LevelDescription>,
 	pub title: String,
+	pub description: &'a String,
 }
 
 impl Component for Description<'_> {
@@ -56,6 +57,8 @@ impl Component for Description<'_> {
 		view! {
 			<section class={scoped_css!("skill_content.css")}>
 				<h2>{"{}", title.replace('_', " ")}</h2>
+				<hr/>
+				@html{to_html(&self.description)}
 				<hr/>
 				<div>
 					{#for (level, description) in levels.into_iter()}
@@ -77,19 +80,19 @@ impl Component for LevelSection {
 	fn to_render(&self, page: &mut Page) {
 		let title = self.title.clone();
 		let level = self.level.clone();
-		let info = self.description.info.clone();
+		let info = self.description.extra_description.clone();
 
 		view! {
 			<section>
 				<div class="skill-header">
 					<h3>{level.to_text()}</h3>
-					{#if self.description.info.is_some()}
+					{#if info.is_some()}
 						<button lef-modal={"{}-{:#?}", &title, &level} aria-label={"open modal over {} {}", &title, level.to_text()}>
 							<InfoIcon />
 						</button>
 					{/if}
 				</div>
-				<p>{&self.description.title}</p>
+				@html{to_html(&self.description.description)}
 				{#if let Some(x) = info}
 					<dialog class={scoped_css!("dialog.css")} id={"{}-{:#?}", &title, &level} lef-modal closedby="any">
 						<Card>

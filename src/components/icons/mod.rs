@@ -27,6 +27,7 @@ pub const SMART_BUTTON_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" a
 pub const STORAGE_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="48px" viewBox="0 -960 960 960" width="48px" fill="currentColor"><path d="M120-160v-148h720v148H120Zm60-38h72v-72h-72v72Zm-60-454v-148h720v148H120Zm60-38h72v-72h-72v72Zm-60 284v-148h720v148H120Zm60-38h72v-72h-72v72Z"/></svg>"##;
 pub const TUNE_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="48px" viewBox="0 -960 960 960" width="48px" fill="currentColor"><path d="M427-120v-225h60v83h353v60H487v82h-60Zm-307-82v-60h247v60H120Zm187-166v-82H120v-60h187v-84h60v226h-60Zm120-82v-60h413v60H427Zm166-165v-225h60v82h187v60H653v83h-60Zm-473-83v-60h413v60H120Z"/></svg>"##;
 pub const WEB_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm0-60h461v-163H140v163Zm521 0h159v-386H661v386ZM140-443h461v-163H140v163Z"/></svg>"##;
+pub const SETTINGS_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m388-80-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521L80-600l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669-710l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592-206L572-80H388Zm92-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Z"/></svg>"##;
 
 // ---------------------------------------------------------------------------
 // Dynamic lookup — used by filter matrices that select icons at runtime via
@@ -61,6 +62,7 @@ pub fn svg_by_name(name: &str) -> &'static str {
 		"storage" => STORAGE_SVG,
 		"tune" => TUNE_SVG,
 		"web" => WEB_SVG,
+		"settings" => SETTINGS_SVG,
 		_ => "",
 	}
 }
@@ -96,6 +98,8 @@ pub struct SmartButtonIcon;
 pub struct StorageIcon;
 pub struct TuneIcon;
 pub struct WebIcon;
+
+pub struct SettingsIcon;
 
 impl Component for AccessibilityNewIcon {
 	fn to_render(&self, _page: &mut Page) {
@@ -225,5 +229,11 @@ impl Component for TuneIcon {
 impl Component for WebIcon {
 	fn to_render(&self, _page: &mut Page) {
 		_page.push_static(WEB_SVG)
+	}
+}
+
+impl Component for SettingsIcon {
+	fn to_render(&self, _page: &mut Page) {
+		_page.push_static(SETTINGS_SVG)
 	}
 }

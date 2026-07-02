@@ -73,19 +73,19 @@ impl Component for LevelSection {
 	fn to_render(&self, page: &mut Page) {
 		let title = self.title.clone();
 		let level = self.level.clone();
-		let info = self.description.info.clone();
+		let info = self.description.extra_description.clone();
 
 		view! {
 			<section>
 				<div class="skill-header">
 					<h3>{level.to_text()}</h3>
-					{#if self.description.info.is_some()}
+					{#if info.is_some()}
 						<button lef-modal={"{}-{:#?}", &title, &level} aria-label={"open modal over {} {}", &title, level.to_text()}>
 							<InfoIcon />
 						</button>
 					{/if}
 				</div>
-				<p>{&self.description.title}</p>
+				<p>{&self.description.description}</p>
 				{#if let Some(x) = info}
 					<dialog class={scoped_css!("dialog.css")} id={"{}-{:#?}", &title, &level} lef-modal closedby="any">
 						<Card>

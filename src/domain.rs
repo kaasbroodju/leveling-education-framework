@@ -266,8 +266,14 @@ impl Guild {
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct LevelDescription {
-	pub title: String,
-	pub info: Option<String>,
+	pub description: String,
+	pub extra_description: Option<String>,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct SkillDescription {
+	pub description: String,
+	pub level_description: BTreeMap<Level, LevelDescription>,
 }
 
 #[derive(Debug, serde::Deserialize, serde::Serialize, Clone)]
@@ -278,7 +284,7 @@ pub struct HBOIExampleResponse {
 	pub title: String,
 }
 
-pub type VaardighedenResponseBody = BTreeMap<Skill, BTreeMap<Level, LevelDescription>>;
+pub type VaardighedenResponseBody = BTreeMap<Skill, SkillDescription>;
 
 use serde::{Deserializer, Serializer};
 use std::fmt;
