@@ -9,7 +9,7 @@ pub struct NavBar<'a> {
 }
 
 impl<'a> Component for NavBar<'a> {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		let nav_list = vec![
 			("Vaardigheden", "/", icons::FACE_SVG),
 			("Beroepstaken / HBO-i", "/beroepstaken", icons::CATEGORY_SVG),
@@ -26,7 +26,7 @@ impl<'a> Component for NavBar<'a> {
 				<ul>
 					{#for (label, href, icon_svg) in nav_list}
 						<li>
-							<a href={href} class={if self.current_url.eq(href) {"active"} else {""}}>
+							<a href={href} class={if self.current_url == href {"active"} else {""}}>
 								<span>@html{icon_svg}</span>
 								<span>{label}</span>
 							</a>

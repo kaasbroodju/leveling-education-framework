@@ -1,15 +1,15 @@
 use crate::components::header::HeaderBar;
 use crate::components::navigation::NavBar;
 use crate::components::quick_search::QuickSearch;
-use tidos::{Component, Page, view};
+use tidos::{Component, Page, view, Slot};
 
 pub struct Layout<'a> {
-	pub content: String,
+	pub content: Slot,
 	pub current_url: &'a str,
 }
 
 impl<'a> Component for Layout<'a> {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		tidos::head! {
 			<style>@html{include_str!("main.css")}</style>
 			<link rel="icon" href="/logo_light.svg" media="(prefers-color-scheme: light)" />
@@ -19,6 +19,9 @@ impl<'a> Component for Layout<'a> {
 			<meta name="description" content="LEF is een tool voor open-ict studenten om onze vaardigheden en HBO-i competenties beter te navigeren." />
 			<script type="application/ld+json">@html{SEO_JSON_LINKED_DATA}</script>
 			<script type="speculationrules">@html{include_str!("speculation_api.json")}</script>
+			<link rel="preload" href="/" as="fetch" crossorigin />
+			<link rel="preload" href="/beroepstaken" as="fetch" crossorigin />
+			<link rel="preload" href="/beroepsproducten" as="fetch" crossorigin />
 		}
 		tidos::head! {
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +37,7 @@ impl<'a> Component for Layout<'a> {
 				<HeaderBar />
 				<NavBar current_url={self.current_url} />
 				<div class="main-container">
-					<main>@html{&self.content}</main>
+					<main>@slot{&self.content}</main>
 				</div>
 			</div>
 		}

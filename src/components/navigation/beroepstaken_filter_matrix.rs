@@ -6,7 +6,7 @@ use tidos::{Component, Page, scoped_css, view};
 pub struct BeroepstakenFilterMatrix;
 
 impl Component for BeroepstakenFilterMatrix {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		let css = scoped_css!("beroepstaken_filter_matrix.css");
 		view! {
 			<header>

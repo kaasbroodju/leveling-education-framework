@@ -7,11 +7,11 @@ use tidos::{Component, Page, scoped_css, view};
 pub struct AboutLef;
 
 impl Component for AboutLef {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<div>
 				<div class={scoped_css!("about_lef.css")}>
-					<Contributers />
+					<Contributors />
 					<AboutLefCard />
 					<Maintainer />
 					<LEFApi />
@@ -21,10 +21,10 @@ impl Component for AboutLef {
 	}
 }
 
-struct Contributers;
+struct Contributors;
 
-impl Component for Contributers {
-	fn to_render(&self, page: &mut Page) -> String {
+impl Component for Contributors {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
 				{#slot:content}
@@ -76,7 +76,7 @@ pub struct PersonSection<'a> {
 }
 
 impl<'a> Component for PersonSection<'a> {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<div>
 				<div>
@@ -90,7 +90,7 @@ impl<'a> Component for PersonSection<'a> {
 				</div>
 				<div>
 					{#if let Some(href) = self.linkedIn}
-						<a href={href} target="_blank" aria-label={format!("bekijk meer over {} op LinkedIn", &self.name)}><span style="font-size: 24px;padding: 8px;"><OpenInNewIcon /></span></a>
+						<a href={href} target="_blank" aria-label={"bekijk meer over {} op LinkedIn", &self.name}><span style="font-size: 24px;padding: 8px;"><OpenInNewIcon /></span></a>
 					{/if}
 				</div>
 			</div>
@@ -101,7 +101,7 @@ impl<'a> Component for PersonSection<'a> {
 struct AboutLefCard;
 
 impl Component for AboutLefCard {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
 				{#slot:content}
@@ -116,7 +116,7 @@ impl Component for AboutLefCard {
 						<div>
 							<ul>
 								<li>
-									<a href="https://www.hu.nl/voltijd-opleidingen/open-ict" target="_blank"><span><SchoolIcon /></span><span>Opleiding</span></a>
+									<a href="https://www.hu.nl/voltijd-opleidingen/open-ict" target="_blank"><span><SchoolIcon /></span><span>{"Opleiding"}</span></a>
 								</li>
 								<li>
 									<a href="https://husite.nl/open-ict/" target="_blank"><span><WebIcon /></span><span><abbr title="Hogeschool Utrecht">{"HU"}</abbr>{" website"}</span></a>
@@ -124,7 +124,7 @@ impl Component for AboutLefCard {
 								<li>
 									<a href="https://github.com/kaasbroodju/leveling-education-framework" target="_blank">
 										<span><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></span>
-										<span>Github</span></a>
+										<span>{"Github"}</span></a>
 								</li>
 							</ul>
 						</div>
@@ -138,7 +138,8 @@ impl Component for AboutLefCard {
 pub struct Maintainer;
 
 impl Component for Maintainer {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
+		#![recursion_limit = "512"]
 		view! {
 			<AboutCard>
 				{#slot:content}
@@ -151,7 +152,7 @@ impl Component for Maintainer {
 								<li>
 									<a href="https://github.com/kaasbroodju" target="_blank">
 										<span><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></span>
-										<span>Github</span>
+										<span>{"Github"}</span>
 									</a>
 								</li>
 								<li>
@@ -159,7 +160,7 @@ impl Component for Maintainer {
 										<span aria-hidden="true">
 											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="24px" height="24px"><path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"/></svg>
 										</span>
-										<span>LinkedIn</span>
+										<span>{"LinkedIn"}</span>
 									</a>
 								</li>
 							</ul>
@@ -174,7 +175,7 @@ impl Component for Maintainer {
 pub struct LEFApi;
 
 impl Component for LEFApi {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
 				{#slot:content}
@@ -185,13 +186,13 @@ impl Component for LEFApi {
 						<div>
 							<ul>
 								<li>
-									<a href="/api/v1/vaardigheden" target="_blank"><span><FaceIcon /></span><span>Vaardigheden</span></a>
+									<a href="/api/v1/vaardigheden" target="_blank"><span><FaceIcon /></span><span>{"Vaardigheden"}</span></a>
 								</li>
 								<li>
-									<a href="/api/v1/hboi" target="_blank"><span><CategoryIcon /></span><span>Beroepstaken / HBO-i</span></a>
+									<a href="/api/v1/hboi" target="_blank"><span><CategoryIcon /></span><span>{"Beroepstaken / HBO-i"}</span></a>
 								</li>
 								<li>
-									<a href="/api/v1/beroepsproducten" target="_blank"><span><Package2Icon /></span><span>Beroepsproducten</span></a>
+									<a href="/api/v1/beroepsproducten" target="_blank"><span><Package2Icon /></span><span>{"Beroepsproducten"}</span></a>
 								</li>
 							</ul>
 						</div>

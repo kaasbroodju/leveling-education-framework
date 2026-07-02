@@ -1,10 +1,11 @@
+#![recursion_limit = "256"]
+
 use chrono::{DateTime, Utc};
 use rocket::fs::{FileServer, NamedFile};
 use rocket::http::{Header, Status};
 use rocket::response::{Responder, status};
 use rocket::{Request, Response};
 use std::path::{Path, PathBuf};
-use tidos::Component;
 mod components;
 mod data;
 mod domain;
@@ -57,81 +58,67 @@ fn llms() -> &'static str {
 
 #[get("/")]
 fn index() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/">
 			{#slot:content}
 				<SkillContent />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
+	page.into()
 }
 
 #[get("/beroepstaken")]
 fn beroepstaken() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/beroepstaken">
 			{#slot:content}
 				<BeroepstakenContent />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
+	page.into()
 }
 
 #[get("/beroepsproducten")]
 fn beroepsproducten() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/beroepsproducten">
 			{#slot:content}
 				<BeroepsproductenContent />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
+	page.into()
 }
 
 #[get("/about")]
 fn about() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/about">
 			{#slot:content}
 				<AboutLef />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
+	page.into()
 }
 
 #[catch(404)]
 fn index_not_found() -> Page {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="">
 			{#slot:content}
 				<h1>{"Page not found"}</h1>
 			{/slot}
 		</Layout>
-	}
+	};
+	tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
+	page
 }
 
 // use rocket::http::{Header, Status};
@@ -207,17 +194,17 @@ async fn files(file: PathBuf) -> Option<CachedFile> {
 }
 
 #[get("/vaardigheden")]
-async fn vaardighedenApi() -> Json<VaardighedenResponseBody> {
+async fn vaardigheden_api() -> Json<VaardighedenResponseBody> {
 	Json((*SKILL_DATA).clone())
 }
 
 #[get("/hboi")]
-async fn beroepstakenApi() -> Json<HBOIResponseBody> {
+async fn beroepstaken_api() -> Json<HBOIResponseBody> {
 	Json((*HBOI_DATA).clone())
 }
 
 #[get("/beroepsproducten")]
-async fn beroepsproductenApi() -> Json<Vec<HBOIExampleResponse>> {
+async fn beroepsproducten_api() -> Json<Vec<HBOIExampleResponse>> {
 	Json((*EXAMPLES_DATA).clone())
 }
 
@@ -226,7 +213,7 @@ fn rocket() -> _ {
 	rocket::build()
 		.mount(
 			"/api/v1",
-			routes![vaardighedenApi, beroepstakenApi, beroepsproductenApi],
+			routes![vaardigheden_api, beroepstaken_api, beroepsproducten_api],
 		)
 		.register("/", catchers![index_not_found])
 		.mount(

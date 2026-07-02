@@ -9,7 +9,7 @@ use tidos::{Component, Page, scoped_css, view};
 pub struct BeroepsproductenContent;
 
 impl Component for BeroepsproductenContent {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		let content = &(*EXAMPLES_DATA);
 
 		let mut grouped_content = BTreeMap::<HBOIKey, Vec<&HBOIExampleResponse>>::new();
@@ -47,7 +47,7 @@ impl Component for BeroepsproductenContent {
 					<div data-architectuurlaag={format!("{:#?}", key.architectuurlaag)} data-activiteit={format!("{:#?}", key.activiteit)}>
 						<Card>
 							{#slot:content}
-								<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={examples} />
+								<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={&examples} />
 							{/slot}
 						</Card>
 					</div>
@@ -60,11 +60,11 @@ impl Component for BeroepsproductenContent {
 struct Description<'a> {
 	pub architectuurlaag: &'a Architectuurlaag,
 	pub activiteit: &'a Activiteit,
-	pub examples: Vec<&'a HBOIExampleResponse>,
+	pub examples: &'a Vec<&'a HBOIExampleResponse>,
 }
 
 impl Component for Description<'_> {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<section class={scoped_css!("beroepsproducten_content.css")}>
 				<h2>{format!(
@@ -93,7 +93,7 @@ struct ExampleCard<'a> {
 }
 
 impl<'a> Component for ExampleCard<'a> {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<span class="guild-tag" style={format!("background-color: {};", self.guild.get_color())}>{self.guild.get_short_name()}</span><span class="title">{self.title}</span>
 		}

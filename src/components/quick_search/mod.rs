@@ -5,7 +5,7 @@ use tidos::{Component, Page, scoped_css, view};
 pub struct QuickSearch;
 
 impl Component for QuickSearch {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		tidos::head! {
 			<script>@html{include_str!("quick_search.js")}</script>
 		}

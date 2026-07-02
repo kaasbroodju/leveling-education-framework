@@ -5,7 +5,7 @@ use tidos::{Component, Page, scoped_css, view};
 pub struct SkillFilterMatrix;
 
 impl Component for SkillFilterMatrix {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
 			<header class={scoped_css!("skill_filter_matrix.css")}>
 				<div>
