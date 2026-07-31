@@ -266,8 +266,16 @@ impl Guild {
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct LevelDescription {
+	pub subtitle: Option<String>,
 	pub description: String,
 	pub extra_description: Option<String>,
+}
+
+#[deprecated]
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct DeprecatedLevelDescription {
+	pub title: String,
+	pub info: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -284,6 +292,8 @@ pub struct HBOIExampleResponse {
 	pub title: String,
 }
 
+#[deprecated]
+pub type DeprecatedVaardighedenResponseBody = BTreeMap<Skill, BTreeMap<Level, DeprecatedLevelDescription>>;
 pub type VaardighedenResponseBody = BTreeMap<Skill, SkillDescription>;
 
 use serde::{Deserializer, Serializer};
@@ -368,7 +378,38 @@ impl<'de> Deserialize<'de> for HBOIKey {
 
 pub type HBOIResponseBody = BTreeMap<HBOIKey, BTreeMap<Level, LevelDescription>>;
 
-// pub type HBOIResponseBody = BTreeMap<String, BTreeMap<Level, LevelDescription>>;
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct BeroepsRol {
+	pub name: String,
+	pub description: String,
+	pub examples: String,
+	pub primary_layer: Architectuurlaag,
+	pub secondary_layers: Vec<Architectuurlaag>,
+	pub roadmap: Roadmap,
+	pub example_jobs: BTreeMap<String, String>,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Roadmap {
+	pub level_one: String,
+	pub level_two: String,
+	pub level_three: String,
+	pub resources: Vec<Resource>,
+	pub challenges: Vec<String>,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Resource {
+	pub text: String,
+	pub url: String,
+}
+
+pub struct ExampleJob {
+	pub title: String,
+	pub description: String,
+}
+
+pub type BeroepsRollenResponseBody = BTreeMap<Guild, BeroepsRol>;
 
 pub const PRODUCT_SKILLS: [Skill; 4] = [
 	Skill::Overzicht_creëren,
@@ -395,6 +436,17 @@ pub const ACTIVITEITEN: [Activiteit; 5] = [
 	Ontwerpen,
 	Realiseren,
 	Manage_and_Control,
+];
+pub const GUILDS: [Guild; 9] = [
+	Guild::ArtificialIntelligence,
+	Guild::Backend,
+	Guild::BusinessItManagement,
+	Guild::CyberSecurity,
+	Guild::CloudInfrastructure,
+	Guild::Frontend,
+	Guild::UIUX,
+	Guild::Embedded,
+	Guild::GameDevelopment,
 ];
 
 pub trait Icon {

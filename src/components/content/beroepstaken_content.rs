@@ -3,9 +3,25 @@ use crate::components::icons::InfoIcon;
 use crate::components::navigation::beroepstaken_filter_matrix::BeroepstakenFilterMatrix;
 use crate::data::HBOI_DATA;
 use crate::domain::{Level, LevelDescription};
-use markdown::to_html;
+use markdown::{CompileOptions, Options, to_html_with_options};
 use std::collections::BTreeMap;
 use tidos::{Component, Page, scoped_css, view};
+
+/// Content comes from our own trusted data files, not user input, so raw HTML
+/// (e.g. `<u>`) is allowed through instead of being stripped.
+fn to_html(value: &str) -> String {
+	to_html_with_options(
+		value,
+		&Options {
+			compile: CompileOptions {
+				allow_dangerous_html: true,
+				..CompileOptions::default()
+			},
+			..Options::default()
+		},
+	)
+	.unwrap()
+}
 
 pub struct BeroepstakenContent;
 
@@ -22,9 +38,7 @@ impl Component for BeroepstakenContent {
 			{#for (skill, levels) in content.iter()}
 				<div data-architectuurlaag={format!("{:#?}", skill.architectuurlaag)} data-activiteit={format!("{:#?}", skill.activiteit)}>
 					<Card>
-						{#slot:content}
-							<Description title={skill.to_string()} levels={levels} />
-						{/slot}
+						<Description title={skill.to_string()} levels={levels} />
 					</Card>
 				</div>
 			{/for}
@@ -76,7 +90,7 @@ impl Component for LevelSection {
 		let info = self.description.extra_description.clone();
 
 		view! {
-			<section>
+			<section data-level={format!("{:#?}", level)}>
 				<div class="skill-header">
 					<h3>{level.to_text()}</h3>
 					{#if info.is_some()}
@@ -89,10 +103,8 @@ impl Component for LevelSection {
 				{#if let Some(x) = info}
 					<dialog class={scoped_css!("dialog.css")} id={"{}-{:#?}", &title, &level} lef-modal closedby="any">
 						<Card>
-							{#slot:content}
-								<h2>{"Extra toelichting {} {}", title.replace('_', " ").to_lowercase(), level.to_text().to_lowercase()}</h2>
-								@html{to_html(&x)}
-							{/slot}
+							<h2>{"Extra toelichting {} {}", title.replace('_', " ").to_lowercase(), level.to_text().to_lowercase()}</h2>
+							@html{to_html(&x)}
 						</Card>
 					</dialog>
 				{/if}

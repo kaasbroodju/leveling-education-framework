@@ -1,4 +1,5 @@
 pub mod beroepstaken_filter_matrix;
+pub mod guild_filter_matrix;
 pub mod skill_filter_matrix;
 
 use crate::components::icons;
@@ -12,6 +13,7 @@ impl<'a> Component for NavBar<'a> {
 	fn to_render(&self, page: &mut Page) {
 		let nav_list = vec![
 			("Vaardigheden", "/", icons::FACE_SVG),
+			("Beroepsrollen", "/beroepsrollen", icons::WORK_SVG),
 			("Beroepstaken / HBO-i", "/beroepstaken", icons::CATEGORY_SVG),
 			(
 				"Beroepsproducten",

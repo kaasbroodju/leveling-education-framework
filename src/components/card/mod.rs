@@ -1,25 +1,21 @@
 use tidos::{Component, Page, scoped_css, view, Slot};
 
-pub struct Card {
-	pub content: Slot,
-}
+pub struct Card<'a> (pub Slot<'a>);
 
-impl Component for Card {
+impl Component for Card<'_> {
 	fn to_render(&self, page: &mut Page) {
 		view! {
-			<div class={"{} with-padding", scoped_css!("card.css")}>@slot{&self.content}</div>
+			<div class={"{} with-padding", scoped_css!("card.css")}>@slot{self.0}</div>
 		}
 	}
 }
 
-pub struct AboutCard {
-	pub content: Slot,
-}
+pub struct AboutCard<'a> (pub Slot<'a>);
 
-impl Component for AboutCard {
+impl Component for AboutCard<'_> {
 	fn to_render(&self, page: &mut Page) {
 		view! {
-			<div class={scoped_css!("card.css")}>@slot{&self.content}</div>
+			<div class={scoped_css!("card.css")}>@slot{&self.0}</div>
 		}
 	}
 }

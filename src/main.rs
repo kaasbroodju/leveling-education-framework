@@ -1,4 +1,4 @@
-#![recursion_limit = "256"]
+// #![recursion_limit = "256"]
 
 use chrono::{DateTime, Utc};
 use rocket::fs::{FileServer, NamedFile};
@@ -19,7 +19,7 @@ use crate::components::content::beroepsproducten_content::BeroepsproductenConten
 use crate::components::content::beroepstaken_content::BeroepstakenContent;
 use crate::components::content::skill_content::SkillContent;
 use crate::components::layout::Layout;
-use crate::domain::{HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
+use crate::domain::{BeroepsRollenResponseBody, DeprecatedVaardighedenResponseBody, HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
 use tidos::{Page, page};
 
 #[derive(Responder)]
@@ -95,6 +95,19 @@ fn beroepsproducten() -> CachedHtml {
 	page.into()
 }
 
+#[get("/beroepsrollen")]
+fn beroepsrollen() -> CachedHtml {
+	let mut page = page! {
+		<Layout current_url="/beroepsrollen">
+			{#slot:content}
+				<BeroepsRollenContent />
+			{/slot}
+		</Layout>
+	};
+	tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
+	page.into()
+}
+
 #[get("/about")]
 fn about() -> CachedHtml {
 	let mut page = page! {
@@ -122,10 +135,11 @@ fn index_not_found() -> Page {
 }
 
 // use rocket::http::{Header, Status};
-use crate::data::{EXAMPLES_DATA, HBOI_DATA, SKILL_DATA};
+use crate::data::{BEROEPSROLLEN_DATA, DEPRECATED_SKILL_DATA, EXAMPLES_DATA, HBOI_DATA, SKILL_DATA};
 use rocket::response::Result as ResponseResult;
 use rocket::response::status::Accepted;
 use rocket::serde::json::Json;
+use crate::components::content::beroepsrollen::BeroepsRollenContent;
 // use rocket::{Request, Response};
 // use rocket::fs::NamedFile;
 // use std::path::{Path, PathBuf};
@@ -193,9 +207,32 @@ async fn files(file: PathBuf) -> Option<CachedFile> {
 	CachedFile::new(path).await.ok()
 }
 
+#[derive(Responder)]
+struct DeprecatedVaardighedenResponse {
+	inner: Json<DeprecatedVaardighedenResponseBody>,
+	link: Header<'static>,
+	deprecation: Header<'static>,
+	sunset: Header<'static>,
+}
+
+#[get("/vaardigheden")]
+async fn deprecated_vaardigheden_api() -> DeprecatedVaardighedenResponse {
+	DeprecatedVaardighedenResponse {
+		inner: Json((*DEPRECATED_SKILL_DATA).clone()),
+		link: Header::new("Link", r#"</api/v2/vaardigheden>; rel="successor-version""#),
+		deprecation: Header::new("Deprecation", "@1788048000"),
+		sunset: Header::new("Sunset", "Wed, 30 Sep 2026 00:00:00 GMT"),
+	}
+}
+
 #[get("/vaardigheden")]
 async fn vaardigheden_api() -> Json<VaardighedenResponseBody> {
 	Json((*SKILL_DATA).clone())
+}
+
+#[get("/beroepsrollen")]
+async fn beroepsrollen_api() -> Json<BeroepsRollenResponseBody> {
+	Json((*BEROEPSROLLEN_DATA).clone())
 }
 
 #[get("/hboi")]
@@ -213,7 +250,11 @@ fn rocket() -> _ {
 	rocket::build()
 		.mount(
 			"/api/v1",
-			routes![vaardigheden_api, beroepstaken_api, beroepsproducten_api],
+			routes![deprecated_vaardigheden_api, beroepsrollen_api, beroepstaken_api, beroepsproducten_api],
+		)
+		.mount(
+			"/api/v2",
+			routes![vaardigheden_api],
 		)
 		.register("/", catchers![index_not_found])
 		.mount(
@@ -222,6 +263,7 @@ fn rocket() -> _ {
 				index,
 				beroepstaken,
 				beroepsproducten,
+				beroepsrollen,
 				about,
 				files,
 				robots,

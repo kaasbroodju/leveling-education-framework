@@ -9,6 +9,14 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
 
+        /* When a level filter hides some sections, repeat(4, 1fr) still
+           reserves 4 tracks and leaves gaps. Switch to auto-fit so the
+           remaining visible sections collapse the empty tracks and stretch
+           to fill the row instead. */
+        body[data-level-view]:not([data-level-view="all"]) & {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
         @media only screen and (max-width: 960px) {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -22,7 +30,24 @@
         > section > p {
             margin: 0;
             white-space: pre-wrap;
+
+            &:not(:first-child) {
+                margin-top: 1rem;
+            }
         }
+
+        summary {
+            margin-top: 1rem;
+
+            > h3 {
+                display: inline;
+            }
+        }
+    }
+
+    .skill-subtitle {
+        font-weight: bold;
+        color: var(--primary-color);
     }
 
     .skill-header {

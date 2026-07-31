@@ -46,9 +46,7 @@ impl Component for BeroepsproductenContent {
 				{#for (key, examples) in grouped_content}
 					<div data-architectuurlaag={format!("{:#?}", key.architectuurlaag)} data-activiteit={format!("{:#?}", key.activiteit)}>
 						<Card>
-							{#slot:content}
-								<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={&examples} />
-							{/slot}
+							<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={&examples} />
 						</Card>
 					</div>
 				{/for}

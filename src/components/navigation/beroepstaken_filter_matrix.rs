@@ -11,32 +11,27 @@ impl Component for BeroepstakenFilterMatrix {
 		view! {
 			<header>
 				<Card>
-					{#slot:content}
-						<div class={css}>
-							{#for x in ARCHITECTUURLAGEN}
-								<button data-filter-architectuurlaag={format!("{x:#?}")} aria-label={format!("{x:#?}")}>
-									<span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
-									<span>{format!("{x:#?}")}</span>
-								</button>
-							{/for}
-						</div>
-					{/slot}
+					<div class={css}>
+						{#for x in ARCHITECTUURLAGEN}
+							<button data-filter-architectuurlaag={format!("{x:#?}")} aria-label={format!("{x:#?}")}>
+								<span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
+								<span>{format!("{x:#?}")}</span>
+							</button>
+						{/for}
+					</div>
 				</Card>
-
 				<Card>
-					{#slot:content}
-						<div class={css}>
-							{#for x in ACTIVITEITEN}
-								<button
-									data-filter-activiteit={format!("{x:#?}")}
-									aria-label={x.to_text()}
-								>
-									<span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
-									<span>{x.to_text()}</span>
-								</button>
-							{/for}
-						</div>
-					{/slot}
+					<div class={css}>
+						{#for x in ACTIVITEITEN}
+							<button
+								data-filter-activiteit={format!("{x:#?}")}
+								aria-label={x.to_text()}
+							>
+								<span style="height: 48px;">@html{icons::svg_by_name(x.to_icon())}</span>
+								<span>{x.to_text()}</span>
+							</button>
+						{/for}
+					</div>
 				</Card>
 			</header>
 		}

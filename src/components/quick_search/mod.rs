@@ -13,16 +13,14 @@ impl Component for QuickSearch {
 		view! {
 			<dialog id="quick-search" closedby="any" class={scoped_css!("quick_search.css")}>
 				<Card>
-					{#slot:content}
-						<div class="search-header">
-							<span><InfoIcon /></span>
-							<input id="search-query" type="search" autocomplete="off" autofocus placeholder="Zoek in LEF..." />
-						</div>
-						<div>
-							<ul id="query-results">
-							</ul>
-						</div>
-					{/slot}
+					<div class="search-header">
+						<span><InfoIcon /></span>
+						<input id="search-query" type="search" autocomplete="off" autofocus placeholder="Zoek in LEF..." />
+					</div>
+					<div>
+						<ul id="query-results">
+						</ul>
+					</div>
 				</Card>
 			</dialog>
 		}
