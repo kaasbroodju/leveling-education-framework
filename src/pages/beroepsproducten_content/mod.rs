@@ -41,6 +41,9 @@ impl Component for BeroepsproductenContent {
 		}
 
 		view! {
+			<Card>
+				<p>{"Per beroepstaak zijn voorbeelden van beroepsproducten beschreven. Deze voorbeelden geven je een beeld van wat je binnen een beroepstaak kunt maken of opleveren. Je kunt de productnamen gebruiken als inspiratie en als startpunt bij het zoeken naar passende oplossingen en manieren van werken."}</p>
+			</Card>
 			<BeroepstakenFilterMatrix />
 			{#if !grouped_content.is_empty()}
 				{#for (key, examples) in grouped_content}

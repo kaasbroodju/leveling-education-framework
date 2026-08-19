@@ -34,6 +34,9 @@ impl Component for BeroepstakenContent {
 		}
 
 		view! {
+			<Card>
+				<p>{"De HBO-i-domeinbeschrijving is een landelijke beschrijving van het ICT-domein. Hierin worden onder andere verschillende beroepstaken binnen het ICT-werkveld beschreven. De domeinbeschrijving ordent ICT-werk op twee manieren. De architectuurlaag laat zien waar het werk over gaat: gebruikersinteractie, organisatieprocessen, infrastructuur, software of hardware interfacing. De activiteit laat zien wat je doet: analyseren, adviseren, ontwerpen, realiseren of manage & control. De combinatie van een architectuurlaag en een activiteit vormt een beroepstaak. Selecteer in de tabel hieronder een combinatie. Per beroepstaak zie je vervolgens een beschrijving van het werk op vier niveaus, van niveau 1 tot en met niveau 4."}</p>
+			</Card>
 			<BeroepstakenFilterMatrix />
 			{#for (skill, levels) in content.iter()}
 				<div data-architectuurlaag={"{:#?}", skill.architectuurlaag} data-activiteit={"{:#?}", skill.activiteit}>

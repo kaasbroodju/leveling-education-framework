@@ -48,7 +48,9 @@
 
     .skill-subtitle {
         font-weight: bold;
+        font-size: 1.17em;
         color: var(--primary-color);
+        margin: 0 !important;
     }
 
     .skill-header {

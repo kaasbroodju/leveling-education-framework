@@ -2000,7 +2000,9 @@ dependencies = [
 
 [[package]]
 name = "tidos"
-version = "0.8.0-rc.2"
+version = "0.8.0-rc.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b361e0e49865fc35e84382533a468ba320dcd4f0db8319d203a0e3fbdc5aa657"
 dependencies = [
  "rocket",
  "tidos_macro",
@@ -2008,7 +2010,9 @@ dependencies = [
 
 [[package]]
 name = "tidos_macro"
-version = "0.8.0-rc.2"
+version = "0.8.0-rc.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "590d16fd2fe158ad3c562bb8948cb5f938c3fc2b2aca53aaf925fe0e6de1b2f5"
 dependencies = [
  "cargo-expand",
  "proc-macro2",
