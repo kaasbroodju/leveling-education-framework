@@ -1,7 +1,6 @@
 use crate::components::header::HeaderBar;
 use crate::components::navigation::NavBar;
 use crate::components::quick_search::QuickSearch;
-use crate::components::settings::SettingsModal;
 use tidos::{Component, Page, view, Slot};
 
 pub struct Layout<'a> {
@@ -34,7 +33,6 @@ impl<'a> Component for Layout<'a> {
 
 		view! {
 			<QuickSearch />
-			<SettingsModal />
 			<div class="main-layout">
 				<HeaderBar />
 				<NavBar current_url={self.current_url} />

@@ -22,18 +22,20 @@ impl Component for GuildFilterMatrix {
 						{/for}
 					</div>
 				</Card>
-				<Card>
-					<h2>{"Master"}</h2>
-					<div @class={"guild_filter_matrix.css"}>
-						<button
-							data-filter-guild={"HCAI"}
-							aria-label={"HCAI"}
-							style={"--guild-color: pink;"}
-						>
-							<span>{"HCAI"}</span>
-						</button>
-					</div>
-				</Card>
+				<div style="margin-top: 24px;">
+					<Card>
+						<h2>{"Master"}</h2>
+						<div @class={"guild_filter_matrix.css"}>
+							<button
+								data-filter-guild={"HCAI"}
+								aria-label={"HCAI"}
+								style={"--guild-color: #4B0082;"}
+							>
+								<span>{"HCAI"}</span>
+							</button>
+						</div>
+					</Card>
+				</div>
 			</header>
 		}
 	}

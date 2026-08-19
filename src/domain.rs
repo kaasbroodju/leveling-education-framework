@@ -91,18 +91,24 @@ impl Skill {
 	}
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, PartialOrd, Ord)]
+#[derive(
+	Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, PartialOrd, Ord, FromFormField,
+)]
 pub enum Level {
 	#[serde(rename(serialize = "1", deserialize = "1"))]
+	#[field(value = "1")]
 	Level1,
 
 	#[serde(rename(serialize = "2", deserialize = "2"))]
+	#[field(value = "2")]
 	Level2,
 
 	#[serde(rename(serialize = "3", deserialize = "3"))]
+	#[field(value = "3")]
 	Level3,
 
 	#[serde(rename(serialize = "4", deserialize = "4"))]
+	#[field(value = "4")]
 	Level4,
 }
 
@@ -203,34 +209,43 @@ impl Icon for Architectuurlaag {
 	}
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, Ord, PartialOrd)]
+#[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq, Hash, Ord, PartialOrd, FromFormField)]
 
 pub enum Guild {
 	#[serde(rename(serialize = "AI", deserialize = "AI"))]
+	#[field(value = "AI")]
 	ArtificialIntelligence,
 
 	#[serde(rename(serialize = "BE", deserialize = "BE"))]
+	#[field(value = "BE")]
 	Backend,
 
 	#[serde(rename(serialize = "BIT", deserialize = "BIT"))]
+	#[field(value = "BIT")]
 	BusinessItManagement,
 
 	#[serde(rename(serialize = "CS", deserialize = "CS"))]
+	#[field(value = "CS")]
 	CyberSecurity,
 
 	#[serde(rename(serialize = "CI", deserialize = "CI"))]
+	#[field(value = "CI")]
 	CloudInfrastructure,
 
 	#[serde(rename(serialize = "FE", deserialize = "FE"))]
+	#[field(value = "FE")]
 	Frontend,
 
 	#[serde(rename(serialize = "UI/UX", deserialize = "UI/UX"))]
+	#[field(value = "UI/UX")]
 	UIUX,
 
 	#[serde(rename(serialize = "TI", deserialize = "TI"))]
+	#[field(value = "TI")]
 	Embedded,
 
 	#[serde(rename(serialize = "GD", deserialize = "GD"))]
+	#[field(value = "GD")]
 	GameDevelopment,
 }
 
