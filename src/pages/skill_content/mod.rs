@@ -1,5 +1,4 @@
 use crate::components::card::Card;
-use crate::components::icons::InfoIcon;
 use crate::components::navigation::skill_filter_matrix::SkillFilterMatrix;
 use crate::data::SKILL_DATA;
 use crate::domain::{Level, LevelDescription};
@@ -57,7 +56,7 @@ struct Description<'a> {
 impl Component for Description<'_> {
 	fn to_render(&self, page: &mut Page) {
 		tidos::head! {
-			<script defer>@html {include_str!("skill_content.js")}</script>
+			<script defer>@html {include_str!("../skill_content.js")}</script>
 		}
 
 		let title = self.title.clone();
@@ -67,8 +66,8 @@ impl Component for Description<'_> {
 			.collect();
 
 		view! {
-			<section class={scoped_css!("skill_content.css")}>
-				<h2>{"{}", title.replace('_', " ")}</h2>
+			<section @class={"../skill_content.css"}>
+				<h2>{title.replace('_', " ")}</h2>
 				<hr/>
 				@html{to_html(&self.description)}
 				<hr/>
@@ -80,12 +79,12 @@ impl Component for Description<'_> {
 				<div>
 					{#for (level, description) in levels.into_iter()}
 						{#if let Some(x) = description.extra_description}
-							<details data-level={format!("{:#?}", level)}>
+							<details data-level={"{:#?}", level}>
 								<summary><h3>{"Extra context {}", level.to_text()}</h3></summary>
 								@html{to_html(&x)}
 							</details>
 						{:else}
-							<div data-level={format!("{:#?}", level)} />
+							<div data-level={"{:#?}", level} />
 						{/if}
 					{/for}
 
@@ -108,14 +107,9 @@ impl Component for LevelSection {
 		let info = self.description.extra_description.clone();
 
 		view! {
-			<section data-level={format!("{:#?}", level)}>
+			<section data-level={"{:#?}", level}>
 				<div class="skill-header">
 					<h3>{level.to_text()}</h3>
-					// {#if info.is_some()}
-					// 	<button lef-modal={"{}-{:#?}", &title, &level} aria-label={"open modal over {} {}", &title, level.to_text()}>
-					// 		<InfoIcon />
-					// 	</button>
-					// {/if}
 				</div>
 				{#if let Some(subtitle) = &self.description.subtitle}
 					<p class="skill-subtitle">{subtitle}</p>

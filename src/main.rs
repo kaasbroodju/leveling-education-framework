@@ -1,7 +1,5 @@
-// #![recursion_limit = "256"]
-
 use chrono::{DateTime, Utc};
-use rocket::fs::{FileServer, NamedFile};
+use rocket::fs::NamedFile;
 use rocket::http::{Header, Status};
 use rocket::response::{Responder, status};
 use rocket::{Request, Response};
@@ -9,17 +7,19 @@ use std::path::{Path, PathBuf};
 mod components;
 mod data;
 mod domain;
+mod pages;
 
 #[macro_use]
 extern crate rocket;
 
 use crate::components::card::Card;
-use crate::components::content::about_lef::AboutLef;
-use crate::components::content::beroepsproducten_content::BeroepsproductenContent;
-use crate::components::content::beroepstaken_content::BeroepstakenContent;
-use crate::components::content::skill_content::SkillContent;
 use crate::components::layout::Layout;
 use crate::domain::{BeroepsRollenResponseBody, DeprecatedVaardighedenResponseBody, HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
+use pages::about_lef::AboutLef;
+use pages::beroepsproducten_content::BeroepsproductenContent;
+use pages::beroepsrollen::BeroepsRollenContent;
+use pages::beroepstaken_content::BeroepstakenContent;
+use pages::skill_content::SkillContent;
 use tidos::{Page, page};
 
 #[derive(Responder)]
@@ -104,7 +104,7 @@ fn beroepsrollen() -> CachedHtml {
 			{/slot}
 		</Layout>
 	};
-	tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
+	tidos::head! {<title>{"LEF - Beroepsrollen"}</title>}
 	page.into()
 }
 
@@ -134,16 +134,10 @@ fn index_not_found() -> Page {
 	page
 }
 
-// use rocket::http::{Header, Status};
 use crate::data::{BEROEPSROLLEN_DATA, DEPRECATED_SKILL_DATA, EXAMPLES_DATA, HBOI_DATA, SKILL_DATA};
 use rocket::response::Result as ResponseResult;
 use rocket::response::status::Accepted;
 use rocket::serde::json::Json;
-use crate::components::content::beroepsrollen::BeroepsRollenContent;
-// use rocket::{Request, Response};
-// use rocket::fs::NamedFile;
-// use std::path::{Path, PathBuf};
-// use chrono::{DateTime, Utc};
 
 pub struct CachedFile {
 	named_file: NamedFile,
@@ -271,5 +265,4 @@ fn rocket() -> _ {
 				sitemap
 			],
 		)
-	// .mount("/", FileServer::from("./app/public"))
 }

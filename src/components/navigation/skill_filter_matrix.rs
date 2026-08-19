@@ -7,7 +7,7 @@ pub struct SkillFilterMatrix;
 impl Component for SkillFilterMatrix {
 	fn to_render(&self, page: &mut Page) {
 		view! {
-			<header class={scoped_css!("skill_filter_matrix.css")}>
+			<header @class={"skill_filter_matrix.css"}>
 				<div>
 					{#for x in PRODUCT_SKILLS}
 						<button

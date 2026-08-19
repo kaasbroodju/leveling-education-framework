@@ -11,7 +11,7 @@ pub struct NavBar<'a> {
 
 impl<'a> Component for NavBar<'a> {
 	fn to_render(&self, page: &mut Page) {
-		let nav_list = vec![
+		let nav_list = [
 			("Vaardigheden", "/", icons::FACE_SVG),
 			("Beroepsrollen", "/beroepsrollen", icons::WORK_SVG),
 			("Beroepstaken / HBO-i", "/beroepstaken", icons::CATEGORY_SVG),
@@ -24,7 +24,7 @@ impl<'a> Component for NavBar<'a> {
 		];
 
 		view! {
-			<nav class={scoped_css!("nav_bar.css")}>
+			<nav @class={"nav_bar.css"}>
 				<ul>
 					{#for (label, href, icon_svg) in nav_list}
 						<li>

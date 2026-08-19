@@ -30,9 +30,13 @@ impl Component for SettingsModal {
 		}
 
 		view! {
-			<dialog id="settings-modal" closedby="any" class={scoped_css!("../content/dialog.css")}>
+			<dialog
+				id="settings-modal"
+				closedby="any"
+				@class={"settings.css"}
+			>
 				<Card>
-					<div class={scoped_css!("settings.css")}>
+					<div class="settings-content">
 						<h2>{"Instellingen"}</h2>
 						<fieldset>
 							<legend>{"Thema"}</legend>

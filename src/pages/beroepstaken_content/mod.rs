@@ -30,13 +30,13 @@ impl Component for BeroepstakenContent {
 		let content = &(*HBOI_DATA);
 
 		tidos::head! {
-			<script>@html{include_str!("beroepstaken_filter.js")}</script>
+			<script>@html{include_str!("../beroepstaken_filter.js")}</script>
 		}
 
 		view! {
 			<BeroepstakenFilterMatrix />
 			{#for (skill, levels) in content.iter()}
-				<div data-architectuurlaag={format!("{:#?}", skill.architectuurlaag)} data-activiteit={format!("{:#?}", skill.activiteit)}>
+				<div data-architectuurlaag={"{:#?}", skill.architectuurlaag} data-activiteit={"{:#?}", skill.activiteit}>
 					<Card>
 						<Description title={skill.to_string()} levels={levels} />
 					</Card>
@@ -54,7 +54,7 @@ struct Description<'a> {
 impl Component for Description<'_> {
 	fn to_render(&self, page: &mut Page) {
 		tidos::head! {
-			<script defer>@html {include_str!("skill_content.js")}</script>
+			<script defer>@html {include_str!("../skill_content.js")}</script>
 		}
 
 		let title = self.title.clone();
@@ -64,8 +64,8 @@ impl Component for Description<'_> {
 			.collect();
 
 		view! {
-			<section class={scoped_css!("skill_content.css")}>
-				<h2>{format!("{}", title.replace('_', " "))}</h2>
+			<section @class={"../skill_content.css"}>
+				<h2>{title.replace('_', " ")}</h2>
 				<hr/>
 				<div>
 					{#for (level, description) in levels.into_iter()}
@@ -90,7 +90,7 @@ impl Component for LevelSection {
 		let info = self.description.extra_description.clone();
 
 		view! {
-			<section data-level={format!("{:#?}", level)}>
+			<section data-level={"{:#?}", level}>
 				<div class="skill-header">
 					<h3>{level.to_text()}</h3>
 					{#if info.is_some()}
@@ -101,7 +101,12 @@ impl Component for LevelSection {
 				</div>
 				<p>{&self.description.description}</p>
 				{#if let Some(x) = info}
-					<dialog class={scoped_css!("dialog.css")} id={"{}-{:#?}", &title, &level} lef-modal closedby="any">
+					<dialog
+						@class={"dialog.css"}
+						id={"{}-{:#?}", &title, &level}
+						lef-modal
+						closedby="any"
+					>
 						<Card>
 							<h2>{"Extra toelichting {} {}", title.replace('_', " ").to_lowercase(), level.to_text().to_lowercase()}</h2>
 							@html{to_html(&x)}

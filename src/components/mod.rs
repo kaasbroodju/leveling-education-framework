@@ -1,5 +1,4 @@
 pub mod card;
-pub mod content;
 pub mod header;
 pub mod icons;
 pub mod layout;

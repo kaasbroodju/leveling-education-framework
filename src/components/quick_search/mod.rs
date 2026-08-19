@@ -11,11 +11,21 @@ impl Component for QuickSearch {
 		}
 
 		view! {
-			<dialog id="quick-search" closedby="any" class={scoped_css!("quick_search.css")}>
+			<dialog
+				id="quick-search"
+				closedby="any"
+				@class={"quick_search.css"}
+			>
 				<Card>
 					<div class="search-header">
 						<span><InfoIcon /></span>
-						<input id="search-query" type="search" autocomplete="off" autofocus placeholder="Zoek in LEF..." />
+						<input
+							id="search-query"
+							type="search"
+							autocomplete="off"
+							autofocus
+							placeholder="Zoek in LEF..."
+						/>
 					</div>
 					<div>
 						<ul id="query-results">

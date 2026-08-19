@@ -37,14 +37,14 @@ impl Component for BeroepsproductenContent {
 		});
 
 		tidos::head! {
-			<script>@html{include_str!("beroepstaken_filter.js")}</script>
+			<script>@html{include_str!("../beroepstaken_filter.js")}</script>
 		}
 
 		view! {
 			<BeroepstakenFilterMatrix />
 			{#if !grouped_content.is_empty()}
 				{#for (key, examples) in grouped_content}
-					<div data-architectuurlaag={format!("{:#?}", key.architectuurlaag)} data-activiteit={format!("{:#?}", key.activiteit)}>
+					<div data-architectuurlaag={"{:#?}", key.architectuurlaag} data-activiteit={"{:#?}", key.activiteit}>
 						<Card>
 							<Description architectuurlaag={&key.architectuurlaag} activiteit={&key.activiteit} examples={&examples} />
 						</Card>
@@ -64,17 +64,13 @@ struct Description<'a> {
 impl Component for Description<'_> {
 	fn to_render(&self, page: &mut Page) {
 		view! {
-			<section class={scoped_css!("beroepsproducten_content.css")}>
-				<h2>{format!(
-					"{:#?} {}",
-					self.architectuurlaag,
-					self.activiteit.to_text()
-				)}</h2>
+			<section @class={"beroepsproducten_content.css"}>
+				<h2>{"{:#?} {}", self.architectuurlaag, self.activiteit.to_text()}</h2>
 				<hr/>
 				<div>
 					<ul>
-						{#for example in &self.examples}
-							<li class={scoped_css!("example_card.css")}>
+						{#for example in self.examples}
+							<li @class={"example_card.css"}>
 								<ExampleCard guild={&example.guild} title={&example.title} />
 							</li>
 						{/for}
@@ -93,7 +89,7 @@ struct ExampleCard<'a> {
 impl<'a> Component for ExampleCard<'a> {
 	fn to_render(&self, page: &mut Page) {
 		view! {
-			<span class="guild-tag" style={format!("background-color: {};", self.guild.get_color())}>{self.guild.get_short_name()}</span><span class="title">{self.title}</span>
+			<span class="guild-tag" style={"background-color: {};", self.guild.get_color()}>{self.guild.get_short_name()}</span><span class="title">{self.title}</span>
 		}
 	}
 }

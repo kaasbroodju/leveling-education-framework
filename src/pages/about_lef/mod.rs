@@ -27,7 +27,7 @@ impl Component for Contributors {
 	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
-				<div class={scoped_css!("contributers.css")}>
+				<div @class={"contributers.css"}>
 					<div>
 						<h2>{"Bijdragers"}</h2>
 					</div>
@@ -102,7 +102,7 @@ impl Component for AboutLefCard {
 	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
-				<div class={scoped_css!("references.css")}>
+				<div @class={"references.css"}>
 					<div>
 						<h2>{"Mede mogelijk gemaakt door"}</h2>
 					</div>
@@ -137,7 +137,7 @@ impl Component for Maintainer {
 	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
-				<div class={scoped_css!("references.css")}>
+				<div @class={"references.css"}>
 					<div>
 						<h2>{"Maintainer: Morris Waaijer"}</h2>
 					</div>
@@ -171,7 +171,7 @@ impl Component for LEFApi {
 	fn to_render(&self, page: &mut Page) {
 		view! {
 			<AboutCard>
-				<div class={scoped_css!("references.css")}>
+				<div @class={"references.css"}>
 					<div>
 						<h2>{"LEF API"}</h2>
 					</div>
