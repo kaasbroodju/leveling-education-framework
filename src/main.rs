@@ -7,6 +7,8 @@ use std::path::{Path, PathBuf};
 mod components;
 mod data;
 mod domain;
+mod filters;
+mod markdown_render;
 mod pages;
 
 #[macro_use]
@@ -14,7 +16,10 @@ extern crate rocket;
 
 use crate::components::card::Card;
 use crate::components::layout::Layout;
-use crate::domain::{BeroepsRollenResponseBody, DeprecatedVaardighedenResponseBody, HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
+use crate::domain::{
+	Activiteit, Architectuurlaag, BeroepsRollenResponseBody, DeprecatedVaardighedenResponseBody,
+	Guild, HBOIExampleResponse, HBOIResponseBody, Level, Skill, VaardighedenResponseBody,
+};
 use pages::about_lef::AboutLef;
 use pages::beroepsproducten_content::BeroepsproductenContent;
 use pages::beroepsrollen::BeroepsRollenContent;
@@ -54,7 +59,7 @@ fn sitemap() -> &'static str {
 
 #[get("/llms.txt")]
 fn llms() -> &'static str {
-	include_str!("../app/data/STUDIEWIJZER_FOR_AI.md")
+	include_str!("../app/data/llms.txt")
 }
 
 #[get("/")]
@@ -233,24 +238,97 @@ async fn deprecated_vaardigheden_api() -> DeprecatedVaardighedenResponse {
 	}
 }
 
-#[get("/vaardigheden")]
-async fn vaardigheden_api() -> Json<VaardighedenResponseBody> {
-	Json((*SKILL_DATA).clone())
+#[get("/vaardigheden?<vaardigheid>&<niveau>")]
+async fn vaardigheden_api(
+	vaardigheid: Option<Skill>,
+	niveau: Option<Level>,
+) -> Json<VaardighedenResponseBody> {
+	Json(filters::filter_vaardigheden(&SKILL_DATA, vaardigheid, niveau))
 }
 
-#[get("/beroepsrollen")]
-async fn beroepsrollen_api() -> Json<BeroepsRollenResponseBody> {
-	Json((*BEROEPSROLLEN_DATA).clone())
+#[get("/beroepsrollen?<gilde>")]
+async fn beroepsrollen_api(gilde: Option<Guild>) -> Json<BeroepsRollenResponseBody> {
+	Json(filters::filter_beroepsrollen(&BEROEPSROLLEN_DATA, gilde))
 }
 
-#[get("/hboi")]
-async fn beroepstaken_api() -> Json<HBOIResponseBody> {
-	Json((*HBOI_DATA).clone())
+#[get("/hboi?<architectuurlaag>&<activiteit>&<niveau>")]
+async fn beroepstaken_api(
+	architectuurlaag: Option<Architectuurlaag>,
+	activiteit: Option<Activiteit>,
+	niveau: Option<Level>,
+) -> Json<HBOIResponseBody> {
+	Json(filters::filter_hboi(
+		&HBOI_DATA,
+		architectuurlaag,
+		activiteit,
+		niveau,
+	))
 }
 
-#[get("/beroepsproducten")]
-async fn beroepsproducten_api() -> Json<Vec<HBOIExampleResponse>> {
-	Json((*EXAMPLES_DATA).clone())
+#[get("/beroepsproducten?<architectuurlaag>&<activiteit>&<gilde>")]
+async fn beroepsproducten_api(
+	architectuurlaag: Option<Architectuurlaag>,
+	activiteit: Option<Activiteit>,
+	gilde: Option<Guild>,
+) -> Json<Vec<HBOIExampleResponse>> {
+	Json(filters::filter_beroepsproducten(
+		&EXAMPLES_DATA,
+		architectuurlaag,
+		activiteit,
+		gilde,
+	))
+}
+
+#[derive(Responder)]
+#[response(content_type = "text/markdown")]
+struct Markdown(String);
+
+#[get("/vaardigheden?<vaardigheid>&<niveau>")]
+async fn llms_vaardigheden(vaardigheid: Option<Skill>, niveau: Option<Level>) -> Markdown {
+	Markdown(markdown_render::vaardigheden_to_markdown(
+		&filters::filter_vaardigheden(&SKILL_DATA, vaardigheid, niveau),
+	))
+}
+
+#[get("/beroepsrollen?<gilde>")]
+async fn llms_beroepsrollen(gilde: Option<Guild>) -> Markdown {
+	Markdown(markdown_render::beroepsrollen_to_markdown(
+		&filters::filter_beroepsrollen(&BEROEPSROLLEN_DATA, gilde),
+	))
+}
+
+#[get("/hboi?<architectuurlaag>&<activiteit>&<niveau>")]
+async fn llms_beroepstaken(
+	architectuurlaag: Option<Architectuurlaag>,
+	activiteit: Option<Activiteit>,
+	niveau: Option<Level>,
+) -> Markdown {
+	Markdown(markdown_render::hboi_to_markdown(&filters::filter_hboi(
+		&HBOI_DATA,
+		architectuurlaag,
+		activiteit,
+		niveau,
+	)))
+}
+
+#[get("/beroepsproducten?<architectuurlaag>&<activiteit>&<gilde>")]
+async fn llms_beroepsproducten(
+	architectuurlaag: Option<Architectuurlaag>,
+	activiteit: Option<Activiteit>,
+	gilde: Option<Guild>,
+) -> Markdown {
+	Markdown(markdown_render::beroepsproducten_to_markdown(
+		&filters::filter_beroepsproducten(&EXAMPLES_DATA, architectuurlaag, activiteit, gilde),
+	))
+}
+
+#[get("/llms-full.txt")]
+fn llms_full() -> &'static str {
+	concat!(
+		include_str!("../app/data/STUDIEWIJZER_FOR_AI.md"),
+		"\n\n",
+		include_str!("../app/data/llms-endpoints.md"),
+	)
 }
 
 #[launch]
@@ -263,6 +341,15 @@ fn rocket() -> _ {
 		.mount(
 			"/api/v2",
 			routes![vaardigheden_api],
+		)
+		.mount(
+			"/llms",
+			routes![
+				llms_vaardigheden,
+				llms_beroepsrollen,
+				llms_beroepstaken,
+				llms_beroepsproducten
+			],
 		)
 		.register("/", catchers![index_not_found])
 		.mount(
@@ -277,6 +364,7 @@ fn rocket() -> _ {
 				files,
 				robots,
 				llms,
+				llms_full,
 				sitemap
 			],
 		)

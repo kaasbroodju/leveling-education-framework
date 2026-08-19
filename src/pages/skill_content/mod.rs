@@ -84,7 +84,7 @@ impl Component for Description<'_> {
 								@html{to_html(&x)}
 							</details>
 						{:else}
-							<div data-level={"{:#?}", level} />
+							<div data-level={"{:#?}", level}></div>
 						{/if}
 					{/for}
 

@@ -1,0 +1,25 @@
+# Leveling Education Framework (LEF)
+
+> LEF helpt Open-ICT studenten (Hogeschool Utrecht) de LEF-vaardigheden, HBO-i beroepstaken, beroepsrollen en beroepsproducten te navigeren en begrijpen. Deze pagina is een index voor AI-assistenten en agents; content is beschikbaar als HTML, JSON of Markdown.
+
+## Pagina's
+
+- [Vaardigheden](https://lef.open-ict.hu.nl/): de 10 LEF-vaardigheden met hun 4 niveaus
+- [Leeswijzer](https://lef.open-ict.hu.nl/leeswijzer): uitleg wat de vaardigheden en niveaus betekenen en hoe niveaus worden vastgesteld
+- [Beroepstaken](https://lef.open-ict.hu.nl/beroepstaken): HBO-i architectuurlaag × activiteit matrix
+- [Beroepsrollen](https://lef.open-ict.hu.nl/beroepsrollen): ICT-beroepsrollen per gilde
+- [Beroepsproducten](https://lef.open-ict.hu.nl/beroepsproducten): voorbeeldproducten per beroepstaak
+- [Over ons](https://lef.open-ict.hu.nl/about): context en bijdragers van LEF
+
+## Volledige context
+
+- [llms-full.txt](https://lef.open-ict.hu.nl/llms-full.txt): onderwijsfilosofie, werk- en leerproces, en de complete referentie van alle endpoints en filters hieronder
+
+## Endpoints
+
+Elk endpoint bestaat in twee smaken: `/api/...` (JSON) en `/llms/...` (Markdown, zelfde data en filters). Alle filters zijn optioneel en vrij te combineren via query parameters; een filter dat niet van toepassing is op een endpoint wordt genegeerd. Zie llms-full.txt voor de volledige parameter-referentie.
+
+- Vaardigheden — [JSON](https://lef.open-ict.hu.nl/api/v2/vaardigheden) · [Markdown](https://lef.open-ict.hu.nl/llms/vaardigheden) — filters: `vaardigheid`, `niveau`
+- Beroepsrollen — [JSON](https://lef.open-ict.hu.nl/api/v1/beroepsrollen) · [Markdown](https://lef.open-ict.hu.nl/llms/beroepsrollen) — filters: `gilde`
+- Beroepstaken (HBO-i) — [JSON](https://lef.open-ict.hu.nl/api/v1/hboi) · [Markdown](https://lef.open-ict.hu.nl/llms/hboi) — filters: `architectuurlaag`, `activiteit`, `niveau`
+- Beroepsproducten — [JSON](https://lef.open-ict.hu.nl/api/v1/beroepsproducten) · [Markdown](https://lef.open-ict.hu.nl/llms/beroepsproducten) — filters: `architectuurlaag`, `activiteit`, `gilde`

@@ -1,4 +1,4 @@
-use crate::components::settings::SettingsButton;
+use crate::components::view_controls::ViewControls;
 use tidos::{Component, Page, scoped_css, view};
 
 pub struct HeaderBar;
@@ -18,7 +18,7 @@ impl Component for HeaderBar {
 						</div>
 					</a>
 				</div>
-				<SettingsButton />
+				<ViewControls />
 			</header>
 		}
 	}

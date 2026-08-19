@@ -19,6 +19,7 @@ pub const INFO_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidd
 pub const LAPTOP_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="48px" viewBox="0 -960 960 960" width="48px" fill="currentColor"><path d="M140-240q-24 0-42-18t-18-42v-480q0-24 18-42t42-18h680q24 0 42 18t18 42v480q0 24-18 42t-42 18H140ZM40-120v-60h880v60H40Z"/></svg>"##;
 pub const MEMORY_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="48px" viewBox="0 -960 960 960" width="48px" fill="currentColor"><path d="M364-364v-231h231v231H364ZM353-99v-86h-95q-28.73 0-50.86-22.14Q185-229.27 185-258v-95H99v-73h86v-112H99v-73h86v-95q0-28.72 22.14-50.86Q229.27-779 258-779h95v-82h73v82h112v-82h73v82h95q28.72 0 50.86 22.14T779-706v95h82v73h-82v112h82v73h-82v95q0 28.73-22.14 50.86Q734.72-185 706-185h-95v86h-73v-86H426v86h-73Zm353-159v-448H258v448h448Z"/></svg>"##;
 pub const MENU_BOOK_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="48px" viewBox="0 -960 960 960" width="48px" fill="currentColor"><path d="M560-574v-48q33-14 67.5-21t72.5-7q26 0 51 4t49 10v44q-24-9-48.5-13.5T700-610q-38 0-73 9.5T560-574Zm0 220v-49q33-13.5 67.5-20.25T700-430q26 0 51 4t49 10v44q-24-9-48.5-13.5T700-390q-38 0-73 9t-67 27Zm0-110v-48q33-14 67.5-21t72.5-7q26 0 51 4t49 10v44q-24-9-48.5-13.5T700-500q-38 0-73 9.5T560-464Zm-48 214q50-25 98-37.5T712-300q38 0 78.5 6t69.5 16v-429q-34-17-71.82-25-37.82-8-76.18-8-54 0-104.5 16.5T512-677v427Zm-30 90q-51-38-111-58.5T248-239q-36.54 0-71.77 9T106-208q-23.1 11-44.55-3Q40-225 40-251v-463q0-15 7-27.5T68-761q42-20 87.5-29.5T248-800q63 0 122.5 17T482-731q51-35 109.5-52T712-800q47.18 0 92.09 9.5Q849-781 891-761q14 7 21.5 19.5T920-714v463q0 27.89-22.5 42.45Q875-194 853-208q-34-14-69.23-22.5Q748.54-239 712-239q-63 0-121 21t-109 58Z"/></svg>"##;
+pub const MENU_BOOK_SVG_SMALL: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M560-574v-48q33-14 67.5-21t72.5-7q26 0 51 4t49 10v44q-24-9-48.5-13.5T700-610q-38 0-73 9.5T560-574Zm0 220v-49q33-13.5 67.5-20.25T700-430q26 0 51 4t49 10v44q-24-9-48.5-13.5T700-390q-38 0-73 9t-67 27Zm0-110v-48q33-14 67.5-21t72.5-7q26 0 51 4t49 10v44q-24-9-48.5-13.5T700-500q-38 0-73 9.5T560-464Zm-48 214q50-25 98-37.5T712-300q38 0 78.5 6t69.5 16v-429q-34-17-71.82-25-37.82-8-76.18-8-54 0-104.5 16.5T512-677v427Zm-30 90q-51-38-111-58.5T248-239q-36.54 0-71.77 9T106-208q-23.1 11-44.55-3Q40-225 40-251v-463q0-15 7-27.5T68-761q42-20 87.5-29.5T248-800q63 0 122.5 17T482-731q51-35 109.5-52T712-800q47.18 0 92.09 9.5Q849-781 891-761q14 7 21.5 19.5T920-714v463q0 27.89-22.5 42.45Q875-194 853-208q-34-14-69.23-22.5Q748.54-239 712-239q-63 0-121 21t-109 58Z"/></svg>"##;
 pub const OPEN_IN_NEW_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h279v60H180v600h600v-279h60v279q0 24-18 42t-42 18H180Zm202-219-42-43 398-398H519v-60h321v321h-60v-218L382-339Z"/></svg>"##;
 pub const PACKAGE_2_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M450-85v-378L120-654v344q0 16 8 30t22 22L450-85Zm60 0 300-173q14-8 22-22t8-30v-345L510-463v378Zm164-542 133-77-297-171q-14-8-30-8t-30 8l-104 60 328 188ZM480-514l133-78-328-188-132 77 327 189Z"/></svg>"##;
 pub const PSYCHOLOGY_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="48px" viewBox="0 -960 960 960" width="48px" fill="currentColor"><path d="M449-374h60l3-44q12-2 22.5-8.5T553-441l42 14 28-48-30-24q5-14 5-29t-5-29l30-24-28-48-42 14q-8-8-19-14t-22-9l-3-44h-60l-3 44q-11 3-22 9t-19 14l-42-14-28 48 30 24q-5 14-5 29t5 29l-30 24 28 48 42-14q8 8 18.5 14.5T446-418l3 44Zm-19.5-104.5Q409-499 409-528t20.5-49.5Q450-598 479-598t49.5 20.5Q549-557 549-528t-20.5 49.5Q508-458 479-458t-49.5-20.5ZM240-80v-172q-57-52-88.5-121.5T120-520q0-150 105-255t255-105q125 0 221.5 73.5T827-615l55 218q4 14-5 25.5T853-360h-93v140q0 25-17.5 42.5T700-160H600v80H240Z"/></svg>"##;
@@ -29,6 +30,9 @@ pub const TUNE_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidd
 pub const WEB_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm0-60h461v-163H140v163Zm521 0h159v-386H661v386ZM140-443h461v-163H140v163Z"/></svg>"##;
 pub const SETTINGS_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m388-80-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521L80-600l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669-710l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592-206L572-80H388Zm92-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Z"/></svg>"##;
 pub const WORK_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm240-600h160v-80H400v80Z"/></svg>"##;
+pub const MONITOR_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg>"##;
+pub const SUN_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><circle cx="12" cy="12" r="4"/><rect x="11" y="1" width="2" height="4" rx="1"/><rect x="11" y="19" width="2" height="4" rx="1"/><rect x="1" y="11" width="4" height="2" rx="1"/><rect x="19" y="11" width="4" height="2" rx="1"/><rect x="11" y="1" width="2" height="4" rx="1" transform="rotate(45 12 12)"/><rect x="11" y="1" width="2" height="4" rx="1" transform="rotate(135 12 12)"/><rect x="11" y="1" width="2" height="4" rx="1" transform="rotate(225 12 12)"/><rect x="11" y="1" width="2" height="4" rx="1" transform="rotate(315 12 12)"/></svg>"##;
+pub const MOON_SVG: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="24px" viewBox="0 0 24 24" width="24px"><mask id="lef-moon-mask"><rect x="0" y="0" width="24" height="24" fill="white"/><circle cx="16" cy="9" r="7.5" fill="black"/></mask><circle cx="12" cy="12" r="9" fill="currentColor" mask="url(#lef-moon-mask)"/></svg>"##;
 
 // ---------------------------------------------------------------------------
 // Dynamic lookup — used by filter matrices that select icons at runtime via
@@ -65,6 +69,9 @@ pub fn svg_by_name(name: &str) -> &'static str {
 		"web" => WEB_SVG,
 		"settings" => SETTINGS_SVG,
 		"work" => WORK_SVG,
+		"monitor" => MONITOR_SVG,
+		"sun" => SUN_SVG,
+		"moon" => MOON_SVG,
 		_ => "",
 	}
 }
@@ -102,6 +109,9 @@ pub struct TuneIcon;
 pub struct WebIcon;
 pub struct SettingsIcon;
 pub struct WorkIcon;
+pub struct MonitorIcon;
+pub struct SunIcon;
+pub struct MoonIcon;
 
 impl Component for AccessibilityNewIcon {
 	fn to_render(&self, _page: &mut Page) {
@@ -237,6 +247,24 @@ impl Component for WebIcon {
 impl Component for SettingsIcon {
 	fn to_render(&self, _page: &mut Page) {
 		_page.push_static(SETTINGS_SVG)
+	}
+}
+
+impl Component for MonitorIcon {
+	fn to_render(&self, _page: &mut Page) {
+		_page.push_static(MONITOR_SVG)
+	}
+}
+
+impl Component for SunIcon {
+	fn to_render(&self, _page: &mut Page) {
+		_page.push_static(SUN_SVG)
+	}
+}
+
+impl Component for MoonIcon {
+	fn to_render(&self, _page: &mut Page) {
+		_page.push_static(MOON_SVG)
 	}
 }
 
