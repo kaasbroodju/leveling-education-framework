@@ -1,10 +1,31 @@
-use crate::domain::{HBOIExampleResponse, HBOIResponseBody, VaardighedenResponseBody};
+use crate::domain::{BeroepsRollenResponseBody, DeprecatedLevelDescription, DeprecatedVaardighedenResponseBody, HBOIExampleResponse, HBOIResponseBody, VaardighedenResponseBody};
 use lazy_static::lazy_static;
 
 const SKILL_CONTENT: &'static str = include_str!("./../app/data/vaardigheden-nl.json");
 lazy_static! {
 	pub static ref SKILL_DATA: VaardighedenResponseBody =
 		serde_json::from_str::<VaardighedenResponseBody>(SKILL_CONTENT).unwrap();
+}
+lazy_static! {
+	pub static ref DEPRECATED_SKILL_DATA: DeprecatedVaardighedenResponseBody = SKILL_DATA
+		.iter()
+		.map(|(skill, skill_description)| {
+			let levels = skill_description
+				.level_description
+				.iter()
+				.map(|(level, level_description)| {
+					(
+						level.clone(),
+						DeprecatedLevelDescription {
+							title: level_description.description.clone(),
+							info: level_description.extra_description.clone(),
+						},
+					)
+				})
+				.collect();
+			(skill.clone(), levels)
+		})
+		.collect();
 }
 
 const HBOI_CONTENT: &'static str = include_str!("./../app/data/hboi-nl.json");
@@ -17,6 +38,12 @@ const EXAMPLES_CONTENT: &'static str = include_str!("./../app/data/examples.json
 lazy_static! {
 	pub static ref EXAMPLES_DATA: Vec<HBOIExampleResponse> =
 		serde_json::from_str::<Vec<HBOIExampleResponse>>(EXAMPLES_CONTENT).unwrap();
+}
+
+const BEROEPSROLLEN_CONTENT: &'static str = include_str!("./../app/data/beroepsrollen.json");
+lazy_static! {
+	pub static ref BEROEPSROLLEN_DATA: BeroepsRollenResponseBody =
+		serde_json::from_str::<BeroepsRollenResponseBody>(BEROEPSROLLEN_CONTENT).unwrap();
 }
 
 #[cfg(test)]
@@ -45,6 +72,12 @@ mod compile_time_tests {
 		// Zelfde logica voor Examples data
 	}
 
+	#[test]
+	fn test_beroepsrollen_data_compiles() {
+		let _data = &*BEROEPSROLLEN_DATA;
+		// Zelfde logica voor Beroepsrollen data
+	}
+
 	// Test 2: Verificatie van niet-lege data
 	#[test]
 	fn test_data_not_empty() {
@@ -59,6 +92,9 @@ mod compile_time_tests {
 
 		let examples_data = &*EXAMPLES_DATA;
 		assert!(!examples_data.is_empty());
+
+		let beroepsrollen_data = &*BEROEPSROLLEN_DATA;
+		assert!(!beroepsrollen_data.is_empty());
 	}
 
 	// Test 3: Structuur validatie

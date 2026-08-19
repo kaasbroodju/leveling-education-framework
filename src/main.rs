@@ -1,24 +1,26 @@
 use chrono::{DateTime, Utc};
-use rocket::fs::{FileServer, NamedFile};
+use rocket::fs::NamedFile;
 use rocket::http::{Header, Status};
 use rocket::response::{Responder, status};
 use rocket::{Request, Response};
 use std::path::{Path, PathBuf};
-use tidos::Component;
 mod components;
 mod data;
 mod domain;
+mod pages;
 
 #[macro_use]
 extern crate rocket;
 
 use crate::components::card::Card;
-use crate::components::content::about_lef::AboutLef;
-use crate::components::content::beroepsproducten_content::BeroepsproductenContent;
-use crate::components::content::beroepstaken_content::BeroepstakenContent;
-use crate::components::content::skill_content::SkillContent;
 use crate::components::layout::Layout;
-use crate::domain::{HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
+use crate::domain::{BeroepsRollenResponseBody, DeprecatedVaardighedenResponseBody, HBOIExampleResponse, HBOIResponseBody, Skill, VaardighedenResponseBody};
+use pages::about_lef::AboutLef;
+use pages::beroepsproducten_content::BeroepsproductenContent;
+use pages::beroepsrollen::BeroepsRollenContent;
+use pages::beroepstaken_content::BeroepstakenContent;
+use pages::leeswijzer::LeeswijzerContent;
+use pages::skill_content::SkillContent;
 use tidos::{Page, page};
 
 #[derive(Responder)]
@@ -57,92 +59,99 @@ fn llms() -> &'static str {
 
 #[get("/")]
 fn index() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/">
 			{#slot:content}
 				<SkillContent />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
+	page.into()
 }
 
 #[get("/beroepstaken")]
 fn beroepstaken() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/beroepstaken">
 			{#slot:content}
 				<BeroepstakenContent />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Beroepstaken"}</title>}
+	page.into()
 }
 
 #[get("/beroepsproducten")]
 fn beroepsproducten() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/beroepsproducten">
 			{#slot:content}
 				<BeroepsproductenContent />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Beroepsproducten"}</title>}
+	page.into()
+}
+
+#[get("/beroepsrollen")]
+fn beroepsrollen() -> CachedHtml {
+	let mut page = page! {
+		<Layout current_url="/beroepsrollen">
+			{#slot:content}
+				<BeroepsRollenContent />
+			{/slot}
+		</Layout>
+	};
+	tidos::head! {<title>{"LEF - Beroepsrollen"}</title>}
+	page.into()
 }
 
 #[get("/about")]
 fn about() -> CachedHtml {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="/about">
 			{#slot:content}
 				<AboutLef />
 			{/slot}
 		</Layout>
-	}
-	.into()
+	};
+	tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
+	page.into()
+}
+
+#[get("/leeswijzer")]
+fn leeswijzer() -> CachedHtml {
+	let mut page = page! {
+		<Layout current_url="/leeswijzer">
+			{#slot:content}
+				<LeeswijzerContent />
+			{/slot}
+		</Layout>
+	};
+	tidos::head! {<title>{"LEF - Leeswijzer"}</title>}
+	page.into()
 }
 
 #[catch(404)]
 fn index_not_found() -> Page {
-	page! {
-		{
-			tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
-			""
-		}
+	let mut page = page! {
 		<Layout current_url="">
 			{#slot:content}
 				<h1>{"Page not found"}</h1>
 			{/slot}
 		</Layout>
-	}
+	};
+	tidos::head! {<title>{"LEF - Vaardigheden"}</title>}
+	page
 }
 
-// use rocket::http::{Header, Status};
-use crate::data::{EXAMPLES_DATA, HBOI_DATA, SKILL_DATA};
+use crate::data::{BEROEPSROLLEN_DATA, DEPRECATED_SKILL_DATA, EXAMPLES_DATA, HBOI_DATA, SKILL_DATA};
 use rocket::response::Result as ResponseResult;
 use rocket::response::status::Accepted;
 use rocket::serde::json::Json;
-// use rocket::{Request, Response};
-// use rocket::fs::NamedFile;
-// use std::path::{Path, PathBuf};
-// use chrono::{DateTime, Utc};
 
 pub struct CachedFile {
 	named_file: NamedFile,
@@ -206,18 +215,41 @@ async fn files(file: PathBuf) -> Option<CachedFile> {
 	CachedFile::new(path).await.ok()
 }
 
+#[derive(Responder)]
+struct DeprecatedVaardighedenResponse {
+	inner: Json<DeprecatedVaardighedenResponseBody>,
+	link: Header<'static>,
+	deprecation: Header<'static>,
+	sunset: Header<'static>,
+}
+
 #[get("/vaardigheden")]
-async fn vaardighedenApi() -> Json<VaardighedenResponseBody> {
+async fn deprecated_vaardigheden_api() -> DeprecatedVaardighedenResponse {
+	DeprecatedVaardighedenResponse {
+		inner: Json((*DEPRECATED_SKILL_DATA).clone()),
+		link: Header::new("Link", r#"</api/v2/vaardigheden>; rel="successor-version""#),
+		deprecation: Header::new("Deprecation", "@1788048000"),
+		sunset: Header::new("Sunset", "Wed, 30 Sep 2026 00:00:00 GMT"),
+	}
+}
+
+#[get("/vaardigheden")]
+async fn vaardigheden_api() -> Json<VaardighedenResponseBody> {
 	Json((*SKILL_DATA).clone())
 }
 
+#[get("/beroepsrollen")]
+async fn beroepsrollen_api() -> Json<BeroepsRollenResponseBody> {
+	Json((*BEROEPSROLLEN_DATA).clone())
+}
+
 #[get("/hboi")]
-async fn beroepstakenApi() -> Json<HBOIResponseBody> {
+async fn beroepstaken_api() -> Json<HBOIResponseBody> {
 	Json((*HBOI_DATA).clone())
 }
 
 #[get("/beroepsproducten")]
-async fn beroepsproductenApi() -> Json<Vec<HBOIExampleResponse>> {
+async fn beroepsproducten_api() -> Json<Vec<HBOIExampleResponse>> {
 	Json((*EXAMPLES_DATA).clone())
 }
 
@@ -226,7 +258,11 @@ fn rocket() -> _ {
 	rocket::build()
 		.mount(
 			"/api/v1",
-			routes![vaardighedenApi, beroepstakenApi, beroepsproductenApi],
+			routes![deprecated_vaardigheden_api, beroepsrollen_api, beroepstaken_api, beroepsproducten_api],
+		)
+		.mount(
+			"/api/v2",
+			routes![vaardigheden_api],
 		)
 		.register("/", catchers![index_not_found])
 		.mount(
@@ -235,12 +271,13 @@ fn rocket() -> _ {
 				index,
 				beroepstaken,
 				beroepsproducten,
+				beroepsrollen,
 				about,
+				leeswijzer,
 				files,
 				robots,
 				llms,
 				sitemap
 			],
 		)
-	// .mount("/", FileServer::from("./app/public"))
 }

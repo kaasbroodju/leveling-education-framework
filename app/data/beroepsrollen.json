@@ -1,0 +1,302 @@
+{
+  "BE": {
+    "name": "Back-end Developer",
+    "description": "Als backender vertaal je de businessvraag naar systemen. Je houdt je bezig met creëren en beschikbaar stellen van data. Je bouwt applicaties en koppelingen tussen systemen.",
+    "examples": "API endpoints, CI/CD pipeline, ETL pipelines, Docker images, UML diagrammen, C4 model, unit tests, OpenAPI documentatie, test coverage rapport, microservices, Grafana dashboards",
+    "primary_layer": "Software",
+    "secondary_layers": [
+      "Infrastructuur",
+      "Organisatieprocessen"
+    ],
+    "roadmap": {
+      "level_one": "Je begrijpt hoe een http-framework werkt en kan daarmee meerdere endpoints beschikbaar stellen die data valideren en interacteren met een database of repository.",
+      "level_two": "Je kan de businessvraag vertalen naar software-oplossingen. De gewenste functionaliteit kun je opdelen in kleine subtaken en subcomponenten, met daarbij de garantie van kwaliteit (security, performance, schaalbaarheid en zo verder) voordat het automatisch naar productie gaat en gevalideerd is aan de businessvraag. (unit tests, intergration tests en Definition of Done)",
+      "level_three": "Je ontwikkelt in een complexe omgeving rekeninghoudend met de businessvraag, die niet op voorhand beschikbaar is, maar uit analyse en advies zichtbaar wordt evenals de door jou voorgestelde oplossing(en). Je hebt inzicht over je applicatie over de gehele OTAP-straat.",
+      "resources": [
+        {
+          "text": "BE algemeen roadmap",
+          "url": "https://roadmap.sh/backend"
+        },
+        {
+          "text": "API Developer roadmap",
+          "url": "https://bytebytego.com/guides/api-web-development"
+        },
+        {
+          "text": "Database roadmap",
+          "url": "https://bytebytego.com/guides/database-and-storage"
+        },
+        {
+          "text": "Performance Engineer roadmap",
+          "url": "https://bytebytego.com/guides/caching-performance"
+        },
+        {
+          "text": "Software Architect roadmap",
+          "url": "https://bytebytego.com/guides/software-architecture"
+        },
+        {
+          "text": "Cloud Developer roadmap",
+          "url": "https://bytebytego.com/guides/cloud-distributed-systems"
+        },
+        {
+          "text": "Algemene software development roadmap",
+          "url": "https://bytebytego.com/guides/software-development"
+        }
+      ],
+      "challenges": [
+        "Hyperschaalbaar systeem bouwen",
+        "De kwaliteitcheck en OTAP-straat volledig automatiseren"
+      ]
+    },
+    "example_jobs": {
+      "API Developer": "De meest bekende rol, je bouwt applicaties en stelt ze beschikbaar voor een front-end of andere backends. Je houdt je bezig met API design, zoals REST-principes, GraphQL en gRPC. Je denkt na over versiebeheer van je API, zodat bestaande consumenten niet breken als je nieuwe functionaliteit toevoegt. Authenticatie en autorisatie, bijvoorbeeld via OAuth2 of JWT, horen ook bij je dagelijkse werk. Je zorgt voor duidelijke documentatie, bijvoorbeeld met OpenAPI/Swagger, zodat andere teamgenoten je API snel kunnen begrijpen en gebruiken. Rate limiting en caching pas je toe om je API robuust en snel te houden onder belasting. Daarnaast test je je endpoints grondig, met unit- en integratietests, om regressies te voorkomen. Uiteindelijk ben jij de brug tussen de business logica en de systemen die daar gebruik van maken.",
+      "Cloud Developer": "Een cloud developer bouwt applicaties in een Azure- of AWS-omgeving. Je bouwt applicaties met Infrastructure as Code (IaC) in je achterhoofd, bijvoorbeeld met Terraform of Bicep. Je denkt na over schaalbaarheid, zodat een applicatie automatisch mee kan groeien met de vraag. Serverless technieken, zoals Azure Functions of AWS Lambda, gebruik je om kosten en beheer te minimaliseren. Je houdt rekening met cloud-kosten en optimaliseert resources zodat je niet onnodig betaalt. Beveiliging in de cloud, zoals identity management en netwerksegmentatie, is een vast onderdeel van je werk. CI/CD pipelines zet je op om deployments naar de cloud geautomatiseerd en betrouwbaar te maken. Je bent voortdurend op de hoogte van nieuwe clouddiensten, omdat het aanbod continu verandert.",
+      "Software Architect": "Een software architect houdt zich bezig met het inrichten van systemen en data. De architect specialiseert zich in software ontwerpen en tekent veel uit voor collega's die de systemen uiteindelijk implementeren. Je maakt keuzes over architectuurpatronen, zoals microservices of een monoliet, afhankelijk van de context. C4-modellen en UML-diagrammen gebruik je om je ontwerp visueel en begrijpelijk te maken voor je teamgenoten. Je weegt niet-functionele eisen af, zoals schaalbaarheid, beveiliging en onderhoudbaarheid, bij elke ontwerpkeuze. Technical debt probeer je vroegtijdig te signaleren en bespreekbaar te maken binnen het team of opdrachtgever. Je helpt medestudenten/collega’s bij het maken van technische keuzes, zonder zelf altijd de code te schrijven. Uiteindelijk zorg jij ervoor dat een systeem niet alleen vandaag werkt, maar ook morgen nog onderhoudbaar is.",
+      "Performance Engineer": "Als een applicatie veel wordt gebruikt, wil je inzicht hoe het in real-time performant blijft. Een performance engineer houdt zich bezig om de performance in kaart te brengen en te optimaliseren. Je gebruikt profiling tools om te ontdekken waar bottlenecks in de code of infrastructuur zitten. Load- en stresstests zet je in om te zien hoe een systeem zich gedraagt onder piekbelasting. Caching-strategieën, zoals Redis of CDN's, pas je toe om response tijden te verlagen. Je monitort systemen continu met tools zoals Grafana of Prometheus, zodat je problemen vroegtijdig signaleert. Je werkt nauw samen met developers om structurele verbeteringen door te voeren in plaats van symptomen te bestrijden."
+    }
+  },
+  "CS": {
+    "name": "Cyber Security Engineer",
+    "description": "Als Cyber Security Engineer ontwerp, implementeer en onderhoud je beveiligingsmaatregelen om digitale systemen te beschermen. Je analyseert risico's, monitort dreigingen, voert tests uit en reageert op beveiligingsincidenten. Je geeft hier adviezen over, zowel qua techniek als organisatorisch.",
+    "examples": "Penetratietesten, Security Assessments, Risicoanalyses, Security Monitoring, Security Operations Center (SOC) inrichting, Cloud Security, Ontwerp Netwerkbeveiliging, Applicatie beveiligingsadviezen en Incident Response Plannen",
+    "primary_layer": "Infrastructuur",
+    "secondary_layers": [
+      "Organisatieprocessen",
+      "Software",
+      "Hardwareinterfacing"
+    ],
+    "roadmap": {
+      "level_one": "Je monitort dreigingen, analyseert security-incidenten, onderzoekt kwetsbaarheden en vertaalt technische inzichten naar concrete beveiligingsmaatregelen en adviezen.",
+      "level_two": "Je identificeert risico's, detecteert aanvallen, onderzoekt beveiligingsincidenten en adviseert over effectieve oplossingen om digitale weerbaarheid te vergroten.",
+      "level_three": "Je beoordeelt het dreigingslandschap, ondersteunt bij complexe securityvraagstukken en helpt organisaties strategische keuzes maken voor een veilige digitale omgeving.",
+      "resources": [
+        {
+          "text": "Dingen om te doen/weten: roadmap cyber",
+          "url": "https://roadmap.sh/cyber-security"
+        },
+        {
+          "text": "Interviews met mensen uit het werkveld",
+          "url": "https://open.spotify.com/show/22mHN6W8EDMREzrGAKQCL1?si=8001f24145924c94"
+        },
+        {
+          "text": "Coolest Careers (&training): sans",
+          "url": "https://www.sans.org/media/cyberstart/10-Coolest-Jobs-Poster.pdf"
+        }
+      ],
+      "challenges": [
+        "Werk aan actuele cyberdreigingen, ontwikkel innovatieve oplossingen zoals een geautomatiseerde testomgeving en maak impact op digitale veiligheid!"
+      ]
+    },
+    "example_jobs": {
+      "Security Operations Centre (SOC) medewerker": "Je bewaakt de digitale veiligheid op taakniveau met real-time monitoren van SIEM-dashboards, triage van alerts en logboeken analyseren. Op probleemniveau met onderzoeken van de bronoorzaak van beveiligingsincidenten, en forensische analyse. En op situatieniveau met coördinatie bij incidenten, weerstand bij grote dreigingen, en systemen herstellen om bedrijfscontinuïteit te garanderen i.s.m. Cyber Security Incident Response Team (CSIRT/CERT).",
+      "Ethical Hacker/Pentester": "Je simuleert cyberaanvallen om de beveiliging te verbeteren. Op taakniveau is het scannen van netwerken, misbruiken van kwetsbaarheden (exploiting), social engineering, wachtwoordkraken en rapporteren van bevindingen. Op probleemniveau identificeer je complexe misconfiguraties en kwetsbare applicatiecode met een PoC. Op situatieniveau adviseer je over algemene risico's en hoe achterliggende oorzaken op te lossen.",
+      "Security Specialist a.k.a. TISO": "Als Technical Information Security Officer (TISO) ben je specialist in bepaalde IT en/of OT (operationele technologie) onderwerpen bij grotere organisatie. Op taakniveau configureer je firewalls, beheer je toegangsrechten en voer je vulnerability scans uit of implementeer je security tooling (zoals EDR/SIEM). Op probleemniveau analyseer je bij dreigingen of incidenten de technische oorzaak, dicht kwetsbaarheden en herstelt de beveiliging. Op situatieniveau adviseer je de technische risico's binnen projecten of zorgt dat aan de normen (zoals ISO27001 of IEC 62443) wordt voldaan.",
+      "Threat Intel Analist": "De focus van de functie ligt in de buitenwereld om te zorgen dat dreigingen van buitenaf niet over het hoofd worden gezien. Op taakniveau monitor je threat feeds, en analyseer je samen met SOC malware-samples, IP-adressen (IoC's) en phishing-e-mails. Je maakt rapporten over specifieke actoren en TTP's (Tactics, Techniques, Procedures). Op probleemniveau onderzoek je specifieke kwetsbaarheden of actieve inbreuken en adviseer je over verdedigingsmaatregelen. Op situatieniveau duid je het bredere dreigingslandschap, en adviseer je over investeringen in beveiliging."
+    }
+  },
+  "UI/UX": {
+    "name": "UI/UX Designer",
+    "description": "De UI/UX-designer vertaalt gebruikersonderzoek, productdoelen en ontwerpprincipes naar concrete ontwerpkeuzes. Je ontwerpt iteratief digitale producten, diensten en interacties die consistent, intuïtief en toegankelijk zijn.",
+    "examples": "Gebruikersonderzoeksrapporten, gebruikersreis-kaarten, wireframes, interactieve prototypes, UI-stijlgidsen, design systems, gebruikerstesten, toegankelijkheidsaudits, mock-ups met annotaties, ontwerpvoorstellen.",
+    "primary_layer": "Gebruikersinteractie",
+    "secondary_layers": [
+      "Organisatieprocessen",
+      "Software"
+    ],
+    "roadmap": {
+      "level_one": "Je begrijpt hoe gebruikersbehoeften, onderzoek en externe feedback samenkomen in een ontwerpopdracht, en je kunt die vertalen naar een interactieontwerp, wireframes of prototypes. Je zoekt verduidelijking bij opdrachtgever, eindgebruikers en experts, en onderzoekt bestaande concepten, diensten en producten als uitgangspunt voor je ontwerp.",
+      "level_two": "Je kunt een businessvraag of probleem vertalen naar een concrete UX-oplossing. Je splitst die op in kleinere ontwerpstappen en toetst je keuzes op kwaliteit, zoals toegankelijkheid, consistentie, bruikbaarheid en haalbaarheid, voordat je ze onderbouwt met testen, evaluatie en iteratie.",
+      "level_three": "Je ontwerpt in een complexe context waarin gebruikers, technologie, organisatie en maatschappelijke factoren samenkomen. Je analyseert gebruikersgedrag, interactie en ervaring vanuit meerdere perspectieven, volgt trends in interactieve technologie en evalueert doorlopend het effect van je ontwerp op de gebruikerservaring.",
+      "resources": [
+        {
+          "text": "[template]",
+          "url": "https://roadmap.sh/ux-design"
+        },
+        {
+          "text": "[template]",
+          "url": "https://www.nngroup.com/"
+        },
+        {
+          "text": "[template]",
+          "url": "https://ixdf.org/"
+        }
+      ],
+      "challenges": [
+        "Snel schakelen, aannames toetsen en de echte gebruikersbehoeften blootleggen.",
+        "Verder gaan dan de eerste oplossing en het onderliggende probleem echt oplossen."
+      ]
+    },
+    "example_jobs": {
+      "Product Designer": "Een product designer combineert UX, UI en strategie om digitale producten te ontwerpen die gebruiksvriendelijk en waardevol zijn.",
+      "UX Researcher": "Een UX-researcher onderzoekt gebruikers met interviews, tests en data om te begrijpen wat zij nodig hebben en waar zij vastlopen.",
+      "UX/UI Visual Designer": "Een UX/UI Visual Designer ontwerpt de visuele en interactieve kwaliteit van een product, zoals lay-out, kleuren, typografie, iconen en componenten, met oog voor gebruiksvriendelijkheid en toegankelijkheid.",
+      "Service Designer": "Een service designer ontwerpt en verbetert de volledige dienstverlening over alle contactmomenten heen."
+    }
+  },
+  "BIT": {
+    "name": "Business IT Engineer",
+    "description": "De Business IT-er staat met één been in de organisatie en één been in de IT. Zo zorgt de Business- IT-er ervoor dat een klantwens uiteindelijk uitmondt in een passende oplossing.",
+    "examples": "Procesontwerpen, gap analyses, SWOTs, risico analyses, product backlogs, dashboards, low-code oplossingen, burndown charts, user journey maps, adviesrapports",
+    "primary_layer": "Organisatieprocessen",
+    "secondary_layers": [
+      "Gebruikersinteractie"
+    ],
+    "roadmap": {
+      "level_one": "Je zorgt ervoor dat er een eenvoudig maar helder overzicht is van een aantal aspecten van het ICT ontwikkelproces: je brengt het te maken product in beeld, je modelleert het (eenvoudige) bedrijfsproces, je identificeert de belangrijkste stakeholders ïdentificeerd, je legt de verantwoordelijkheden in het team en je zorgt dat er met een backlog continu wordt gewerkt aan kwaliteitsverbetering.",
+      "level_two": "Je neemt verantwoordelijkheid voor de productvisie, kwaliteit, budget en planning binnen een ontwikkelteam, je stemt verwachtingen af met stakeholders en vertaalt deze naar een geprioriteerde backlog met epics, features en user stories, je modelleert een (complex) bedrijfsproces, je stimuleert teamontwikkeling, je formuleert prestatie indicatoren, je analyseert en visualiseert op systematische wijze data en gebruikt deze om onderbouwde keuzes te maken over scope, prioriteiten en kwaliteit.",
+      "level_three": "Je stemt je handelen af op de context, omvang en complexiteit van de organisatie, je draagt zorgt voor kwaliteitsborging door middel van geautomatiseerd testen, je past maturitymodellen toe voor continue verbetering. Diper de data in. Veranderen.",
+      "resources": [
+        {
+          "text": "De Business IT engineer kan gebruik maken van de Business IT roadmap.",
+          "url": "https://hogeschoolutrecht.sharepoint.com/:x:/r/sites/ext_Onderwijs_openicthl15collegezaal/Gedeelde%20documenten/Gilde%20Business%20IT/2025-2026/250909%20BIT%20-%20PO%20BA%20BI%20roadmap.xlsx?d=w6f4c8033177e4fb8bc73f71ad3ddbed1&csf=1&web=1&e=aIaT0q"
+        }
+      ],
+      "challenges": [
+        "Schrijf een kwantitatief onderbouwde business case"
+      ]
+    },
+    "example_jobs": {
+      "Product Owner": "De Product Owner(PO) neemt verantwoordelijkheid voor de productvisie en het ontwikkelproces. De PO brengt met het team de user journey in kaart door gebruikerswensen en het bedrijfsproces scherp te houden, en communiceert actief met alle betrokken stakeholders. Binnen het team signaleert de PO kwaliteiten en geeft ruimte voor hun ontwikkeling. De PO vertaalt het product backlog naar behapbare stukken en maakt roadmap richting einddoel. Daarbij stuurt de PO op de waarde die het product toevoegt en bewaakt hij de kwaliteit van de opgeleverde resultaten — altijd binnen de grenzen van het beschikbare budget aan uren en middelen.",
+      "Business analyst": "Een Business Analyst (BA) vormt de schakel tussen de organisatie en de IT-oplossing. De BA analyseert bedrijfsprocessen, brengt knelpunten in kaart en vertaalt deze naar heldere functionele eisen en specificaties. Daarvoor onderhoudt de BA nauw contact met stakeholders om behoeften op te halen en verwachtingen te managen. Vervolgens werkt de BA die inzichten uit in concrete documentatie — zoals use cases, procesmodellen of requirements — die het ontwikkelteam direct kan gebruiken. Zo zorgt de BA ervoor dat de juiste oplossing wordt gebouwd voor het juiste probleem.",
+      "Data analyst": "Een Data Analist (DA) verzamelt, ordent en onderzoekt data om organisaties te helpen betere beslissingen te nemen. De DA werkt gestructureerd: data verzamelen, opschonen, analyseren en visualiseren. Een Data Analist richt zich op het ontdekken van inzichten, trends en patronen die relevant zijn voor bedrijfsprocessen. Daarbij gebruikt de DA tools zoals Python, SQL en dashboards. Een data analist is daarnaast in staat om data inzichtelijk te visualiseren d.m.v. grafieken, interactieve dashboards en infographics."
+    }
+  },
+  "CI": {
+    "name": "Cloud & Infra Engineer",
+    "description": "Als Cloud & Infra Engineer ontwerp, automatiseer, implementeer en beheer je moderne IT-infrastructuren. Je zorgt ervoor dat cloudplatformen, netwerken, servers en containers veilig, schaalbaar en betrouwbaar functioneren. Daarbij werk je veel met automatisering, monitoring, security en SD-ers",
+    "examples": "Infrastructure as Code (Terraform/Bicep), (Cloud) architectuurontwerpen (HLD), Netwerkontwerpen (VPC/VNet), Kubernetes-clusters, CI/CD pipelines, monitoring & observability dashboards, Identity & Access Management (IAM)-configuraties, Disaster Recovery- en Backup-plannen, Automatiseringsscripts (PowerShell/Bash/Python) en Infrastructuurdocumentatie (LLD).",
+    "primary_layer": "Infrastructuur",
+    "secondary_layers": [
+      "Organisatieprocessen",
+      "Software"
+    ],
+    "roadmap": {
+      "level_one": "Je ontwerpt, realiseert, automatiseert en beheert cloud- en infrastructuuromgevingen. Je configureert netwerken, servers, containers, identity management en monitoring.",
+      "level_two": "Je vertaalt beschikbaarheids-, prestatie-, beveiligings- en schaalbaarheidsvraagstukken naar technische infrastructuuroplossingen. Daarnaast automatiseer je deployments en infrastructuur met Infrastructure as Code en zorg je voor een veilige, betrouwbare en goed gedocumenteerde omgeving.",
+      "level_three": "Je werkt in complexe hybride omgevingen waarin cloudplatformen, on-premises infrastructuur, netwerken, applicaties en security samenkomen. Je maakt afwegingen tussen kosten, prestaties, schaalbaarheid, beschikbaarheid en beveiliging en werkt nauw samen met softwareontwikkelaars, security engineers en systeembeheerders om een toekomstbestendige infrastructuur te realiseren.",
+      "resources": [
+        {
+          "text": "DevOps Roadmap: Learn to become a DevOps Engineer or SRE",
+          "url": "https://roadmap.sh/devops"
+        },
+        {
+          "text": "Network Engineer",
+          "url": "https://roadmap.sh/network-engineer"
+        },
+        {
+          "text": "Training for Azure | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/training/azure/"
+        }
+      ],
+      "challenges": [
+        "Ontwerp een volledig geautomatiseerde cloudomgeving, die zichzelf kan uitrollen, monitoren en herstellen.",
+        "Bouw een highly available Kubernetes-platform met Infrastructure as Code, CI/CD, netwerksegmentatie, monitoring en disaster recovery."
+      ]
+    },
+    "example_jobs": {
+      "Cloud Engineer": "Een Cloud Engineer ontwerpt, bouwt en beheert cloudomgevingen op platformen zoals Azure, AWS, Google Cloud of soevereine cloud. Je automatiseert infrastructuur met Terraform of Bicep, richt netwerken en identity management in en zorgt voor schaalbare, veilige en kostenefficiënte oplossingen. Je monitort cloudomgevingen, optimaliseert prestaties en ondersteunt ontwikkelteams bij deployments en cloud-native oplossingen.",
+      "Netwerk Engineer": "Een Network Engineer ontwerpt, configureert en beheert de netwerkinfrastructuur van organisaties. Je werkt met routers, switches, firewalls, load balancers, VPN-verbindingen en draadloze netwerken om veilige en betrouwbare communicatie tussen gebruikers, locaties en systemen mogelijk te maken. Je analyseert netwerkverkeer, lost storingen op en optimaliseert prestaties, beschikbaarheid en beveiliging. Daarnaast houd je je bezig met netwerksegmentatie, redundantie, software-defined networking (SDN) en hybride netwerkoplossingen die aansluiten op cloudomgevingen.",
+      "Platform Engineer": "Een Platform Engineer ontwikkelt en beheert het technische platform waarop ontwikkelteams hun software bouwen en uitrollen. Je levert gestandaardiseerde cloud- en infrastructuurdiensten, automatiseert provisioning, implementeert observability en security en zorgt ervoor dat ontwikkelaars zelfstandig en veilig kunnen werken binnen een stabiele infrastructuur.",
+      "Infrastructuur Engineer": "Een Infrastructure Engineer ontwerpt, implementeert en beheert de technische infrastructuur waarop applicaties en diensten draaien. Je beheert servers, virtualisatieplatformen, opslag, back-upvoorzieningen en besturingssystemen, zowel on-premises als in hybride omgevingen. Je automatiseert beheerwerkzaamheden, bewaakt de continuïteit van bedrijfskritische systemen en zorgt voor hoge beschikbaarheid en disaster recovery. Daarnaast werk je nauw samen met cloud-, netwerk- en securityspecialisten om een stabiele, veilige en toekomstbestendige IT-infrastructuur te realiseren."
+    }
+  },
+  "FE": {
+    "name": "Front-end developer",
+    "description": "Je bouwt en onderhoudt de client‑zijde van web- en mobiele apps. Je zet UI/UX-ontwerpen om in functionele, responsieve producties met HTML, CSS en JavaScript (ook frameworks zoals React of Vue). Je overbrugt ontwerp en techniek voor een naadloze, snelle, toegankelijke gebruikerservaring.",
+    "examples": "UI/UX-ontwerpen implementeren, zorgen voor responsiviteit en cross‑browser compatibiliteit, prestaties optimaliseren, samenwerken met ontwerpers en backend developers, implement accessibility, testen & debugen code, Front‑end infrastructuur onderhouden en doorontwikkelen.",
+    "primary_layer": "Software",
+    "secondary_layers": [
+      "Gebruikersinteractie"
+    ],
+    "roadmap": {
+      "level_one": "[template]",
+      "level_two": "[template]",
+      "level_three": "[template]",
+      "resources": [
+        {
+          "text": "[template]",
+          "url": "[template]"
+        },
+        {
+          "text": "[template]",
+          "url": "[template]"
+        },
+        {
+          "text": "[template]",
+          "url": "[template]"
+        }
+      ],
+      "challenges": [
+        "[template]"
+      ]
+    },
+    "example_jobs": {}
+  },
+  "TI": {
+    "name": "Embedded technologie Engineer",
+    "description": "Ontwerpt, ontwikkelt en implementeert hardware en software voor embedded systemen. Werkt aan uitdagende projecten, van industriële automatisering tot slimme apparaten voor consumenten en bedrijven (IoT).",
+    "examples": "Elk apparaat wat je kan verzinnen! Op basis van een zelf-ontwikkeld 3d-ontwerp, uitgeprint met een 3d-printer, een zelf ontworpen en geprinte PCB, enige elektronica-kennis en kennis van de aansturing van het apparaat in Rust of C++.",
+    "primary_layer": "Hardwareinterfacing",
+    "secondary_layers": [
+      "Infrastructuur",
+      "Software"
+    ],
+    "roadmap": {
+      "level_one": "[template]",
+      "level_two": "[template]",
+      "level_three": "[template]",
+      "resources": [
+        {
+          "text": "[template]",
+          "url": "[template]"
+        },
+        {
+          "text": "[template]",
+          "url": "[template]"
+        },
+        {
+          "text": "[template]",
+          "url": "[template]"
+        }
+      ],
+      "challenges": [
+        "[template]"
+      ]
+    },
+    "example_jobs": {
+      "C++ Developer": "Houdt zich bezig met het ontwikkelen van software voor het aansturen van hardware, zoals firmware en drivers. Een C++ Developer wordt vaak ingezet voor het zoeken van een oplossing voor specifieke IT-problemen.",
+      "Technisch adviseur": "Adviseert over embedded software systemen, standaarden en de aanschaf, installatie en toepassing daarvan. Hij (of zij) heeft als adviseur diepgaande kennis over onderwerpen in de Embedded Software, en weet dit ook over te brengen.",
+      "Hardware Engineer, Industriële Automatisering, Mechatronicus": "Gespecialiseerd in Mechatronica., een combinatie van Elektrotechniek, Werktuigbouwkunde, Software-engineering en Meet- en regeltechniek. Verantwoordelijk voor werkzaamheden en processen in de industriële automatisering, zoals bijvoorbeeld robotisering en slimme energiesystemen.",
+      "Rust Developer": "Houdt zich bezig met het ontwikkelen van software voor het aansturen van hardware, zoals firmware en drivers. Een Rust Developer wordt vaak ingezet voor het zoeken van een oplossing voor specifieke IT-problemen."
+    }
+  },
+  "AI": {
+    "name": "AI Engineer",
+    "description": "Overal waar data is of waar kenniswerkers zijn zijn er mogelijkheden om processen te verbeteren met behulp van AI. Dit kan bij heel diverse organisaties: van grote organisaties zoals banken of overheidsinstellingen tot startups in allerlei sectoren.",
+    "examples": "Advies AI use cases, ontwerp data-architectuur, AI based decision support system, keuze cloud vs local AI, data-architectuur ontwerp, recommendation system, kostenberekening GenAI, ethische implicaties, implementatie pre-trained model, analyse hardwarevereisten voor AI",
+    "primary_layer": "Software",
+    "secondary_layers": [
+      "Organisatieprocessen",
+      "Gebruikersinteractie",
+      "Infrastructuur",
+      "Hardwareinterfacing"
+    ],
+    "roadmap": {
+      "level_one": "Analyseer de kwaliteit van een beschikbare data set en herken hier patronen in met behulp van ML technieken.",
+      "level_two": "Train en test een computer vision model voor het herkennen van lego steentjes op kleur en type.",
+      "level_three": "Adviseer en maak een kostenanalyse over de toepassing van Generative AI binnen een organisatie rekening houdend met randvoorwaarden rond human-in-the-loop, privacy en security.",
+      "resources": [
+        {
+          "text": "AI Atlas 2026 – Miro",
+          "url": "https://miro.com/app/board/uXjVK0CdZjI=/"
+        }
+      ],
+      "challenges": []
+    },
+    "example_jobs": {
+      "Data Engineer": "Verwerft inzichten en bouwt voorspellende modellen met behulp van data",
+      "AI Ethics Specialist": "Zorgt ervoor dat AI-systemen eerlijk, transparant en conform de regelgeving zijn",
+      "AI Solution Architect": "Ontwerpt schaalbare AI-systemen en integreert modellen in toepassingen in de praktijk",
+      "AI Agent Engineer": "Bouwt autonome AI-agenten die plannen maken, handelen en tools gebruiken"
+    }
+  }
+}

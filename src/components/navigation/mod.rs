@@ -1,4 +1,5 @@
 pub mod beroepstaken_filter_matrix;
+pub mod guild_filter_matrix;
 pub mod skill_filter_matrix;
 
 use crate::components::icons;
@@ -9,24 +10,27 @@ pub struct NavBar<'a> {
 }
 
 impl<'a> Component for NavBar<'a> {
-	fn to_render(&self, page: &mut Page) -> String {
-		let nav_list = vec![
+	fn to_render(&self, page: &mut Page) {
+		let nav_list = [
 			("Vaardigheden", "/", icons::FACE_SVG),
+			("Beroepsrollen", "/beroepsrollen", icons::WORK_SVG),
 			("Beroepstaken / HBO-i", "/beroepstaken", icons::CATEGORY_SVG),
 			(
 				"Beroepsproducten",
 				"/beroepsproducten",
 				icons::PACKAGE_2_SVG,
 			),
+			// TODO: tijdelijk hergebruikt icoon van Beroepsproducten, vervangen door een eigen icoon.
+			("Zo gebruik je LEF", "/leeswijzer", icons::PACKAGE_2_SVG),
 			("Over ons", "/about", icons::INFO_SVG),
 		];
 
 		view! {
-			<nav class={scoped_css!("nav_bar.css")}>
+			<nav @class={"nav_bar.css"}>
 				<ul>
 					{#for (label, href, icon_svg) in nav_list}
 						<li>
-							<a href={href} class={if self.current_url.eq(href) {"active"} else {""}}>
+							<a href={href} class={if self.current_url == href {"active"} else {""}}>
 								<span>@html{icon_svg}</span>
 								<span>{label}</span>
 							</a>

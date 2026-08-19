@@ -1,12 +1,13 @@
+use crate::components::settings::SettingsButton;
 use tidos::{Component, Page, scoped_css, view};
 
 pub struct HeaderBar;
 
 impl Component for HeaderBar {
-	fn to_render(&self, page: &mut Page) -> String {
+	fn to_render(&self, page: &mut Page) {
 		view! {
-			<header class={scoped_css!("header_bar.css")}>
-				<div class={scoped_css!("logo.css")}>
+			<header @class={"header_bar.css"}>
+				<div @class={"logo.css"}>
 					<a href="/" aria-label="terug naar startpagina">
 						<div>
 							<div aria-hidden="true">
@@ -17,6 +18,7 @@ impl Component for HeaderBar {
 						</div>
 					</a>
 				</div>
+				<SettingsButton />
 			</header>
 		}
 	}
