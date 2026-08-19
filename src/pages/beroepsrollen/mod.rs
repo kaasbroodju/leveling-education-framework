@@ -25,6 +25,12 @@ impl Component for BeroepsRollenContent {
 						<BeroepsRolCards rol={rol} />
 					</div>
 				{/for}
+				<div data-guild={"HCAI"}>
+					<Card>
+						<h2>{"HCAI"}</h2>
+						<p>{"Je ontwerpt en ontwikkelt een praktijkoplossing voor een AI-vraagstuk. Je integreert daarin kennis van technische mogelijkheden en meerdere human-centered (bijvoorbeeld ethische, sociaalmaatschappelijke en juridische) aspecten, zoekt hierin op kritische wijze een passende balans en schrijft een wetenschappelijke onderbouwing van gemaakte keuzes."}</p>
+					</Card>
+				</div>
 			</div>
 		}
 	}

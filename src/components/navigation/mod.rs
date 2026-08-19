@@ -20,6 +20,8 @@ impl<'a> Component for NavBar<'a> {
 				"/beroepsproducten",
 				icons::PACKAGE_2_SVG,
 			),
+			// TODO: tijdelijk hergebruikt icoon van Beroepsproducten, vervangen door een eigen icoon.
+			("Zo gebruik je LEF", "/leeswijzer", icons::PACKAGE_2_SVG),
 			("Over ons", "/about", icons::INFO_SVG),
 		];
 

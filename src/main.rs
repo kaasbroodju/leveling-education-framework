@@ -19,6 +19,7 @@ use pages::about_lef::AboutLef;
 use pages::beroepsproducten_content::BeroepsproductenContent;
 use pages::beroepsrollen::BeroepsRollenContent;
 use pages::beroepstaken_content::BeroepstakenContent;
+use pages::leeswijzer::LeeswijzerContent;
 use pages::skill_content::SkillContent;
 use tidos::{Page, page};
 
@@ -118,6 +119,19 @@ fn about() -> CachedHtml {
 		</Layout>
 	};
 	tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
+	page.into()
+}
+
+#[get("/leeswijzer")]
+fn leeswijzer() -> CachedHtml {
+	let mut page = page! {
+		<Layout current_url="/leeswijzer">
+			{#slot:content}
+				<LeeswijzerContent />
+			{/slot}
+		</Layout>
+	};
+	tidos::head! {<title>{"LEF - Leeswijzer"}</title>}
 	page.into()
 }
 
@@ -259,6 +273,7 @@ fn rocket() -> _ {
 				beroepsproducten,
 				beroepsrollen,
 				about,
+				leeswijzer,
 				files,
 				robots,
 				llms,

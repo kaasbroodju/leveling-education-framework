@@ -9,6 +9,7 @@ impl Component for GuildFilterMatrix {
 		view! {
 			<header>
 				<Card>
+					<h2>{"Bachelor"}</h2>
 					<div @class={"guild_filter_matrix.css"}>
 						{#for x in GUILDS}
 							<button
@@ -19,6 +20,18 @@ impl Component for GuildFilterMatrix {
 								<span>{x.get_short_name()}</span>
 							</button>
 						{/for}
+					</div>
+				</Card>
+				<Card>
+					<h2>{"Master"}</h2>
+					<div @class={"guild_filter_matrix.css"}>
+						<button
+							data-filter-guild={"HCAI"}
+							aria-label={"HCAI"}
+							style={"--guild-color: pink;"}
+						>
+							<span>{"HCAI"}</span>
+						</button>
 					</div>
 				</Card>
 			</header>
