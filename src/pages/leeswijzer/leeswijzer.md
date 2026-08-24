@@ -1,14 +1,14 @@
-**Wat zijn de LEFvaardigheden?**
+**Wat zijn de LEF-vaardigheden?**
 
-In de opleiding werk je met tien LEFvaardigheden. Deze beschrijven wat nodig is om professioneel te handelen in het ICTdomein. Ze zijn gebaseerd op (inter)nationale kaders* voor hoger onderwijs en gelden voor de bachelor OpenICT, de bachelor Duaal en de master HCAI.
+In de opleiding werk je met tien LEF-vaardigheden. Deze beschrijven wat nodig is om professioneel te handelen in het ICT-domein. Ze zijn gebaseerd op (inter)nationale kaders\* voor hoger onderwijs en gelden voor de bachelor Open-ICT, de bachelor Duaal en de master HCAI.
 
 **Wat betekenen de niveaus?**
 
 Elke vaardigheid kent vier niveaus die op elkaar voortbouwen. De niveaus zeggen iets over hoe je handelt, keuzes maakt en soms ook iets over de omstandigheden waarin je werkt. Grofweg betekent:
 
-- Niveau 1: propedeuseniveau
-- Niveau 2 en 3: hoofdfase bachelorniveau
-- Niveau 4: masterniveau
+* Niveau 1: propedeuseniveau
+* Niveau 2 en 3: hoofdfase bachelorniveau
+* Niveau 4: masterniveau
 
 **Wat betekent groeien in niveau?**
 
@@ -16,15 +16,15 @@ Een hoger niveau betekent niet alleen dat je iets beter uitvoert. Het betekent d
 
 Niet elke situatie biedt de mogelijkheid om elk niveau te laten zien. Een hoger niveau kun je laten zien:
 
-- wanneer de situatie minder vastligt,
-- wanneer er wezenlijke keuzes te maken zijn, of
-- wanneer je moet omgaan met onzekerheid, belangen of afhankelijkheden.
+* wanneer de situatie minder vastligt,
+* wanneer er wezenlijke keuzes te maken zijn, of
+* wanneer je moet omgaan met onzekerheid, belangen of afhankelijkheden.
 
 Groeien in niveau ontstaat uit de combinatie van context en handelen:
 
-- in een taakgerichte situatie laat je vooral basisvaardigheden zien;
-- in een probleemgerichte situatie kunnen afwegingen en keuzes zichtbaar worden;
-- in meer open of professionele situaties wordt zichtbaar hoe je handelt bij onzekerheid en een grotere complexiteit.
+* in een taakgerichte situatie laat je vooral basisvaardigheden zien;
+* in een probleemgerichte situatie kunnen afwegingen en keuzes zichtbaar worden;
+* in meer open of professionele situaties wordt zichtbaar hoe je handelt bij onzekerheid en een grotere complexiteit.
 
 Examinatoren betrekken deze context bij de beoordeling van vaardigheden.
 
@@ -34,6 +34,7 @@ Een niveau wordt vastgesteld wanneer er over een periode voldoende beeld is van 
 
 **Tot slot**
 
-De LEFvaardigheden maken professionele ontwikkeling zichtbaar en ondersteunen zorgvuldige beoordeling op basis van samenhang en ontwikkeling.
+De LEF-vaardigheden maken professionele ontwikkeling zichtbaar en ondersteunen zorgvuldige beoordeling op basis van samenhang en ontwikkeling.
 
 \* (Inter)nationale kaders: HBO-i, het European Qualifications Framework, het European eCompetence Framework (eCF), Dublin Descriptoren, EDISON en ICT Ethics.
+
