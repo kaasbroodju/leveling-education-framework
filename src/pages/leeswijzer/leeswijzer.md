@@ -36,5 +36,5 @@ Een niveau wordt vastgesteld wanneer er over een periode voldoende beeld is van 
 
 De LEF-vaardigheden maken professionele ontwikkeling zichtbaar en ondersteunen zorgvuldige beoordeling op basis van samenhang en ontwikkeling.
 
-\* (Inter)nationale kaders: HBO-i, het European Qualifications Framework, het European eCompetence Framework (eCF), Dublin Descriptoren, EDISON en ICT Ethics.
+\* (Inter)nationale kaders: HBO-i, het European Qualifications Framework, het European e-Competence Framework (e-CF), Dublin Descriptoren, EDISON en ICT Ethics.
 
