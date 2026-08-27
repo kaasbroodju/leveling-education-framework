@@ -14,8 +14,8 @@ impl Component for GuildFilterMatrix {
 						{#for x in GUILDS}
 							<button
 								data-filter-guild={x.get_short_name()}
+								data-guild-color={x.get_short_name()}
 								aria-label={x.get_short_name()}
-								style={"--guild-color: {};", x.get_color()}
 							>
 								<span>{x.get_short_name()}</span>
 							</button>
@@ -28,8 +28,8 @@ impl Component for GuildFilterMatrix {
 						<div @class={"guild_filter_matrix.css"}>
 							<button
 								data-filter-guild={"HCAI"}
+								data-guild-color={"HCAI"}
 								aria-label={"HCAI"}
-								style={"--guild-color: #4B0082;"}
 							>
 								<span>{"HCAI"}</span>
 							</button>

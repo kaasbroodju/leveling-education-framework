@@ -9,7 +9,7 @@ impl Component for SkillFilterMatrix {
 		view! {
 			<header @class={"skill_filter_matrix.css"}>
 				<section>
-					<h2 style="color: #8c9ebb;">{"productvaardigheden"}</h2>
+					<h2 style="color: var(--product-skill-color);">{"productvaardigheden"}</h2>
 					<div>
 						{#for x in PRODUCT_SKILLS}
 							<button
@@ -24,7 +24,7 @@ impl Component for SkillFilterMatrix {
 					</div>
 				</section>
 				<section>
-					<h2 style="color: #a2b490;">{"sociale vaardigheden"}</h2>
+					<h2 style="color: var(--social-skill-color);">{"sociale vaardigheden"}</h2>
 					<div>
 						{#for x in SOCIAL_SKILLS}
 							<button class="social-skill" data-filter-vaardigheid={x.to_text()} aria-label={x.to_text()}>
@@ -44,7 +44,7 @@ impl Component for SkillFilterMatrix {
 							</button>
 						{/for}
 					</div>
-					<h2 style="color: #d49e81;">{"persoonsvormende vaardigheden"}</h2>
+					<h2 style="color: var(--personal-skill-color);">{"persoonsvormende vaardigheden"}</h2>
 				</section>
 			</header>
 		}

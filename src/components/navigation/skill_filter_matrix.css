@@ -114,7 +114,7 @@
         }
     }
 
-    .product-skill { --base-color: #8c9ebb; }
-    .social-skill { --base-color: #a2b490; }
-    .personal-skill { --base-color: #d49e81; }
+    .product-skill { --base-color: var(--product-skill-color); }
+    .social-skill { --base-color: var(--social-skill-color); }
+    .personal-skill { --base-color: var(--personal-skill-color); }
 }

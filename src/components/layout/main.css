@@ -23,8 +23,44 @@ a {
     --line-color: #d7d7d7;
     --quick-search-bg-color: #ffffff;
     --quick-search-border-color: #d1d9e0;
-    --Paper-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --card-shadow: 0px 0px 6px 0px rgba(from var(--primary-color) r g b / 0.1);
+    --contrast-text-color: #f0f0f0;
+    --filter-border-color: #878787;
+
+    --product-skill-color: #8c9ebb;
+    --social-skill-color: #a2b490;
+    --personal-skill-color: #d49e81;
+
+    --hboi-primary-layer-color: #89aed0;
+    --hboi-secondary-layer-color: #c3d9ec;
+
+    --guild-ai-color: #4B0082;
+    --guild-be-color: #B71C1C;
+    --guild-bit-color: #9A7300;
+    --guild-cs-color: #085308;
+    --guild-ci-color: #59c759;
+    --guild-fe-color: #D35400;
+    --guild-uiux-color: #880E4F;
+    --guild-ti-color: #001F3F;
+    --guild-gd-color: #8950C7;
+    --guild-hcai-color: #4B0082;
 }
+
+/* Maps the data-guild-color attribute (set from Guild::get_short_name()) to
+   the matching guild color, wherever the attribute appears. Named distinctly
+   from data-guild, which guild_filter.js already uses to target filterable
+   cards. Lets each guild's color be themed independently, e.g. for dark-mode
+   contrast. */
+[data-guild-color="AI"] { --guild-color: var(--guild-ai-color); }
+[data-guild-color="BE"] { --guild-color: var(--guild-be-color); }
+[data-guild-color="BIT"] { --guild-color: var(--guild-bit-color); }
+[data-guild-color="CS"] { --guild-color: var(--guild-cs-color); }
+[data-guild-color="CI"] { --guild-color: var(--guild-ci-color); }
+[data-guild-color="FE"] { --guild-color: var(--guild-fe-color); }
+[data-guild-color="UI/UX"] { --guild-color: var(--guild-uiux-color); }
+[data-guild-color="TI"] { --guild-color: var(--guild-ti-color); }
+[data-guild-color="GD"] { --guild-color: var(--guild-gd-color); }
+[data-guild-color="HCAI"] { --guild-color: var(--guild-hcai-color); }
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-bg-color: #121212;
@@ -34,7 +70,8 @@ a {
         --line-color: #2e2e2e;
         --quick-search-bg-color: #212830;
         --quick-search-border-color: #3d444d;
-
+        --hboi-primary-layer-color: #1e3a5f;
+        --hboi-secondary-layer-color: #2f4d6e;
     }
 }
 
@@ -48,6 +85,8 @@ a {
     --line-color: #d7d7d7;
     --quick-search-bg-color: #ffffff;
     --quick-search-border-color: #d1d9e0;
+    --hboi-primary-layer-color: #89aed0;
+    --hboi-secondary-layer-color: #c3d9ec;
 }
 
 :root[data-theme="dark"] {
@@ -58,6 +97,8 @@ a {
     --line-color: #2e2e2e;
     --quick-search-bg-color: #212830;
     --quick-search-border-color: #3d444d;
+    --hboi-primary-layer-color: #1e3a5f;
+    --hboi-secondary-layer-color: #2f4d6e;
 }
 
 .main-layout {

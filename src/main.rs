@@ -20,7 +20,6 @@ use crate::domain::{
 	Activiteit, Architectuurlaag, BeroepsRollenResponseBody, DeprecatedVaardighedenResponseBody,
 	Guild, HBOIExampleResponse, HBOIResponseBody, Level, Skill, VaardighedenResponseBody,
 };
-use pages::about_lef::AboutLef;
 use pages::beroepsproducten_content::BeroepsproductenContent;
 use pages::beroepsrollen::BeroepsRollenContent;
 use pages::beroepstaken_content::BeroepstakenContent;
@@ -111,19 +110,6 @@ fn beroepsrollen() -> CachedHtml {
 		</Layout>
 	};
 	tidos::head! {<title>{"LEF - Beroepsrollen"}</title>}
-	page.into()
-}
-
-#[get("/about")]
-fn about() -> CachedHtml {
-	let mut page = page! {
-		<Layout current_url="/about">
-			{#slot:content}
-				<AboutLef />
-			{/slot}
-		</Layout>
-	};
-	tidos::head! {<title>{"LEF - Leveling Education Framework"}</title>}
 	page.into()
 }
 
@@ -359,7 +345,6 @@ fn rocket() -> _ {
 				beroepstaken,
 				beroepsproducten,
 				beroepsrollen,
-				about,
 				leeswijzer,
 				files,
 				robots,

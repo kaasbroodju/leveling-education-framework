@@ -263,20 +263,6 @@ impl Guild {
 			Guild::GameDevelopment => "GD",
 		}
 	}
-
-	pub fn get_color(&self) -> &str {
-		match &self {
-			Guild::ArtificialIntelligence => "#4B0082",
-			Guild::Backend => "#B71C1C",
-			Guild::BusinessItManagement => "#9A7300",
-			Guild::CyberSecurity => "#085308ff",
-			Guild::CloudInfrastructure => "#59c759ff",
-			Guild::Frontend => "#D35400",
-			Guild::UIUX => "#880E4F",
-			Guild::Embedded => "#001F3F",
-			Guild::GameDevelopment => "#8950C7",
-		}
-	}
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]

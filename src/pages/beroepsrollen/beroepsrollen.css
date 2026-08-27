@@ -37,9 +37,9 @@
             margin: 1ch 0;
             padding: 1ch;
 
-            &.primary-layer { --base-color: #1e3a5f }
+            &.primary-layer { --base-color: var(--hboi-primary-layer-color); }
             &:not(.primary-layer, .secondary-layer) { --base-color: var(--tertairy-bg-color); }
-            &.secondary-layer { --base-color: #93b8d8; }
+            &.secondary-layer { --base-color: var(--hboi-secondary-layer-color); }
         }
     }
 }
