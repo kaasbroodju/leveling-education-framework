@@ -2,32 +2,38 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lef.open-ict.hu.nl/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://lef.hu.nl/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lef.open-ict.hu.nl/beroepstaken</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://lef.hu.nl/beroepstaken</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lef.open-ict.hu.nl/beroepsproducten</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://lef.hu.nl/beroepsproducten</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lef.open-ict.hu.nl/about</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://lef.hu.nl/beroepsrollen</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lef.open-ict.hu.nl/llms.txt</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://lef.hu.nl/leeswijzer</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lef.hu.nl/llms.txt</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

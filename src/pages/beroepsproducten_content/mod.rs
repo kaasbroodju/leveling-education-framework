@@ -92,7 +92,7 @@ struct ExampleCard<'a> {
 impl<'a> Component for ExampleCard<'a> {
 	fn to_render(&self, page: &mut Page) {
 		view! {
-			<span class="guild-tag" style={"background-color: {};", self.guild.get_color()}>{self.guild.get_short_name()}</span><span class="title">{self.title}</span>
+			<span class="guild-tag" data-guild-color={self.guild.get_short_name()}>{self.guild.get_short_name()}</span><span class="title">{self.title}</span>
 		}
 	}
 }

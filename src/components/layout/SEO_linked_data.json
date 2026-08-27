@@ -2,8 +2,8 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "LEF - Leveling Education Framework",
-  "description": "Een snelle en overzichtelijke tool om door HBO-i competenties en Open-ICT vaardigheden te navigeren. Gebruikt door alle studenten en docenten van Open-ICT voor competentie-evaluatie met filter systeem en deelbare links.",
-  "url": "https://lef.open-ict.hu.nl/",
+  "description": "Een snelle en overzichtelijke tool om door HBO-i competenties en LEF-vaardigheden te navigeren. Gebruikt door studenten en docenten van Open-ICT, de duale HBO-ICT-opleidingen en de master Human-Centered Artificial Intelligence van Hogeschool Utrecht voor competentie-evaluatie met filter systeem en deelbare links.",
+  "url": "https://lef.hu.nl/",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "programmingLanguage": ["Rust", "JavaScript", "CSS"],
@@ -45,53 +45,94 @@
     "description": "Oorspronkelijke ontwikkelaar van LEF uit ergernis over de trage en onoverzichtelijke HBO-i kubus",
     "sameAs": "https://www.linkedin.com/in/luca-bergman-30b28b203/"
   },
-  "publisher": {
-    "@type": "EducationalOrganization",
-    "name": "Open-ICT",
-    "alternateName": "Open-ICT Leerroute",
-    "description": "Agile, project-gestuurd ICT onderwijs volgens Spotify-model met squads, tribes en gildes. Winnaar tweede prijs Nederlandse Onderwijspremie 2021 (€800.000).",
-    "url": "https://www.hu.nl/voltijd-opleidingen/open-ict",
-    "foundingDate": "2019",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Heidelberglaan 15",
-      "addressLocality": "Utrecht",
-      "postalCode": "3584 CS",
-      "addressCountry": "NL"
-    },
-    "parentOrganization": {
-      "@type": "CollegeOrUniversity",
-      "name": "Hogeschool Utrecht",
-      "url": "https://www.hu.nl/",
+  "publisher": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Open-ICT",
+      "alternateName": "Open-ICT Leerroute",
+      "description": "Agile, project-gestuurd ICT onderwijs volgens Spotify-model met squads, tribes en gildes. Winnaar tweede prijs Nederlandse Onderwijspremie 2021 (€800.000).",
+      "url": "https://www.hu.nl/voltijd-opleidingen/open-ict",
+      "foundingDate": "2019",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Heidelberglaan 15",
         "addressLocality": "Utrecht",
+        "postalCode": "3584 CS",
         "addressCountry": "NL"
+      },
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hogeschool Utrecht",
+        "url": "https://www.hu.nl/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Utrecht",
+          "addressCountry": "NL"
+        }
+      },
+      "department": {
+        "@type": "EducationalOrganization",
+        "name": "HBO-ICT",
+        "description": "ICT bachelor opleiding van Hogeschool Utrecht"
+      },
+      "educationalCredentialAwarded": "Bachelor of ICT",
+      "educationalProgramMode": "Full-time",
+      "learningResourceType": "Project-based Learning",
+      "teachingMethodology": [
+        "Agile/Scrum methodology",
+        "Spotify organizational model",
+        "Praktijkgericht onderwijs",
+        "Peer learning",
+        "Continuous feedback"
+      ],
+      "award": {
+        "@type": "Award",
+        "name": "Nederlandse Onderwijspremie 2021 - Tweede Prijs",
+        "description": "Winnaar van €800.000 voor vernieuwend agile ICT-onderwijs",
+        "dateReceived": "2021-03-01",
+        "awarder": "Ministerie van Onderwijs, Cultuur en Wetenschap"
       }
     },
-    "department": {
+    {
       "@type": "EducationalOrganization",
-      "name": "HBO-ICT",
-      "description": "ICT bachelor opleiding van Hogeschool Utrecht"
+      "name": "HBO-ICT Software Development Duaal",
+      "description": "Duale HBO-ICT opleiding van Hogeschool Utrecht, opgezet met Stichting Cloud IT Academy, waarbij studenten studeren en werken combineren.",
+      "url": "https://www.hu.nl/deeltijd-opleidingen/hbo-ict-software-development-duaal",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hogeschool Utrecht",
+        "url": "https://www.hu.nl/"
+      },
+      "educationalCredentialAwarded": "Bachelor of ICT",
+      "educationalProgramMode": "Dual"
     },
-    "educationalCredentialAwarded": "Bachelor of ICT",
-    "educationalProgramMode": "Full-time",
-    "learningResourceType": "Project-based Learning",
-    "teachingMethodology": [
-      "Agile/Scrum methodology",
-      "Spotify organizational model",
-      "Praktijkgericht onderwijs",
-      "Peer learning",
-      "Continuous feedback"
-    ],
-    "award": {
-      "@type": "Award",
-      "name": "Nederlandse Onderwijspremie 2021 - Tweede Prijs",
-      "description": "Winnaar van €800.000 voor vernieuwend agile ICT-onderwijs",
-      "dateReceived": "2021-03-01",
-      "awarder": "Ministerie van Onderwijs, Cultuur en Wetenschap"
+    {
+      "@type": "EducationalOrganization",
+      "name": "HBO-ICT Cyber Security & Cloud Duaal",
+      "description": "Duale HBO-ICT opleiding van Hogeschool Utrecht, opgezet met Stichting Cloud IT Academy, gericht op cyber security en cloud infrastructuur.",
+      "url": "https://www.hu.nl/deeltijd-opleidingen/hbo-ict-system-network-en-cloud-engineering-duaal",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hogeschool Utrecht",
+        "url": "https://www.hu.nl/"
+      },
+      "educationalCredentialAwarded": "Bachelor of ICT",
+      "educationalProgramMode": "Dual"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Master Human-Centered Artificial Intelligence",
+      "description": "Masteropleiding van Hogeschool Utrecht gericht op de technische en maatschappelijke/ethische aspecten van AI.",
+      "url": "https://www.hu.nl/voltijd-opleidingen/master-human-centered-artificial-intelligence",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hogeschool Utrecht",
+        "url": "https://www.hu.nl/"
+      },
+      "educationalCredentialAwarded": "Master of Science",
+      "educationalProgramMode": "Full-time"
     }
-  },
+  ],
   "maintainer": [
     {
       "@type": "Person",
@@ -145,7 +186,7 @@
   "audience": {
     "@type": "EducationalAudience",
     "educationalRole": ["student", "teacher", "administrator", "coach", "gildemeester"],
-    "audienceType": "Open-ICT community"
+    "audienceType": "Open-ICT, HBO-ICT duaal en master Human-Centered AI community"
   },
   "applicationSubCategory": [
     "Competentie Management",
