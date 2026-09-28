@@ -3,12 +3,25 @@ name: CI to Docker Hub
 on:
   push:
     branches: [ main ]
+  # Handmatig (her)bouwen van een schooljaar-versie, bijv. een oude commit als 2025.
+  # Een handmatige build verplaatst `latest` niet.
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Branch, tag of commit om te bouwen'
+        required: true
+        default: 'main'
+      schooljaar:
+        description: 'Startjaar van het schooljaar (bijv. 2025 voor 2025-2026)'
+        required: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -30,10 +43,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: test
+    env:
+      DOCKER_HUB_REPOSITORY: leveling-education-framework
     steps:
       -
         name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+      -
+        # Schooljaar loopt van 1 augustus t/m 31 juli; de tag is het startjaar.
+        name: Bepaal schooljaar
+        id: schooljaar
+        env:
+          INPUT_SCHOOLJAAR: ${{ inputs.schooljaar }}
+        run: |
+          if [ -n "$INPUT_SCHOOLJAAR" ]; then
+            jaar="$INPUT_SCHOOLJAAR"
+          else
+            jaar=$(TZ=Europe/Amsterdam date +%Y)
+            maand=$(TZ=Europe/Amsterdam date +%-m)
+            if [ "$maand" -lt 8 ]; then jaar=$((jaar - 1)); fi
+          fi
+          if ! [[ "$jaar" =~ ^[0-9]{4}$ ]]; then
+            echo "Ongeldig schooljaar: $jaar" >&2
+            exit 1
+          fi
+          echo "jaar=$jaar" >> "$GITHUB_OUTPUT"
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -47,15 +83,27 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       -
+        # Tags per build:
+        #   2026    -> laatste build van schooljaar 2026-2027
+        #   latest  -> meest recente build van main (alleen bij een push)
+        name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_HUB_REPOSITORY }}
+          flavor: latest=false
+          tags: |
+            type=raw,value=${{ steps.schooljaar.outputs.jaar }}
+            type=raw,value=latest,enable=${{ github.event_name == 'push' }}
+      -
         name: Build and push app
         uses: docker/build-push-action@v5
-        env:
-          DOCKER_HUB_REPOSITORY: leveling-education-framework
         with:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_HUB_REPOSITORY }}:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_HUB_REPOSITORY }}:latest
           cache-to: type=inline
